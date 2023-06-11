@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'home/home_screen.dart';
+import 'package:codebooter_study_app/utils/dimensions.dart';
+import 'home/homeScreen.dart';
 
 void main() {
+  //print the screen height
   runApp(MyApp());
 }
 
@@ -12,9 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: homeScreen(),
     );
   }
