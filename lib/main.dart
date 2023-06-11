@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:codebooter_study_app/utils/dimensions.dart';
-import 'home/homeScreen.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'home/HomeScreen.dart';
 
 void main() {
   //print the screen height

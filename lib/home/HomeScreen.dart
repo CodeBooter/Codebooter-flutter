@@ -1,12 +1,12 @@
-import 'package:codebooter_study_app/home/features.dart';
+import 'package:codebooter_study_app/home/Features.dart';
 import 'package:codebooter_study_app/home/blog.dart';
-import 'package:codebooter_study_app/utils/dimensions.dart';
-import 'package:codebooter_study_app/widgets/bigText.dart';
-import 'package:codebooter_study_app/widgets/smallText.dart';
-import 'package:codebooter_study_app/home/sideBar.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/widgets/BigText.dart';
+import 'package:codebooter_study_app/widgets/SmallText.dart';
+import 'package:codebooter_study_app/home/SideBar.dart';
 
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
+import '../utils/Colors.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
@@ -54,29 +54,32 @@ class _homeScreenState extends State<homeScreen> {
             ),
           ),
           SizedBox(height: dimension.val20),
-          Column(
-            children: [
-              Container(
-                alignment: Alignment.center,
-                child: Column(children: [
-                  bigText(
-                    text: "Welcome to CodeBooter👋",
-                    size: dimension.font20,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  smallText(
-                    text: "Boot your life to code🚀",
-                    size: dimension.font16,
-                  ),
-                ]),
-              ),
-              SizedBox(height: dimension.val20),
-              features(),
-              SizedBox(height: dimension.val20),
-              blog(),
-              SizedBox(height: dimension.val20),
-            ],
-          ),
+          Expanded(
+              child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  child: Column(children: [
+                    bigText(
+                      text: "Welcome to CodeBooter👋",
+                      size: dimension.font20,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    smallText(
+                      text: "Boot your life to code🚀",
+                      size: dimension.font16,
+                    ),
+                  ]),
+                ),
+                SizedBox(height: dimension.val20),
+
+                features(), // Features imported from features.dart
+                SizedBox(height: dimension.val20),
+                blog(), // Blog imported from blog.dart
+              ],
+            ),
+          ))
         ],
       ),
     );

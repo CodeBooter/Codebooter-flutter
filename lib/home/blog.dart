@@ -1,6 +1,6 @@
-import 'package:codebooter_study_app/utils/dimensions.dart';
-import 'package:codebooter_study_app/utils/colors.dart';
-import 'package:codebooter_study_app/widgets/bigText.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
+import 'package:codebooter_study_app/widgets/BigText.dart';
 
 import 'package:flutter/material.dart';
 
