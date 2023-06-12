@@ -55,31 +55,41 @@ class _homeScreenState extends State<homeScreen> {
           ),
           SizedBox(height: dimension.val20),
           Expanded(
-              child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  alignment: Alignment.center,
-                  child: Column(children: [
-                    bigText(
-                      text: "Welcome to CodeBooter👋",
-                      size: dimension.font20,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    smallText(
-                      text: "Boot your life to code🚀",
-                      size: dimension.font16,
-                    ),
-                  ]),
-                ),
-                SizedBox(height: dimension.val20),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: Column(children: [
+                      bigText(
+                        text: "Welcome to CodeBooter👋",
+                        size: dimension.font20,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      smallText(
+                        text: "Boot your life to code🚀",
+                        size: dimension.font16,
+                      ),
+                    ]),
+                  ),
+                  SizedBox(height: dimension.val20),
 
-                features(), // Features imported from features.dart
-                SizedBox(height: dimension.val20),
-                blog(), // Blog imported from blog.dart
-              ],
+                  features(), // Features imported from features.dart
+                  SizedBox(height: dimension.val20),
+                  blog(), // Blog imported from blog.dart
+                ],
+              ),
             ),
-          ))
+            //navigation bar
+          ),
+          Container(
+              //navigation bar
+
+              child: Column(
+            children: [
+              // NavBar(),
+            ],
+          )),
         ],
       ),
     );

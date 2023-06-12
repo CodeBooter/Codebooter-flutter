@@ -21,6 +21,7 @@ class dimension {
   static double get height132 => Get.height / 6.56; //132
   static double get height115 => Get.height / 7.52; //115
   static double get height85 => Get.height / 10.19; //85
+
   static double get font24 => Get.height / 36.1; //24
   static double get font16 => Get.height / 54.15; //16
   static double get font20 => Get.height / 43.31; //20

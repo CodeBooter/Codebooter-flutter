@@ -120,7 +120,7 @@ class _featuresState extends State<features> {
                           decoration: BoxDecoration(
                             //add a image
                             image: const DecorationImage(
-                              image: AssetImage('assets/images/dsa.jpg'),
+                              image: AssetImage('assets/images/playlist1.png'),
                               // put image
                               fit: BoxFit.fill,
                               //border color
@@ -130,8 +130,9 @@ class _featuresState extends State<features> {
                             color: appColors.BoxColor,
                           ),
                         ),
-                        bigText(text: "DSA", size: dimension.font16),
-                        smallText(text: "Complete DSA")
+                        bigText(
+                            text: "Full stack course", size: dimension.font16),
+                        smallText(text: "complete and verified playlist")
                       ],
                     ),
                   ),
@@ -171,7 +172,7 @@ class _featuresState extends State<features> {
                           decoration: BoxDecoration(
                             //add a image
                             image: const DecorationImage(
-                              image: AssetImage('assets/images/dsa.jpg'),
+                              image: AssetImage('assets/images/interview.png'),
                               // put image
                               fit: BoxFit.fill,
                               //border color
@@ -181,8 +182,8 @@ class _featuresState extends State<features> {
                             color: appColors.BoxColor,
                           ),
                         ),
-                        bigText(text: "DSA", size: dimension.font16),
-                        smallText(text: "Complete DSA")
+                        bigText(text: "Interview Gem", size: dimension.font16),
+                        smallText(text: "Complete interview preparation")
                       ],
                     ),
                   ),
@@ -222,7 +223,7 @@ class _featuresState extends State<features> {
                           decoration: BoxDecoration(
                             //add a image
                             image: const DecorationImage(
-                              image: AssetImage('assets/images/dsa.jpg'),
+                              image: AssetImage('assets/images/shivani.png'),
                               // put image
                               fit: BoxFit.fill,
                               //border color
@@ -232,8 +233,8 @@ class _featuresState extends State<features> {
                             color: appColors.BoxColor,
                           ),
                         ),
-                        bigText(text: "DSA", size: dimension.font16),
-                        smallText(text: "Complete DSA")
+                        bigText(text: "Exam Notes", size: dimension.font16),
+                        smallText(text: "Shivani and compressed notes")
                       ],
                     ),
                   ),
