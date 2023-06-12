@@ -1,6 +1,6 @@
+import 'package:codebooter_study_app/home/NavBar.dart';
 import 'package:flutter/material.dart';
 
-import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'home/HomeScreen.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My Flutter App',
-      home: homeScreen(),
+      home: NavBar(),
     );
   }
 }

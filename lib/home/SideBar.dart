@@ -38,7 +38,7 @@ class _sideBarState extends State<sideBar> {
           isSidebarOpen
               ? Icons.close
               : Icons.menu, // Change icon based on sidebar state
-          color: Colors.white,
+          color: Color.fromARGB(255, 8, 8, 8),
         ),
       ),
     );

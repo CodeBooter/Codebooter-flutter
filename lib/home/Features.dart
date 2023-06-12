@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 
+import '../Screens/ExamNoteScreen.dart';
+
 class features extends StatefulWidget {
   const features({super.key});
 
@@ -132,7 +134,10 @@ class _featuresState extends State<features> {
                         ),
                         bigText(
                             text: "Full stack course", size: dimension.font16),
-                        smallText(text: "complete and verified playlist")
+                        smallText(
+                          text: "complete and verified playlist",
+                          overFlow: TextOverflow.ellipsis,
+                        )
                       ],
                     ),
                   ),
@@ -191,7 +196,11 @@ class _featuresState extends State<features> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      print("hello");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ExamNoteScreen()),
+                      );
                     });
                   },
                   child: Container(

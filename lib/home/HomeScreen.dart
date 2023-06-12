@@ -1,15 +1,16 @@
+import 'package:codebooter_study_app/home/AppBar.dart';
 import 'package:codebooter_study_app/home/Features.dart';
+import 'package:codebooter_study_app/home/NavBar.dart';
 import 'package:codebooter_study_app/home/blog.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:codebooter_study_app/widgets/SmallText.dart';
-import 'package:codebooter_study_app/home/SideBar.dart';
 
 import 'package:flutter/material.dart';
 import '../utils/Colors.dart';
 
 class homeScreen extends StatefulWidget {
-  const homeScreen({super.key});
+  homeScreen({super.key});
 
   @override
   State<homeScreen> createState() => _homeScreenState();
@@ -21,38 +22,14 @@ class _homeScreenState extends State<homeScreen> {
     print(MediaQuery.of(context).size.height);
     print(MediaQuery.of(context).size.width);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 255, 250, 228),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: dimension.topPadding,
           ),
-          Container(
-            child: Container(
-              // margin: EdgeInsets.only(top: dimension.topPadding, bottom: 20),
-              padding: EdgeInsets.only(
-                  left: dimension.val20, right: dimension.val20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  sideBar(), // Sidebar imported from sidebar.dart
-                  bigText(
-                    text: 'Home',
-                    size: dimension.font24,
-                  ),
-                  Container(
-                    width: dimension.val45,
-                    height: dimension.val45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: appColors.iconBoxColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          Header(),
           SizedBox(height: dimension.val20),
           Expanded(
             child: SingleChildScrollView(
@@ -82,14 +59,6 @@ class _homeScreenState extends State<homeScreen> {
             ),
             //navigation bar
           ),
-          Container(
-              //navigation bar
-
-              child: Column(
-            children: [
-              // NavBar(),
-            ],
-          )),
         ],
       ),
     );
