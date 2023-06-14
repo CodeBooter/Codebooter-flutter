@@ -1,45 +1,71 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:codebooter_study_app/utils/Dimensions.dart';
-import '../utils/Colors.dart';
 
-class sideBar extends StatefulWidget {
-  const sideBar({super.key});
-
-  @override
-  State<sideBar> createState() => _sideBarState();
-}
-
-class _sideBarState extends State<sideBar> {
-  bool isSidebarOpen = false; // Flag to track sidebar state
-
-  void toggleSidebar() {
-    setState(() {
-      isSidebarOpen = !isSidebarOpen;
-    });
-  }
-
+class sideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // sidebar open
-        toggleSidebar();
-        // sidebar clo
-      },
-      child: Container(
-        width: dimension.val45,
-        height: dimension.val45,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: appColors.iconBoxColor,
-        ),
-        child: Icon(
-          isSidebarOpen
-              ? Icons.close
-              : Icons.menu, // Change icon based on sidebar state
-          color: Color.fromARGB(255, 8, 8, 8),
-        ),
+    return Drawer(
+      child: ListView(
+        // Remove padding
+        padding: EdgeInsets.zero,
+        children: [
+          UserAccountsDrawerHeader(
+            accountName: Text('Manav Khadka'),
+            accountEmail: Text('manavkhadka2004@gmail.com'),
+            currentAccountPicture: CircleAvatar(
+              child: ClipOval(
+                child: Image.network(
+                  'https://storage.googleapis.com/kaggle-avatars/images/13402284-kg.jpg',
+                  fit: BoxFit.cover,
+                  width: 90,
+                  height: 90,
+                ),
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage(
+                      'https://www.ahaguru.com/new-website-assets/img/banner-bg-1.jpg')),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () => null,
+          ),
+          ListTile(
+            leading: Icon(Icons.book_outlined),
+            title: Text('Data Structures & Algorithm'),
+            onTap: () => null,
+          ),
+          ListTile(
+            leading: Icon(Icons.book_online_sharp),
+            title: Text('Courses'),
+            onTap: () => null,
+          ),
+          ListTile(
+            leading: Icon(Icons.laptop_chromebook),
+            title: Text('Interview'),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.shelves),
+            title: Text('notes'),
+            onTap: () => null,
+          ),
+          ListTile(
+            leading: Icon(Icons.note_alt_outlined),
+            title: Text('Blog'),
+            onTap: () => null,
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Logout'),
+            leading: Icon(Icons.exit_to_app),
+            onTap: () => null,
+          ),
+        ],
       ),
     );
   }

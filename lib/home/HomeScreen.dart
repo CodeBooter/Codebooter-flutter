@@ -29,7 +29,7 @@ class _homeScreenState extends State<homeScreen> {
           SizedBox(
             height: dimension.topPadding,
           ),
-          Header(),
+
           SizedBox(height: dimension.val20),
           Expanded(
             child: SingleChildScrollView(
