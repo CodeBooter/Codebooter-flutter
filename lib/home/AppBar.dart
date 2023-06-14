@@ -22,7 +22,7 @@ class _AppBarState extends State<Header> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            sideBar(), // Sidebar imported from sidebar.dart
+          // Sidebar imported from sidebar.dart
             bigText(
               text: 'Home',
               size: dimension.font24,
