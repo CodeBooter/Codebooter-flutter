@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/authentication/authentiction.dart';
 import 'package:codebooter_study_app/home/Features.dart';
 import 'package:codebooter_study_app/home/SideBar.dart';
 import 'package:codebooter_study_app/home/blog.dart';
@@ -39,7 +40,7 @@ class _Page1ScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.bookmark),
             tooltip: 'Go to the next page',
-            onPressed: () => context.go('/fs'),
+            onPressed: () => AuthService().signOut(context),
           ),
         ],
       ),
