@@ -3,6 +3,7 @@ import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:go_router/go_router.dart';
 
 import '../Screens/ExamNoteScreen.dart';
 
@@ -36,215 +37,234 @@ class _featuresState extends State<features> {
               spacing: dimension.val10,
               runSpacing: dimension.val10,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      print("hello");
-                    });
-                  },
+                InkWell(
                   child: Container(
                     alignment: Alignment.center,
                     width: dimension.width180,
                     height: dimension.height132,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 136, 136, 136)
-                              .withOpacity(0.2),
-                          blurRadius: 10.0,
-                          spreadRadius: 5.0,
-                          offset: const Offset(-1, 0),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(dimension.val5),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: dimension.val2,
-                        ),
-                        Container(
-                          height: dimension.height85,
-                          width: dimension.width165,
-                          decoration: BoxDecoration(
-                            //add a image
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/dsa.jpg'),
-                              // put image
-                              fit: BoxFit.fill,
-                              //border color
-                            ),
-
-                            borderRadius: BorderRadius.circular(dimension.val5),
-                            color: appColors.BoxColor,
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(dimension.val5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 136, 136, 136)
+                                .withOpacity(0.2),
+                            blurRadius: 10.0,
+                            spreadRadius: 5.0,
+                            offset: const Offset(-1, 0),
                           ),
+                        ],
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Future.delayed(Duration(milliseconds: 200), () {
+                            context.go('/dsa');
+                          });
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: dimension.val2,
+                            ),
+                            Container(
+                              height: dimension.height85,
+                              width: dimension.width165,
+                              decoration: BoxDecoration(
+                                // Add an image
+                                image: const DecorationImage(
+                                  image: AssetImage('assets/images/dsa.jpg'),
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius:
+                                    BorderRadius.circular(dimension.val5),
+                                color: appColors.BoxColor,
+                              ),
+                            ),
+                            bigText(text: "DSA", size: dimension.font16),
+                            smallText(text: "Complete DSA"),
+                          ],
                         ),
-                        bigText(text: "DSA", size: dimension.font16),
-                        smallText(text: "Complete DSA")
-                      ],
+                      ),
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      print("hello");
-                    });
-                  },
+                InkWell(
                   child: Container(
                     alignment: Alignment.center,
                     width: dimension.width180,
                     height: dimension.height132,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 136, 136, 136)
-                              .withOpacity(0.2),
-                          blurRadius: 10.0,
-                          spreadRadius: 5.0,
-                          offset: const Offset(-1, 0),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(dimension.val5),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: dimension.val2,
-                        ),
-                        Container(
-                          height: dimension.height85,
-                          width: dimension.width165,
-                          decoration: BoxDecoration(
-                            //add a image
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/playlist1.png'),
-                              // put image
-                              fit: BoxFit.fill,
-                              //border color
-                            ),
-
-                            borderRadius: BorderRadius.circular(dimension.val5),
-                            color: appColors.BoxColor,
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(dimension.val5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 136, 136, 136)
+                                .withOpacity(0.2),
+                            blurRadius: 10.0,
+                            spreadRadius: 5.0,
+                            offset: const Offset(-1, 0),
                           ),
+                        ],
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Future.delayed(Duration(milliseconds: 200), () {
+                            context.go('/courses');
+                          });
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: dimension.val2,
+                            ),
+                            Container(
+                              height: dimension.height85,
+                              width: dimension.width165,
+                              decoration: BoxDecoration(
+                                // Add an image
+                                image: const DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/playlist1.png'),
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius:
+                                    BorderRadius.circular(dimension.val5),
+                                color: appColors.BoxColor,
+                              ),
+                            ),
+                            bigText(
+                                text: "Full Stack Course",
+                                size: dimension.font16),
+                            smallText(text: "Free and verfied course"),
+                          ],
                         ),
-                        bigText(
-                            text: "Full stack course", size: dimension.font16),
-                        smallText(
-                          text: "complete and verified playlist",
-                          overFlow: TextOverflow.ellipsis,
-                        )
-                      ],
+                      ),
                     ),
                   ),
                 ),
-                GestureDetector(
+                InkWell(
                   onTap: () {
-                    setState(() {
-                      print("hello");
+                    Future.delayed(Duration(milliseconds: 200), () {
+                      context.go('/interview');
                     });
                   },
                   child: Container(
                     alignment: Alignment.center,
                     width: dimension.width180,
                     height: dimension.height132,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 136, 136, 136)
-                              .withOpacity(0.2),
-                          blurRadius: 10.0,
-                          spreadRadius: 5.0,
-                          offset: const Offset(-1, 0),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(dimension.val5),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: dimension.val2,
-                        ),
-                        Container(
-                          height: dimension.height85,
-                          width: dimension.width165,
-                          decoration: BoxDecoration(
-                            //add a image
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/interview.png'),
-                              // put image
-                              fit: BoxFit.fill,
-                              //border color
-                            ),
-
-                            borderRadius: BorderRadius.circular(dimension.val5),
-                            color: appColors.BoxColor,
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(dimension.val5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 136, 136, 136)
+                                .withOpacity(0.2),
+                            blurRadius: 10.0,
+                            spreadRadius: 5.0,
+                            offset: const Offset(-1, 0),
                           ),
+                        ],
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Future.delayed(Duration(milliseconds: 200), () {
+                            context.go('/interview');
+                          });
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: dimension.val2,
+                            ),
+                            Container(
+                              height: dimension.height85,
+                              width: dimension.width165,
+                              decoration: BoxDecoration(
+                                // Add an image
+                                image: const DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/interview.png'),
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius:
+                                    BorderRadius.circular(dimension.val5),
+                                color: appColors.BoxColor,
+                              ),
+                            ),
+                            bigText(
+                                text: "Interview Gems", size: dimension.font16),
+                            smallText(
+                                text: "TnP verified Interview preparation"),
+                          ],
                         ),
-                        bigText(text: "Interview Gem", size: dimension.font16),
-                        smallText(text: "Complete interview preparation")
-                      ],
+                      ),
                     ),
                   ),
                 ),
-                GestureDetector(
+                InkWell(
                   onTap: () {
-                    setState(() {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ExamNoteScreen()),
-                      );
+                    Future.delayed(Duration(milliseconds: 200), () {
+                      context.go('/notes');
                     });
                   },
                   child: Container(
                     alignment: Alignment.center,
                     width: dimension.width180,
                     height: dimension.height132,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 136, 136, 136)
-                              .withOpacity(0.2),
-                          blurRadius: 10.0,
-                          spreadRadius: 5.0,
-                          offset: const Offset(-1, 0),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(dimension.val5),
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: dimension.val2,
-                        ),
-                        Container(
-                          height: dimension.height85,
-                          width: dimension.width165,
-                          decoration: BoxDecoration(
-                            //add a image
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/shivani.png'),
-                              // put image
-                              fit: BoxFit.fill,
-                              //border color
-                            ),
-
-                            borderRadius: BorderRadius.circular(dimension.val5),
-                            color: appColors.BoxColor,
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(dimension.val5),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 136, 136, 136)
+                                .withOpacity(0.2),
+                            blurRadius: 10.0,
+                            spreadRadius: 5.0,
+                            offset: const Offset(-1, 0),
                           ),
+                        ],
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Future.delayed(Duration(milliseconds: 200), () {
+                            context.go('/notes');
+                          });
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: dimension.val2,
+                            ),
+                            Container(
+                              height: dimension.height85,
+                              width: dimension.width165,
+                              decoration: BoxDecoration(
+                                // Add an image
+                                image: const DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/shivani.png'),
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius:
+                                    BorderRadius.circular(dimension.val5),
+                                color: appColors.BoxColor,
+                              ),
+                            ),
+                            bigText(
+                                text: "Examination notes",
+                                size: dimension.font16),
+                            smallText(text: "University and college notes"),
+                          ],
                         ),
-                        bigText(text: "Exam Notes", size: dimension.font16),
-                        smallText(text: "Shivani and compressed notes")
-                      ],
+                      ),
                     ),
                   ),
                 ),

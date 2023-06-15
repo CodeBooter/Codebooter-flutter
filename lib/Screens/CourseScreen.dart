@@ -1,20 +1,34 @@
+import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 
 class CourseScreen extends StatefulWidget {
   const CourseScreen({super.key});
 
   @override
-  State<CourseScreen> createState() => _CourseScreenState();
+  State<CourseScreen> createState() => _DsaScreenState();
 }
 
-class _CourseScreenState extends State<CourseScreen> {
+class _DsaScreenState extends State<CourseScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 100,
-      child: Text("CourseScreen"),
-      color: Colors.red,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+        toolbarHeight: dimension.val70,
+        centerTitle: true,
+        title: bigText(
+          text: "Full Stack Courses",
+        ),
+      ),
+      body: const Center(
+        child: Text('Manav'),
+      ),
     );
   }
 }
