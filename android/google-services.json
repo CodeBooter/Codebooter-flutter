@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "450472724669",
+    "project_id": "codebooter-study",
+    "storage_bucket": "codebooter-study.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450472724669:android:221f30379690adea364fd4",
+        "android_client_info": {
+          "package_name": "com.codebooter.codebooter_study_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450472724669-hidu69tcgjv9av6knajomekihhrcmonv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7zNnHrdG4ku5AeQn6wk9mL-OGXigZh64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450472724669-hidu69tcgjv9av6knajomekihhrcmonv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
