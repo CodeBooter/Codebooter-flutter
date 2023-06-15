@@ -6,6 +6,7 @@ class dimension {
   static double get topPadding => Get.height / 15; //57.75238095238096
 
   static double get val60 => Get.height / 14.44; //60
+  static double get val70 => Get.height / 12.38; //70
   static double get val50 => Get.height / 17.32; //50
   static double get val45 => Get.height / 19.25; //45
   static double get val40 => Get.height / 21.65; //40
@@ -14,6 +15,7 @@ class dimension {
   static double get val25 => Get.height / 34.52; //25
 
   static double get val20 => Get.height / 43.31; // 20
+  static double get val15 => Get.height / 57.75; //15
   static double get val10 => Get.height / 86.62; //10
   static double get val5 => Get.height / 173.25; //5
   static double get val2 => Get.height / 433.125; //2
@@ -28,5 +30,8 @@ class dimension {
 
   static double get font24 => Get.height / 36.1; //24
   static double get font16 => Get.height / 54.15; //16
+  static double get font14 => Get.height / 61.86; //14
+  static double get font12 => Get.height / 72.16; //12
+  static double get font18 => Get.height / 48.11; //18
   static double get font20 => Get.height / 43.31; //20
 }
