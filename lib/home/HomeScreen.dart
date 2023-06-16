@@ -1,5 +1,6 @@
 import 'package:codebooter_study_app/home/Features.dart';
 import 'package:codebooter_study_app/home/SideBar.dart';
+import 'package:codebooter_study_app/home/animatedScreen.dart';
 import 'package:codebooter_study_app/home/blog.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
@@ -20,7 +21,7 @@ class _Page1ScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: sideBar(),
+      drawer: AnimatedDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: const Color.fromARGB(255, 19, 16, 16)),
         backgroundColor: Colors.transparent,

@@ -13,6 +13,8 @@ class sideBar extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
         ),
+        //animate drawer
+
         width: dimension.screenWidth * 0.6,
         child: Column(
           children: [
