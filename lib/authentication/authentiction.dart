@@ -47,4 +47,41 @@ class AuthService {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
   }
+
+  //get user name
+  String? getUserName() {
+    final currentUser = _firebaseAuth.currentUser;
+    return currentUser?.displayName;
+  }
+
+  //get user email
+  String? getUserEmail() {
+    final currentUser = _firebaseAuth.currentUser;
+    return currentUser?.email;
+  }
+
+  //getUserImage()
+  String? getUserImage() {
+    final currentUser = _firebaseAuth.currentUser;
+    final String? photoURL = currentUser?.photoURL;
+    return photoURL;
+  }
 }
+
+
+
+//  accountName() {
+//     if (_authService.isAuthenticated()) {
+//       return _authService.getUid();
+//     } else {
+//       return 'Guest';
+//     }
+//   }
+
+//   accountEmail() {
+//     if (_authService.isAuthenticated()) {
+//       return _authService.getUid();
+//     } else {
+//       return 'Guest';
+//     }
+//   }

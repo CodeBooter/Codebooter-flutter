@@ -1,11 +1,10 @@
-import 'package:codebooter_study_app/authentication/authentiction.dart';
 import 'package:codebooter_study_app/home/Features.dart';
 import 'package:codebooter_study_app/home/SideBar.dart';
 import 'package:codebooter_study_app/home/blog.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:go_router/go_router.dart';
 
 import '../widgets/SmallText.dart';
@@ -40,7 +39,7 @@ class _Page1ScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.bookmark),
             tooltip: 'Go to the next page',
-            onPressed: () => AuthService().signOut(context),
+            onPressed: () => context.go('/saveditems'),
           ),
         ],
       ),

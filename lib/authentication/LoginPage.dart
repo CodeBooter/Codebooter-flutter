@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:codebooter_study_app/authentication/authentiction.dart';
-import '../widgets/BigText.dart';
+
 import '../utils/Dimensions.dart';
-import '../widgets/SmallText.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {

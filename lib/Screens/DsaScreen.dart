@@ -16,7 +16,7 @@ class _DsaScreenState extends State<DsaScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black,
         ),
         toolbarHeight: dimension.val70,
