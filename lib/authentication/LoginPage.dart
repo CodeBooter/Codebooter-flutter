@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:github_sign_in_plus/github_sign_in_plus.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:codebooter_study_app/authentication/authentiction.dart';
+import 'package:codebooter_study_app/authentication/auth_service.dart';
 
 import '../utils/Dimensions.dart';
 
@@ -15,8 +16,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final AuthService _authService = AuthService();
 
+  // final GoogleSignIn _googleSignIn = GoogleSignIn();
+  // final GitHubSignIn _gitHubSignIn =GitHubSignIn()
   // Future<void> signInWithGoogle() async {
   //   try {
   //     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -41,18 +44,18 @@ class _LoginPageState extends State<LoginPage> {
   // }
 
   //sign out
-  Future<void> signOut() async {
-    try {
-      await FirebaseAuth.instance.signOut();
-      await _googleSignIn.signOut();
+  // Future<void> signOut() async {
+  //   try {
+  //     await FirebaseAuth.instance.signOut();
+  //     await _authService..signOut();
 
-      // Navigate to the login page or any other page
-      context.go('/login');
-    } catch (error) {
-      // Handle sign-out error
-      print(error);
-    }
-  }
+  //     // Navigate to the login page or any other page
+  //     context.go('/login');
+  //   } catch (error) {
+  //     // Handle sign-out error
+  //     print(error);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -134,9 +137,9 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     child: InkWell(
                       onTap: () {
-                        _googleSignIn.signIn().then((value) {
+                        _authService.signInWithGoogle(context).then((value) {
                           // print user name
-                          print(value!.displayName);
+                          // print(value!.displayName);
 
                           AuthService().signInWithGoogle(context);
                         });
@@ -185,13 +188,16 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: () {
                       Future.delayed(Duration(milliseconds: 2000), () {
-                        context.go('/');
+                        AuthService().signInWithGitHub(context);
                       });
                     },
                     child: InkWell(
                       onTap: () {
-                        Future.delayed(Duration(milliseconds: 200), () {
-                          context.go('/dsa');
+                        _authService.signInWithGitHub(context).then((value) {
+                          // print user name
+                          // print(value!.displayName);
+                          // _authService.signInWithGitHub(context);
+                          context.go('/homepage');
                         });
                       },
                       child: Container(
@@ -199,7 +205,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color.fromARGB(255, 212, 211, 211),
+                            color: const Color.fromARGB(255, 212, 211, 211),
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(5),
@@ -211,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
                               width: dimension.val10,
                             ),
                             Image.asset(
-                              'assets/images/apple.png',
+                              'assets/images/github.png',
                               width: dimension.val20,
                               height: dimension.val20,
                             ),
@@ -219,7 +225,7 @@ class _LoginPageState extends State<LoginPage> {
                               width: dimension.val10,
                             ),
                             Text(
-                              'Continue with Apple',
+                              'Continue with GitHub',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 53, 53, 53),
                                 fontFamily: 'Poppins',

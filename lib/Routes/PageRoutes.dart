@@ -3,8 +3,8 @@ import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/authentication/LoginPage.dart';
-import 'package:codebooter_study_app/authentication/authentiction.dart';
-import 'package:codebooter_study_app/home/SideBar.dart';
+import 'package:codebooter_study_app/authentication/auth_service.dart';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
