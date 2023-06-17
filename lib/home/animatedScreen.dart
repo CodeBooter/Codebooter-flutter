@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:codebooter_study_app/authentication/authentiction.dart';
+import 'package:codebooter_study_app/authentication/auth_service.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:go_router/go_router.dart';
 
@@ -87,6 +87,20 @@ class AnimatedDrawer extends StatelessWidget {
                   ),
                   horizontalTitleGap: dimension.val2,
                   title: Text('Courses',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
+                  onTap: () {
+                    context.go('/home');
+                  },
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.work_outline_rounded,
+                    size: dimension.val25,
+                  ),
+                  horizontalTitleGap: dimension.val2,
+                  title: Text('Internship/Jobs',
                       style: TextStyle(
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
