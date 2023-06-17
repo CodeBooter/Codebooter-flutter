@@ -1,48 +1,155 @@
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:codebooter_study_app/authentication/authentiction.dart';
+import 'package:go_router/go_router.dart';
 
 class sideBar extends StatelessWidget {
+  final AuthService _authService = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: dimension.screenWidth * 0.6,
-      child: ListView(
-        // Remove padding
-        padding: EdgeInsets.zero,
-        children: [
-          Center(
-            child: UserAccountsDrawerHeader(
-              accountName: Text('Manav Khadka'),
-              accountEmail: Text('manavkhadka2004@gmail.com'),
-              currentAccountPicture: CircleAvatar(
-                child: Center(
-                  child: ClipOval(
-                    child: Image.network(
-                      'https://storage.googleapis.com/kaggle-avatars/images/13402284-kg.jpg',
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+        ),
+        //animate drawer
+
+        width: dimension.screenWidth * 0.6,
+        child: Column(
+          children: [
+            Container(
+              height: dimension.screenHeight * 0.3,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: dimension.screenHeight * 0.09,
+                  ),
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/images/logo.png',
                       fit: BoxFit.cover,
-                      width: 90,
-                      height: 90,
                     ),
                   ),
-                ),
-              ),
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 101, 104, 107),
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                        'https://www.ahaguru.com/new-website-assets/img/banner-bg-1.jpg')),
+                  SizedBox(
+                    height: dimension.val20,
+                  ),
+                  Text(
+                    _authService.getUserName() ?? "User",
+                    style: TextStyle(
+                        fontSize: dimension.font20,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(
+                    height: dimension.val5,
+                  ),
+                  Text(
+                    _authService.getUserEmail() ?? "User",
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
               ),
             ),
-          ),
-          Divider(),
-          ListTile(
-            title: Text('Logout'),
-            leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
-          ),
-        ],
-      ),
-    );
+            SizedBox(
+              height: dimension.val20,
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              horizontalTitleGap: dimension.val2,
+              title: Text('Home'),
+              onTap: () {
+                context.go('/home');
+              },
+            ),
+            SizedBox(
+              height: dimension.val40,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _authService.signOut(context);
+                context.go('/');
+              },
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 250, 250, 250),
+                onPrimary: Colors.white,
+                elevation: 6,
+                //3d
+
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                      color: const Color.fromARGB(255, 19, 16, 16),
+                      width: 1,
+                      style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(32.0),
+                ),
+              ),
+              child: Text('Sign Out',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: dimension.font16,
+                      fontWeight: FontWeight.w400),
+                  textAlign: TextAlign.center),
+            )
+          ],
+        ));
   }
 }

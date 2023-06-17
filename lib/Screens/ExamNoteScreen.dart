@@ -23,7 +23,7 @@ class _DsaScreenState extends State<ExamNoteScreen> {
         toolbarHeight: dimension.val70,
         centerTitle: true,
         title: bigText(
-          text: "Full Stack Courses",
+          text: "Exam Notes",
         ),
       ),
       body: const Center(

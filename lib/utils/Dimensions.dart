@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
 class dimension {
-  static double get screenHeight => Get.height; //866.2857142857143
-  static double get screenWidth => Get.width; //411.428571428571444
+  static double get screenHeight => Get.height; //screen height
+  static double get screenWidth => Get.width; //screen width
   static double get topPadding => Get.height / 15; //57.75238095238096
 
   static double get val60 => Get.height / 14.44; //60
@@ -21,9 +21,14 @@ class dimension {
   static double get val2 => Get.height / 433.125; //2
 
   static double get width355 => Get.width / 1.16; //355
+  static double get width311 => Get.width / 1.32; //311
+
   static double get width180 => Get.width / 2.4; //180
   static double get width165 => Get.width / 2.49; //165
 
+  static double get height400 => Get.height / 2.16; //400
+  static double get height350 => Get.height / 2.47; //350
+  static double get height300 => Get.height / 2.88; //300
   static double get height132 => Get.height / 6.56; //132
   static double get height115 => Get.height / 7.52; //115
   static double get height85 => Get.height / 10.19; //85

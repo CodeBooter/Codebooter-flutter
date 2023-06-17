@@ -1,7 +1,10 @@
 import 'package:codebooter_study_app/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
-import 'package:codebooter_study_app/Screens/LoginScreen.dart';
+import 'package:codebooter_study_app/Screens/SavedItem.dart';
+import 'package:codebooter_study_app/authentication/LoginPage.dart';
+import 'package:codebooter_study_app/authentication/authentiction.dart';
+import 'package:codebooter_study_app/home/SideBar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,19 +15,17 @@ import '../home/HomeScreen.dart';
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
 
-  static const String title = 'GoRouter Routes';
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      color: Colors.transparent,
-      routerDelegate: _router.routerDelegate,
-      routeInformationParser: _router.routeInformationParser,
-      routeInformationProvider: _router.routeInformationProvider,
-      // routerDelegate: appRouter().router.routerDelegate,
-      // routeInformationParser: appRouter().router.routeInformationParser,
-      // routeInformationProvider: appRouter().router.routeInformationProvider,
-    );
+        color: Colors.transparent,
+        routerDelegate: _router.routerDelegate,
+        routeInformationParser: _router.routeInformationParser,
+        routeInformationProvider: _router.routeInformationProvider,
+        // routerDelegate: appRouter().router.routerDelegate,
+        // routeInformationParser: appRouter().router.routeInformationParser,
+        // routeInformationProvider: appRouter().router.routeInformationProvider,
+        debugShowCheckedModeBanner: false);
   }
 
   final GoRouter _router = GoRouter(
@@ -32,6 +33,11 @@ class App extends StatelessWidget {
     routes: <GoRoute>[
       GoRoute(
         routes: <GoRoute>[
+          GoRoute(
+            path: 'homepage',
+            builder: (BuildContext context, GoRouterState state) =>
+                HomeScreen(),
+          ),
           GoRoute(
             path: 'dsa',
             builder: (BuildContext context, GoRouterState state) =>
@@ -52,6 +58,11 @@ class App extends StatelessWidget {
             builder: (BuildContext context, GoRouterState state) =>
                 const ExamNoteScreen(),
           ),
+          GoRoute(
+            path: 'saveditems',
+            builder: (BuildContext context, GoRouterState state) =>
+                const SavedItem(),
+          ),
           // GoRoute(
           //   path: 'courses',
           //   builder: (BuildContext context, GoRouterState state) =>
@@ -59,7 +70,19 @@ class App extends StatelessWidget {
           // ),
         ],
         path: '/',
-        builder: (BuildContext context, GoRouterState state) => HomeScreen(),
+        builder: (BuildContext context, GoRouterState state) {
+          // Check if the user is authenticated
+          final isAuthenticated = AuthService().isAuthenticated();
+          // final isLogout = sideBar().clickedLogout;
+
+          // If authenticated, redirect to HomePage
+          if (!isAuthenticated) {
+            return LoginPage();
+          } else {
+            // Otherwise, show the LoginPage
+            return HomeScreen();
+          }
+        },
       ),
     ],
   );

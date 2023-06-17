@@ -1,18 +1,59 @@
-import 'package:codebooter_study_app/utils/Dimensions.dart';
-import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:codebooter_study_app/authentication/authentiction.dart';
 
-import '../widgets/BigText.dart';
+import '../utils/Dimensions.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+  // Future<void> signInWithGoogle() async {
+  //   try {
+  //     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+  //     final GoogleSignInAuthentication googleAuth =
+  //         await googleUser!.authentication;
+
+  //     // Use these details to authenticate with Firebase
+  //     final OAuthCredential credential = GoogleAuthProvider.credential(
+  //       accessToken: googleAuth.accessToken,
+  //       idToken: googleAuth.idToken,
+  //     );
+
+  //     // Sign in to Firebase using the Google credentials
+  //     await FirebaseAuth.instance.signInWithCredential(credential);
+
+  //     // Navigate to the home page
+  //     context.go('/homepage');
+  //   } catch (error) {
+  //     // Handle sign-in error
+  //     print(error);
+  //   }
+  // }
+
+  //sign out
+  Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      await _googleSignIn.signOut();
+
+      // Navigate to the login page or any other page
+      context.go('/login');
+    } catch (error) {
+      // Handle sign-out error
+      print(error);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,23 +129,20 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: () {
                       Future.delayed(Duration(milliseconds: 2000), () {
-                        context.go('/');
+                        AuthService().signInWithGoogle(context);
                       });
                     },
                     child: InkWell(
                       onTap: () {
-                        Future.delayed(Duration(milliseconds: 200), () {
-                          context.go('/');
+                        _googleSignIn.signIn().then((value) {
+                          // print user name
+                          print(value!.displayName);
+
+                          AuthService().signInWithGoogle(context);
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.only(
-                          left: dimension.val50,
-                          right: dimension.val10,
-                          top: dimension.val10,
-                          bottom: dimension.val10,
-                        ),
-                        width: dimension.width355,
+                        width: dimension.width311,
                         height: dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -114,6 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
                               width: dimension.val10,
@@ -126,12 +165,12 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               width: dimension.val10,
                             ),
-                            const Text(
+                            Text(
                               'Continue with Google',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 53, 53, 53),
                                 fontFamily: 'Poppins',
-                                fontSize: 14,
+                                fontSize: dimension.font14,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -152,17 +191,11 @@ class _LoginPageState extends State<LoginPage> {
                     child: InkWell(
                       onTap: () {
                         Future.delayed(Duration(milliseconds: 200), () {
-                          context.go('/');
+                          context.go('/dsa');
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.only(
-                          left: dimension.val50,
-                          right: dimension.val10,
-                          top: dimension.val10,
-                          bottom: dimension.val10,
-                        ),
-                        width: dimension.width355,
+                        width: dimension.width311,
                         height: dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -172,6 +205,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
                               width: dimension.val10,
@@ -184,12 +218,12 @@ class _LoginPageState extends State<LoginPage> {
                             SizedBox(
                               width: dimension.val10,
                             ),
-                            const Text(
+                            Text(
                               'Continue with Apple',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 53, 53, 53),
                                 fontFamily: 'Poppins',
-                                fontSize: 14,
+                                fontSize: dimension.font14,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
