@@ -28,7 +28,7 @@ class AnimatedDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: dimension.height350,
+                  height: dimension.height300,
                   child: Column(
                     children: [
                       SizedBox(height: dimension.val50),
@@ -67,13 +67,100 @@ class AnimatedDrawer extends StatelessWidget {
                   height: dimension.val20,
                 ),
                 ListTile(
-                  leading: Icon(Icons.home),
+                  leading: Icon(
+                    Icons.home,
+                    size: dimension.val25,
+                  ),
                   horizontalTitleGap: dimension.val2,
-                  title: Text('Home'),
+                  title: Text('Home',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
                   onTap: () {
                     context.go('/home');
                   },
                 ),
+                ListTile(
+                  leading: Icon(
+                    Icons.laptop,
+                    size: dimension.val25,
+                  ),
+                  horizontalTitleGap: dimension.val2,
+                  title: Text('Courses',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
+                  onTap: () {
+                    context.go('/home');
+                  },
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.book_outlined,
+                    size: dimension.val25,
+                  ),
+                  horizontalTitleGap: dimension.val2,
+                  title: Text('Notes',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
+                  onTap: () {
+                    context.go('/home');
+                  },
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.laptop_mac_rounded,
+                    size: dimension.val25,
+                  ),
+                  horizontalTitleGap: dimension.val2,
+                  title: Text('Interview Gem',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
+                  onTap: () {
+                    context.go('/home');
+                  },
+                ),
+                ListTile(
+                  //icon for blog
+
+                  leading: Icon(
+                    Icons.article_outlined,
+                    size: dimension.val25,
+                  ),
+                  horizontalTitleGap: dimension.val2,
+                  title: Text('Blog',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
+                  onTap: () {
+                    context.go('/home');
+                  },
+                ),
+                //divider
+                Divider(
+                  height: dimension.val20,
+                  thickness: dimension.val2,
+                  indent: dimension.val20,
+                  endIndent: dimension.val20,
+                ),
+
+                ListTile(
+                  leading: Icon(
+                    Icons.help_outlined,
+                    size: dimension.val25,
+                  ),
+                  horizontalTitleGap: dimension.val2,
+                  title: Text('help',
+                      style: TextStyle(
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400)),
+                  onTap: () {
+                    context.go('/home');
+                  },
+                ),
+
                 // Add your other list tiles here
                 SizedBox(
                   height: dimension.val40,
@@ -86,11 +173,11 @@ class AnimatedDrawer extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromARGB(255, 250, 250, 250),
                     onPrimary: Colors.white,
-                    elevation: 6,
+                    elevation: dimension.val5,
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
-                          color: const Color.fromARGB(255, 19, 16, 16),
-                          width: 1,
+                          color: Color.fromARGB(255, 19, 16, 16),
+                          width: dimension.val2,
                           style: BorderStyle.solid),
                       borderRadius: BorderRadius.circular(32.0),
                     ),
