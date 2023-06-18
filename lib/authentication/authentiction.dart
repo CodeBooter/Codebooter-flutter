@@ -48,6 +48,8 @@ class AuthService {
     return currentUser != null;
   }
 
+
+
   //get user name
   String? getUserName() {
     final currentUser = _firebaseAuth.currentUser;
@@ -60,12 +62,14 @@ class AuthService {
     return currentUser?.email;
   }
 
-  //getUserImage()
-  String? getUserImage() {
-    final currentUser = _firebaseAuth.currentUser;
-    final String? photoURL = currentUser?.photoURL;
-    return photoURL;
-  }
+
+//get profile
+String? profileurl(){
+    final curruse = _firebaseAuth.currentUser;
+    return curruse?.photoURL;
+}
+
+
 }
 
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/authentication/authentiction.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AnimatedDrawer extends StatelessWidget {
   final AuthService _authService = AuthService();
@@ -10,7 +11,7 @@ class AnimatedDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 1, end: 0),
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       builder: (BuildContext context, double value, Widget? child) {
         return Transform(
           transform: Matrix4.identity()
@@ -33,14 +34,13 @@ class AnimatedDrawer extends StatelessWidget {
                     children: [
                       SizedBox(height: dimension.val50),
                       SizedBox(
-                        height: dimension.val60,
+                        height: dimension.val30,
                       ),
-                      ClipOval(
-                        child: Image.asset(
-                          'assets/images/logo.png',
-                          fit: BoxFit.cover,
-                        ),
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(_authService.profileurl() ?? '')
                       ),
+
                       SizedBox(
                         height: dimension.val20,
                       ),
@@ -64,7 +64,7 @@ class AnimatedDrawer extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: dimension.val20,
+                  height: dimension.val1,
                 ),
                 ListTile(
                   leading: Icon(
@@ -77,7 +77,7 @@ class AnimatedDrawer extends StatelessWidget {
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
                   onTap: () {
-                    context.go('/home');
+                    context.go('/homepage');
                   },
                 ),
                 ListTile(
@@ -91,7 +91,7 @@ class AnimatedDrawer extends StatelessWidget {
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
                   onTap: () {
-                    context.go('/home');
+                    context.go('/courses');
                   },
                 ),
                 ListTile(
@@ -105,7 +105,7 @@ class AnimatedDrawer extends StatelessWidget {
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
                   onTap: () {
-                    context.go('/home');
+                    context.go('/notes');
                   },
                 ),
                 ListTile(
@@ -119,12 +119,11 @@ class AnimatedDrawer extends StatelessWidget {
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
                   onTap: () {
-                    context.go('/home');
+                    context.go('/interview');
                   },
                 ),
                 ListTile(
                   //icon for blog
-
                   leading: Icon(
                     Icons.article_outlined,
                     size: dimension.val25,
@@ -135,7 +134,7 @@ class AnimatedDrawer extends StatelessWidget {
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
                   onTap: () {
-                    context.go('/home');
+                    context.go('/blog');
                   },
                 ),
                 //divider
@@ -145,7 +144,6 @@ class AnimatedDrawer extends StatelessWidget {
                   indent: dimension.val20,
                   endIndent: dimension.val20,
                 ),
-
                 ListTile(
                   leading: Icon(
                     Icons.help_outlined,
@@ -157,7 +155,7 @@ class AnimatedDrawer extends StatelessWidget {
                           fontSize: dimension.font16,
                           fontWeight: FontWeight.w400)),
                   onTap: () {
-                    context.go('/home');
+                    context.go('/help');
                   },
                 ),
 
@@ -168,7 +166,7 @@ class AnimatedDrawer extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     _authService.signOut(context);
-                    context.go('/');
+                    context.go('/logout');
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromARGB(255, 250, 250, 250),
