@@ -21,7 +21,7 @@ class _blogState extends State<blog> {
         children: [
           Container(
             child: bigText(
-              text: "Blogs",
+              text: "Job/Internships",
               size: dimension.font24,
             ),
           ),

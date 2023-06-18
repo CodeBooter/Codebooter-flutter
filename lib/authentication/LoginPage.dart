@@ -9,7 +9,7 @@ import '../utils/Dimensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -131,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Future.delayed(Duration(milliseconds: 2000), () {
+                      Future.delayed(const Duration(milliseconds: 2000), () {
                         AuthService().signInWithGoogle(context);
                       });
                     },
@@ -149,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color.fromARGB(255, 212, 211, 211),
+                            color: const Color.fromARGB(255, 212, 211, 211),
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(5),
@@ -171,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                             Text(
                               'Continue with Google',
                               style: TextStyle(
-                                color: Color.fromARGB(255, 53, 53, 53),
+                                color: const Color.fromARGB(255, 53, 53, 53),
                                 fontFamily: 'Poppins',
                                 fontSize: dimension.font14,
                                 fontWeight: FontWeight.w600,
@@ -187,7 +187,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Future.delayed(Duration(milliseconds: 2000), () {
+                      Future.delayed(const Duration(milliseconds: 2000), () {
                         AuthService().signInWithGitHub(context);
                       });
                     },
@@ -227,7 +227,7 @@ class _LoginPageState extends State<LoginPage> {
                             Text(
                               'Continue with GitHub',
                               style: TextStyle(
-                                color: Color.fromARGB(255, 53, 53, 53),
+                                color: const Color.fromARGB(255, 53, 53, 53),
                                 fontFamily: 'Poppins',
                                 fontSize: dimension.font14,
                                 fontWeight: FontWeight.w600,
@@ -244,7 +244,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 107, 106, 106),
+                      color: const Color.fromARGB(255, 107, 106, 106),
                       fontFamily: 'calibri',
                       fontSize: dimension.val10,
                       fontWeight: FontWeight.w400,
@@ -256,7 +256,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     '©  2023 CodeBooter. All rights reserved.',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 107, 106, 106),
+                      color: const Color.fromARGB(255, 107, 106, 106),
                       fontFamily: 'calibri',
                       fontSize: dimension.font12,
                       fontWeight: FontWeight.w400,

@@ -1,14 +1,17 @@
+import 'dart:ffi';
+
 import 'package:codebooter_study_app/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Screens/SavedItem.dart';
+import 'package:codebooter_study_app/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/authentication/auth_service.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../Screens/DsaScreen.dart';
+import '../Screens/dsa/DsaScreen.dart';
 import '../Screens/ErrorScreen.dart';
 import '../home/HomeScreen.dart';
 
@@ -36,12 +39,17 @@ class App extends StatelessWidget {
           GoRoute(
             path: 'homepage',
             builder: (BuildContext context, GoRouterState state) =>
-                HomeScreen(),
+                const HomeScreen(),
           ),
           GoRoute(
             path: 'dsa',
             builder: (BuildContext context, GoRouterState state) =>
                 const DsaScreen(),
+          ),
+          GoRoute(
+            path: 'dsa/arrays',
+            builder: (BuildContext context, GoRouterState state) =>
+                const Arrays(),
           ),
           GoRoute(
             path: 'courses',

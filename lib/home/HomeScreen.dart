@@ -66,11 +66,11 @@ class _Page1ScreenState extends State<HomeScreen> {
                   ]),
                 ),
                 SizedBox(height: dimension.val20),
-                features(),
+                const features(),
                 SizedBox(
                   height: dimension.val20,
                 ),
-                blog(),
+                const blog(),
               ],
             ),
           ),
