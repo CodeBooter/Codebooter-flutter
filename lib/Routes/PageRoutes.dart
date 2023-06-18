@@ -1,10 +1,11 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:codebooter_study_app/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/authentication/auth_service.dart';
-
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -76,14 +77,27 @@ class App extends StatelessWidget {
           // final isLogout = sideBar().clickedLogout;
 
           // If authenticated, redirect to HomePage
-          if (!isAuthenticated) {
-            return LoginPage();
+
+          if (isAuthenticated) {
+            return AnimatedSplashScreen(
+              splash: Image.asset('assets/images/github.png',),
+              nextScreen: HomeScreen(),
+              splashTransition: SplashTransition.slideTransition,
+            );
           } else {
-            // Otherwise, show the LoginPage
-            return HomeScreen();
+            // Otherwise, show the SplashScreen
+
+            return AnimatedSplashScreen(
+              splash: Image.asset(
+                'assets/images/.png', height: 700, width: 700,),
+              nextScreen: LoginPage(),
+              splashTransition: SplashTransition.fadeTransition,
+              duration: 30000,
+              splashIconSize: dimension.width180,
+            );
           }
-        },
-      ),
+        }
+      )
     ],
   );
 }
