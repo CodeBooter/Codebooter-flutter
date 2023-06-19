@@ -3,7 +3,6 @@ import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
-import 'package:flutter_highlight/themes/github.dart';
 
 class Arrays extends StatefulWidget {
   const Arrays({super.key});

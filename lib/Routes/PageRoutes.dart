@@ -1,4 +1,3 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:codebooter_study_app/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
@@ -7,7 +6,7 @@ import 'package:codebooter_study_app/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/authentication/auth_service.dart';
-import 'package:codebooter_study_app/utils/Dimensions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
