@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/Admin/home/mongoDB/MongoDbConnect.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 
@@ -6,14 +7,14 @@ import 'package:go_router/go_router.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/Admin/mongoDB/MongoDbConnect.dart';
 
-class AdminPage extends StatefulWidget {
-  const AdminPage({super.key});
+class AdminLogin extends StatefulWidget {
+  const AdminLogin({super.key});
 
   @override
-  State<AdminPage> createState() => _AdminPageState();
+  State<AdminLogin> createState() => _AdminLoginState();
 }
 
-class _AdminPageState extends State<AdminPage> {
+class _AdminLoginState extends State<AdminLogin> {
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
@@ -126,7 +127,7 @@ class _AdminPageState extends State<AdminPage> {
                               if (isValid) {
                                 // Login success, perform the desired action
                                 // For example, navigate to the admin home page
-                                GoRouter.of(context).go('/dsa/arrays');
+                                GoRouter.of(context).go('/admin');
                               } else {
                                 // Invalid login credentials
                                 // Show an error message or perform any other appropriate action
