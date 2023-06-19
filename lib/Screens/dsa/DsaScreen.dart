@@ -43,41 +43,15 @@ class _DsaScreenState extends State<DsaScreen> {
             ),
             ListTile(
               leading: Icon(
-                Icons.laptop,
+                Icons.link_outlined,
                 size: dimension.val25,
               ),
               horizontalTitleGap: dimension.val2,
-              title: Text('Courses',
+              title: Text('Linked List',
                   style: TextStyle(
                       fontSize: dimension.font16, fontWeight: FontWeight.w400)),
               onTap: () {
-                context.go('/home');
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.work_outline_rounded,
-                size: dimension.val25,
-              ),
-              horizontalTitleGap: dimension.val2,
-              title: Text('Internship/Jobs',
-                  style: TextStyle(
-                      fontSize: dimension.font16, fontWeight: FontWeight.w400)),
-              onTap: () {
-                context.go('/home');
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.book_outlined,
-                size: dimension.val25,
-              ),
-              horizontalTitleGap: dimension.val2,
-              title: Text('Notes',
-                  style: TextStyle(
-                      fontSize: dimension.font16, fontWeight: FontWeight.w400)),
-              onTap: () {
-                context.go('/home');
+                context.go('/dsa/linkedlist');
               },
             ),
           ],

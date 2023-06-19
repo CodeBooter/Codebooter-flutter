@@ -1,8 +1,10 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:codebooter_study_app/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Screens/dsa/arrays.dart';
+import 'package:codebooter_study_app/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/authentication/auth_service.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
@@ -43,12 +45,21 @@ class App extends StatelessWidget {
               path: 'dsa',
               builder: (BuildContext context, GoRouterState state) =>
                   const DsaScreen(),
+              routes: [
+                GoRoute(
+                  path: 'arrays',
+                  builder: (BuildContext context, GoRouterState state) =>
+                      const Arrays(),
+                ),
+                // Add more subroutes as needed
+                GoRoute(
+                  path: 'linkedlist',
+                  builder: (BuildContext context, GoRouterState state) =>
+                      const LinkedList(),
+                ),
+              ],
             ),
-            GoRoute(
-              path: 'dsa/arrays',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const Arrays(),
-            ),
+
             GoRoute(
               path: 'courses',
               builder: (BuildContext context, GoRouterState state) =>
@@ -77,34 +88,10 @@ class App extends StatelessWidget {
           ],
           path: '/',
           builder: (BuildContext context, GoRouterState state) {
-            // Check if the user is authenticated
-            final isAuthenticated = AuthService().isAuthenticated();
-            // final isLogout = sideBar().clickedLogout;
-
-            // If authenticated, redirect to HomePage
-
-            if (isAuthenticated) {
-              return AnimatedSplashScreen(
-                splash: Image.asset(
-                  'assets/images/github.png',
-                ),
-                nextScreen: HomeScreen(),
-                splashTransition: SplashTransition.slideTransition,
-              );
+            if (AuthService().isAuthenticated()) {
+              return const HomeScreen();
             } else {
-              // Otherwise, show the SplashScreen
-
-              return AnimatedSplashScreen(
-                splash: Image.asset(
-                  'assets/images/.png',
-                  height: 700,
-                  width: 700,
-                ),
-                nextScreen: LoginPage(),
-                splashTransition: SplashTransition.fadeTransition,
-                duration: 30000,
-                splashIconSize: dimension.width180,
-              );
+              return const LoginPage();
             }
           })
     ],
