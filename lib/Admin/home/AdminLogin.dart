@@ -126,7 +126,7 @@ class _AdminLoginState extends State<AdminLogin> {
                               if (isValid) {
                                 // Login success, perform the desired action
                                 // For example, navigate to the admin home page
-                                GoRouter.of(context).go('/admin');
+                                GoRouter.of(context).go('/admin/home');
                               } else {
                                 // Invalid login credentials
                                 // Show an error message or perform any other appropriate action
