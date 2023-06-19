@@ -1,4 +1,5 @@
-import 'package:codebooter_study_app/Admin/home/admin_home.dart';
+import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
+import 'package:codebooter_study_app/Admin/home/AdminLogin.dart';
 import 'package:codebooter_study_app/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Screens/InterviewPrepScreen.dart';
@@ -39,7 +40,7 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'homepage',
               builder: (BuildContext context, GoRouterState state) =>
-                  const AdminPage(),
+                  const HomeScreen(),
             ),
             GoRoute(
               path: 'dsa',
@@ -80,11 +81,17 @@ class App extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   const SavedItem(),
             ),
+
             GoRoute(
-              path: 'AdminLogin',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const AdminPage(),
-            ),
+                path: 'admin',
+                builder: (context, state) => AdminLogin(),
+                routes: [
+                  GoRoute(
+                    path: 'home',
+                    builder: (context, state) => AdminHomePage(),
+                  ),
+                ]),
+
             // GoRoute(
             //   path: 'courses',
             //   builder: (BuildContext context, GoRouterState state) =>

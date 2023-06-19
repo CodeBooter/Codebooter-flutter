@@ -9,14 +9,14 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class AdminHomePage extends StatefulWidget {
+  const AdminHomePage({super.key});
 
   @override
-  State<HomeScreen> createState() => _Page1ScreenState();
+  State<AdminHomePage> createState() => _Page1ScreenState();
 }
 
-class _Page1ScreenState extends State<HomeScreen> {
+class _Page1ScreenState extends State<AdminHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,8 @@ class _Page1ScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: bigText(text: "Home", color: const Color.fromARGB(255, 0, 0, 0)),
+        title: bigText(
+            text: "Admin Home", color: const Color.fromARGB(255, 0, 0, 0)),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add_alert),
