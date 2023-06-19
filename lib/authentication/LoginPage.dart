@@ -1,6 +1,5 @@
 import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'package:go_router/go_router.dart';
 
