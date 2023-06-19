@@ -1,4 +1,6 @@
+import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -237,6 +239,28 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(
+                    height: dimension.val15,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Future.delayed(const Duration(milliseconds: 2000), () {
+                        context.go('/AdminLogin');
+                      });
+                    },
+                    child: Text("Are you a admin? Login here",
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 53, 53, 53),
+                          fontFamily: 'Poppins',
+                          fontSize: dimension.font12,
+                          fontWeight: FontWeight.w400,
+                          //height between underline and text
+
+                          decoration: TextDecoration.underline,
+                          decorationColor: Color.fromARGB(255, 3, 3, 3),
+                          decorationStyle: TextDecorationStyle.solid,
+                        )),
+                  ),
+                  SizedBox(
                     height: dimension.height85,
                   ),
                   Text(
@@ -251,14 +275,9 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: dimension.val70,
                   ),
-                  Text(
-                    '©  2023 CodeBooter. All rights reserved.',
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 107, 106, 106),
-                      fontFamily: 'calibri',
-                      fontSize: dimension.font12,
-                      fontWeight: FontWeight.w400,
-                    ),
+                  smallText(
+                    text: '©  2023 CodeBooter. All rights reserved.',
+                    size: dimension.font12,
                   ),
                 ]),
               ],
