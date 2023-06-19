@@ -45,6 +45,7 @@ dependencies:
   github_sign_in_plus: ^0.0.1
   firebase_auth: ^4.6.3
   firebase_auth_oauth: ^1.0.2
+  flutter_highlight: ^0.7.0
 
 dev_dependencies:
   flutter_test:
