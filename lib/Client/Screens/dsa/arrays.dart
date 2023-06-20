@@ -1,7 +1,7 @@
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
-
 
 class Arrays extends StatefulWidget {
   const Arrays({super.key});
@@ -11,123 +11,134 @@ class Arrays extends StatefulWidget {
 }
 
 class _Arrays extends State<Arrays> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Arrays'),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children:[
-
+        appBar: AppBar(
+          title: const Text('Arrays'),
+        ),
+        body: SingleChildScrollView(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             // defination of array
-           Container(
-             padding: const EdgeInsets.only(top: 12,left: 15),
-             child: const Text('Definition',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
-           ),
             Container(
-              padding: const EdgeInsets.all(15),
-              child: const SingleChildScrollView(
+                padding: const EdgeInsets.only(top: 12, left: 15),
+                child: Text(
+                  'Definition',
+                  style: TextStyle(
+                    fontSize: dimension.font24,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
+                  ),
+                )),
+            Container(
+              padding: EdgeInsets.all(dimension.font16),
+              child: SingleChildScrollView(
                 child: Text(
                   'An array is a fixed-size, contiguous block of memory that stores a collection of elements of the same data type.',
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(
+                      fontSize: dimension.font20, fontFamily: 'Poppins'),
                 ),
               ),
             ),
 
-
-
             //images
-            Container(
-            height: 120,
-            decoration: BoxDecoration(
-              color: Colors.cyan,
-             image: const DecorationImage(
-                 image: NetworkImage('https://media.geeksforgeeks.org/wp-content/uploads/20220721080308/array.png'),
-             fit: BoxFit.fill),
-              // border: Border.all(color: Colors.red),
-                borderRadius: BorderRadius.circular(20)
+            Center(
+              child: Container(
+                height: dimension.height132,
+                width: dimension.screenWidth * 0.7,
+                decoration: BoxDecoration(
+                    image: const DecorationImage(
+                        image: NetworkImage(
+                            'https://lh3.googleusercontent.com/EKkdBmtCPfAlXESkJ2Kwx13eBNAx-GsQv9M67WoPFXaGY2X7yU28v3AqmyUiRLxFg2aLBdZ7VJGzapfs6zdkaVeggtuHSao4m2J0bD3MRfvXKWnA5ZjnJfidHjY9NQf8uLVLT_gAHMVLxLHhhT3e4KBLtORIQT_TLtPb-aTIwMOCkNLOH3poHz1pQMZReZ1yfWZetm5XQw3bBTmKgRgUFLnSfICns2IN_O5pcRenyHMpMvELWGPxMFYrPO-Yp4ZOduiN9RP-5LbYJL3_aJGP78BjyTkCE5-zTwBN5GDAmQpgrvYTm94kVG-qebp13MYtcRzyrq_zWPSQr6SnntuUQHK3uvrcxeYpQzWdqyuHxxM-aZ6yHAzx8Y2ucHlX0nR_qvQ87SnmR2vwxH0jVY88Abjlr9aTF4wa7Txuad1SQFDezUbaoVu55CifI5HYRNjprOOuL579lH9kewEZCuHRZyvknwxj4h36YQT4aa4b5COeOOvX5La0SNQcZh6mqbU7SABEum1ZZ06LaFV3DfNpTbJwUmMrvkFTOl_LwGRBQWI8kcUzxKMkBT9kLXiet2-r2bFUZtfPKoDqS5ezghk3paFhpIxKBAh9K2Ij-si-BZnKVoBlf4zDT8jniiqPkwRhkkrOQrmlN-ydlIgmq_MuwLwdRUs2JML3WfizqKJkQF8KuKJrjOz6nZ9zRAerhfahRKs2_b7G7ytP0zwRRl_H2gDXG4nvQpBOitnYg1klUEEQ5TEHQQPJOn2l3R_MP1ytW192e0CuFu1h_kd6Aj5qt1NciorfMjRIUOTsyDREVh2MUzyYpE0kbq_jDXd6N-_8O6y6UOs6snhDHEYmDkFPoWGlfAQiYLtHPljbYONQOKXI3cMLYVcDDJFrpVlu7Q4yJLcrM-zmlngl3_-MEdpaIjDECcP9m9aiomgGE53VGvwT6BE=w512-h221-s-no?authuser=0'),
+                        fit: BoxFit.fill),
+                    // border: Border.all(color: Colors.red),
+                    borderRadius: BorderRadius.circular(20)),
+              ),
             ),
-          ),
-
 
             // types of array
             Container(
-                padding: const EdgeInsets.only(top: 12,left: 15,bottom: 14),
-                child: const Text('Types of Array',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
-            ),
+                padding: const EdgeInsets.only(top: 12, left: 15, bottom: 14),
+                child: Text('Types of Array',
+                    style: TextStyle(
+                      fontSize: dimension.font24,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Poppins',
+                    ))),
 
             Container(
-              padding: const EdgeInsets.all(15),
-              child: const SingleChildScrollView(
+              padding: EdgeInsets.all(dimension.val15),
+              child: SingleChildScrollView(
                 child: Text(
                   'There are two types of arrays:\n - One-Dimensional Arrays\n - Two-Dimensional Array\n - Multi-Dimensional Arrays',
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(
+                      fontSize: dimension.font20, fontFamily: 'Poppins'),
                 ),
               ),
             ),
 
             Container(
-              padding: const EdgeInsets.only(top: 40,),
+              padding: const EdgeInsets.only(
+                top: 40,
+              ),
               height: 200,
               decoration: const BoxDecoration(
-
                 image: DecorationImage(
-                    image:NetworkImage('https://www.tutorialspoint.com/data_structures_algorithms/images/array_representation.jpg'),
+                    image: NetworkImage(
+                        'https://www.tutorialspoint.com/data_structures_algorithms/images/array_representation.jpg'),
                     fit: BoxFit.cover),
                 // border: Border.all(color: Colors.red),
-
               ),
             ),
 
             // 1- d array
             Container(
-                padding: const EdgeInsets.only(top: 12,left: 15,bottom: 15),
-                child: const Text('1-D Array',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
-            ),
+                padding: const EdgeInsets.only(top: 12, left: 15, bottom: 15),
+                child: const Text(
+                  '1-D Array',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )),
             Container(
               height: 150,
               decoration: const BoxDecoration(
-                  color: Colors.cyan,
-                  image: DecorationImage(
-                      image: NetworkImage('https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-10.jpeg'),
-                      fit: BoxFit.fill),
-                  // border: Border.all(color: Colors.red),
-
+                color: Colors.cyan,
+                image: DecorationImage(
+                    image: NetworkImage(
+                        'https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-10.jpeg'),
+                    fit: BoxFit.fill),
+                // border: Border.all(color: Colors.red),
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 12,left: 15,right: 12,bottom: 15),
+              padding: const EdgeInsets.only(
+                  top: 12, left: 15, right: 12, bottom: 15),
               child: RichText(
                 text: const TextSpan(
                   children: [
                     TextSpan(
-                      text: 'A one-dimensional array, also known as a flat array, is the simplest form of an array. It consists of a linear collection of elements stored in a single row.\n',
+                      text:
+                          'A one-dimensional array, also known as a flat array, is the simplest form of an array. It consists of a linear collection of elements stored in a single row.\n',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
                     TextSpan(
-                      text: 'It stores elements in a linear sequence, where each element is accessed using its index.'
-
-                    'It is often used to represent lists, sequences, or vectors of values. \n',
+                      text:
+                          'It stores elements in a linear sequence, where each element is accessed using its index.'
+                          'It is often used to represent lists, sequences, or vectors of values. \n',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
-
                   ],
                 ),
               ),
             ),
             Container(
               margin: const EdgeInsets.all(20),
-
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.black38,
@@ -166,38 +177,38 @@ class _Arrays extends State<Arrays> {
               ),
             ),
 
-
             // 2-D array
             Container(
-                padding: const EdgeInsets.only(top: 12,left: 15,bottom: 15),
-                child: const Text('2-D Array',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
-            ),
+                padding: const EdgeInsets.only(top: 12, left: 15, bottom: 15),
+                child: const Text(
+                  '2-D Array',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )),
             Container(
               height: 130,
               decoration: const BoxDecoration(
-
-                  image: DecorationImage(
-                      image: NetworkImage('https://i.stack.imgur.com/Jx5kE.png'),
-                      fit: BoxFit.fill),
-                  // border: Border.all(color: Colors.red),
-
+                image: DecorationImage(
+                    image: NetworkImage('https://i.stack.imgur.com/Jx5kE.png'),
+                    fit: BoxFit.fill),
+                // border: Border.all(color: Colors.red),
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 12,left: 15,right: 12),
+              padding: const EdgeInsets.only(top: 12, left: 15, right: 12),
               child: RichText(
                 text: const TextSpan(
                   children: [
                     TextSpan(
-                      text: 'A two-dimensional (2D) array is a data structure that represents a grid-like arrangement of elements, organized into rows and columns. Array, each element is identified by its row and column indices.\n',
+                      text:
+                          'A two-dimensional (2D) array is a data structure that represents a grid-like arrangement of elements, organized into rows and columns. Array, each element is identified by its row and column indices.\n',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
-
                     TextSpan(
-                      text: '2D arrays are useful for representing tabular data, matrices, grids, and other two-dimensional structures.\n',
+                      text:
+                          '2D arrays are useful for representing tabular data, matrices, grids, and other two-dimensional structures.\n',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
@@ -209,7 +220,6 @@ class _Arrays extends State<Arrays> {
             ),
             Container(
               margin: const EdgeInsets.all(20),
-
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.black38,
@@ -251,40 +261,41 @@ class _Arrays extends State<Arrays> {
               ),
             ),
 
-
-
             // Multi dimensional array
             Container(
-                padding: const EdgeInsets.only(top: 12,left: 15,bottom: 15),
-                child: const Text('Multi-Dimensional Array',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
-            ),
+                padding: const EdgeInsets.only(top: 12, left: 15, bottom: 15),
+                child: const Text(
+                  'Multi-Dimensional Array',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )),
             Container(
               height: 150,
               decoration: const BoxDecoration(
-                  color: Colors.cyan,
-                  image: DecorationImage(
-
-                      image: NetworkImage('https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-13.jpeg'),
-                      fit: BoxFit.fill),
-                  // border: Border.all(color: Colors.red),
-              
+                color: Colors.cyan,
+                image: DecorationImage(
+                    image: NetworkImage(
+                        'https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-13.jpeg'),
+                    fit: BoxFit.fill),
+                // border: Border.all(color: Colors.red),
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 12,left: 15,right: 12,bottom: 15),
+              padding: const EdgeInsets.only(
+                  top: 12, left: 15, right: 12, bottom: 15),
               child: RichText(
                 text: const TextSpan(
                   children: [
                     TextSpan(
-                      text: 'A multi-dimensional array is an array with more than two dimensions. Each element in a multi-dimensional array is identified by multiple indices, corresponding to its position in each dimension.\n',
+                      text:
+                          'A multi-dimensional array is an array with more than two dimensions. Each element in a multi-dimensional array is identified by multiple indices, corresponding to its position in each dimension.\n',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
-
                     TextSpan(
-                      text: 'One-dimensional arrays are commonly used to represent lists, sequences, or vectors of values.',
+                      text:
+                          'One-dimensional arrays are commonly used to represent lists, sequences, or vectors of values.',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
@@ -296,7 +307,6 @@ class _Arrays extends State<Arrays> {
             ),
             Container(
               margin: const EdgeInsets.all(20),
-
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.black38,
@@ -331,14 +341,14 @@ class _Arrays extends State<Arrays> {
               ),
             ),
 
-
-
             // types of arrays end
 
             Container(
-                padding: const EdgeInsets.only(top: 12,left: 15),
-                child: const Text('Basic Operations on Array',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
-            ),
+                padding: const EdgeInsets.only(top: 12, left: 15),
+                child: const Text(
+                  'Basic Operations on Array',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                )),
             Container(
               padding: const EdgeInsets.all(15),
               child: const SingleChildScrollView(
@@ -349,10 +359,8 @@ class _Arrays extends State<Arrays> {
               ),
             ),
 
-
             Container(
               margin: const EdgeInsets.all(20),
-
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.black38,
@@ -459,11 +467,7 @@ public class ArrayOperations {
                 ),
               ),
             ),
-
-
-        ]
-        ),
-      )
-    );
+          ]),
+        ));
   }
 }

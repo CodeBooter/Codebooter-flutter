@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:codebooter_study_app/authentication/auth_service.dart';
+import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 
-import '../utils/Dimensions.dart';
+import '../../utils/Dimensions.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -243,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: () {
                       Future.delayed(const Duration(milliseconds: 2000), () {
-                        context.go('/admin');
+                        context.go('/admin/home');
                       });
                     },
                     child: Text("Are you a admin? Login here",

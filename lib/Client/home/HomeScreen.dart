@@ -1,14 +1,14 @@
-import 'package:codebooter_study_app/home/Features.dart';
+import 'package:codebooter_study_app/Client/home/Features.dart';
 
-import 'package:codebooter_study_app/home/animatedScreen.dart';
-import 'package:codebooter_study_app/home/blog.dart';
+import 'package:codebooter_study_app/Client/home/animatedScreen.dart';
+import 'package:codebooter_study_app/Client/home/blog.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import '../widgets/SmallText.dart';
+import '../../widgets/SmallText.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
