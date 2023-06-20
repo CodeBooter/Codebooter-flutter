@@ -11,7 +11,6 @@ Future<bool> validateLogin(String email, String password) async {
   final query = where.eq('email', email).eq('password', password);
   final count = await collection.count(query);
   currentUser = count > 0 ? email : "";
-  await db.close();
 
   return count > 0;
 }
@@ -25,4 +24,6 @@ void logout() {
   currentUser = "";
 }
 //mongoDB Logout
+
+
 

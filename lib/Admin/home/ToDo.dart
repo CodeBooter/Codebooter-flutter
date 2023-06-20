@@ -57,7 +57,7 @@ class _ToDoState extends State<ToDo> {
                       child: InkWell(
                         onTap: () {
                           Future.delayed(Duration(milliseconds: 200), () {
-                            context.go('/dsa');
+                            context.go('/admin/home/jobpost');
                           });
                         },
                         child: Column(

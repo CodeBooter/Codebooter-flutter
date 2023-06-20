@@ -1,5 +1,6 @@
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/Authentication/AdminLogin.dart';
+import 'package:codebooter_study_app/Admin/home/JobPost.dart';
 import 'package:codebooter_study_app/Admin/mongoDB/MongoDbConnect.dart';
 import 'package:codebooter_study_app/Client/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
@@ -88,9 +89,14 @@ class App extends StatelessWidget {
                 builder: (context, state) => AdminLogin(),
                 routes: [
                   GoRoute(
-                    path: 'home',
-                    builder: (context, state) => AdminHomePage(),
-                  ),
+                      path: 'home',
+                      builder: (context, state) => AdminHomePage(),
+                      routes: [
+                        GoRoute(
+                          path: 'jobpost',
+                          builder: (context, state) => JobPost(),
+                        ),
+                      ]),
                 ]),
 
             // GoRoute(

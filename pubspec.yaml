@@ -47,6 +47,7 @@ dependencies:
   firebase_auth_oauth: ^1.0.2
   flutter_highlight: ^0.7.0
   mongo_dart: ^0.9.1
+  http: ^0.13.6
 
 dev_dependencies:
   flutter_test:

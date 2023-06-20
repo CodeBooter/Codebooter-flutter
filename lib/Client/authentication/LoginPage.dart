@@ -243,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: () {
                       Future.delayed(const Duration(milliseconds: 2000), () {
-                        context.go('/admin');
+                        context.go('/admin/home');
                       });
                     },
                     child: Text("Are you a admin? Login here",
