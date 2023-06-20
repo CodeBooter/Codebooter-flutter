@@ -1,7 +1,9 @@
-import 'package:codebooter_study_app/home/Features.dart';
+import 'package:codebooter_study_app/Admin/home/ToDo.dart';
+import 'package:codebooter_study_app/Admin/mongoDB/MongoDbConnect.dart';
+import 'package:codebooter_study_app/Client/home/Features.dart';
 
-import 'package:codebooter_study_app/home/animatedScreen.dart';
-import 'package:codebooter_study_app/home/blog.dart';
+import 'package:codebooter_study_app/Client/home/animatedScreen.dart';
+import 'package:codebooter_study_app/Client/home/blog.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:codebooter_study_app/widgets/SmallText.dart';
@@ -20,7 +22,6 @@ class _Page1ScreenState extends State<AdminHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: AnimatedDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: const Color.fromARGB(255, 19, 16, 16)),
         backgroundColor: Colors.transparent,
@@ -66,11 +67,22 @@ class _Page1ScreenState extends State<AdminHomePage> {
                   ]),
                 ),
                 SizedBox(height: dimension.val20),
-                const features(),
+                const ToDo(),
                 SizedBox(
                   height: dimension.val20,
                 ),
-                const blog(),
+
+                // logout
+                ElevatedButton(
+                    onPressed: () {
+                      logout();
+                      context.go('/admin');
+                    },
+                    child: const Text('Logout',
+                        style: TextStyle(color: Colors.white)),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color.fromARGB(255, 0, 0, 0)))),
               ],
             ),
           ),

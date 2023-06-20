@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'package:codebooter_study_app/authentication/auth_service.dart';
+import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 
-import '../utils/Dimensions.dart';
+import '../../utils/Dimensions.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

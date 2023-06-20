@@ -1,6 +1,6 @@
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:codebooter_study_app/authentication/auth_service.dart';
+import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:go_router/go_router.dart';
 
 class sideBar extends StatelessWidget {
