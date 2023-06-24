@@ -1,5 +1,4 @@
 import 'package:codebooter_study_app/Client/home/Features.dart';
-
 import 'package:codebooter_study_app/Client/home/animatedScreen.dart';
 import 'package:codebooter_study_app/Client/home/blog.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
@@ -66,7 +65,7 @@ class _Page1ScreenState extends State<HomeScreen> {
                   ]),
                 ),
                 SizedBox(height: dimension.val20),
-                const features(),
+                const Features(),
                 SizedBox(
                   height: dimension.val20,
                 ),
