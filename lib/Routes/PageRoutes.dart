@@ -1,3 +1,6 @@
+import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
+import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
+import 'package:codebooter_study_app/Admin/home/PostJob.dart';
 import 'package:codebooter_study_app/Client/Screens/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
@@ -79,6 +82,24 @@ class App extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   const SavedItem(),
             ),
+            GoRoute(
+                path: 'admin',
+                builder: (BuildContext context, GoRouterState state) =>
+                    const AdminLogin(),
+                routes: [
+                  GoRoute(
+                      path: 'home',
+                      builder: (BuildContext context, GoRouterState state) =>
+                          const AdminHome(),
+                      routes: [
+                        GoRoute(
+                          path: 'jobpost',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const PostJob(),
+                        ),
+                      ]),
+                ])
 
             // GoRoute(
             //   path: 'courses',
@@ -89,10 +110,14 @@ class App extends StatelessWidget {
           path: '/',
           builder: (BuildContext context, GoRouterState state) {
             if (AuthService().isAuthenticated()) {
-              return const HomeScreen();
+              if (AuthService().isUsingEmail()) {
+                return const AdminHome();
+              } else {
+                return const HomeScreen();
+              }
             } else {
               // Navigate to the login page
-              return const LoginPage();
+              return LoginPage();
             }
           })
     ],

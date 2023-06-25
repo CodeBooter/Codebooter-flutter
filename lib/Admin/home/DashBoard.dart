@@ -6,15 +6,16 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 
 import 'package:go_router/go_router.dart';
 
-class Features extends StatefulWidget {
-  const Features({Key? key}) : super(key: key);
+class DashBoard extends StatefulWidget {
+  const DashBoard({Key? key}) : super(key: key);
 
   @override
-  _FeaturesState createState() => _FeaturesState();
+  _DashBoardState createState() => _DashBoardState();
 }
 
-class _FeaturesState extends State<Features> {
-  final double imageHeight = dimension.height85;
+class _DashBoardState extends State<DashBoard> {
+  final List<bool> isTappedList = [false, false, false, false];
+  final double imageHeight = dimension.height100;
   final double imageWidth = dimension.width165;
   final double containerWidth = dimension.width180;
   final double containerHeight = dimension.height132;
@@ -26,12 +27,11 @@ class _FeaturesState extends State<Features> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           bigText(
-            text: 'Features',
+            text: 'DashBoard',
             size: dimension.font24,
           ),
           SizedBox(height: dimension.val20),
@@ -41,28 +41,16 @@ class _FeaturesState extends State<Features> {
               runSpacing: runSpacing,
               children: [
                 _buildFeatureContainer(
-                  imageAsset: 'assets/images/dsa.jpg',
-                  title: 'DSA',
-                  subtitle: 'Complete DSA',
-                  onTap: () => _navigateTo('/dsa'),
+                  imageAsset:
+                      'https://i.pinimg.com/474x/20/4e/e3/204ee372909f732061f897cbf5744531.jpg',
+                  title: 'Post a Job/Internship',
+                  onTap: () => _navigateTo('/admin/home/jobpost'),
                 ),
                 _buildFeatureContainer(
-                  imageAsset: 'assets/images/playlist1.png',
-                  title: 'Full Stack Course',
-                  subtitle: 'Free and verified course',
-                  onTap: () => _navigateTo('/courses'),
-                ),
-                _buildFeatureContainer(
-                  imageAsset: 'assets/images/interview.png',
-                  title: 'Interview Gems',
-                  subtitle: 'TnP verified Interview preparation',
-                  onTap: () => _navigateTo('/interview'),
-                ),
-                _buildFeatureContainer(
-                  imageAsset: 'assets/images/shivani.png',
-                  title: 'Examination notes',
-                  subtitle: 'University and college notes',
-                  onTap: () => _navigateTo('/notes'),
+                  imageAsset:
+                      'https://i.pinimg.com/564x/5d/62/16/5d62163faddba5aead7acf4f51377867.jpg',
+                  title: 'Post a webinar',
+                  onTap: () => _navigateTo('/admin/jobpost'),
                 ),
               ],
             ),
@@ -75,7 +63,6 @@ class _FeaturesState extends State<Features> {
   Widget _buildFeatureContainer({
     required String imageAsset,
     required String title,
-    required String subtitle,
     required VoidCallback onTap,
   }) {
     return InkWell(
@@ -92,23 +79,24 @@ class _FeaturesState extends State<Features> {
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(0, 3), // changes position of shadow
+                color: Color.fromARGB(255, 136, 136, 136).withOpacity(0.2),
+                blurRadius: 10.0,
+                spreadRadius: 5.0,
+                offset: const Offset(-1, 0),
               ),
             ],
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: dimension.val2),
               Container(
+                alignment: Alignment.center,
                 height: imageHeight,
                 width: imageWidth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(imageAsset),
+                    image: NetworkImage(imageAsset),
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(borderRadius),
@@ -116,7 +104,6 @@ class _FeaturesState extends State<Features> {
                 ),
               ),
               bigText(text: title, size: dimension.font16),
-              smallText(text: subtitle),
             ],
           ),
         ),

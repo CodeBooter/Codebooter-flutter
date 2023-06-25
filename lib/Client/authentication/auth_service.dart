@@ -76,6 +76,13 @@ class AuthService {
     }
   }
 
+  bool isUsingEmail() {
+    final currentUser = _firebaseAuth.currentUser;
+    final providerData = currentUser?.providerData;
+    return providerData?.any((userInfo) => userInfo.providerId == 'password') ??
+        false;
+  }
+
   bool isAuthenticated() {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
