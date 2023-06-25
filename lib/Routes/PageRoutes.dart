@@ -1,7 +1,7 @@
 import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/home/PostJob.dart';
-import 'package:codebooter_study_app/Client/Screens/CourseScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';

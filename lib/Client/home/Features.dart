@@ -15,18 +15,18 @@ class Features extends StatefulWidget {
 
 class _FeaturesState extends State<Features> {
   final double imageHeight = dimension.height85;
-  final double imageWidth = dimension.width165;
+  final double imageWidth = dimension.width180;
   final double containerWidth = dimension.width180;
-  final double containerHeight = dimension.height132;
+  final double containerHeight = dimension.height130;
   final double borderRadius = dimension.val5;
-  final double spacing = dimension.val10;
-  final double runSpacing = dimension.val10;
+  final double spacing = dimension.val15;
+  final double runSpacing = dimension.val15;
   final Duration tapDelay = Duration(milliseconds: 200);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
+    return Padding(
+      padding: const EdgeInsets.only(left: 2, right: 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,37 +35,35 @@ class _FeaturesState extends State<Features> {
             size: dimension.font24,
           ),
           SizedBox(height: dimension.val20),
-          Container(
-            child: Wrap(
-              spacing: spacing,
-              runSpacing: runSpacing,
-              children: [
-                _buildFeatureContainer(
-                  imageAsset: 'assets/images/dsa.jpg',
-                  title: 'DSA',
-                  subtitle: 'Complete DSA',
-                  onTap: () => _navigateTo('/dsa'),
-                ),
-                _buildFeatureContainer(
-                  imageAsset: 'assets/images/playlist1.png',
-                  title: 'Full Stack Course',
-                  subtitle: 'Free and verified course',
-                  onTap: () => _navigateTo('/courses'),
-                ),
-                _buildFeatureContainer(
-                  imageAsset: 'assets/images/interview.png',
-                  title: 'Interview Gems',
-                  subtitle: 'TnP verified Interview preparation',
-                  onTap: () => _navigateTo('/interview'),
-                ),
-                _buildFeatureContainer(
-                  imageAsset: 'assets/images/shivani.png',
-                  title: 'Examination notes',
-                  subtitle: 'University and college notes',
-                  onTap: () => _navigateTo('/notes'),
-                ),
-              ],
-            ),
+          Wrap(
+            spacing: spacing,
+            runSpacing: runSpacing,
+            children: [
+              _buildFeatureContainer(
+                imageAsset: 'assets/images/dsa.jpg',
+                title: 'DSA',
+                subtitle: 'Complete DSA',
+                onTap: () => _navigateTo('/dsa'),
+              ),
+              _buildFeatureContainer(
+                imageAsset: 'assets/images/playlist1.png',
+                title: 'Full Stack Course',
+                subtitle: 'Free and verified course',
+                onTap: () => _navigateTo('/courses'),
+              ),
+              _buildFeatureContainer(
+                imageAsset: 'assets/images/interview.png',
+                title: 'Interview Gems',
+                subtitle: 'TnP verified Interview preparation',
+                onTap: () => _navigateTo('/interview'),
+              ),
+              _buildFeatureContainer(
+                imageAsset: 'assets/images/shivani.png',
+                title: 'Examination notes',
+                subtitle: 'University and college notes',
+                onTap: () => _navigateTo('/notes'),
+              ),
+            ],
           ),
         ],
       ),
@@ -83,7 +81,7 @@ class _FeaturesState extends State<Features> {
         Future.delayed(tapDelay, onTap);
       },
       child: Container(
-        alignment: Alignment.center,
+        alignment: Alignment.centerLeft,
         width: containerWidth,
         height: containerHeight,
         child: Ink(
@@ -115,8 +113,15 @@ class _FeaturesState extends State<Features> {
                   color: appColors.BoxColor,
                 ),
               ),
-              bigText(text: title, size: dimension.font16),
-              smallText(text: subtitle),
+              bigText(
+                text: title,
+                size: dimension.font16,
+                overFlow: TextOverflow.ellipsis,
+              ),
+              smallText(
+                text: subtitle,
+                overFlow: TextOverflow.ellipsis,
+              ),
             ],
           ),
         ),

@@ -46,7 +46,7 @@ class _Page1ScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        body: Column(children: [
           Expanded(
             child: SingleChildScrollView(
               child: Column(
