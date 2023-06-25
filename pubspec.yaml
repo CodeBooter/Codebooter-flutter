@@ -48,6 +48,7 @@ dependencies:
   flutter_highlight: ^0.7.0
   mongo_dart: ^0.9.1
   http: ^0.13.6
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
