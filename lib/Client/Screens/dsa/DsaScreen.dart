@@ -26,35 +26,181 @@ class _DsaScreenState extends State<DsaScreen> {
             text: "DSA",
           ),
         ),
-        body: Column(
-          children: [
-            ListTile(
-              leading: Icon(
-                Icons.data_array_rounded,
-                size: dimension.val25,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(
+                  Icons.data_array_rounded,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Array',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/arrays');
+                },
               ),
-              horizontalTitleGap: dimension.val2,
-              title: Text('Array',
-                  style: TextStyle(
-                      fontSize: dimension.font16, fontWeight: FontWeight.w400)),
-              onTap: () {
-                context.go('/dsa/arrays');
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.link_outlined,
-                size: dimension.val25,
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Linked List',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
               ),
-              horizontalTitleGap: dimension.val2,
-              title: Text('Linked List',
-                  style: TextStyle(
-                      fontSize: dimension.font16, fontWeight: FontWeight.w400)),
-              onTap: () {
-                context.go('/dsa/linkedlist');
-              },
-            ),
-          ],
+              ListTile(
+                leading: Icon(
+                  //stack icon
+                  //stack icon
+                  Icons.layers_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Stack',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.format_list_numbered_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Queue',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Hash Table',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Graphs',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('trees',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Linked List',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Linked List',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Linked List',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Linked List',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.link_outlined,
+                  size: dimension.val25,
+                ),
+                horizontalTitleGap: dimension.val2,
+                title: Text('Linked List',
+                    style: TextStyle(
+                        fontSize: dimension.font16,
+                        fontWeight: FontWeight.w400)),
+                onTap: () {
+                  context.go('/dsa/linkedlist');
+                },
+              ),
+            ],
+          ),
         ));
   }
 }

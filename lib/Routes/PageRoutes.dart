@@ -9,6 +9,7 @@ import 'package:codebooter_study_app/Client/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
+import 'package:codebooter_study_app/Client/home/JobInternship.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -76,6 +77,11 @@ class App extends StatelessWidget {
               path: 'notes',
               builder: (BuildContext context, GoRouterState state) =>
                   const ExamNoteScreen(),
+            ),
+            GoRoute(
+              path: 'jobinternship',
+              builder: (BuildContext context, GoRouterState state) =>
+                  const JobInternships(),
             ),
             GoRoute(
               path: 'saveditems',
