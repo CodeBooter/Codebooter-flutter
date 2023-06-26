@@ -24,6 +24,24 @@ class DsaScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.cyclone_sharp,
+            title: 'Recursion',
+            onTap: () {
+              context.go('/dsa/recursion');
+            },
+          ),
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.read_more_outlined,
+            title: 'Backtracking',
+            onTap: () {
+              context.go('/dsa/back');
+            },
+          ),
           _buildDataStructureTile(
             context: context,
             icon: Icons.data_array_rounded,
@@ -86,6 +104,16 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/trie');
             },
           ),
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.dynamic_feed_rounded,
+            title: 'Dynamic Programming',
+            onTap: () {
+              context.go('/dsa/dp');
+            },
+          ),
+
           // Add more data structure tiles here
         ],
       ),

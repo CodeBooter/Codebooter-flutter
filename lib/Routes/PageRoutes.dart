@@ -5,6 +5,8 @@ import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
+import 'package:codebooter_study_app/Client/Screens/dsa/Backtracking.dart';
+import 'package:codebooter_study_app/Client/Screens/dsa/DynamicProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
@@ -20,6 +22,7 @@ import 'package:codebooter_study_app/Client/home/HomeScreen.dart';
 
 import '../Client/Screens/dsa/Graph.dart';
 import '../Client/Screens/dsa/Queue.dart';
+import '../Client/Screens/dsa/Recursion.dart';
 import '../Client/Screens/dsa/Stack.dart';
 import '../Client/Screens/dsa/Tree.dart';
 import '../Client/Screens/dsa/Trie.dart';
@@ -92,6 +95,21 @@ class App extends StatelessWidget {
                   path: 'graph',
                   builder: (BuildContext context, GoRouterState state) =>
                   const Graphs(),
+                ),
+                GoRoute(
+                  path: 'dp',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const DynamicProgramming(),
+                ),
+                GoRoute(
+                  path: 'recursion',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Recursion(),
+                ),
+                GoRoute(
+                  path: 'back',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Backtracking(),
                 ),
               ],
             ),
