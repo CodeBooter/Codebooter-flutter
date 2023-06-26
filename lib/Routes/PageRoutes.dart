@@ -117,6 +117,11 @@ class App extends StatelessWidget {
               const JobInternships(),
             ),
             GoRoute(
+              path: 'jobinternship',
+              builder: (BuildContext context, GoRouterState state) =>
+                  const JobInternships(),
+            ),
+            GoRoute(
               path: 'saveditems',
               builder: (BuildContext context, GoRouterState state) =>
               const SavedItem(),
