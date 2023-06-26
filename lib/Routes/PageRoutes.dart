@@ -9,6 +9,7 @@ import 'package:codebooter_study_app/Client/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
+import 'package:codebooter_study_app/Client/home/JobInternship.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +17,12 @@ import 'package:go_router/go_router.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/DsaScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ErrorScreen.dart';
 import 'package:codebooter_study_app/Client/home/HomeScreen.dart';
+
+import '../Client/Screens/dsa/Graph.dart';
+import '../Client/Screens/dsa/Queue.dart';
+import '../Client/Screens/dsa/Stack.dart';
+import '../Client/Screens/dsa/Tree.dart';
+import '../Client/Screens/dsa/Trie.dart';
 
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
@@ -41,23 +48,50 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'homepage',
               builder: (BuildContext context, GoRouterState state) =>
-                  const HomeScreen(),
+              const HomeScreen(),
             ),
             GoRoute(
               path: 'dsa',
               builder: (BuildContext context, GoRouterState state) =>
-                  const DsaScreen(),
+              const DsaScreen(),
               routes: [
                 GoRoute(
                   path: 'arrays',
                   builder: (BuildContext context, GoRouterState state) =>
-                      const Arrays(),
+                  const Arrays(),
                 ),
                 // Add more subroutes as needed
                 GoRoute(
                   path: 'linkedlist',
                   builder: (BuildContext context, GoRouterState state) =>
-                      const LinkedList(),
+                  const LinkedList(),
+                ),
+                GoRoute(
+                  path: 'stack',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Stacks(),
+                ),
+                // Add more subroutes as needed
+                GoRoute(
+                  path: 'queue',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Queues(),
+                ),
+                GoRoute(
+                  path: 'tree',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Tree(),
+                ),
+                GoRoute(
+                  path: 'trie',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Trie(),
+                ),
+                // Add more subroutes as needed
+                GoRoute(
+                  path: 'graph',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Graphs(),
                 ),
               ],
             ),
@@ -65,38 +99,43 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'courses',
               builder: (BuildContext context, GoRouterState state) =>
-                  const CourseScreen(),
+              const CourseScreen(),
             ),
             GoRoute(
               path: 'interview',
               builder: (BuildContext context, GoRouterState state) =>
-                  const InterviewPrepScreen(),
+              const InterviewPrepScreen(),
             ),
             GoRoute(
               path: 'notes',
               builder: (BuildContext context, GoRouterState state) =>
-                  const ExamNoteScreen(),
+              const ExamNoteScreen(),
+            ),
+            GoRoute(
+              path: 'jobinternship',
+              builder: (BuildContext context, GoRouterState state) =>
+              const JobInternships(),
             ),
             GoRoute(
               path: 'saveditems',
               builder: (BuildContext context, GoRouterState state) =>
-                  const SavedItem(),
+              const SavedItem(),
             ),
             GoRoute(
                 path: 'admin',
                 builder: (BuildContext context, GoRouterState state) =>
-                    const AdminLogin(),
+                const AdminLogin(),
                 routes: [
                   GoRoute(
                       path: 'home',
                       builder: (BuildContext context, GoRouterState state) =>
-                          const AdminHome(),
+                      const AdminHome(),
                       routes: [
                         GoRoute(
                           path: 'jobpost',
                           builder:
                               (BuildContext context, GoRouterState state) =>
-                                  const PostJob(),
+                          const PostJob(),
                         ),
                       ]),
                 ])

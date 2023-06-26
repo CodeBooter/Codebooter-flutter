@@ -1,0 +1,231 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_highlight/flutter_highlight.dart';
+import 'package:flutter_highlight/themes/a11y-dark.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
+
+class Queues extends StatefulWidget {
+  const Queues({Key? key}) : super(key: key);
+
+  @override
+  _QueuesState createState() => _QueuesState();
+}
+
+class _QueuesState extends State<Queues> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        title: Text(
+          'Queues',
+          style: TextStyle(
+            fontSize: dimension.font24,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Georgia',
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(dimension.val20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Definition',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+              SizedBox(height: dimension.val10),
+              Text(
+                'A queue is a data structure that follows the First-In-First-Out (FIFO) principle.',
+                style: TextStyle(
+                  fontSize: dimension.font18,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+              SizedBox(height: dimension.val25),
+              Center(
+                child: Image(
+                  image: NetworkImage('https://i.imgur.com/G96qGr3.png'),
+                  height: dimension.height185,
+                ),
+              ),
+              SizedBox(height: dimension.val25),
+              Text(
+                'Types of Queues',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+              SizedBox(height: dimension.val25),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    _buildQueueType(
+                      title: 'Simple Queue',
+                      definition:
+                      'In Simple Queue, elements are added to the rear and removed from the front.In this queue the Insertion and deletion takes place from specified ends.',
+                      color: Color(0xFFFFFFFF), // White color
+                    ),
+                    SizedBox(width: dimension.val15),
+                    _buildQueueType(
+                      title: 'Circular Queue',
+                      definition:
+                      'In a circular queue, the rear and front elements are connected in a circular manner, allowing efficient space utilization. Insertion and Deletioncan be done from any point',
+                      color: Color(0xFFFFFFFF), // White color
+                    ),
+                    SizedBox(width: dimension.val15),
+                    _buildQueueType(
+                      title: 'Priority Queue',
+                      definition:
+                      'It Assigns a priority value to each element, and dequeues the highest priority element first.This Queue works on the priority of the value of element',
+                      color: Color(0xFFFFFFFF), // White color
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: dimension.val25),
+              Text(
+                'Operations performed on Queue',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+              SizedBox(height: dimension.val10),
+              Text(
+                '~ Enqueue: Adds an element to the rear of the queue.\n'
+                    '~ Dequeue: Removes and returns the front element from the queue.\n'
+                    '~ Front: Returns the front element without removing it.\n'
+                    '~ Rear: Returns the rear element without removing it.\n'
+                    '~ IsEmpty: Checks if the queue is empty.\n'
+                    '~ IsFull: Checks if the queue is full (in case of a fixed-size queue).',
+                style: TextStyle(
+                  fontSize: dimension.font18,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+              SizedBox(height: dimension.val25),
+              Text(
+                'Example',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
+                ),
+              ),
+              SizedBox(height: dimension.val10),
+              Container(
+                margin: EdgeInsets.all(dimension.val20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(dimension.val10),
+                  color: Colors.black38,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      spreadRadius: dimension.val2,
+                      blurRadius: dimension.val5,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: HighlightView(
+                  '''class Queue {
+  List<dynamic> elements = [];
+  dynamic front() {
+    if (isEmpty()) {
+      throw Exception('Queue is empty');
+    }
+    return elements[0];
+  }
+  dynamic rear() {
+    if (isEmpty()) {
+      throw Exception('Queue is empty');
+    }
+    return elements[elements.length - 1];
+  }
+}
+void main() {
+  Queue queue = Queue();
+  queue.enqueue(10);
+  queue.enqueue(20);
+  queue.enqueue(30);
+  print('Front element: );
+  print('Rear element:');
+  while (!queue.isEmpty()) {
+    print('Dequeued element: ');
+  }
+}''',
+                  language: 'dart',
+                  theme: a11yDarkTheme,
+                  padding: EdgeInsets.all(dimension.val15),
+                  textStyle: TextStyle(
+                    fontFamily: 'Courier New',
+                    fontSize: dimension.font14,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildQueueType({
+    required String title,
+    required String definition,
+    required Color color,
+  }) {
+    return Container(
+      width: dimension.width311,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(dimension.val15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
+      padding: EdgeInsets.all(dimension.val20),
+      margin: EdgeInsets.all(dimension.val10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: dimension.font16,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Georgia',
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height: dimension.val10),
+          Text(
+            definition,
+            style: TextStyle(
+              fontSize: dimension.font16,
+              fontFamily: 'Georgia',
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height: dimension.val15),
+        ],
+      ),
+    );
+  }
+}
