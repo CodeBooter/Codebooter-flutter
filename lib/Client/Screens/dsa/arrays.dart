@@ -3,14 +3,13 @@ import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 
+
 class Arrays extends StatefulWidget {
   const Arrays({super.key});
   @override
   _ArraysState createState() => _ArraysState();
 }
-
 class _ArraysState extends State<Arrays> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,6 +190,7 @@ END FOR
   }) {
     return Container(
       width: dimension.width311,
+      height: dimension.height180,
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(dimension.val15),
