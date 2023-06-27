@@ -7,8 +7,11 @@ import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/Backtracking.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/DynamicProgramming.dart';
+import 'package:codebooter_study_app/Client/Screens/dsa/Sorting.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/arrays.dart';
+import 'package:codebooter_study_app/Client/Screens/dsa/greedy.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
+import 'package:codebooter_study_app/Client/Screens/dsa/searching.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/Client/home/JobInternship.dart';
@@ -110,6 +113,21 @@ class App extends StatelessWidget {
                   path: 'back',
                   builder: (BuildContext context, GoRouterState state) =>
                   const Backtracking(),
+                ),
+                GoRoute(
+                  path: 'sort',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Sorting(),
+                ),
+                GoRoute(
+                  path: 'search',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Searching(),
+                ),
+                GoRoute(
+                  path: 'greedy',
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const Greedy(),
                 ),
               ],
             ),

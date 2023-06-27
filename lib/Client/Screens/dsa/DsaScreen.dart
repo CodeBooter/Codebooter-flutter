@@ -36,12 +36,22 @@ class DsaScreen extends StatelessWidget {
           const SizedBox(height: 8),
           _buildDataStructureTile(
             context: context,
-            icon: Icons.read_more_outlined,
-            title: 'Backtracking',
+            icon: Icons.search_off_sharp,
+            title: 'Searching',
             onTap: () {
-              context.go('/dsa/back');
+              context.go('/dsa/search');
             },
           ),
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.sort_by_alpha,
+            title: 'Sorting',
+            onTap: () {
+              context.go('/dsa/sort');
+            },
+          ),
+
           _buildDataStructureTile(
             context: context,
             icon: Icons.data_array_rounded,
@@ -114,18 +124,40 @@ class DsaScreen extends StatelessWidget {
             },
           ),
 
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.read_more_outlined,
+            title: 'Backtracking',
+            onTap: () {
+              context.go('/dsa/back');
+            },
+          ),
+
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.graphic_eq_outlined,
+            title: 'Greedy',
+            onTap: () {
+              context.go('/dsa/greedy');
+            },
+          ),
+
           // Add more data structure tiles here
         ],
       ),
     );
   }
 
-  Widget _buildDataStructureTile({
+  Widget _buildDataStructureTile
+      ({
     required BuildContext context,
     required IconData icon,
     required String title,
     required VoidCallback onTap,
-  }) {
+  })
+  {
     return Card(
       elevation: 5,
       shadowColor: Colors.grey,
