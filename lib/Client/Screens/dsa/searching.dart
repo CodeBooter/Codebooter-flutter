@@ -80,6 +80,8 @@ class Searching extends StatelessWidget {
                 ),
               ),
             ),
+
+
             SizedBox(height: dimension.val25),
             Card(
               elevation: 6,
