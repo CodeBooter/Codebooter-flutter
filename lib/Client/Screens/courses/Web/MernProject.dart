@@ -2,7 +2,9 @@ import 'package:codebooter_study_app/Client/Screens/courses/Web/VideoPlayer.dart
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 
-import 'package:codebooter_study_app/client/Screens/courses/YouTubeFunction.dart';
+
+
+import '../YoutubeFunction.dart';
 
 class MernProject extends StatelessWidget {
   const MernProject({Key? key}) : super(key: key);
