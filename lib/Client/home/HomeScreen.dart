@@ -1,17 +1,13 @@
-import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobBloc.dart';
-import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobEvent.dart';
-import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobState.dart';
 import 'package:codebooter_study_app/Client/home/Features.dart';
 import 'package:codebooter_study_app/Client/home/animatedScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:go_router/go_router.dart';
-
 import '../../widgets/SmallText.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key});
@@ -26,11 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       drawer: AnimatedDrawer(),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Color.fromARGB(255, 19, 16, 16)),
+        iconTheme: const IconThemeData(color: appColors.blackcolor),
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: bigText(text: "Home", color: const Color.fromARGB(255, 0, 0, 0)),
+        title: bigText(text: "Home", color: appColors.blackcolor),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add_alert),

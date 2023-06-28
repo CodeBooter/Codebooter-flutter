@@ -75,11 +75,11 @@ class _DashBoardState extends State<DashBoard> {
         height: containerHeight,
         child: Ink(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: appColors.maincolor,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(
-                color: Color.fromARGB(255, 136, 136, 136).withOpacity(0.2),
+                color: appColors.strokeColor.withOpacity(0.2),
                 blurRadius: 10.0,
                 spreadRadius: 5.0,
                 offset: const Offset(-1, 0),
@@ -100,7 +100,7 @@ class _DashBoardState extends State<DashBoard> {
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(borderRadius),
-                  color: appColors.BoxColor,
+                  color: appColors.maincolor,
                 ),
               ),
               bigText(text: title, size: dimension.font16),

@@ -86,7 +86,7 @@ class _FeaturesState extends State<Features> {
         height: containerHeight,
         child: Ink(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: appColors.maincolor,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(
@@ -110,7 +110,7 @@ class _FeaturesState extends State<Features> {
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(borderRadius),
-                  color: appColors.BoxColor,
+                  color: appColors.maincolor,
                 ),
               ),
               bigText(
