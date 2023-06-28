@@ -16,6 +16,7 @@ import 'package:codebooter_study_app/Client/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/greedy.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/searching.dart';
+import 'package:codebooter_study_app/Client/Screens/help.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
@@ -64,6 +65,11 @@ class App extends StatelessWidget {
               path: 'homepage',
               builder: (BuildContext context, GoRouterState state) =>
                   const HomeScreen(),
+            ),
+            GoRoute(
+              path: 'help',
+              builder: (BuildContext context, GoRouterState state) =>
+              const Help(),
             ),
             GoRoute(
               path: 'dsa',
