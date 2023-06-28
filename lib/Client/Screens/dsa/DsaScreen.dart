@@ -24,34 +24,7 @@ class DsaScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const SizedBox(height: 8),
-          _buildDataStructureTile(
-            context: context,
-            icon: Icons.cyclone_sharp,
-            title: 'Recursion',
-            onTap: () {
-              context.go('/dsa/recursion');
-            },
-          ),
-          const SizedBox(height: 8),
-          _buildDataStructureTile(
-            context: context,
-            icon: Icons.search_off_sharp,
-            title: 'Searching',
-            onTap: () {
-              context.go('/dsa/search');
-            },
-          ),
-          const SizedBox(height: 8),
-          _buildDataStructureTile(
-            context: context,
-            icon: Icons.sort_by_alpha,
-            title: 'Sorting',
-            onTap: () {
-              context.go('/dsa/sort');
-            },
-          ),
-
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.data_array_rounded,
@@ -60,7 +33,8 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/arrays');
             },
           ),
-          const SizedBox(height: 8),
+
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.link_outlined,
@@ -69,7 +43,7 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/linkedlist');
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.layers_outlined,
@@ -78,7 +52,7 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/stack');
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.line_style_sharp,
@@ -87,7 +61,7 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/queue');
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.account_tree_outlined,
@@ -96,7 +70,7 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/tree');
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.auto_graph_sharp,
@@ -105,7 +79,7 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/graph');
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.shape_line_outlined,
@@ -114,7 +88,34 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/trie');
             },
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.cyclone_sharp,
+            title: 'Recursion',
+            onTap: () {
+              context.go('/dsa/recursion');
+            },
+          ),
+          SizedBox(height: dimension.val10),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.search_off_sharp,
+            title: 'Searching',
+            onTap: () {
+              context.go('/dsa/search');
+            },
+          ),
+          SizedBox(height: dimension.val10),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.sort_by_alpha,
+            title: 'Sorting',
+            onTap: () {
+              context.go('/dsa/sort');
+            },
+          ),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.dynamic_feed_rounded,
@@ -124,7 +125,7 @@ class DsaScreen extends StatelessWidget {
             },
           ),
 
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.read_more_outlined,
@@ -134,7 +135,7 @@ class DsaScreen extends StatelessWidget {
             },
           ),
 
-          const SizedBox(height: 8),
+          SizedBox(height: dimension.val10),
           _buildDataStructureTile(
             context: context,
             icon: Icons.graphic_eq_outlined,
