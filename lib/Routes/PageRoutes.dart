@@ -202,7 +202,7 @@ class App extends StatelessWidget {
                           path: 'jobpost',
                           builder:
                               (BuildContext context, GoRouterState state) =>
-                                  const PostJob(),
+                                  PostJob(),
                         ),
                       ]),
                 ])

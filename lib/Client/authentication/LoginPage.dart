@@ -7,6 +7,8 @@ import 'package:go_router/go_router.dart';
 class LoginPage extends StatelessWidget {
   final AuthService _authService = AuthService();
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     // final dimension = Dimensions();
@@ -28,10 +30,10 @@ class LoginPage extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   width: dimension.val60,
                   height: dimension.val60,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                     image: DecorationImage(
-                      image: AssetImage('assets/images/logo.png'),
+                      image: AssetImage('assets/images/logo4.png'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -56,7 +58,7 @@ class LoginPage extends StatelessWidget {
                       fontSize: dimension.font16,
                       fontWeight: FontWeight.w400,
                     ),
-                    children: [
+                    children: const [
                       TextSpan(text: 'Help you to '),
                       TextSpan(
                         text: 'Learn, Prepare',
@@ -166,7 +168,7 @@ class LoginPage extends StatelessWidget {
                       fontSize: dimension.font12,
                       fontWeight: FontWeight.w400,
                       decoration: TextDecoration.underline,
-                      decorationColor: Color.fromARGB(255, 3, 3, 3),
+                      decorationColor: const Color.fromARGB(255, 3, 3, 3),
                       decorationStyle: TextDecorationStyle.solid,
                     ),
                   ),
