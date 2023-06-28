@@ -46,7 +46,7 @@ class _JobInternshipsState extends State<JobInternships> {
             }
             if (state is JobLoadedState) {
               List<JobModel> jobList = state.jobs;
-              print(jobList[1].imageAsset);
+              // print(jobList[1].imageAsset);
 
               return Column(
                 children: [

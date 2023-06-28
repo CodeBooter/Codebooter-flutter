@@ -48,15 +48,76 @@ class _PostJobState extends State<PostJob> {
 
       if (response.statusCode == 201) {
         // Job created successfully
-        print('Job created successfully');
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Success'),
+              content: Text('Job created successfully'),
+              actions: [
+                TextButton(
+                  child: Text('OK'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    clearFields();
+                  },
+                ),
+              ],
+            );
+          },
+        );
       } else {
         // Handle error
-        print('Error creating job: ${response.statusCode}');
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Error'),
+              content: Text('Error creating job: ${response.statusCode}'),
+              actions: [
+                TextButton(
+                  child: Text('OK'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
       }
     } catch (e) {
       // Handle error
-      print('Error creating job: $e');
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Error'),
+            content: Text('Error creating job: $e'),
+            actions: [
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
+  }
+
+  void clearFields() {
+    _titleController.clear();
+    _imageAssetController.clear();
+    _stipendController.clear();
+    _locationController.clear();
+    _companyController.clear();
+    _applyLinkController.clear();
+    _durationController.clear();
+    _applyByController.clear();
+    _deadlineController.clear();
   }
 
   @override
@@ -74,7 +135,7 @@ class _PostJobState extends State<PostJob> {
               children: [
                 TextFormField(
                   controller: _titleController,
-                  decoration: InputDecoration(labelText: 'Title'),
+                  decoration: InputDecoration(labelText: 'Role'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter job title';
@@ -84,7 +145,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _imageAssetController,
-                  decoration: InputDecoration(labelText: 'Image Asset'),
+                  decoration: InputDecoration(labelText: 'Image Link'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter image asset';
