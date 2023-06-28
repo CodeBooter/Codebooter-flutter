@@ -150,14 +150,12 @@ class DsaScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDataStructureTile
-      ({
+  Widget _buildDataStructureTile({
     required BuildContext context,
     required IconData icon,
     required String title,
     required VoidCallback onTap,
-  })
-  {
+  }) {
     return Card(
       elevation: 5,
       shadowColor: Colors.grey,
@@ -169,7 +167,10 @@ class DsaScreen extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: TextStyle(fontSize: dimension.font16, fontWeight: FontWeight.bold, fontFamily: 'Georgia'),
+          style: TextStyle(
+              fontSize: dimension.font16,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Georgia'),
         ),
         onTap: onTap,
       ),

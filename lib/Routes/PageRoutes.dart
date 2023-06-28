@@ -5,6 +5,10 @@ import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/HtmlCss.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/JavaScript.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/MernProject.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/MernStack.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/Backtracking.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/DynamicProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/Sorting.dart';
@@ -14,9 +18,10 @@ import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/searching.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
-import 'package:codebooter_study_app/Client/home/JobInternship.dart';
+import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:codebooter_study_app/Client/Screens/dsa/DsaScreen.dart';
@@ -35,6 +40,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+
     return MaterialApp.router(
         color: Colors.transparent,
         routerDelegate: _router.routerDelegate,
@@ -54,129 +63,146 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'homepage',
               builder: (BuildContext context, GoRouterState state) =>
-              const HomeScreen(),
+                  const HomeScreen(),
             ),
             GoRoute(
               path: 'dsa',
               builder: (BuildContext context, GoRouterState state) =>
-              const DsaScreen(),
+                  const DsaScreen(),
               routes: [
                 GoRoute(
                   path: 'arrays',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Arrays(),
+                      const Arrays(),
                 ),
                 // Add more subroutes as needed
                 GoRoute(
                   path: 'linkedlist',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const LinkedList(),
+                      const LinkedList(),
                 ),
                 GoRoute(
                   path: 'stack',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Stacks(),
+                      const Stacks(),
                 ),
                 // Add more subroutes as needed
                 GoRoute(
                   path: 'queue',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Queues(),
+                      const Queues(),
                 ),
                 GoRoute(
                   path: 'tree',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Tree(),
+                      const Tree(),
                 ),
                 GoRoute(
                   path: 'trie',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Trie(),
+                      const Trie(),
                 ),
                 // Add more subroutes as needed
                 GoRoute(
                   path: 'graph',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Graphs(),
+                      const Graphs(),
                 ),
                 GoRoute(
                   path: 'dp',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const DynamicProgramming(),
+                      const DynamicProgramming(),
                 ),
                 GoRoute(
                   path: 'recursion',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Recursion(),
+                      const Recursion(),
                 ),
                 GoRoute(
                   path: 'back',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Backtracking(),
+                      const Backtracking(),
                 ),
                 GoRoute(
                   path: 'sort',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Sorting(),
+                      const Sorting(),
                 ),
                 GoRoute(
                   path: 'search',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Searching(),
+                      const Searching(),
                 ),
                 GoRoute(
                   path: 'greedy',
                   builder: (BuildContext context, GoRouterState state) =>
-                  const Greedy(),
+                      const Greedy(),
                 ),
               ],
             ),
 
             GoRoute(
-              path: 'courses',
-              builder: (BuildContext context, GoRouterState state) =>
-              const CourseScreen(),
-            ),
+                path: 'courses',
+                builder: (BuildContext context, GoRouterState state) =>
+                    const CourseScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'basicwebdev',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const HtmlCss(),
+                  ),
+                  GoRoute(
+                    path: 'javascript',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const JavaScript(),
+                  ),
+                  GoRoute(
+                    path: 'mernstack',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const MernStack(),
+                  ),
+                  GoRoute(
+                    path: 'mernproject',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const MernProject(),
+                  )
+                ]),
             GoRoute(
               path: 'interview',
               builder: (BuildContext context, GoRouterState state) =>
-              const InterviewPrepScreen(),
+                  const InterviewPrepScreen(),
             ),
             GoRoute(
               path: 'notes',
               builder: (BuildContext context, GoRouterState state) =>
-              const ExamNoteScreen(),
-            ),
-            GoRoute(
-              path: 'jobinternship',
-              builder: (BuildContext context, GoRouterState state) =>
-              const JobInternships(),
+                  const ExamNoteScreen(),
             ),
             GoRoute(
               path: 'jobinternship',
               builder: (BuildContext context, GoRouterState state) =>
                   const JobInternships(),
             ),
+
             GoRoute(
               path: 'saveditems',
               builder: (BuildContext context, GoRouterState state) =>
-              const SavedItem(),
+                  const SavedItem(),
             ),
             GoRoute(
                 path: 'admin',
                 builder: (BuildContext context, GoRouterState state) =>
-                const AdminLogin(),
+                    const AdminLogin(),
                 routes: [
                   GoRoute(
                       path: 'home',
                       builder: (BuildContext context, GoRouterState state) =>
-                      const AdminHome(),
+                          const AdminHome(),
                       routes: [
                         GoRoute(
                           path: 'jobpost',
                           builder:
                               (BuildContext context, GoRouterState state) =>
-                          const PostJob(),
+                                  const PostJob(),
                         ),
                       ]),
                 ])

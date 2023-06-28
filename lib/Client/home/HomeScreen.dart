@@ -1,9 +1,13 @@
+import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobBloc.dart';
+import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobEvent.dart';
+import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobState.dart';
 import 'package:codebooter_study_app/Client/home/Features.dart';
 import 'package:codebooter_study_app/Client/home/animatedScreen.dart';
-import 'package:codebooter_study_app/Client/home/JobInternship.dart';
+import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
 

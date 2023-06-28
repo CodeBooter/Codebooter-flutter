@@ -15,7 +15,7 @@ class _DsaScreenState extends State<CourseScreen> {
   final double imageWidth = dimension.width110;
   final double containerWidth = dimension.width110;
   final double containerHeight = dimension.height115;
-  final double borderRadius = dimension.val20;
+  final double borderRadius = dimension.val10;
   final double spacing = dimension.val20;
   final double runSpacing = dimension.val20;
   final Duration tapDelay = Duration(milliseconds: 200);
@@ -25,7 +25,7 @@ class _DsaScreenState extends State<CourseScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         iconTheme: const IconThemeData(
           color: Colors.black,
         ),
@@ -54,28 +54,34 @@ class _DsaScreenState extends State<CourseScreen> {
                     runSpacing: runSpacing,
                     children: [
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/originals/39/bc/07/39bc075f675821e60d06ac42cb125ffb.png',
+                        onTap: () => _navigateTo('/courses/basicwebdev'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/0c/92/16/0c92162e83308b464eabf33f9b1c41b8.jpg',
+                        onTap: () => _navigateTo('/courses/javascript'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                        onTap: () => _navigateTo('/courses/mernstack'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/d4/84/55/d48455bcb05c3061de03c2be7f27c48c.jpg',
+                        onTap: () => _navigateTo('/courses/mernproject'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
                       ),
                     ],
                   ),
@@ -98,27 +104,33 @@ class _DsaScreenState extends State<CourseScreen> {
                     runSpacing: runSpacing,
                     children: [
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                     ],
@@ -142,28 +154,34 @@ class _DsaScreenState extends State<CourseScreen> {
                     runSpacing: runSpacing,
                     children: [
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
+                      ),
+                      _buildFeatureContainer(
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
+                      ),
+                      _buildFeatureContainer(
+                        imageAsset:
+                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
                         onTap: () => _navigateTo('/dsa'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
                       ),
                       _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset: 'assets/images/react.png',
-                        onTap: () => _navigateTo('/dsa'),
+                        imageAsset:
+                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                        onTap: () => _navigateTo('/basicwebdev'),
                       ),
                     ],
                   ),
@@ -211,7 +229,7 @@ class _DsaScreenState extends State<CourseScreen> {
                 width: imageWidth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(imageAsset),
+                    image: NetworkImage(imageAsset),
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(borderRadius),
