@@ -26,17 +26,14 @@ class Greedy extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Definition',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
+            Padding(
+              padding: EdgeInsets.all(dimension.val5),
+              child: Text(
+                'Definition',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
             ),
@@ -52,17 +49,14 @@ class Greedy extends StatelessWidget {
               ),
             ),
             SizedBox(height: dimension.val25),
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Key Concepts',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
+            Padding(
+              padding: EdgeInsets.all(dimension.val5),
+              child: Text(
+                'Key Concepts',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
             ),
@@ -82,17 +76,14 @@ class Greedy extends StatelessWidget {
               ),
             ),
             SizedBox(height: dimension.val25),
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Example',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
+            Padding(
+              padding: EdgeInsets.all(dimension.val5),
+              child: Text(
+                'Example',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
             ),

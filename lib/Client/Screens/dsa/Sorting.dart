@@ -21,98 +21,100 @@ class Sorting extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
+      body: ListView(
         padding: EdgeInsets.all(dimension.val20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Definition',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
+        children: [
+          Card(
+            elevation: 6,
+            child: Padding(
+              padding: EdgeInsets.all(dimension.val15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Definition',
+                    style: TextStyle(
+                      fontSize: dimension.font20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Georgia',
+                    ),
                   ),
-                ),
-              ),
-            ),
-            SizedBox(height: dimension.val10),
-            Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
-              child: Text(
-                'Sorting is the process of arranging elements in a specific order, typically in increasing or decreasing order based on a certain property or key.',
-                style: TextStyle(
-                  fontSize: dimension.font18,
-                  fontFamily: 'Georgia',
-                ),
-              ),
-            ),
-            SizedBox(height: dimension.val25),
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Key Concepts',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: dimension.val10),
-            Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
-              child: Text(
-                '1. Sorting Algorithm: The algorithm that determines the process of rearranging elements in a specific order.\n'
-                    '2. Comparison-based Sorting: Sorting algorithms that compare elements and make decisions based on the comparison results.\n'
-                    '3. Stable Sorting: Sorting algorithms that maintain the relative order of elements with equal keys.\n'
-                    '4. In-place Sorting: Sorting algorithms that rearrange elements within the given array without using additional memory.\n'
-                    '5. Time Complexity: The measure of the amount of time required by a sorting algorithm to perform the sorting operation.',
-                style: TextStyle(
-                  fontSize: dimension.font18,
-                  fontFamily: 'Georgia',
-                ),
-              ),
-            ),
-            SizedBox(height: dimension.val25),
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Example',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: dimension.val10),
-            Container(
-              margin: EdgeInsets.all(dimension.val20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(dimension.val10),
-                color: Colors.grey[200],
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    spreadRadius: dimension.val2,
-                    blurRadius: dimension.val5,
-                    offset: Offset(0, 3), // changes position of shadow
+                  SizedBox(height: dimension.val10),
+                  Text(
+                    'Sorting is the process of arranging elements in a specific order, typically in increasing or decreasing order based on a certain property or key.',
+                    style: TextStyle(
+                      fontSize: dimension.font18,
+                      fontFamily: 'Georgia',
+                    ),
                   ),
                 ],
               ),
-              child: HighlightView(
-                '''void bubbleSort(List<int> array) {
+            ),
+          ),
+          SizedBox(height: dimension.val25),
+          Card(
+            elevation: 6,
+            child: Padding(
+              padding: EdgeInsets.all(dimension.val15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Key Concepts',
+                    style: TextStyle(
+                      fontSize: dimension.font20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Georgia',
+                    ),
+                  ),
+                  SizedBox(height: dimension.val10),
+                  Text(
+                    '1. Sorting Algorithm: The algorithm that determines the process of rearranging elements in a specific order.\n'
+                        '2. Comparison-based Sorting: Sorting algorithms that compare elements and make decisions based on the comparison results.\n'
+                        '3. Stable Sorting: Sorting algorithms that maintain the relative order of elements with equal keys.\n'
+                        '4. In-place Sorting: Sorting algorithms that rearrange elements within the given array without using additional memory.\n'
+                        '5. Time Complexity: The measure of the amount of time required by a sorting algorithm to perform the sorting operation.',
+                    style: TextStyle(
+                      fontSize: dimension.font18,
+                      fontFamily: 'Georgia',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: dimension.val25),
+          Card(
+            elevation: 6,
+            child: Padding(
+              padding: EdgeInsets.all(dimension.val15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Example',
+                    style: TextStyle(
+                      fontSize: dimension.font20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Georgia',
+                    ),
+                  ),
+                  SizedBox(height: dimension.val10),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(dimension.val10),
+                      color: Colors.grey[200],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          spreadRadius: dimension.val2,
+                          blurRadius: dimension.val5,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: HighlightView(
+                      '''void bubbleSort(List<int> array) {
   int n = array.length;
   for (int i = 0; i < n - 1; i++) {
     for (int j = 0; j < n - i - 1; j++) {
@@ -131,19 +133,20 @@ void main() {
   bubbleSort(numbers);
   print('Sorted numbers: \$numbers');
 }''',
-
-
-                language: 'dart',
-                theme: a11yDarkTheme,
-                padding: EdgeInsets.all(dimension.val15),
-                textStyle: TextStyle(
-                  fontFamily: 'Courier New',
-                  fontSize: dimension.font14,
-                ),
+                      language: 'dart',
+                      theme: a11yDarkTheme,
+                      padding: EdgeInsets.all(dimension.val15),
+                      textStyle: TextStyle(
+                        fontFamily: 'Courier New',
+                        fontSize: dimension.font14,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
