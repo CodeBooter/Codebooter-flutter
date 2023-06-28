@@ -24,6 +24,34 @@ class DsaScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.cyclone_sharp,
+            title: 'Recursion',
+            onTap: () {
+              context.go('/dsa/recursion');
+            },
+          ),
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.search_off_sharp,
+            title: 'Searching',
+            onTap: () {
+              context.go('/dsa/search');
+            },
+          ),
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.sort_by_alpha,
+            title: 'Sorting',
+            onTap: () {
+              context.go('/dsa/sort');
+            },
+          ),
+
           _buildDataStructureTile(
             context: context,
             icon: Icons.data_array_rounded,
@@ -86,6 +114,36 @@ class DsaScreen extends StatelessWidget {
               context.go('/dsa/trie');
             },
           ),
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.dynamic_feed_rounded,
+            title: 'Dynamic Programming',
+            onTap: () {
+              context.go('/dsa/dp');
+            },
+          ),
+
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.read_more_outlined,
+            title: 'Backtracking',
+            onTap: () {
+              context.go('/dsa/back');
+            },
+          ),
+
+          const SizedBox(height: 8),
+          _buildDataStructureTile(
+            context: context,
+            icon: Icons.graphic_eq_outlined,
+            title: 'Greedy',
+            onTap: () {
+              context.go('/dsa/greedy');
+            },
+          ),
+
           // Add more data structure tiles here
         ],
       ),
@@ -106,7 +164,6 @@ class DsaScreen extends StatelessWidget {
           icon,
           color: Colors.black45,
           size: dimension.val25,
-          weight: 200,
         ),
         title: Text(
           title,
