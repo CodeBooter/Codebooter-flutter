@@ -5,6 +5,10 @@ import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/HtmlCss.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/JavaScript.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/MernProject.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/Web/MernStack.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/arrays.dart';
 import 'package:codebooter_study_app/Client/Screens/dsa/linkedList.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
@@ -12,6 +16,7 @@ import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:codebooter_study_app/Client/Screens/dsa/DsaScreen.dart';
@@ -29,6 +34,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+
     return MaterialApp.router(
         color: Colors.transparent,
         routerDelegate: _router.routerDelegate,
@@ -97,10 +106,31 @@ class App extends StatelessWidget {
             ),
 
             GoRoute(
-              path: 'courses',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const CourseScreen(),
-            ),
+                path: 'courses',
+                builder: (BuildContext context, GoRouterState state) =>
+                    const CourseScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'basicwebdev',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const HtmlCss(),
+                  ),
+                  GoRoute(
+                    path: 'javascript',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const JavaScript(),
+                  ),
+                  GoRoute(
+                    path: 'mernstack',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const MernStack(),
+                  ),
+                  GoRoute(
+                    path: 'mernproject',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const MernProject(),
+                  )
+                ]),
             GoRoute(
               path: 'interview',
               builder: (BuildContext context, GoRouterState state) =>
@@ -116,11 +146,7 @@ class App extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   const JobInternships(),
             ),
-            GoRoute(
-              path: 'jobinternship',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const JobInternships(),
-            ),
+
             GoRoute(
               path: 'saveditems',
               builder: (BuildContext context, GoRouterState state) =>
