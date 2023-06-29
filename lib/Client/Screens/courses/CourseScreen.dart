@@ -1,16 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CourseScreen extends StatefulWidget {
-  const CourseScreen({super.key});
+  const CourseScreen({Key? key}) : super(key: key);
 
   @override
-  State<CourseScreen> createState() => _DsaScreenState();
+  State<CourseScreen> createState() => _CourseScreenState();
 }
 
-class _DsaScreenState extends State<CourseScreen> {
+class _CourseScreenState extends State<CourseScreen> {
   final double imageHeight = dimension.height113;
   final double imageWidth = dimension.width110;
   final double containerWidth = dimension.width110;
@@ -19,6 +20,7 @@ class _DsaScreenState extends State<CourseScreen> {
   final double spacing = dimension.val20;
   final double runSpacing = dimension.val20;
   final Duration tapDelay = Duration(milliseconds: 200);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -224,17 +226,22 @@ class _DsaScreenState extends State<CourseScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: dimension.val2),
-              Container(
-                height: imageHeight,
-                width: imageWidth,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(imageAsset),
-                    fit: BoxFit.fill,
+              CachedNetworkImage(
+                imageUrl: imageAsset,
+                imageBuilder: (context, imageProvider) => Container(
+                  height: imageHeight,
+                  width: imageWidth,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.fill,
+                    ),
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    color: const Color.fromARGB(255, 209, 209, 209),
                   ),
-                  borderRadius: BorderRadius.circular(borderRadius),
-                  color: const Color.fromARGB(255, 209, 209, 209),
                 ),
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ],
           ),
