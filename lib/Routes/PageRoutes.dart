@@ -1,8 +1,11 @@
 import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/home/PostJob.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ChemistryNotes.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/EngineeringMaths1.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
-import 'package:codebooter_study_app/Client/Screens/ExamNoteScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/Test.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/Web/HtmlCss.dart';
@@ -179,10 +182,21 @@ class App extends StatelessWidget {
                   const InterviewPrepScreen(),
             ),
             GoRoute(
-              path: 'notes',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const ExamNoteScreen(),
-            ),
+                path: 'notes',
+                builder: (BuildContext context, GoRouterState state) =>
+                    const ExamNotesScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'chemistry',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ChemistryNotes(),
+                  ),
+                  GoRoute(
+                    path: 'mathematics1',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const EngineeringMaths1(),
+                  )
+                ]),
             GoRoute(
               path: 'jobinternship',
               builder: (BuildContext context, GoRouterState state) =>

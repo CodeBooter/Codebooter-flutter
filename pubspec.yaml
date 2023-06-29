@@ -54,6 +54,9 @@ dependencies:
   
   youtube_data_api: ^1.0.4
   intl: ^0.18.1
+  syncfusion_flutter_pdfviewer: ^21.2.10
+  path_provider: ^2.0.15
+  cached_network_image: ^3.2.3
   
 dev_dependencies:
   flutter_test:
