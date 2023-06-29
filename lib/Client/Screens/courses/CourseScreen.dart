@@ -49,41 +49,44 @@ class _DsaScreenState extends State<CourseScreen> {
                     size: dimension.font24,
                   ),
                   SizedBox(height: dimension.val20),
-                  Wrap(
-                    spacing: spacing,
-                    runSpacing: runSpacing,
-                    children: [
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/originals/39/bc/07/39bc075f675821e60d06ac42cb125ffb.png',
-                        onTap: () => _navigateTo('/courses/basicwebdev'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/0c/92/16/0c92162e83308b464eabf33f9b1c41b8.jpg',
-                        onTap: () => _navigateTo('/courses/javascript'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/courses/mernstack'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/d4/84/55/d48455bcb05c3061de03c2be7f27c48c.jpg',
-                        onTap: () => _navigateTo('/courses/mernproject'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+                      spacing: spacing,
+                      runSpacing: runSpacing,
+                      children: [
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/originals/39/bc/07/39bc075f675821e60d06ac42cb125ffb.png',
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/0c/92/16/0c92162e83308b464eabf33f9b1c41b8.jpg',
+                          onTap: () => _navigateTo('/courses/javascript'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/courses/mernstack'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/d4/84/55/d48455bcb05c3061de03c2be7f27c48c.jpg',
+                          onTap: () => _navigateTo('/courses/mernproject'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -99,41 +102,45 @@ class _DsaScreenState extends State<CourseScreen> {
                     size: dimension.font24,
                   ),
                   SizedBox(height: dimension.val20),
-                  Wrap(
-                    spacing: spacing,
-                    runSpacing: runSpacing,
-                    children: [
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+
+                      spacing: spacing,
+                      runSpacing: runSpacing,
+                      children: [
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -149,41 +156,44 @@ class _DsaScreenState extends State<CourseScreen> {
                     size: dimension.font24,
                   ),
                   SizedBox(height: dimension.val20),
-                  Wrap(
-                    spacing: spacing,
-                    runSpacing: runSpacing,
-                    children: [
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                        onTap: () => _navigateTo('/dsa'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                      _buildFeatureContainer(
-                        imageAsset:
-                            'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                        onTap: () => _navigateTo('/basicwebdev'),
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+
+                    child: Wrap(
+                      spacing: spacing,
+                      children: [
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                          onTap: () => _navigateTo('/dsa'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          imageAsset:
+                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                          onTap: () => _navigateTo('/basicwebdev'),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
