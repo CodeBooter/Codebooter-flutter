@@ -4,7 +4,7 @@ class JobModel {
   String stipend;
   String duration;
   String location;
-  String applyBy;
+  String deadline;
   String applyLink;
 
   JobModel({
@@ -13,7 +13,7 @@ class JobModel {
     required this.stipend,
     required this.duration,
     required this.location,
-    required this.applyBy,
+    required this.deadline,
     required this.applyLink,
   });
 
@@ -34,7 +34,7 @@ class JobModel {
       stipend: json['stipend'],
       duration: json['duration'],
       location: json['location'],
-      applyBy: json['applyBy'],
+      deadline: json['deadline'].toString(),
       applyLink: json['applyLink'],
     );
   }

@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../widgets/SmallText.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key});
 
@@ -20,26 +19,22 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appColors.maincolor,
       drawer: AnimatedDrawer(),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: appColors.blackcolor),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        iconTheme: const IconThemeData(color: appColors.borderColor),
+        backgroundColor: appColors.maincolor,
+        elevation: 4,
+        // shadowColor: appColors.borderColor,
+
         centerTitle: true,
-        title: bigText(text: "Home", color: appColors.blackcolor),
+        title: bigText(text: "Home", color: appColors.mainTextColor),
         actions: <Widget>[
+          //dark mode button
           IconButton(
-            icon: const Icon(Icons.add_alert),
-            tooltip: 'Show Snackbar',
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('This is a snackbar')));
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.bookmark),
-            tooltip: 'Go to the next page',
-            onPressed: () => context.go('/saveditems'),
+            onPressed: () {},
+            icon: const Icon(Icons.dark_mode),
+            color: appColors.borderColor,
           ),
         ],
       ),
@@ -49,25 +44,38 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  child: Column(children: [
-                    SizedBox(height: dimension.val20),
-                    bigText(
-                      text: "Welcome to CodeBooter👋",
-                      size: dimension.font20,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    smallText(
-                      text: "Boot your life to code🚀",
-                      size: dimension.font16,
-                    ),
-                  ]),
-                ),
-                SizedBox(height: dimension.val20),
                 const Features(),
-                SizedBox(
-                  height: dimension.val20,
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: dimension.val20,
+                    right: dimension.val20,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Job & Internships",
+                        style: TextStyle(
+                          color: appColors.mainTextColor,
+                          fontFamily: 'poppins',
+                          fontSize: dimension.font20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () => context.go('/jobinternship'),
+                        child: Text(
+                          "View All",
+                          style: TextStyle(
+                            fontFamily: 'poppins',
+                            fontSize: dimension.font16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const JobInternships(),
               ],

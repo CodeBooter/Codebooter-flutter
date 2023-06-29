@@ -3,6 +3,7 @@ import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobBloc.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobEvent.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobBloc/JobState.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobModel.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,8 +19,8 @@ class JobInternships extends StatefulWidget {
 }
 
 class _JobInternshipsState extends State<JobInternships> {
-  final double imageHeight = dimension.height95;
-  final double imageWidth = dimension.width90;
+  final double imageHeight = dimension.height100;
+  final double imageWidth = dimension.width100;
   final double containerWidth = dimension.width360;
   final double containerHeight = dimension.height110;
   final double borderRadius = dimension.val5;
@@ -50,22 +51,13 @@ class _JobInternshipsState extends State<JobInternships> {
 
               return Column(
                 children: [
-                  Text(
-                    "Job & Internships",
-                    style: TextStyle(
-                      fontFamily: 'poppins',
-                      fontSize: dimension.font20,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  SizedBox(height: dimension.val10),
                   ...jobList.map((job) => _buildFeatureContainer(
                         title: job.title,
                         imageAsset: job.imageAsset,
                         stipend: job.stipend,
                         duration: job.duration,
                         location: job.location,
-                        applyBy: job.applyBy,
+                        deadline: job.deadline,
                         onTap: () async {
                           final url = job.applyLink;
 
@@ -94,166 +86,192 @@ class _JobInternshipsState extends State<JobInternships> {
     required String stipend,
     required String duration,
     required String location,
-    required String applyBy,
+    required String deadline,
     required VoidCallback onTap,
   }) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: containerWidth,
-        height: containerHeight,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-          borderRadius: BorderRadius.circular(borderRadius),
-          color: Color.fromARGB(255, 255, 255, 255),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: dimension.val5,
-            ),
-            Container(
-              width: imageWidth,
-              height: imageHeight,
+      padding: EdgeInsets.all(dimension.val5),
+      child: InkWell(
+        onTap: onTap,
+        child: Ink(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius),
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
+          child: InkWell(
+            onTap: onTap,
+            splashColor: Colors.grey.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(borderRadius),
+            child: Container(
+              width: containerWidth,
+              height: containerHeight,
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
                 borderRadius: BorderRadius.circular(borderRadius),
-                image: DecorationImage(
-                  image: NetworkImage(imageAsset),
-                  fit: BoxFit.fill,
-                ),
+                color: appColors.maincolor,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: dimension.val5,
+                  ),
+                  Container(
+                    width: imageWidth,
+                    height: imageHeight,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(borderRadius),
+                      image: DecorationImage(
+                        image: NetworkImage(imageAsset),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: dimension.val10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: dimension.val5),
+                      Text(
+                        "$title",
+                        style: TextStyle(
+                          color: appColors.mainTextColor,
+                          fontFamily: 'poppins',
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val5),
+                      Row(
+                        children: [
+                          Container(
+                            height: dimension.height80,
+                            width: dimension.width68,
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.monetization_on_outlined,
+                                  size: dimension.val20,
+                                  color: appColors.borderColor,
+                                ),
+                                SizedBox(height: dimension.val10),
+                                Text(
+                                  "$stipend ",
+                                  style: TextStyle(
+                                    color: appColors.mainTextColor,
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: dimension.font14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                SizedBox(height: dimension.val5),
+                                SizedBox(
+                                  height: dimension.val20,
+                                  child: ElevatedButton(
+                                    onPressed: onTap,
+                                    style: ElevatedButton.styleFrom(
+                                      primary: appColors.maincolor,
+                                      onPrimary: appColors.maincolor,
+                                      elevation: dimension.val5,
+                                      shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                            color: appColors.borderColor,
+                                            width: 1,
+                                            style: BorderStyle.solid),
+                                        borderRadius: BorderRadius.circular(
+                                            dimension.val5),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      'Apply',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: dimension.font12,
+                                        color: appColors.mainTextColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: dimension.val5),
+                          Container(
+                            height: dimension.height80,
+                            width: dimension.width68,
+                            child: Column(
+                              children: [
+                                Icon(Icons.location_on_outlined,
+                                    size: dimension.val20),
+                                SizedBox(height: dimension.val10),
+                                Text(
+                                  "$location ",
+                                  style: TextStyle(
+                                    color: appColors.mainTextColor,
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: dimension.font14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: dimension.height80,
+                            width: dimension.width68,
+                            child: Column(
+                              children: [
+                                Icon(Icons.access_time_outlined,
+                                    size: dimension.val20),
+                                SizedBox(height: dimension.val10),
+                                Text(
+                                  "$duration ",
+                                  style: TextStyle(
+                                    color: appColors.mainTextColor,
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: dimension.font14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: dimension.height80,
+                            width: dimension.width68,
+                            child: Column(
+                              children: [
+                                Icon(Icons.hourglass_bottom_outlined,
+                                    size: dimension.val20),
+                                SizedBox(height: dimension.val10),
+                                Text(
+                                  "${deadline.substring(5, 10)}",
+                                  style: TextStyle(
+                                    color: appColors.mainTextColor,
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: dimension.font14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: dimension.val10),
+                    ],
+                  ),
+                ],
               ),
             ),
-            SizedBox(width: dimension.val10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: dimension.val5),
-                Text(
-                  "$title",
-                  style: TextStyle(
-                    fontFamily: 'poppins',
-                    fontSize: dimension.font16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                SizedBox(height: dimension.val5),
-                Row(
-                  children: [
-                    Container(
-                      height: dimension.height80,
-                      width: dimension.width68,
-                      child: Column(
-                        children: [
-                          Icon(
-                            Icons.monetization_on_outlined,
-                            size: dimension.val20,
-                          ),
-                          SizedBox(height: dimension.val10),
-                          Text(
-                            "$stipend ",
-                            style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              fontSize: dimension.font14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(height: dimension.val10),
-                          SizedBox(
-                            height: dimension.val20,
-                            child: ElevatedButton(
-                              onPressed: onTap,
-                              child: Text(
-                                'Apply',
-                                style: TextStyle(
-                                  fontSize: dimension.font12,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary:
-                                    const Color.fromARGB(255, 232, 232, 232),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(buttonRadius),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: dimension.val5),
-                    Container(
-                      height: dimension.height80,
-                      width: dimension.width68,
-                      child: Column(
-                        children: [
-                          Icon(Icons.location_on_outlined,
-                              size: dimension.val20),
-                          SizedBox(height: dimension.val10),
-                          Text(
-                            "$location ",
-                            style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              fontSize: dimension.font14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: dimension.height80,
-                      width: dimension.width68,
-                      child: Column(
-                        children: [
-                          Icon(Icons.access_time_outlined,
-                              size: dimension.val20),
-                          SizedBox(height: dimension.val10),
-                          Text(
-                            "$duration ",
-                            style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              fontSize: dimension.font14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: dimension.height80,
-                      width: dimension.width68,
-                      child: Column(
-                        children: [
-                          Icon(Icons.calendar_today_outlined,
-                              size: dimension.val20),
-                          SizedBox(height: dimension.val10),
-                          Text(
-                            "$applyBy ",
-                            style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              fontSize: dimension.font14,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: dimension.val10),
-              ],
-            ),
-          ],
+          ),
         ),
       ),
     );

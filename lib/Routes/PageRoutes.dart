@@ -23,6 +23,7 @@ import 'package:codebooter_study_app/Client/Screens/help.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
+import 'package:codebooter_study_app/Client/home/JobInternshipScreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -72,7 +73,7 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'help',
               builder: (BuildContext context, GoRouterState state) =>
-              const Help(),
+                  const Help(),
             ),
             GoRoute(
               path: 'dsa',
@@ -200,7 +201,7 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'jobinternship',
               builder: (BuildContext context, GoRouterState state) =>
-                  const JobInternships(),
+                  const JobInternshipScreen(),
             ),
 
             GoRoute(

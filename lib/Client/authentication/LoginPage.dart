@@ -43,7 +43,7 @@ class LoginPage extends StatelessWidget {
                 const Text(
                   'Welcome to CodeBooter 👋 🚀',
                   style: TextStyle(
-                    color: appColors.greycolor,
+                    color: Color.fromARGB(255, 0, 0, 0),
                     fontFamily: 'Poppins',
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
                   textAlign: TextAlign.left,
                   text: TextSpan(
                     style: TextStyle(
-                      color: appColors.maincolor,
+                      color: const Color.fromARGB(255, 0, 0, 0),
                       fontFamily: 'Poppins',
                       fontSize: dimension.font16,
                       fontWeight: FontWeight.w400,
@@ -86,7 +86,7 @@ class LoginPage extends StatelessWidget {
                     height: dimension.val40,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: appColors.maincolor,
+                        color: Color.fromARGB(255, 62, 62, 62),
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(5),
@@ -104,7 +104,7 @@ class LoginPage extends StatelessWidget {
                         Text(
                           'Continue with Google',
                           style: TextStyle(
-                            color: appColors.strokeColor,
+                            color: Color.fromARGB(219, 0, 0, 0),
                             fontFamily: 'Poppins',
                             fontSize: dimension.font14,
                             fontWeight: FontWeight.w600,
@@ -126,7 +126,7 @@ class LoginPage extends StatelessWidget {
                     height: dimension.val40,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: appColors.maincolor,
+                        color: Color.fromARGB(255, 48, 48, 48),
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(5),
@@ -144,7 +144,7 @@ class LoginPage extends StatelessWidget {
                         Text(
                           'Continue with GitHub',
                           style: TextStyle(
-                            color: appColors.strokeColor,
+                            color: const Color.fromARGB(219, 0, 0, 0),
                             fontFamily: 'Poppins',
                             fontSize: dimension.font14,
                             fontWeight: FontWeight.w600,
@@ -164,7 +164,7 @@ class LoginPage extends StatelessWidget {
                   child: Text(
                     "Are you an admin? Login here",
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 53, 53, 53),
+                      color: Color.fromARGB(255, 32, 32, 32),
                       fontFamily: 'Poppins',
                       fontSize: dimension.font12,
                       fontWeight: FontWeight.w400,

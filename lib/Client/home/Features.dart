@@ -14,13 +14,13 @@ class Features extends StatefulWidget {
 }
 
 class _FeaturesState extends State<Features> {
-  final double imageHeight = dimension.height85;
-  final double imageWidth = dimension.width180;
-  final double containerWidth = dimension.width180;
-  final double containerHeight = dimension.height130;
+  final double imageHeight = dimension.height180;
+  final double imageWidth = dimension.width170;
+  final double containerWidth = dimension.width170;
+  final double containerHeight = dimension.height185;
   final double borderRadius = dimension.val5;
-  final double spacing = dimension.val15;
-  final double runSpacing = dimension.val15;
+  final double spacing = dimension.val25;
+  final double runSpacing = dimension.val25;
   final Duration tapDelay = Duration(milliseconds: 200);
 
   @override
@@ -33,34 +33,27 @@ class _FeaturesState extends State<Features> {
           bigText(
             text: 'Features',
             size: dimension.font24,
+            color: appColors.mainTextColor,
           ),
-          SizedBox(height: dimension.val20),
+          SizedBox(height: dimension.val10),
           Wrap(
             spacing: spacing,
             runSpacing: runSpacing,
             children: [
               _buildFeatureContainer(
-                imageAsset: 'assets/images/dsa.jpg',
-                title: 'DSA',
-                subtitle: 'Complete DSA',
+                imageAsset: 'https://i.imgur.com/hVwC04e.png',
                 onTap: () => _navigateTo('/dsa'),
               ),
               _buildFeatureContainer(
-                imageAsset: 'assets/images/playlist1.png',
-                title: 'Full Stack Course',
-                subtitle: 'Free and verified course',
+                imageAsset: 'https://i.imgur.com/UlQacov.png',
                 onTap: () => _navigateTo('/courses'),
               ),
               _buildFeatureContainer(
-                imageAsset: 'assets/images/interview.png',
-                title: 'Interview Gems',
-                subtitle: 'TnP verified Interview preparation',
+                imageAsset: 'https://i.imgur.com/MLjoIQM.png',
                 onTap: () => _navigateTo('/interview'),
               ),
               _buildFeatureContainer(
-                imageAsset: 'assets/images/shivani.png',
-                title: 'Examination notes',
-                subtitle: 'University and college notes',
+                imageAsset: 'https://i.imgur.com/uZ2Yw1f.png',
                 onTap: () => _navigateTo('/notes'),
               ),
             ],
@@ -72,8 +65,6 @@ class _FeaturesState extends State<Features> {
 
   Widget _buildFeatureContainer({
     required String imageAsset,
-    required String title,
-    required String subtitle,
     required VoidCallback onTap,
   }) {
     return InkWell(
@@ -106,21 +97,12 @@ class _FeaturesState extends State<Features> {
                 width: imageWidth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(imageAsset),
+                    image: NetworkImage(imageAsset),
                     fit: BoxFit.fill,
                   ),
                   borderRadius: BorderRadius.circular(borderRadius),
                   color: appColors.maincolor,
                 ),
-              ),
-              bigText(
-                text: title,
-                size: dimension.font16,
-                overFlow: TextOverflow.ellipsis,
-              ),
-              smallText(
-                text: subtitle,
-                overFlow: TextOverflow.ellipsis,
               ),
             ],
           ),
