@@ -78,7 +78,7 @@ class AnimatedDrawer extends StatelessWidget {
                             fontSize: dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
-                      context.go('/home');
+                      context.go('/homepage');
                     },
                   ),
                   ListTile(
@@ -92,7 +92,7 @@ class AnimatedDrawer extends StatelessWidget {
                             fontSize: dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
-                      context.go('/home');
+                      context.go('/courses');
                     },
                   ),
                   ListTile(
@@ -106,7 +106,7 @@ class AnimatedDrawer extends StatelessWidget {
                             fontSize: dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
-                      context.go('/home');
+                      context.go('/jobinternship');
                     },
                   ),
                   ListTile(
@@ -120,7 +120,7 @@ class AnimatedDrawer extends StatelessWidget {
                             fontSize: dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
-                      context.go('/home');
+                      context.go('/notes');
                     },
                   ),
                   ListTile(
@@ -134,23 +134,7 @@ class AnimatedDrawer extends StatelessWidget {
                             fontSize: dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
-                      context.go('/home');
-                    },
-                  ),
-                  ListTile(
-                    //icon for blog
-
-                    leading: Icon(
-                      Icons.article_outlined,
-                      size: dimension.val25,
-                    ),
-                    horizontalTitleGap: dimension.val2,
-                    title: Text('Blog',
-                        style: TextStyle(
-                            fontSize: dimension.font16,
-                            fontWeight: FontWeight.w400)),
-                    onTap: () {
-                      context.go('/home');
+                      context.go('/interview');
                     },
                   ),
                   //divider
@@ -167,12 +151,12 @@ class AnimatedDrawer extends StatelessWidget {
                       size: dimension.val25,
                     ),
                     horizontalTitleGap: dimension.val2,
-                    title: Text('help',
+                    title: Text('Help',
                         style: TextStyle(
                             fontSize: dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
-                      context.go('/home');
+                      context.go('/help');
                     },
                   ),
 
@@ -185,6 +169,7 @@ class AnimatedDrawer extends StatelessWidget {
                       _authService.signOut(context);
                       context.go('/');
                     },
+
                     style: ElevatedButton.styleFrom(
                       primary: const Color.fromARGB(255, 250, 250, 250),
                       onPrimary: Colors.white,
@@ -197,6 +182,7 @@ class AnimatedDrawer extends StatelessWidget {
                         borderRadius: BorderRadius.circular(32.0),
                       ),
                     ),
+
                     child: Text(
                       'Sign Out',
                       style: TextStyle(

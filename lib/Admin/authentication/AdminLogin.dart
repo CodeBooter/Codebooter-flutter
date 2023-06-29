@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
@@ -46,7 +47,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   const Text(
                     'Welcome to CodeBooter 👋 🚀',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 53, 53, 53),
+                      color: appColors.shadowColor,
                       fontFamily: 'Poppins',
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
@@ -56,7 +57,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   const Text.rich(
                     TextSpan(
                       style: TextStyle(
-                        color: Color.fromARGB(255, 53, 53, 53),
+                        color: appColors.greycolor,
                         fontFamily: 'Poppins',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -124,7 +125,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   const Text(
                     'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 107, 106, 106),
+                      color: appColors.greycolor,
                       fontFamily: 'calibri',
                       fontSize: 10,
                       fontWeight: FontWeight.w400,

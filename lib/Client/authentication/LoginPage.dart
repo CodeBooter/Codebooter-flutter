@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
@@ -42,7 +43,7 @@ class LoginPage extends StatelessWidget {
                 const Text(
                   'Welcome to CodeBooter 👋 🚀',
                   style: TextStyle(
-                    color: Color.fromARGB(255, 53, 53, 53),
+                    color: appColors.greycolor,
                     fontFamily: 'Poppins',
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
@@ -53,7 +54,7 @@ class LoginPage extends StatelessWidget {
                   textAlign: TextAlign.left,
                   text: TextSpan(
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 53, 53, 53),
+                      color: appColors.maincolor,
                       fontFamily: 'Poppins',
                       fontSize: dimension.font16,
                       fontWeight: FontWeight.w400,
@@ -85,7 +86,7 @@ class LoginPage extends StatelessWidget {
                     height: dimension.val40,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: const Color.fromARGB(255, 212, 211, 211),
+                        color: appColors.maincolor,
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(5),
@@ -103,7 +104,7 @@ class LoginPage extends StatelessWidget {
                         Text(
                           'Continue with Google',
                           style: TextStyle(
-                            color: const Color.fromARGB(255, 53, 53, 53),
+                            color: appColors.strokeColor,
                             fontFamily: 'Poppins',
                             fontSize: dimension.font14,
                             fontWeight: FontWeight.w600,
@@ -125,7 +126,7 @@ class LoginPage extends StatelessWidget {
                     height: dimension.val40,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: const Color.fromARGB(255, 212, 211, 211),
+                        color: appColors.maincolor,
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(5),
@@ -143,7 +144,7 @@ class LoginPage extends StatelessWidget {
                         Text(
                           'Continue with GitHub',
                           style: TextStyle(
-                            color: const Color.fromARGB(255, 53, 53, 53),
+                            color: appColors.strokeColor,
                             fontFamily: 'Poppins',
                             fontSize: dimension.font14,
                             fontWeight: FontWeight.w600,

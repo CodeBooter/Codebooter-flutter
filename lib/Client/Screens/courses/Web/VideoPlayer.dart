@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -106,14 +107,14 @@ class _VideoScreenState extends State<VideoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          iconTheme: IconThemeData(color: const Color.fromARGB(255, 0, 0, 0)),
+          iconTheme: IconThemeData(color: appColors.blackcolor),
           centerTitle: true,
-          backgroundColor: Colors.white,
+          backgroundColor: appColors.maincolor,
           title: Text(
             _videoTitle,
             style: TextStyle(
               overflow: TextOverflow.clip,
-              color: Colors.black,
+              color: appColors.blackcolor,
               fontSize: dimension.font18,
               fontWeight: FontWeight.w500,
             ),
