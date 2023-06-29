@@ -25,96 +25,343 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          iconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+          toolbarHeight: dimension.val70,
+          centerTitle: true,
+          title: bigText(
+            text: "Exam Notes",
+          ),
         ),
-        toolbarHeight: dimension.val70,
-        centerTitle: true,
-        title: bigText(
-          text: "Exam Notes",
-        ),
-      ),
-      body: SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-                left: dimension.width25, right: dimension.width25),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(dimension.val20),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    bigText(
-                      text: 'First Year',
-                      size: dimension.font20,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Swipe',
-                          style: TextStyle(
-                              fontSize: dimension.font20,
-                              fontWeight: FontWeight.w400),
-                        ),
-                        Icon(
-                          Icons.keyboard_double_arrow_right_outlined,
-                          size: dimension.val30,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(height: dimension.val20),
-                SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Wrap(
-                        spacing: spacing,
-                        runSpacing: runSpacing,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildFeatureContainer(
-                            imageAsset:
-                                'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
-                            onTap: () => _navigateTo('/notes/chemistry'),
+                          bigText(
+                            text: 'First Year',
+                            size: dimension.font20,
                           ),
-                          _buildFeatureContainer(
-                            imageAsset: 'https://i.imgur.com/latY3gT.jpeg',
-                            onTap: () => _navigateTo('/notes/mathematics1'),
+                          Row(
+                            children: [
+                              Text(
+                                'Swipe',
+                                style: TextStyle(
+                                    fontSize: dimension.font20,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              Icon(
+                                Icons.keyboard_double_arrow_right_outlined,
+                                size: dimension.val30,
+                              ),
+                            ],
                           ),
-                          _buildFeatureContainer(
-                            imageAsset:
-                                'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
-                            onTap: () => _navigateTo('/notes/chemistry'),
+                        ],
+                      ),
+                      SizedBox(height: dimension.val5),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Wrap(
+                                spacing: spacing,
+                                runSpacing: runSpacing,
+                                children: [
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.imgur.com/latY3gT.jpeg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/mathematics1'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  SizedBox(height: dimension.val20),
+                                ])
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: dimension.val25),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          bigText(
+                            text: 'Second Year',
+                            size: dimension.font20,
                           ),
-                          _buildFeatureContainer(
-                            imageAsset:
-                                'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
-                            onTap: () => _navigateTo('/notes/chemistry'),
+                          Row(
+                            children: [
+                              Text(
+                                'Swipe',
+                                style: TextStyle(
+                                    fontSize: dimension.font20,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              Icon(
+                                Icons.keyboard_double_arrow_right_outlined,
+                                size: dimension.val30,
+                              ),
+                            ],
                           ),
-                          _buildFeatureContainer(
-                            imageAsset:
-                                'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
-                            onTap: () => _navigateTo('/notes/chemistry'),
+                        ],
+                      ),
+                      SizedBox(height: dimension.val5),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Wrap(
+                                spacing: spacing,
+                                runSpacing: runSpacing,
+                                children: [
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.imgur.com/latY3gT.jpeg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/mathematics1'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  SizedBox(height: dimension.val20),
+                                ])
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: dimension.val25),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          bigText(
+                            text: 'Third Year',
+                            size: dimension.font20,
                           ),
-                          _buildFeatureContainer(
-                            imageAsset:
-                                'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
-                            onTap: () => _navigateTo('/notes/chemistry'),
+                          Row(
+                            children: [
+                              Text(
+                                'Swipe',
+                                style: TextStyle(
+                                    fontSize: dimension.font20,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              Icon(
+                                Icons.keyboard_double_arrow_right_outlined,
+                                size: dimension.val30,
+                              ),
+                            ],
                           ),
-                          SizedBox(height: dimension.val20),
-                        ])),
-              ],
-            ),
-          )
-        ],
-      )),
-    );
+                        ],
+                      ),
+                      SizedBox(height: dimension.val5),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Wrap(
+                                spacing: spacing,
+                                runSpacing: runSpacing,
+                                children: [
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.imgur.com/latY3gT.jpeg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/mathematics1'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  SizedBox(height: dimension.val20),
+                                ])
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: dimension.val25),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          bigText(
+                            text: 'Fourth Year',
+                            size: dimension.font20,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Swipe',
+                                style: TextStyle(
+                                    fontSize: dimension.font20,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              Icon(
+                                Icons.keyboard_double_arrow_right_outlined,
+                                size: dimension.val30,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: dimension.val5),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Wrap(
+                                spacing: spacing,
+                                runSpacing: runSpacing,
+                                children: [
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.imgur.com/latY3gT.jpeg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/mathematics1'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/chemistry'),
+                                  ),
+                                  SizedBox(height: dimension.val20),
+                                ])
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ]),
+          ),
+        ));
   }
 
   Widget _buildFeatureContainer({
