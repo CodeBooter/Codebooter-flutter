@@ -47,7 +47,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   const Text(
                     'Welcome to CodeBooter 👋 🚀',
                     style: TextStyle(
-                      color: appColors.shadowColor,
+                      color: AppColors.shadowColor,
                       fontFamily: 'Poppins',
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
@@ -57,7 +57,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   const Text.rich(
                     TextSpan(
                       style: TextStyle(
-                        color: appColors.greycolor,
+                        color: AppColors.shadowColor,
                         fontFamily: 'Poppins',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -125,7 +125,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   const Text(
                     'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                     style: TextStyle(
-                      color: appColors.greycolor,
+                      color: AppColors.shadowColor,
                       fontFamily: 'calibri',
                       fontSize: 10,
                       fontWeight: FontWeight.w400,

@@ -1,8 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+
+import '../../../utils/Colors.dart';
 
 class CourseScreen extends StatefulWidget {
   const CourseScreen({Key? key}) : super(key: key);
@@ -23,18 +27,24 @@ class _CourseScreenState extends State<CourseScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-        toolbarHeight: dimension.val70,
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
         centerTitle: true,
         title: bigText(
-          text: "Full Stack Courses",
+          text: "Courses",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: SingleChildScrollView(
@@ -46,12 +56,16 @@ class _CourseScreenState extends State<CourseScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: dimension.val10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       bigText(
                         text: 'Programming Languages',
                         size: dimension.font18,
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
                       ),
                       Row(
                         children: [
@@ -124,6 +138,9 @@ class _CourseScreenState extends State<CourseScreen> {
                       bigText(
                         text: 'Cyber Security & Ethical Hacking',
                         size: dimension.font18,
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
                       ),
                       Row(
                         children: [
@@ -196,6 +213,9 @@ class _CourseScreenState extends State<CourseScreen> {
                       bigText(
                         text: 'AI/ML/DS & Python',
                         size: dimension.font18,
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
                       ),
                       Row(
                         children: [
@@ -267,6 +287,9 @@ class _CourseScreenState extends State<CourseScreen> {
                       bigText(
                         text: 'Web Development',
                         size: dimension.font18,
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
                       ),
                       Row(
                         children: [
@@ -292,8 +315,9 @@ class _CourseScreenState extends State<CourseScreen> {
                       runSpacing: runSpacing,
                       children: [
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/originals/39/bc/07/39bc075f675821e60d06ac42cb125ffb.png',
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/1Ip31wl.png"
+                              : "https://i.imgur.com/GThFukt.png",
                           onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
@@ -339,6 +363,9 @@ class _CourseScreenState extends State<CourseScreen> {
                       bigText(
                         text: 'Android Development',
                         size: dimension.font18,
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
                       ),
                       Row(
                         children: [
@@ -409,6 +436,9 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       bigText(
                         text: 'Core concepts',
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
                         size: dimension.font18,
                       ),
                       Row(
@@ -480,6 +510,7 @@ class _CourseScreenState extends State<CourseScreen> {
     required String imageAsset,
     required VoidCallback onTap,
   }) {
+    final appState = Provider.of<AppState>(context);
     return InkWell(
       onTap: () {
         Future.delayed(tapDelay, onTap);
@@ -490,11 +521,13 @@ class _CourseScreenState extends State<CourseScreen> {
         height: containerHeight,
         child: Ink(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: appState.isDarkMode
+                ? AppColors.primaryColor
+                : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: AppColors.shadowColor,
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: Offset(0, 3), // changes position of shadow
@@ -516,10 +549,12 @@ class _CourseScreenState extends State<CourseScreen> {
                       fit: BoxFit.fill,
                     ),
                     borderRadius: BorderRadius.circular(borderRadius),
-                    color: const Color.fromARGB(255, 209, 209, 209),
+                    color: appState.isDarkMode
+                        ? AppColors.primaryColor
+                        : AppColors.lightModePrimary,
                   ),
                 ),
-                placeholder: (context, url) => CircularProgressIndicator(),
+                // placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ],
