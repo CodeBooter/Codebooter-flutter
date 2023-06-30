@@ -1,4 +1,4 @@
-import 'package:codebooter_study_app/Client/Screens/courses/Web/VideoPlayer.dart';
+import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/Routes/PageRoutes.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
