@@ -37,9 +37,13 @@ class AnimatedDrawer extends StatelessWidget {
                           height: dimension.val60,
                         ),
                         ClipOval(
-                          child: Image.asset(
-                            'assets/images/logo.png',
-                            height: dimension.height115,
+                          child: Image(
+                            image: NetworkImage(_authService.getUserImage() ??
+                                "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"),
+                            height: dimension.height100,
+                            width: dimension.width105,
+                            fit: BoxFit
+                                .cover, // Ensure the image covers the circular area
                           ),
                         ),
                         SizedBox(
@@ -169,7 +173,6 @@ class AnimatedDrawer extends StatelessWidget {
                       _authService.signOut(context);
                       context.go('/');
                     },
-
                     style: ElevatedButton.styleFrom(
                       primary: const Color.fromARGB(255, 250, 250, 250),
                       onPrimary: Colors.white,
@@ -182,7 +185,6 @@ class AnimatedDrawer extends StatelessWidget {
                         borderRadius: BorderRadius.circular(32.0),
                       ),
                     ),
-
                     child: Text(
                       'Sign Out',
                       style: TextStyle(
