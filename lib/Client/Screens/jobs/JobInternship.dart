@@ -187,6 +187,7 @@ class _JobInternshipsState extends State<JobInternships> {
                                   child: ElevatedButton(
                                     onPressed: onTap,
                                     style: ElevatedButton.styleFrom(
+
                                       primary: appState.isDarkMode
                                           ? AppColors.primaryColor
                                           : AppColors.lightModePrimary,
@@ -204,18 +205,19 @@ class _JobInternshipsState extends State<JobInternships> {
                                       ),
                                     ),
                                     child: Text(
-                                      'Apply',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: dimension.font12,
-                                        color: appState.isDarkMode
-                                            ? AppColors.mainTextColor
-                                            : const Color.fromARGB(
-                                                255, 0, 0, 0),
+                                        'Apply',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: dimension.val10,
+                                          color: appState.isDarkMode
+                                              ? AppColors.mainTextColor
+                                              : const Color.fromARGB(
+                                                  255, 0, 0, 0),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
+
                               ],
                             ),
                           ),
