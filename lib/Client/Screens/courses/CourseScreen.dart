@@ -17,8 +17,8 @@ class CourseScreen extends StatefulWidget {
 
 class _CourseScreenState extends State<CourseScreen> {
   final double imageHeight = dimension.height90;
-  final double imageWidth = dimension.width90;
-  final double containerWidth = dimension.width92;
+  final double imageWidth = dimension.width100;
+  final double containerWidth = dimension.width100;
   final double containerHeight = dimension.height92;
   final double borderRadius = dimension.val5;
   final double spacing = dimension.val30;
@@ -91,33 +91,41 @@ class _CourseScreenState extends State<CourseScreen> {
                       runSpacing: runSpacing,
                       children: [
                         _buildFeatureContainer(
+                          // C
+
+                          imageAsset: 'https://i.imgur.com/0MJHztR.png',
+                            onTap: () => _navigateTo('/courses/basicwebdev')
+                        ),
+                        _buildFeatureContainer(
+                          //c++
                           imageAsset:
-                              'https://i.pinimg.com/originals/39/bc/07/39bc075f675821e60d06ac42cb125ffb.png',
+                              'https://i.imgur.com/Rmw00BF.png',
+                          onTap: () => _navigateTo('/courses/javascript'),
+                        ),
+                        _buildFeatureContainer(
+                          // java
+                          imageAsset:
+                              'https://i.imgur.com/a8bEmNa.png',
+                          onTap: () => _navigateTo('/courses/mernstack'),
+                        ),
+                        _buildFeatureContainer(
+                          // python
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/NNrSkna.png"
+                              : "https://i.imgur.com/nZfIpGq.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          // go
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/0P3aNqN.png"
+                              : "https://i.imgur.com/35AviEe.png",
                           onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
                           imageAsset:
-                              'https://i.pinimg.com/564x/0c/92/16/0c92162e83308b464eabf33f9b1c41b8.jpg',
-                          onTap: () => _navigateTo('/courses/javascript'),
-                        ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/courses/mernstack'),
-                        ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/d4/84/55/d48455bcb05c3061de03c2be7f27c48c.jpg',
-                          onTap: () => _navigateTo('/courses/mernproject'),
-                        ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
-                        ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                              //typescript
+                              'https://i.imgur.com/wd3NbjV.png',
                           onTap: () => _navigateTo('/basicwebdev'),
                         ),
                       ],
@@ -166,35 +174,40 @@ class _CourseScreenState extends State<CourseScreen> {
                       runSpacing: runSpacing,
                       children: [
                         _buildFeatureContainer(
+                          //kali
                           imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
+                              'https://i.imgur.com/DSmu89K.png',
                           onTap: () => _navigateTo('/dsa'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // cyber security
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/6XrlmlN.png"
+                              : "https://i.imgur.com/3dgawDo.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // info gathering
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/r7CQKHx.png"
+                              : "https://i.imgur.com/AtHKHOK.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // CCNA
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/wm3jxlu.png"
+                              : "https://i.imgur.com/FkFLCaT.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // network security
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/RZF2b7h.png"
+                              : "https://i.imgur.com/BSv6qzL.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
-                        ),
+
                       ],
                     ),
                   ),
@@ -240,34 +253,46 @@ class _CourseScreenState extends State<CourseScreen> {
                       spacing: spacing,
                       children: [
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // machine learning
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/MNjeZQ3.png"
+                              : "https://i.imgur.com/mJ5N0KN.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // artificial intelligence
+                            imageAsset: appState.isDarkMode
+                                ? "https://i.imgur.com/zzpBGm6.png"
+                                : "https://i.imgur.com/HTIopm8.png",
+                            onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // deep learning
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/CPdKqdb.png"
+                              : "https://i.imgur.com/mdIajrE.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // basic
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/i2ttYut.png"
+                              : "https://i.imgur.com/yiEDQfY.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // data science
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/350fUz4.png"
+                              : "https://i.imgur.com/fLdB7Ca.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // project
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/dD7jVdP.png"
+                              : "https://i.imgur.com/ymXnkOI.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
                       ],
                     ),
@@ -336,14 +361,25 @@ class _CourseScreenState extends State<CourseScreen> {
                           onTap: () => _navigateTo('/courses/mernproject'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // React
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/tWYDndX.png"
+                              : "https://i.imgur.com/ykbNj29.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          //  Angular
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/UBHe9fb.png"
+                              : "https://i.imgur.com/HwljCot.png",
+                          onTap: () => _navigateTo('/courses/angular'),
+                        ),
+                        _buildFeatureContainer(
+                          //  Node
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/oZNOTZo.png"
+                              : "https://i.imgur.com/yLH0B6j.png",
+                          onTap: () => _navigateTo('/courses/node'),
                         ),
                       ],
                     ),
@@ -361,7 +397,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       bigText(
-                        text: 'Android Development',
+                        text: 'Application Development',
                         size: dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
@@ -390,35 +426,33 @@ class _CourseScreenState extends State<CourseScreen> {
                       spacing: spacing,
                       children: [
                         _buildFeatureContainer(
+                          // java
                           imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
+                              'https://i.imgur.com/WYCnqoD.png',
                           onTap: () => _navigateTo('/basicwebdev'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          //flutter
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/nGpY6aF.png"
+                              : "https://i.imgur.com/4pABgqQ.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // react native
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/RFIHxQ5.png"
+                              : "https://i.imgur.com/liye8uO.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // firebase
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/YTDu9Wb.png"
+                              : "https://i.imgur.com/HIU0kNl.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
-                        ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
-                        ),
+
                       ],
                     ),
                   ),
@@ -464,34 +498,40 @@ class _CourseScreenState extends State<CourseScreen> {
                       spacing: spacing,
                       children: [
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // computer networks
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/npJqp9J.png"
+                              : "https://i.imgur.com/dBG8Scr.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // operating system
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/wpG8va6.png"
+                              : "https://i.imgur.com/9oaWPpu.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/7c/9e/03/7c9e0391a1f364502d7c8b962657d031.jpg',
-                          onTap: () => _navigateTo('/dsa'),
+                          // DBMS
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/2TEeMxj.png"
+                              : "https://i.imgur.com/UpmpoIR.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // compiler design
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/Xo7sH9V.png"
+                              : "https://i.imgur.com/BlSc20T.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
+
                         _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
-                        ),
-                        _buildFeatureContainer(
-                          imageAsset:
-                              'https://i.pinimg.com/564x/84/9b/48/849b48172509031cb4a4ad223cbc8ebc.jpg',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          // theory of computation
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/IRAKwtr.png"
+                              : "https://i.imgur.com/mgBo1bM.png",
+                          onTap: () => _navigateTo('/courses/react'),
                         ),
                       ],
                     ),
