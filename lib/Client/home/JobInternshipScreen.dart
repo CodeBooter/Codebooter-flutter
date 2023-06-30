@@ -27,7 +27,8 @@ class _DsaScreenState extends State<JobInternshipScreen> {
           text: "Jobs & Internships",
         ),
       ),
-      body: JobInternships(),
+      body: Padding(
+          padding: EdgeInsets.all(dimension.font12), child: JobInternships()),
     );
   }
 }

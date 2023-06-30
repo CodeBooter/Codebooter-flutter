@@ -1,3 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:codebooter_study_app/Client/home/HomeScreen.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +8,7 @@ import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class Features extends StatefulWidget {
   const Features({Key? key}) : super(key: key);
@@ -25,6 +29,8 @@ class _FeaturesState extends State<Features> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+    bool isDarkMode = AppColors.isDarkMode;
     return Padding(
       padding: const EdgeInsets.only(left: 2, right: 2),
       child: Column(
@@ -33,7 +39,7 @@ class _FeaturesState extends State<Features> {
           bigText(
             text: 'Features',
             size: dimension.font24,
-            color: appColors.mainTextColor,
+            color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
           SizedBox(height: dimension.val10),
           Wrap(
@@ -41,19 +47,27 @@ class _FeaturesState extends State<Features> {
             runSpacing: runSpacing,
             children: [
               _buildFeatureContainer(
-                imageAsset: 'https://i.imgur.com/hVwC04e.png',
+                imageAsset: appState.isDarkMode
+                    ? 'https://i.imgur.com/O0AYLFY.png'
+                    : 'https://i.imgur.com/ZM3HoSa.png',
                 onTap: () => _navigateTo('/dsa'),
               ),
               _buildFeatureContainer(
-                imageAsset: 'https://i.imgur.com/UlQacov.png',
+                imageAsset: appState.isDarkMode
+                    ? 'https://i.imgur.com/psroZPx.png'
+                    : 'https://i.imgur.com/chVM8es.png',
                 onTap: () => _navigateTo('/courses'),
               ),
               _buildFeatureContainer(
-                imageAsset: 'https://i.imgur.com/MLjoIQM.png',
+                imageAsset: appState.isDarkMode
+                    ? 'https://i.imgur.com/tsmGrpX.png'
+                    : 'https://i.imgur.com/Ijyh2AC.png',
                 onTap: () => _navigateTo('/interview'),
               ),
               _buildFeatureContainer(
-                imageAsset: 'https://i.imgur.com/uZ2Yw1f.png',
+                imageAsset: appState.isDarkMode
+                    ? 'https://i.imgur.com/ThdpOTH.png'
+                    : 'https://i.imgur.com/eFqgEZp.png',
                 onTap: () => _navigateTo('/notes'),
               ),
             ],
@@ -67,6 +81,7 @@ class _FeaturesState extends State<Features> {
     required String imageAsset,
     required VoidCallback onTap,
   }) {
+    final appState = Provider.of<AppState>(context);
     return InkWell(
       onTap: () {
         Future.delayed(tapDelay, onTap);
@@ -77,14 +92,18 @@ class _FeaturesState extends State<Features> {
         height: containerHeight,
         child: Ink(
           decoration: BoxDecoration(
-            color: appColors.maincolor,
+            color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(0, 3), // changes position of shadow
+                color: AppColors.shadowColor,
+
+                spreadRadius: 1,
+                blurRadius: 2,
+                offset: Offset(
+                  2,
+                  5,
+                ), // changes position of shadow
               ),
             ],
           ),
@@ -92,17 +111,24 @@ class _FeaturesState extends State<Features> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: dimension.val2),
-              Container(
-                height: imageHeight,
-                width: imageWidth,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(imageAsset),
-                    fit: BoxFit.fill,
+              CachedNetworkImage(
+                imageUrl: imageAsset,
+                imageBuilder: (context, imageProvider) => Container(
+                  height: imageHeight,
+                  width: imageWidth,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.fill,
+                    ),
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    color: appState.isDarkMode
+                        ? AppColors.primaryColor
+                        : AppColors.lightModePrimary,
                   ),
-                  borderRadius: BorderRadius.circular(borderRadius),
-                  color: appColors.maincolor,
                 ),
+                // placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ],
           ),

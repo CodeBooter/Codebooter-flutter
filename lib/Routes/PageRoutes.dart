@@ -1,6 +1,7 @@
 import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/home/PostJob.dart';
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ChemistryNotes.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/EngineeringMaths1.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
@@ -24,7 +25,7 @@ import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
 import 'package:codebooter_study_app/Client/home/JobInternshipScreen.dart';
-
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -50,7 +51,12 @@ class App extends StatelessWidget {
     ]);
 
     return MaterialApp.router(
-        color: Colors.transparent,
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+        themeMode: Provider.of<AppState>(context).isDarkMode
+            ? ThemeMode.dark
+            : ThemeMode.light,
+        color: Color.fromARGB(255, 255, 253, 253),
         routerDelegate: _router.routerDelegate,
         routeInformationParser: _router.routeInformationParser,
         routeInformationProvider: _router.routeInformationProvider,
@@ -159,7 +165,9 @@ class App extends StatelessWidget {
                   GoRoute(
                     path: 'basicwebdev',
                     builder: (BuildContext context, GoRouterState state) =>
-                        const HtmlCss(),
+                        HtmlCss(
+                      context: context,
+                    ),
                   ),
                   GoRoute(
                     path: 'javascript',

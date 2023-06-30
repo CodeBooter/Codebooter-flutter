@@ -1,11 +1,10 @@
 import 'package:codebooter_study_app/Client/Screens/courses/Web/VideoPlayer.dart';
+import 'package:codebooter_study_app/Routes/PageRoutes.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 
 import '../YoutubeFunction.dart';
-
-
 
 class JavaScript extends StatelessWidget {
   const JavaScript({Key? key}) : super(key: key);
@@ -170,7 +169,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: appColors.maincolor.withOpacity(0.5),
+            color: AppColors.shadowColor,
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0, 3),

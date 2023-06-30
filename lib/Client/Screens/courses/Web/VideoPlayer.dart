@@ -1,9 +1,11 @@
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/YoutubeFunction.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class VideoScreen extends StatefulWidget {
   final String videoId;
@@ -105,16 +107,27 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-          iconTheme: IconThemeData(color: appColors.blackcolor),
+          iconTheme: IconThemeData(
+              color: appState.isDarkMode
+                  ? AppColors.mainTextColor
+                  : AppColors.primaryColor),
           centerTitle: true,
-          backgroundColor: appColors.maincolor,
+          backgroundColor: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
           title: Text(
             _videoTitle,
             style: TextStyle(
               overflow: TextOverflow.clip,
-              color: appColors.blackcolor,
+              color: appState.isDarkMode
+                  ? AppColors.mainTextColor
+                  : AppColors.primaryColor,
               fontSize: dimension.font18,
               fontWeight: FontWeight.w500,
             ),
@@ -161,12 +174,12 @@ class _VideoScreenState extends State<VideoScreen> {
                     children: [
                       ExpansionPanel(
                         headerBuilder: (BuildContext context, bool isExpanded) {
-                          return const Padding(
-                            padding: EdgeInsets.all(16.0),
+                          return Padding(
+                            padding: EdgeInsets.all(dimension.font18),
                             child: Text(
                               'Description',
                               style: TextStyle(
-                                fontSize: 18.0,
+                                fontSize: dimension.font20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
