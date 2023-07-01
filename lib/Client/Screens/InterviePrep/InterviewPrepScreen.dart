@@ -72,7 +72,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? "https://i.imgur.com/wpG8va6.png"
                           : "https://i.imgur.com/9oaWPpu.png",
-                      onTap: () => _navigateTo('/interview'),
+                      onTap: () => _navigateTo('/interview/os'),
                     ),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(
@@ -111,7 +111,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/Vmkv1ma.png'
                           : 'https://i.imgur.com/SAciE64.png',
-                      onTap: () => _navigateTo('/interview'),
+                      onTap: () => _navigateTo('/interview/dbms'),
                     ),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(
@@ -122,7 +122,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/CUX05LH.png'
                           : 'https://i.imgur.com/mMzZwcG.png',
-                      onTap: () => _navigateTo('/interview'),
+                      onTap: () => _navigateTo('/interview/cn'),
                     ),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(
