@@ -11,8 +11,8 @@ class Python extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLu0W_9lII9agwh1XjRt242xIpHhPT2llg';
+    final String channelId = 'CodeWithHarry';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class Python extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Python',
           style: TextStyle(color: Colors.black),
         ),
       ),

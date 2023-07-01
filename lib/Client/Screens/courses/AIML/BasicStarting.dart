@@ -11,8 +11,8 @@ class BasicStarting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLkAvdJp-JK5Pc5H23CzKNFZ2LPsJd12j6';
+    final String channelId = 'CodeBooter';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class BasicStarting extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Basics',
           style: TextStyle(color: Colors.black),
         ),
       ),

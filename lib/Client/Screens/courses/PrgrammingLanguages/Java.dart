@@ -11,8 +11,8 @@ class Java extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLd3UqWTnYXOmx_J1774ukG_rvrpyWczm0';
+    final String channelId = 'DurgaSoftwareSolutions';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class Java extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Java',
           style: TextStyle(color: Colors.black),
         ),
       ),

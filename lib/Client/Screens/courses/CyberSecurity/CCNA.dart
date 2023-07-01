@@ -11,8 +11,8 @@ class CCNA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P';
+    final String channelId = 'NetworkChuck';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class CCNA extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'CCNA',
           style: TextStyle(color: Colors.black),
         ),
       ),

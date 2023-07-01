@@ -11,7 +11,7 @@ class DecentralizedApplication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
+    final String playlistId = 'PLgPmWS2dQHW_8indakJ5MxKAKdVliIatp';
     final String channelId = 'NetNinja';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -20,7 +20,7 @@ class DecentralizedApplication extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Decentralized Application',
           style: TextStyle(color: Colors.black),
         ),
       ),

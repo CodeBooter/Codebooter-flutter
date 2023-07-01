@@ -11,7 +11,7 @@ class IntroToWeb3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
+    final String playlistId = 'PLbbtODcOYIoFs0PDlTdxpEsZiyDR2q9aA';
     final String channelId = 'NetNinja';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -20,7 +20,7 @@ class IntroToWeb3 extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Intro to web 3',
           style: TextStyle(color: Colors.black),
         ),
       ),
