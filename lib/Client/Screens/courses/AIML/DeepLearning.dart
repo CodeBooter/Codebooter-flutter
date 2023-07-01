@@ -11,8 +11,8 @@ class DeepLearning extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI';
+    final String channelId = 'AAmini';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class DeepLearning extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Deep Learning',
           style: TextStyle(color: Colors.black),
         ),
       ),

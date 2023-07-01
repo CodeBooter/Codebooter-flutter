@@ -106,21 +106,21 @@ class _CourseScreenState extends State<CourseScreen> {
                           // java
                           imageAsset:
                               'https://i.imgur.com/a8bEmNa.png',
-                          onTap: () => _navigateTo('/courses/go'),
+                          onTap: () => _navigateTo('/courses/java'),
                         ),
                         _buildFeatureContainer(
                           // python
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/NNrSkna.png"
                               : "https://i.imgur.com/nZfIpGq.png",
-                          onTap: () => _navigateTo('/courses/java'),
+                          onTap: () => _navigateTo('/courses/python'),
                         ),
                         _buildFeatureContainer(
                           // go
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/0P3aNqN.png"
                               : "https://i.imgur.com/35AviEe.png",
-                          onTap: () => _navigateTo('/courses/python'),
+                          onTap: () => _navigateTo('/courses/go'),
                         ),
                         _buildFeatureContainer(
                           imageAsset:
@@ -174,18 +174,19 @@ class _CourseScreenState extends State<CourseScreen> {
                       runSpacing: runSpacing,
                       children: [
                         _buildFeatureContainer(
-                          //kali
-                          imageAsset:
-                              'https://i.imgur.com/DSmu89K.png',
-                          onTap: () => _navigateTo('/courses/kali'),
-                        ),
-                        _buildFeatureContainer(
                           // cyber security
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/6XrlmlN.png"
                               : "https://i.imgur.com/3dgawDo.png",
                           onTap: () => _navigateTo('/courses/cybersecurity'),
                         ),
+                        _buildFeatureContainer(
+                          //kali
+                          imageAsset:
+                              'https://i.imgur.com/DSmu89K.png',
+                          onTap: () => _navigateTo('/courses/kali'),
+                        ),
+
                         _buildFeatureContainer(
                           // info gathering
                           imageAsset: appState.isDarkMode
@@ -253,19 +254,27 @@ class _CourseScreenState extends State<CourseScreen> {
                       spacing: spacing,
                       children: [
                         _buildFeatureContainer(
+                          // basic
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/i2ttYut.png"
+                              : "https://i.imgur.com/yiEDQfY.png",
+                          onTap: () => _navigateTo('/courses/basicstarting'),
+                        ),
+                        _buildFeatureContainer(
+                          // artificial intelligence
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/zzpBGm6.png"
+                              : "https://i.imgur.com/HTIopm8.png",
+                          onTap: () => _navigateTo('/courses/artificialintelligence'),
+                        ),
+                        _buildFeatureContainer(
                           // machine learning
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/MNjeZQ3.png"
                               : "https://i.imgur.com/mJ5N0KN.png",
                           onTap: () => _navigateTo('/courses/machinelearnin'),
                         ),
-                        _buildFeatureContainer(
-                          // artificial intelligence
-                            imageAsset: appState.isDarkMode
-                                ? "https://i.imgur.com/zzpBGm6.png"
-                                : "https://i.imgur.com/HTIopm8.png",
-                            onTap: () => _navigateTo('/courses/artificialintelligence'),
-                        ),
+
                         _buildFeatureContainer(
                           // deep learning
                           imageAsset: appState.isDarkMode
@@ -273,13 +282,7 @@ class _CourseScreenState extends State<CourseScreen> {
                               : "https://i.imgur.com/mdIajrE.png",
                           onTap: () => _navigateTo('/courses/deeplearning'),
                         ),
-                        _buildFeatureContainer(
-                          // basic
-                          imageAsset: appState.isDarkMode
-                              ? "https://i.imgur.com/i2ttYut.png"
-                              : "https://i.imgur.com/yiEDQfY.png",
-                          onTap: () => _navigateTo('/courses/basicstarting'),
-                        ),
+
                         _buildFeatureContainer(
                           // data science
                           imageAsset: appState.isDarkMode

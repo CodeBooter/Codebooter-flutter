@@ -11,8 +11,8 @@ class ArtificialIntelligence extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI';
+    final String channelId = 'edurekaIN';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class ArtificialIntelligence extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Artificial Intelligence',
           style: TextStyle(color: Colors.black),
         ),
       ),

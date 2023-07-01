@@ -11,8 +11,8 @@ class Kali extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLhfrWIlLOoKMe1Ue0IdeULQvEgCgQ3a1B';
+    final String channelId = 'davidbombal';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class Kali extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Kali Linux',
           style: TextStyle(color: Colors.black),
         ),
       ),

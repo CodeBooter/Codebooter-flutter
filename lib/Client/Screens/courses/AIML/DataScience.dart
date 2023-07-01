@@ -11,8 +11,8 @@ class DataScience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLeo1K3hjS3us_ELKYSj_Fth2tIEkdKXvV';
+    final String channelId = 'codebasics';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class DataScience extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Data Science',
           style: TextStyle(color: Colors.black),
         ),
       ),
