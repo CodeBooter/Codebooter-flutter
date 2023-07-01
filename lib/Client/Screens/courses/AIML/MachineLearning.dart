@@ -11,8 +11,8 @@ class MachineLearning extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU';
+    final String channelId = 'stanfordonline';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class MachineLearning extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Machine Learning',
           style: TextStyle(color: Colors.black),
         ),
       ),

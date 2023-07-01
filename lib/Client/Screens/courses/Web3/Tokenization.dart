@@ -11,7 +11,7 @@ class Tokenization extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
+    final String playlistId = 'PLnjh8FWWpVQhZTrsuOcSJzrBn10O1MnQi';
     final String channelId = 'NetNinja';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -20,7 +20,7 @@ class Tokenization extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Tokenization',
           style: TextStyle(color: Colors.black),
         ),
       ),

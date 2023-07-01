@@ -11,7 +11,7 @@ class ComputerNetwork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
+    final String playlistId = 'PLmXKhU9FNesSjFbXSZGF8JF_4LVwwofCd';
     final String channelId = 'NetNinja';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -20,7 +20,7 @@ class ComputerNetwork extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Computer Networks',
           style: TextStyle(color: Colors.black),
         ),
       ),

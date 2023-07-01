@@ -11,8 +11,8 @@ class InformationGathering extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    final String playlistId = 'PLIhvC56v63IJ9SYBtdDsNnORfTNFCXR8_';
+    final String channelId = 'NetworkChuck';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -20,7 +20,7 @@ class InformationGathering extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Information gathering',
           style: TextStyle(color: Colors.black),
         ),
       ),

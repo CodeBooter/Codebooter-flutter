@@ -11,7 +11,7 @@ class TypeScript extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
+    final String playlistId = 'PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI';
     final String channelId = 'NetNinja';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -20,7 +20,7 @@ class TypeScript extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'HTML CSS',
+          'Type Script',
           style: TextStyle(color: Colors.black),
         ),
       ),
