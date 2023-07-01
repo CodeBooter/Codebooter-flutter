@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 //y
@@ -7,10 +8,12 @@ class ClickableVideoContainer extends StatefulWidget {
   final double width;
   final double height;
 
-  ClickableVideoContainer({required this.videoId, this.width = 300, this.height = 150});
+  ClickableVideoContainer(
+      {required this.videoId, this.width = 300, this.height = 150});
 
   @override
-  _ClickableVideoContainerState createState() => _ClickableVideoContainerState();
+  _ClickableVideoContainerState createState() =>
+      _ClickableVideoContainerState();
 }
 
 class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
@@ -50,24 +53,26 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
           ),
         );
       },
-      child: Container(
-        width: widget.width,
-        height: widget.height,
-        child: Stack(
-          children: [
-            Image.network(
-              'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
-              fit: BoxFit.cover,
-            ),
-            Center(
-              child: Icon(
-                Icons.play_circle_fill,
-                size: 50,
-                color: Colors.white,
+      child: Center(
+        child: Stack(children: [
+          Center(
+            child: Container(
+              width: dimension.screenWidth * 0.9,
+              height: dimension.height200,
+              child: Image.network(
+                'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
+          ),
+          Center(
+            child: Icon(
+              Icons.play_circle_outline,
+              size: 50,
+              color: const Color.fromARGB(255, 18, 18, 18),
+            ),
+          )
+        ]),
       ),
     );
   }

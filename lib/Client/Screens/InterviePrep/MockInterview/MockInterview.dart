@@ -9,6 +9,7 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 //p
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 class MockInterview extends StatefulWidget {
   const MockInterview();
 
@@ -52,14 +53,16 @@ class _MockInterviewState extends State<MockInterview> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color:  appState.isDarkMode?Colors.white:Colors.black,
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         centerTitle: true,
-        backgroundColor: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         title: Text(
           'MockInterview Preparation',
           style: TextStyle(
-            color: appState.isDarkMode?Colors.white:Colors.black,
+            color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
         ),
       ),
@@ -69,7 +72,8 @@ class _MockInterviewState extends State<MockInterview> {
           itemBuilder: (context, index) {
             final videoId = videoIds[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0), // Add vertical padding
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 8.0, vertical: 8.0), // Add vertical padding
               child: Container(
                 width: dimension.height80,
                 height: dimension.height230,
@@ -82,7 +86,6 @@ class _MockInterviewState extends State<MockInterview> {
             );
           },
         ),
-
       ),
     );
   }
