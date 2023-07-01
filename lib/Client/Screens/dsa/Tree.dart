@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 
 class Tree extends StatefulWidget {
   const Tree({Key? key}) : super(key: key);
@@ -13,17 +17,24 @@ class Tree extends StatefulWidget {
 class _TreeState extends State<Tree> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Tree',
-          style: TextStyle(
-            fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',
-          ),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Tree",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: SingleChildScrollView(
@@ -74,21 +85,21 @@ class _TreeState extends State<Tree> {
                       title: 'Binary Tree',
                       definition:
                       'A binary tree is a tree in which each node has at most two children, referred to as the left child and the right child. The binary tree is a fundamental data structure that is widely used and serves as the basis for many other tree-based data structures.',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildTreeType(
                       title: 'Binary Search Tree',
                       definition:
                       'A binary search tree (BST) is a binary tree in which the nodes are ordered or sorted. For any given node, all the values in its left subtree are less than its value, and all the values in its right subtree are greater than its value.',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildTreeType(
                       title: 'AVL Tree',
                       definition:
                       ' An AVL (Adelson-Velskii and Landis) tree is a self-balancing binary search tree. It maintains an additional balance factor for each node, which ensures that the heights of the left and right subtrees differ by at most one.AVL trees provide log time complexity for operations. ',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                   ],
                 ),
@@ -196,12 +207,13 @@ void main() {
   Widget _buildTreeType({
     required String title,
     required String definition,
-    required Color color,
+
   }) {
+    final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: color,
+        color: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
@@ -223,7 +235,9 @@ void main() {
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode
+            ? AppColors.lightModePrimary
+                : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -232,7 +246,9 @@ void main() {
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: Colors.black,
+                color: appState.isDarkMode
+                    ? AppColors.lightModePrimary
+                    : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

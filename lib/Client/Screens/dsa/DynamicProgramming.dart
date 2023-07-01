@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 
 
 
@@ -15,23 +19,31 @@ class DynamicProgramming extends StatefulWidget {
 class _DynamicProgrammingState extends State<DynamicProgramming> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Dynamic Programming',
-          style: TextStyle(
-            fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',
-          ),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Dynamic Programming",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: ListView(
         padding: EdgeInsets.all(dimension.val20),
         children: [
           Card(
+            color:  appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
             elevation: 6,
             child: Padding(
               padding: EdgeInsets.all(dimension.val15),
@@ -52,6 +64,7 @@ class _DynamicProgrammingState extends State<DynamicProgramming> {
                     style: TextStyle(
                       fontSize: dimension.font18,
                       fontFamily: 'Georgia',
+                      color:  appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
                     ),
                   ),
                 ],
@@ -60,6 +73,7 @@ class _DynamicProgrammingState extends State<DynamicProgramming> {
           ),
           SizedBox(height: dimension.val25),
           Card(
+            color:  appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
             elevation: 6,
             child: Padding(
               padding: EdgeInsets.all(dimension.val15),
@@ -72,6 +86,7 @@ class _DynamicProgrammingState extends State<DynamicProgramming> {
                       fontSize: dimension.font20,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Georgia',
+                      color:  appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(height: dimension.val10),
@@ -90,6 +105,7 @@ class _DynamicProgrammingState extends State<DynamicProgramming> {
           ),
           SizedBox(height: dimension.val25),
           Card(
+            color:  appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
             elevation: 6,
             child: Padding(
               padding: EdgeInsets.all(dimension.val15),
@@ -102,6 +118,7 @@ class _DynamicProgrammingState extends State<DynamicProgramming> {
                       fontSize: dimension.font20,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Georgia',
+                      color:  appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(height: dimension.val10),

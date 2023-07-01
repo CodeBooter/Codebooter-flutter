@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
 
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 class Stacks extends StatefulWidget {
   const Stacks({Key? key}) : super(key: key);
 
@@ -13,17 +17,24 @@ class Stacks extends StatefulWidget {
 class _StacksState extends State<Stacks> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Stacks',
-          style: TextStyle(
-            fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',
-          ),
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
+      appBar:AppBar(
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Stack",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: SingleChildScrollView(
@@ -74,19 +85,19 @@ class _StacksState extends State<Stacks> {
                     _buildStackType(
                       title: 'Simple Stack',
                       definition: ' A static stack has a fixed size determined at the time of creation. Once the stack is full, it cannot accommodate any more elements until some are removed (popped) from the stack.',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildStackType(
                       title: 'Dynamic Stack',
                       definition: 'Dynamic stack, also known as a resizable stack, can grow or shrink dynamically based on the number of elements it contains. It uses dynamic memory allocation to resize itself.',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildStackType(
                       title: 'Fixed-size Stack',
                       definition: 'n array-based stack is implemented using an array or a similar fixed-size data structure. It maintains a pointer (often called "top") indicating the last inserted element. ',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                   ],
                 ),
@@ -186,12 +197,13 @@ void main() {
   Widget _buildStackType({
     required String title,
     required String definition,
-    required Color color,
+
   }) {
+    final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: color,
+        color: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
@@ -213,7 +225,7 @@ void main() {
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -222,7 +234,7 @@ void main() {
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

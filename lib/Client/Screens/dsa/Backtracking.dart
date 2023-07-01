@@ -2,23 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
 
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 class Backtracking extends StatelessWidget {
   const Backtracking({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Backtracking',
-          style: TextStyle(
-            fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',
-          ),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Backtracking",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: SingleChildScrollView(
@@ -26,17 +37,14 @@ class Backtracking extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Definition',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
+            Padding(
+              padding: EdgeInsets.all(dimension.val5),
+              child: Text(
+                'Definition',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
             ),
@@ -52,17 +60,14 @@ class Backtracking extends StatelessWidget {
               ),
             ),
             SizedBox(height: dimension.val25),
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Key Concepts',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
+            Padding(
+              padding: EdgeInsets.all(dimension.val5),
+              child: Text(
+                'Key Concepts',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
             ),
@@ -81,17 +86,14 @@ class Backtracking extends StatelessWidget {
               ),
             ),
             SizedBox(height: dimension.val25),
-            Card(
-              elevation: 6,
-              child: Padding(
-                padding: EdgeInsets.all(dimension.val5),
-                child: Text(
-                  'Example',
-                  style: TextStyle(
-                    fontSize: dimension.font20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Georgia',
-                  ),
+            Padding(
+              padding: EdgeInsets.all(dimension.val5),
+              child: Text(
+                'Example',
+                style: TextStyle(
+                  fontSize: dimension.font20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
             ),

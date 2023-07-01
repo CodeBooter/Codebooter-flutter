@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 class Trie extends StatefulWidget {
   const Trie({Key? key}) : super(key: key);
 
@@ -11,19 +16,27 @@ class Trie extends StatefulWidget {
 class _TrieState extends State<Trie> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Trie',
-          style: TextStyle(
-            fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',
-          ),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Trie",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
+
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(dimension.val20),
@@ -92,9 +105,9 @@ class _TrieState extends State<Trie> {
                   color: Colors.black38,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black12,
-                      spreadRadius: dimension.val2,
-                      blurRadius: dimension.val5,
+                      color: AppColors.shadowColor,
+                      spreadRadius: 2,
+                      blurRadius: 5,
                       offset: Offset(0, 3), // changes position of shadow
                     ),
                   ],

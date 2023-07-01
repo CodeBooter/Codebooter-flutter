@@ -3,8 +3,11 @@ import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+
+import '../../../utils/Colors.dart';
 
 class ExamNotesScreen extends StatefulWidget {
   const ExamNotesScreen({Key? key}) : super(key: key);
@@ -24,18 +27,24 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
   final Duration tapDelay = Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          iconTheme: const IconThemeData(
-            color: Colors.black,
-          ),
-          toolbarHeight: dimension.val70,
+          iconTheme: IconThemeData(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
+          backgroundColor: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
+          elevation: 4,
           centerTitle: true,
           title: bigText(
             text: "Exam Notes",
+            color: appState.isDarkMode
+                ? AppColors.mainTextColor
+                : const Color.fromARGB(255, 0, 0, 0),
           ),
         ),
         body: SingleChildScrollView(
@@ -52,6 +61,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'First Year',
                             size: dimension.font20,
+                            color: appState.isDarkMode ? Colors.white : Colors.black,
                           ),
                           Row(
                             children: [
@@ -59,7 +69,8 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 'Swipe',
                                 style: TextStyle(
                                     fontSize: dimension.font20,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                color: appState.isDarkMode ? Colors.white : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -156,6 +167,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'Second Year',
                             size: dimension.font20,
+                            color: appState.isDarkMode ? Colors.white : Colors.black,
                           ),
                           Row(
                             children: [
@@ -163,7 +175,8 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 'Swipe',
                                 style: TextStyle(
                                     fontSize: dimension.font20,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                color: appState.isDarkMode ? Colors.white : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -260,6 +273,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'Third Year',
                             size: dimension.font20,
+                            color: appState.isDarkMode ? Colors.white : Colors.black,
                           ),
                           Row(
                             children: [
@@ -267,7 +281,8 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 'Swipe',
                                 style: TextStyle(
                                     fontSize: dimension.font20,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                color: appState.isDarkMode ? Colors.white : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -375,6 +390,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'Fourth Year',
                             size: dimension.font20,
+                            color: appState.isDarkMode ? Colors.white : Colors.black,
                           ),
                           Row(
                             children: [
@@ -382,7 +398,8 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 'Swipe',
                                 style: TextStyle(
                                     fontSize: dimension.font20,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                color: appState.isDarkMode ? Colors.white : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -472,8 +489,11 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
   Widget _buildFeatureContainer({
     required String imageAsset,
     required VoidCallback onTap,
+
   }) {
+    final appState = Provider.of<AppState>(context);
     return InkWell(
+
       onTap: () {
         Future.delayed(tapDelay, onTap);
       },
@@ -487,7 +507,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: appState.isDarkMode?Colors.grey:AppColors.shadowColor,
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: Offset(0, 3), // changes position of shadow
