@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+//y
 
 class ClickableVideoContainer extends StatefulWidget {
   final String videoId;
   final double width;
   final double height;
 
-  ClickableVideoContainer(
-      {required this.videoId, this.width = 200, this.height = 150});
+  ClickableVideoContainer({required this.videoId, this.width = 300, this.height = 150});
 
   @override
-  _ClickableVideoContainerState createState() =>
-      _ClickableVideoContainerState();
+  _ClickableVideoContainerState createState() => _ClickableVideoContainerState();
 }
 
 class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
@@ -54,9 +53,20 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
       child: Container(
         width: widget.width,
         height: widget.height,
-        child: Image.network(
-          'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
-          fit: BoxFit.cover,
+        child: Stack(
+          children: [
+            Image.network(
+              'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
+              fit: BoxFit.cover,
+            ),
+            Center(
+              child: Icon(
+                Icons.play_circle_fill,
+                size: 50,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -2,9 +2,10 @@ import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/home/PostJob.dart';
 import 'package:codebooter_study_app/AppState.dart';
-import 'package:codebooter_study_app/Client/Screens/ExamNotes/ChemistryNotes.dart';
-import 'package:codebooter_study_app/Client/Screens/ExamNotes/EngineeringMaths1.dart';
+
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/ChemistryNotes.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/EngineeringMaths2.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/ComputerNetworks.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/DBMS2.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/OperatingSystem2.dart';
