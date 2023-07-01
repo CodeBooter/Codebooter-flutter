@@ -1,17 +1,18 @@
 import 'dart:convert';
 import 'package:codebooter_study_app/AppState.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
-class CppProgramming extends StatefulWidget {
-  const CppProgramming();
+class DsaQuestion extends StatefulWidget {
+  const DsaQuestion();
 
   @override
-  _CppProgrammingState createState() => _CppProgrammingState();
+  _DsaQuestionState createState() => _DsaQuestionState();
 }
 
-class _CppProgrammingState extends State<CppProgramming> {
+class _DsaQuestionState extends State<DsaQuestion> {
   List<Map<String, String>> questionsAndAnswers = [];
   bool isLoading = true;
 
@@ -24,7 +25,7 @@ class _CppProgrammingState extends State<CppProgramming> {
   Future<void> fetchQuestionsAndAnswers() async {
     try {
       final response = await http.get(Uri.parse(
-          'https://script.google.com/macros/s/AKfycbyJo2khzcI8zhPe0ngu1apE1_lC5hnEkxjNqnTBMQPWGaDiV888g1Gkx-JKd-eJ--6q/exec'));
+          'https://script.google.com/macros/s/AKfycbybApV_cAp5YKv3-z_M4MTEENzZN2L4lCzzSMVBS6vTsyIVi6jKGAqXxaN5MzYM9Qgz/exec'));
       if (response.statusCode == 200) {
         final data = json.decode(response.body)['data'] as List<dynamic>;
         setState(() {
@@ -50,11 +51,13 @@ class _CppProgrammingState extends State<CppProgramming> {
 
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor:
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         title: Text(
-          'C++ Programming',
+          'DSA Questions and Answers ',
           style: TextStyle(
             color: appState.isDarkMode ? Colors.white : Colors.black,
           ),

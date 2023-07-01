@@ -67,11 +67,11 @@ class DsaInterview extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Future.delayed(tapDelay, () {
-                        context.go("/c");
+                        context.go("/interview/dsaquestions");
                       });
                     },
                     child: Text(
-                      "C Questions",
+                      "DSA Questions",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         color: appState.isDarkMode
@@ -101,7 +101,7 @@ class DsaInterview extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       Future.delayed(tapDelay, () {
-                        GoRouter.of(context).go("/c");
+                        GoRouter.of(context).go("/interview/dsaproblems");
                       });
                     },
                     child: Text(

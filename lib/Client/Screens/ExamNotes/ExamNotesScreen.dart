@@ -61,7 +61,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'First Year',
                             size: dimension.font20,
-                            color: appState.isDarkMode ? Colors.white : Colors.black,
+                            color: appState.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
                           ),
                           Row(
                             children: [
@@ -70,7 +72,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 style: TextStyle(
                                     fontSize: dimension.font20,
                                     fontWeight: FontWeight.w400,
-                                color: appState.isDarkMode ? Colors.white : Colors.black),
+                                    color: appState.isDarkMode
+                                        ? Colors.white
+                                        : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -122,35 +126,34 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/JHSEkVO.jpg',
+                                        'https://i.imgur.com/JHSEkVO.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/dZbuLl1.jpg',
+                                        'https://i.imgur.com/dZbuLl1.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/mathematics1'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/CVwI8jV.jpg',
+                                        'https://i.imgur.com/CVwI8jV.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/tEvvAfz.jpg',
+                                        'https://i.imgur.com/tEvvAfz.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/Yoyfbou.jpg',
+                                        'https://i.imgur.com/Yoyfbou.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
-
                                   SizedBox(height: dimension.val20),
                                 ])
                           ],
@@ -167,7 +170,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'Second Year',
                             size: dimension.font20,
-                            color: appState.isDarkMode ? Colors.white : Colors.black,
+                            color: appState.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
                           ),
                           Row(
                             children: [
@@ -176,7 +181,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 style: TextStyle(
                                     fontSize: dimension.font20,
                                     fontWeight: FontWeight.w400,
-                                color: appState.isDarkMode ? Colors.white : Colors.black),
+                                    color: appState.isDarkMode
+                                        ? Colors.white
+                                        : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -228,35 +235,34 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/FohUYQn.jpg',
+                                        'https://i.imgur.com/FohUYQn.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/9x9GybD.jpg',
+                                        'https://i.imgur.com/9x9GybD.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/mathematics1'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/NCENCLK.jpg',
+                                        'https://i.imgur.com/NCENCLK.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/P65o5e2.jpg',
+                                        'https://i.imgur.com/P65o5e2.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/9M7f08r.jpg',
+                                        'https://i.imgur.com/9M7f08r.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
-
                                   SizedBox(height: dimension.val20),
                                 ])
                           ],
@@ -273,7 +279,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'Third Year',
                             size: dimension.font20,
-                            color: appState.isDarkMode ? Colors.white : Colors.black,
+                            color: appState.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
                           ),
                           Row(
                             children: [
@@ -282,7 +290,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 style: TextStyle(
                                     fontSize: dimension.font20,
                                     fontWeight: FontWeight.w400,
-                                color: appState.isDarkMode ? Colors.white : Colors.black),
+                                    color: appState.isDarkMode
+                                        ? Colors.white
+                                        : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -340,37 +350,37 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/AAgYhf8.jpg',
+                                        'https://i.imgur.com/AAgYhf8.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/t82CmYU.jpg',
+                                        'https://i.imgur.com/t82CmYU.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/mathematics1'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/bhWiBqs.jpg',
+                                        'https://i.imgur.com/bhWiBqs.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/DUvFS3k.jpg',
+                                        'https://i.imgur.com/DUvFS3k.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/3a9Tj3D.jpg',
+                                        'https://i.imgur.com/3a9Tj3D.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/Ea99ImE.jpg',
+                                        'https://i.imgur.com/Ea99ImE.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
@@ -390,7 +400,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                           bigText(
                             text: 'Fourth Year',
                             size: dimension.font20,
-                            color: appState.isDarkMode ? Colors.white : Colors.black,
+                            color: appState.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
                           ),
                           Row(
                             children: [
@@ -399,7 +411,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 style: TextStyle(
                                     fontSize: dimension.font20,
                                     fontWeight: FontWeight.w400,
-                                color: appState.isDarkMode ? Colors.white : Colors.black),
+                                    color: appState.isDarkMode
+                                        ? Colors.white
+                                        : Colors.black),
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
@@ -457,23 +471,22 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/5x6xuoV.jpg',
+                                        'https://i.imgur.com/5x6xuoV.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/91Wb97D.jpg',
+                                        'https://i.imgur.com/91Wb97D.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                    'https://i.imgur.com/mUtbZiW.jpg',
+                                        'https://i.imgur.com/mUtbZiW.jpg',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
-
                                   SizedBox(height: dimension.val20),
                                 ])
                           ],
@@ -489,11 +502,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
   Widget _buildFeatureContainer({
     required String imageAsset,
     required VoidCallback onTap,
-
   }) {
     final appState = Provider.of<AppState>(context);
     return InkWell(
-
       onTap: () {
         Future.delayed(tapDelay, onTap);
       },
@@ -503,11 +514,11 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
         height: containerHeight,
         child: Ink(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: appState.isDarkMode ? AppColors.primaryColor : Colors.white,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(
-                color: appState.isDarkMode?Colors.grey:AppColors.shadowColor,
+                color: AppColors.shadowColor,
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: Offset(0, 3), // changes position of shadow
