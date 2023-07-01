@@ -5,6 +5,10 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ChemistryNotes.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/EngineeringMaths1.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaProblems.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaQuestion.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/HR/h_r.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/MockInterview/MockInterview.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/CProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/CppProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/JsProgramming.dart';
@@ -422,6 +426,26 @@ class App extends StatelessWidget {
                     path: 'sqlprogramming',
                     builder: (BuildContext context, GoRouterState state) =>
                         const SqlProgramming(),
+                  ),
+                  GoRoute(
+                    path: 'hr',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        HR(),
+                  ),
+                  GoRoute(
+                    path: 'dsaquestions',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        DsaQuestion(),
+                  ),
+                  GoRoute(
+                    path: 'dsaproblems',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        DsaProblems(),
+                  ),
+                  GoRoute(
+                    path: 'mockinterview',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        MockInterview(),
                   ),
                 ]),
             GoRoute(

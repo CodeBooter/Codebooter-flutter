@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:codebooter_study_app/AppState.dart';
-import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaInterview.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/ProgrammingInterview.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
@@ -61,7 +61,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/SZdYtgU.png'
                           : 'https://i.imgur.com/ZKFP2go.png',
-                      onTap: () => _navigateTo('/courses'),
+                      onTap: () => _navigateTo('/interview/hr'),
                     ),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(
@@ -100,7 +100,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/hpKh71m.png'
                           : 'https://i.imgur.com/mpN9h5e.png',
-                      onTap: () => _navigateTo('/courses'),
+                      onTap: () => _navigateTo('/interview/mockinterview'),
                     ),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(

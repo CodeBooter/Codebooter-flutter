@@ -47,11 +47,11 @@ dependencies:
   flutter_highlight: ^0.7.0
   mongo_dart: ^0.9.1
   http: ^0.13.6
-  youtube_player_flutter: ^8.1.2
   equatable: ^2.0.5
   flutter_bloc: ^8.1.3
   liquid_progress_indicator: ^0.4.0
   
+  youtube_player_flutter: ^8.1.2
   youtube_data_api: ^1.0.4
   intl: ^0.18.1
   syncfusion_flutter_pdfviewer: ^21.2.10

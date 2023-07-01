@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:codebooter_study_app/AppState.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ class CProgramming extends StatefulWidget {
 
 class _CProgrammingState extends State<CProgramming> {
   List<Map<String, String>> questionsAndAnswers = [];
+  bool isLoading = true;
 
   @override
   void initState() {
@@ -33,6 +35,7 @@ class _CProgrammingState extends State<CProgramming> {
                     'answer': item['answer'] as String,
                   })
               .toList();
+          isLoading = false; // Set loading state to false when data is fetched
         });
       } else {
         print('Request failed with status: ${response.statusCode}.');
@@ -48,24 +51,29 @@ class _CProgrammingState extends State<CProgramming> {
 
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor:
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         title: Text(
           'C Programming',
           style: TextStyle(
-              color: appState.isDarkMode ? Colors.white : Colors.black),
+            color: appState.isDarkMode ? Colors.white : Colors.black,
+          ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: questionsAndAnswers.length,
-        itemBuilder: (context, index) {
-          return QuestionAnswerTile(
-            question: questionsAndAnswers[index]['question']!,
-            answer: questionsAndAnswers[index]['answer']!,
-          );
-        },
-      ),
+      body: isLoading // Check if data is still loading
+          ? Center(child: CircularProgressIndicator()) // Show loading indicator
+          : ListView.builder(
+              itemCount: questionsAndAnswers.length,
+              itemBuilder: (context, index) {
+                return QuestionAnswerTile(
+                  question: questionsAndAnswers[index]['question']!,
+                  answer: questionsAndAnswers[index]['answer']!,
+                );
+              },
+            ),
     );
   }
 }
