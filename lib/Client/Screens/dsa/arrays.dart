@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
 
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 
 class Arrays extends StatefulWidget {
   const Arrays({super.key});
@@ -12,15 +16,25 @@ class Arrays extends StatefulWidget {
 class _ArraysState extends State<Arrays> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Arrays',
-          style: TextStyle(fontSize: dimension.font24, fontWeight: FontWeight.bold,fontFamily: 'Georgia',),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Arrays",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
-
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -61,14 +75,14 @@ class _ArraysState extends State<Arrays> {
                       title: 'One-Dimensional Array',
                       definition:
                       'A one-dimensional array is the most basic type of array. It stores elements in a linear sequence, where each element is accessed using a single index.',
-                      color: Color(0xcFFFFFFF), //  Blue color
+                    //  Blue color
                     ),
                     SizedBox(width: dimension.val15),
                     _buildLinkedListType(
                       title: 'Two-Dimensional Array',
                       definition:
                       'A two-dimensional array is an array of arrays. It represents a table-like structure with rows and columns. It is often used to represent matrices and grids.',
-                      color: Color(0xcFFFFFFF), // Blue color
+                     // Blue color
 
 
                     ),
@@ -77,7 +91,7 @@ class _ArraysState extends State<Arrays> {
                       title: 'Dynamic Array',
                       definition:
                       'A dynamic array is an array that can dynamically resize itself during runtime. It allows for adding or removing elements without a fixed size constraint.',
-                      color: Color(0xcFFFFFFF), // Blue color
+
                     ),
 
                     SizedBox(width: dimension.val15),
@@ -85,7 +99,7 @@ class _ArraysState extends State<Arrays> {
                       title: 'Jagged Array',
                       definition:
                       'A jagged array, also known as an array of arrays, is an array where each element can be an array of different lengths. It allows for creating ragged structures',
-                      color: Color(0xcFFFFFFF), // Blue color
+
                     ),
 
                     SizedBox(width: dimension.val15),
@@ -93,7 +107,7 @@ class _ArraysState extends State<Arrays> {
                       title: 'Sparse Array',
                       definition:
                       'A sparse array is an array where most of the elements have a default or null value, and only a small portion of the elements contain actual data.',
-                      color: Color(0xcFFFFFFF), // Blue color
+
                     ),
 
                     SizedBox(width: dimension.val15),
@@ -101,7 +115,6 @@ class _ArraysState extends State<Arrays> {
                       title: 'Multi-Dimensional Array',
                       definition:
                       'A multidimensional array is an array with more than two dimensions. It extends the concept of a two-dimensional array to higher dimensions. ',
-                      color: Color(0xcFFFFFFF), // Blue color
                     ),
                   ],
                 ),
@@ -139,12 +152,16 @@ class _ArraysState extends State<Arrays> {
 
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(dimension.val10),
-                    color: Colors.black38,
+                    color: appState.isDarkMode
+                        ? AppColors.shadowColor : AppColors.primaryColor,
                     boxShadow:  [
                       BoxShadow(
-                        color: Colors.black12,
-                        spreadRadius: dimension.val2,
-                        blurRadius: dimension.val5,
+
+                        color: appState.isDarkMode
+                ? AppColors.shadowColor
+                    : AppColors.primaryColor,
+                        spreadRadius: 2,
+                        blurRadius: 5,
                         offset: Offset(0, 3), // changes position of shadow
                       ),
                     ]),
@@ -186,13 +203,17 @@ END FOR
   Widget _buildLinkedListType({
     required String title,
     required String definition,
-    required Color color,
+
   }) {
+    final appState = Provider.of<AppState>(context);
     return Container(
+
       width: dimension.width311,
       height: dimension.height180,
       decoration: BoxDecoration(
-        color: color,
+        color: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
@@ -215,7 +236,9 @@ END FOR
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -224,7 +247,9 @@ END FOR
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

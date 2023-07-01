@@ -2,25 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+import '../../../utils/Colors.dart';
 
 class DsaScreen extends StatelessWidget {
   const DsaScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-        toolbarHeight: dimension.val50,
-        centerTitle: true,
-        title: bigText(
-          text: "DSA",
-        ),
-      ),
+    iconTheme: IconThemeData(
+    color: appState.isDarkMode ? Colors.white : Colors.black),
+    backgroundColor: appState.isDarkMode
+    ? AppColors.primaryColor
+        : AppColors.lightModePrimary,
+    elevation: 4,
+    centerTitle: true,
+    title: bigText(
+    text: "Exam Notes",
+    color: appState.isDarkMode
+    ? AppColors.mainTextColor
+        : const Color.fromARGB(255, 0, 0, 0),
+    ),
+    ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -157,13 +168,17 @@ class DsaScreen extends StatelessWidget {
     required String title,
     required VoidCallback onTap,
   }) {
+    final appState = Provider.of<AppState>(context);
     return Card(
-      elevation: 5,
-      shadowColor: Colors.grey,
+      color: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
+      elevation: 7,
+      shadowColor: AppColors.mainTextColor.withOpacity(.2),
       child: ListTile(
         leading: Icon(
           icon,
-          color: Colors.black45,
+          color: appState.isDarkMode ? Colors.white : Colors.black,
           size: dimension.val25,
         ),
         title: Text(
@@ -171,7 +186,10 @@ class DsaScreen extends StatelessWidget {
           style: TextStyle(
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
-              fontFamily: 'Georgia'),
+              fontFamily: 'Georgia',
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),),
         ),
         onTap: onTap,
       ),

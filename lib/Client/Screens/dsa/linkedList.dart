@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 
 class LinkedList extends StatefulWidget {
   const LinkedList({super.key});
@@ -13,17 +17,25 @@ class _LinkedListState extends State<LinkedList> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Linked List',
-          style: TextStyle(fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Linked List",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
-
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -66,14 +78,14 @@ class _LinkedListState extends State<LinkedList> {
                       title: 'Singly Linked List',
                       definition:
                       'A singly linked list is a type of linked list where each node contains a data element and a reference (link) to the next node in the list. The last node in the list points to null, indicating the end of the list.',
-                      color: Color(0xFFFFFFFF), //  Blue color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildLinkedListType(
                       title: 'Doubly Linked List',
                       definition:
                       'A doubly linked list is a type of linked list where each node contains a data element and two references (links): one to the previous node and one to the next node in the list. This allows for traversal in both directions.',
-                      color: Color(0xFFFFFFFF), // Blue color
+
 
 
                     ),
@@ -82,7 +94,7 @@ class _LinkedListState extends State<LinkedList> {
                       title: 'Circular Linked List',
                       definition:
                       'A circular linked list is a type of linked list where the last nodes reference points back to the first node, creating a circular structure. This means that the next reference of the last node points to the first node.',
-                      color: Color(0xFFFFFFFF), // Blue color
+
                     ),
                   ],
                 ),
@@ -184,12 +196,13 @@ NextFree = NextFree + 1
   Widget _buildLinkedListType({
     required String title,
     required String definition,
-    required Color color,
+
   }) {
+    final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: color,
+        color: appState.isDarkMode?AppColors.primaryColor:AppColors.mainTextColor,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
@@ -212,7 +225,7 @@ NextFree = NextFree + 1
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode?AppColors.mainTextColor:AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -221,7 +234,7 @@ NextFree = NextFree + 1
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode?AppColors.mainTextColor:AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

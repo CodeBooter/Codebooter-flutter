@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/a11y-dark.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
 
+import '../../../utils/Colors.dart';
+import '../../../widgets/BigText.dart';
 class Queues extends StatefulWidget {
   const Queues({Key? key}) : super(key: key);
 
@@ -13,17 +17,22 @@ class Queues extends StatefulWidget {
 class _QueuesState extends State<Queues> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text(
-          'Queues',
-          style: TextStyle(
-            fontSize: dimension.font24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Georgia',
-          ),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Linked List",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: SingleChildScrollView(
@@ -73,21 +82,21 @@ class _QueuesState extends State<Queues> {
                       title: 'Simple Queue',
                       definition:
                       'In Simple Queue, elements are added to the rear and removed from the front.In this queue the Insertion and deletion takes place from specified ends.',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildQueueType(
                       title: 'Circular Queue',
                       definition:
                       'In a circular queue, the rear and front elements are connected in a circular manner, allowing efficient space utilization. Insertion and Deletioncan be done from any point',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                     SizedBox(width: dimension.val15),
                     _buildQueueType(
                       title: 'Priority Queue',
                       definition:
                       'It Assigns a priority value to each element, and dequeues the highest priority element first.This Queue works on the priority of the value of element',
-                      color: Color(0xFFFFFFFF), // White color
+
                     ),
                   ],
                 ),
@@ -184,12 +193,13 @@ void main() {
   Widget _buildQueueType({
     required String title,
     required String definition,
-    required Color color,
+
   }) {
+    final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: color,
+        color: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
@@ -211,7 +221,7 @@ void main() {
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -220,7 +230,7 @@ void main() {
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: Colors.black,
+              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),
