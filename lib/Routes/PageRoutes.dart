@@ -5,6 +5,11 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ChemistryNotes.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/EngineeringMaths1.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/CProgramming.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/CppProgramming.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/JsProgramming.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/PythonProgramming.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/SqlProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/AIML/ArtificialIntelligence.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/AIML/BasicStarting.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/AIML/DataScience.dart';
@@ -195,7 +200,6 @@ class App extends StatelessWidget {
                 path: 'courses',
                 builder: (BuildContext context, GoRouterState state) =>
                     const CourseScreen(),
-
                 routes: [
                   GoRoute(
                     path: 'basicwebdev',
@@ -222,196 +226,204 @@ class App extends StatelessWidget {
                   GoRoute(
                     path: 'angular',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Angular(),
-                  )
-                  ,
+                        const Angular(),
+                  ),
                   GoRoute(
                     path: 'nodejs',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const NodeJS(),
-                  )
-                  ,
+                        const NodeJS(),
+                  ),
                   GoRoute(
                     path: 'reactjs',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const ReactJs(),
-                  )
-                  ,
+                        const ReactJs(),
+                  ),
                   GoRoute(
                     path: 'artificialintelligence',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const ArtificialIntelligence(),
+                        const ArtificialIntelligence(),
                   ),
                   GoRoute(
                     path: 'basicstarting',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const BasicStarting(),
+                        const BasicStarting(),
                   ),
                   GoRoute(
                     path: 'datascience',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const DataScience(),
+                        const DataScience(),
                   ),
                   GoRoute(
                     path: 'deeplearning',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const DeepLearning(),
+                        const DeepLearning(),
                   ),
                   GoRoute(
                     path: 'machinelearning',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const MachineLearning(),
+                        const MachineLearning(),
                   ),
                   GoRoute(
                     path: 'project',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Project(),
-                  )
-                  ,
+                        const Project(),
+                  ),
                   GoRoute(
                     path: 'firebasebackend',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const FirebaseBackend(),
-                  )
-                  ,
+                        const FirebaseBackend(),
+                  ),
                   GoRoute(
                     path: 'flutterapp',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const FlutterApp(),
-                  )
-                  ,
+                        const FlutterApp(),
+                  ),
                   GoRoute(
                     path: 'javaapp',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const JavaApp(),
-                  )
-                  ,
+                        const JavaApp(),
+                  ),
                   GoRoute(
                     path: 'reactnative',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const ReactNative(),
-                  )
-                  ,
+                        const ReactNative(),
+                  ),
                   GoRoute(
                     path: 'compilerdesign',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const CompilerDesign(),
-                  )
-                  ,
+                        const CompilerDesign(),
+                  ),
                   GoRoute(
                     path: 'computernetwork',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const ComputerNetwork(),
-                  )
-                  ,
+                        const ComputerNetwork(),
+                  ),
                   GoRoute(
                     path: 'dbms',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const DBMS(),
+                        const DBMS(),
                   ),
                   GoRoute(
                     path: 'operatingsystem',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const OperatingSystem(),
+                        const OperatingSystem(),
                   ),
                   GoRoute(
-                    path: 'toc',
-                    builder: (BuildContext context, GoRouterState state) =>
-                    const TOC()
-
-                  )
-                  ,
+                      path: 'toc',
+                      builder: (BuildContext context, GoRouterState state) =>
+                          const TOC()),
                   GoRoute(
                     path: 'ccna',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const CCNA(),
+                        const CCNA(),
                   ),
                   GoRoute(
                     path: 'cybersecurity',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const CyberSecurity(),
+                        const CyberSecurity(),
                   ),
                   GoRoute(
                     path: 'informationgathering',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const InformationGathering(),
+                        const InformationGathering(),
                   ),
                   GoRoute(
                     path: 'kali',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Kali(),
+                        const Kali(),
                   ),
                   GoRoute(
                     path: 'networksecurity',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const NetworkSecurity(),
+                        const NetworkSecurity(),
                   ),
                   GoRoute(
                     path: 'clang',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const CLang(),
+                        const CLang(),
                   ),
                   GoRoute(
                     path: 'cpp',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const CPP(),
+                        const CPP(),
                   ),
                   GoRoute(
                     path: 'go',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const GO(),
+                        const GO(),
                   ),
                   GoRoute(
                     path: 'java',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Java(),
+                        const Java(),
                   ),
                   GoRoute(
                     path: 'python',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Python(),
+                        const Python(),
                   ),
                   GoRoute(
                     path: 'typescript',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const TypeScript(),
-                  )
-                  ,
+                        const TypeScript(),
+                  ),
                   GoRoute(
                     path: 'introtoweb3',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const IntroToWeb3(),
-                  )
-                  ,
+                        const IntroToWeb3(),
+                  ),
                   GoRoute(
                     path: 'decentralizedapplication',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const DecentralizedApplication(),
-                  )
-                  ,
+                        const DecentralizedApplication(),
+                  ),
                   GoRoute(
                     path: 'tokenization',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Tokenization(),
-                  )
-                  ,
+                        const Tokenization(),
+                  ),
                   GoRoute(
                     path: 'etherium',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Etherium(),
-                  )
-                  ,
+                        const Etherium(),
+                  ),
                   GoRoute(
                     path: 'solidity',
                     builder: (BuildContext context, GoRouterState state) =>
-                    const Solidity(),
+                        const Solidity(),
                   )
                 ]),
             GoRoute(
-              path: 'interview',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const InterviewPrepScreen(),
-            ),
+                path: 'interview',
+                builder: (BuildContext context, GoRouterState state) =>
+                    const InterviewPrepScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'cprogramming',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        CProgramming(),
+                  ),
+                  GoRoute(
+                    path: 'c++programming',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const CppProgramming(),
+                  ),
+                  GoRoute(
+                    path: 'pythonprogramming',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const PythonProgramming(),
+                  ),
+                  GoRoute(
+                    path: 'jsprogramming',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const JsProgramming(),
+                  ),
+                  GoRoute(
+                    path: 'sqlprogramming',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const SqlProgramming(),
+                  ),
+                ]),
             GoRoute(
                 path: 'notes',
                 builder: (BuildContext context, GoRouterState state) =>

@@ -69,6 +69,7 @@ class dimension {
   static double get width25 => Get.width / 17.6; //25
   static double get width20 => Get.width / 22; //20
   static double get width15 => Get.width / 29.33; //15
+  static double get width10 => Get.width / 44; //10
 
   static double get height400 => Get.height / 2.16; //400
   static double get height350 => Get.height / 2.47; //350

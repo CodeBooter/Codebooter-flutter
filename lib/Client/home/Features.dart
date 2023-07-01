@@ -92,7 +92,9 @@ class _FeaturesState extends State<Features> {
         height: containerHeight,
         child: Ink(
           decoration: BoxDecoration(
-            color: AppColors.primaryColor,
+            color: appState.isDarkMode
+                ? AppColors.primaryColor
+                : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
               BoxShadow(

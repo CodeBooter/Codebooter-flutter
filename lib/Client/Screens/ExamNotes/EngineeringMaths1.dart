@@ -16,7 +16,7 @@ class EngineeringMaths1 extends StatefulWidget {
 
 class _EngineeringMaths1State extends State<EngineeringMaths1> {
   final String pdfUrl =
-      'https://github.com/CodeBooter/img/blob/8f5c61939e5185742d10cbc767e8982037bde165/math%201.pdf';
+      'https://raw.githubusercontent.com/Manav-khadka/dfsfsd/715236bc87e59d18bff4384fd40f55bbf8f9eb45/math%201.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
