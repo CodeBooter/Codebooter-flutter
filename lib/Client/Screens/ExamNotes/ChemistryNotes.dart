@@ -14,7 +14,7 @@ class ChemistryNotes extends StatefulWidget {
 
 class _ChemistryNotesState extends State<ChemistryNotes> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://github.com/CodeBooter/img/blob/8f5c61939e5185742d10cbc767e8982037bde165/math%201.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

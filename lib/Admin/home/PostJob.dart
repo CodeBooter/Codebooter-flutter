@@ -14,7 +14,7 @@ class _PostJobState extends State<PostJob> {
   TextEditingController _imageAssetController = TextEditingController();
   TextEditingController _stipendController = TextEditingController();
   TextEditingController _locationController = TextEditingController();
-  TextEditingController _companyController = TextEditingController();
+  // TextEditingController _companyController = TextEditingController();
   TextEditingController _applyLinkController = TextEditingController();
   TextEditingController _durationController = TextEditingController();
   TextEditingController _applyByController = TextEditingController();
@@ -29,7 +29,7 @@ class _PostJobState extends State<PostJob> {
       'imageAssest': _imageAssetController.text,
       'stipend': _stipendController.text,
       'location': _locationController.text,
-      'company': _companyController.text,
+      // 'company': _companyController.text,
       'applyLink': _applyLinkController.text,
       'duration': _durationController.text,
       'applyBy': _applyByController.text,
@@ -113,7 +113,7 @@ class _PostJobState extends State<PostJob> {
     _imageAssetController.clear();
     _stipendController.clear();
     _locationController.clear();
-    _companyController.clear();
+    // _companyController.clear();
     _applyLinkController.clear();
     _durationController.clear();
     _applyByController.clear();
@@ -174,7 +174,7 @@ class _PostJobState extends State<PostJob> {
                   },
                 ),
                 TextFormField(
-                  controller: _companyController,
+                  // controller: _companyController,
                   decoration: InputDecoration(labelText: 'Company'),
                   validator: (value) {
                     if (value!.isEmpty) {
