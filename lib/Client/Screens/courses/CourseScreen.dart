@@ -94,39 +94,39 @@ class _CourseScreenState extends State<CourseScreen> {
                           // C
 
                           imageAsset: 'https://i.imgur.com/0MJHztR.png',
-                            onTap: () => _navigateTo('/courses/basicwebdev')
+                            onTap: () => _navigateTo('/courses/clang')
                         ),
                         _buildFeatureContainer(
                           //c++
                           imageAsset:
                               'https://i.imgur.com/Rmw00BF.png',
-                          onTap: () => _navigateTo('/courses/javascript'),
+                          onTap: () => _navigateTo('/courses/cpp'),
                         ),
                         _buildFeatureContainer(
                           // java
                           imageAsset:
                               'https://i.imgur.com/a8bEmNa.png',
-                          onTap: () => _navigateTo('/courses/mernstack'),
+                          onTap: () => _navigateTo('/courses/go'),
                         ),
                         _buildFeatureContainer(
                           // python
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/NNrSkna.png"
                               : "https://i.imgur.com/nZfIpGq.png",
-                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                          onTap: () => _navigateTo('/courses/java'),
                         ),
                         _buildFeatureContainer(
                           // go
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/0P3aNqN.png"
                               : "https://i.imgur.com/35AviEe.png",
-                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                          onTap: () => _navigateTo('/courses/python'),
                         ),
                         _buildFeatureContainer(
                           imageAsset:
                               //typescript
                               'https://i.imgur.com/wd3NbjV.png',
-                          onTap: () => _navigateTo('/basicwebdev'),
+                          onTap: () => _navigateTo('/courses/typescript'),
                         ),
                       ],
                     ),
@@ -177,7 +177,7 @@ class _CourseScreenState extends State<CourseScreen> {
                           //kali
                           imageAsset:
                               'https://i.imgur.com/DSmu89K.png',
-                          onTap: () => _navigateTo('/dsa'),
+                          onTap: () => _navigateTo('/courses/kali'),
                         ),
                         _buildFeatureContainer(
                           // cyber security
@@ -451,6 +451,88 @@ class _CourseScreenState extends State<CourseScreen> {
                               ? "https://i.imgur.com/YTDu9Wb.png"
                               : "https://i.imgur.com/HIU0kNl.png",
                           onTap: () => _navigateTo('/courses/react'),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: dimension.val20),
+            Padding(
+              padding: EdgeInsets.only(left: dimension.width25),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      bigText(
+                        text: 'WEB 3',
+                        size: dimension.font18,
+                        color: appState.isDarkMode
+                            ? AppColors.mainTextColor
+                            : const Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'swipe',
+                            style: TextStyle(
+                                fontSize: dimension.font16,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Icon(
+                            Icons.keyboard_double_arrow_right_outlined,
+                            size: dimension.font20,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: dimension.val5),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+                      spacing: spacing,
+                      runSpacing: runSpacing,
+                      children: [
+                        _buildFeatureContainer(
+                          //intro to web 3
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/bXiJWRC.png"
+                              : "https://i.imgur.com/D6nVovW.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          // Decentralized
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/nnv8pV3.png"
+                              : "https://i.imgur.com/1i9IfI2.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          // tokenization
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/BnUpwX3.png"
+                              : "https://i.imgur.com/tvyJheX.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          // ethereum
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/ppgPbNv.png"
+                              : "https://i.imgur.com/coFJl9t.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
+                        ),
+                        _buildFeatureContainer(
+                          // solidity
+                          imageAsset: appState.isDarkMode
+                              ? "https://i.imgur.com/BXQUslb.png"
+                              : "https://i.imgur.com/t39Dvu5.png",
+                          onTap: () => _navigateTo('/courses/basicwebdev'),
                         ),
 
                       ],

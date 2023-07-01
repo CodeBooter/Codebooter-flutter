@@ -1,17 +1,18 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
-import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 
 import '../YoutubeFunction.dart';
 
-class MernProject extends StatelessWidget {
-  const MernProject({Key? key}) : super(key: key);
+
+
+class DataScience extends StatelessWidget {
+  const DataScience({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL-7d5gUt3OsNStapRdJRYQCJoUtO2FvVA';
-    final String channelId = 'LamaDev';
+    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
+    final String channelId = 'NetNinja';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -19,7 +20,7 @@ class MernProject extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
-          'MERN Projects',
+          'HTML CSS',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -35,7 +36,7 @@ class MernProject extends StatelessWidget {
                 final item = playlistItems[index];
                 final title = item['snippet']['title'];
                 final thumbnailUrl =
-                    item['snippet']['thumbnails']['default']['url'];
+                item['snippet']['thumbnails']['default']['url'];
 
                 final channelId = item['snippet']['channelId'];
                 final videoId = item['snippet']['resourceId']['videoId'];
@@ -100,7 +101,7 @@ class MernProject extends StatelessWidget {
                                     Text(
                                       '$likeCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                      TextStyle(fontSize: dimension.font14),
                                     ),
                                     const SizedBox(width: 8),
                                     Icon(
@@ -110,7 +111,7 @@ class MernProject extends StatelessWidget {
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                      TextStyle(fontSize: dimension.font14),
                                     ),
                                   ],
                                 );
@@ -168,7 +169,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: AppColors.shadowColor,
+            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0, 3),
@@ -191,3 +192,4 @@ Widget buildListTile({
     ),
   );
 }
+
