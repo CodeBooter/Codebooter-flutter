@@ -1,8 +1,10 @@
 import 'dart:io';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class EngineeringMaths1 extends StatefulWidget {
@@ -14,10 +16,11 @@ class EngineeringMaths1 extends StatefulWidget {
 
 class _EngineeringMaths1State extends State<EngineeringMaths1> {
   final String pdfUrl =
-      'https://ia902707.us.archive.org/27/items/math-1_202306/math%201.pdf';
+      'https://github.com/CodeBooter/img/blob/8f5c61939e5185742d10cbc767e8982037bde165/math%201.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
+  double downloadProgress = 0;
 
   @override
   void initState() {
@@ -35,12 +38,23 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
         isPdfDownloaded = true;
       });
     } else {
-      final response = await HttpClient().getUrl(Uri.parse(pdfUrl));
-      final downloadedFile = await response.close();
-      final bytes = await consolidateHttpClientResponseBytes(downloadedFile);
-      await file.writeAsBytes(bytes);
-      setState(() {
-        isPdfDownloaded = true;
+      final dio = Dio();
+      dio.download(
+        pdfUrl,
+        localPath,
+        onReceiveProgress: (received, total) {
+          if (total != -1) {
+            setState(() {
+              downloadProgress = received / total;
+              downloadMessage =
+                  "Downloading ${(downloadProgress * 100).toStringAsFixed(0)}%";
+            });
+          }
+        },
+      ).then((_) {
+        setState(() {
+          isPdfDownloaded = true;
+        });
       });
     }
   }
@@ -67,6 +81,8 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
       await file.delete();
       setState(() {
         isPdfDownloaded = false;
+        downloadProgress = 0;
+        downloadMessage = "Click download icon to start download";
       });
     }
   }
@@ -106,7 +122,16 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CircularProgressIndicator(),
+                  CircularProgressIndicator(value: downloadProgress),
+                  SizedBox(height: dimension.val20),
+                  Text(
+                    downloadMessage,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: dimension.font20,
+                    ),
+                  ),
+                  SizedBox(height: dimension.val20),
                   IconButton(
                     onPressed: () {
                       downloadPdf();
@@ -117,13 +142,6 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
                       size: dimension.val60,
                     ),
                   ),
-                  SizedBox(
-                    height: dimension.val20,
-                  ),
-                  Text(downloadMessage,
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontSize: dimension.font20)),
                 ],
               ),
       ),

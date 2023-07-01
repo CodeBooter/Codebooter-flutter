@@ -64,9 +64,11 @@ class dimension {
   static double get width60 => Get.width / 7.33; //60
   static double get width50 => Get.width / 8.8; //50
   static double get width40 => Get.width / 11; //40
+  static double get width35 => Get.width / 12.57; //35
   static double get width30 => Get.width / 14.66; //30
   static double get width25 => Get.width / 17.6; //25
   static double get width20 => Get.width / 22; //20
+  static double get width15 => Get.width / 29.33; //15
 
   static double get height400 => Get.height / 2.16; //400
   static double get height350 => Get.height / 2.47; //350
@@ -79,8 +81,14 @@ class dimension {
   static double get height180 => Get.height / 4.8; //180
   static double get height175 => Get.height / 4.97; //175
   static double get height170 => Get.height / 5.12; //170
+  static double get height165 => Get.height / 5.3; //165
+  static double get height160 => Get.height / 5.5; //160
+  static double get height155 => Get.height / 5.65; //155
+  static double get height153 => Get.height / 5.72; //153
   static double get height150 => Get.height / 5.76; //150
+  static double get height145 => Get.height / 6.03; //145
   static double get height140 => Get.height / 6.17; //140
+  static double get height135 => Get.height / 6.4; //135
   static double get height132 => Get.height / 6.56; //132
   static double get height130 => Get.height / 6.61; //130
   static double get height128 => Get.height / 6.68; //128

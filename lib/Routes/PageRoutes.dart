@@ -7,7 +7,7 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/EngineeringMaths1.
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/Test.dart';
-import 'package:codebooter_study_app/Client/Screens/InterviewPrepScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/Web/HtmlCss.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/Web/JavaScript.dart';
