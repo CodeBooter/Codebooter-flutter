@@ -1,9 +1,19 @@
+
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/MockInterview/MockVideoPlayer.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
+//p
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
 import '../../../../utils/Colors.dart';
@@ -52,6 +62,7 @@ class _MockInterviewState extends State<MockInterview> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
+
             color: appState.isDarkMode ? Colors.white : Colors.black),
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
@@ -63,6 +74,17 @@ class _MockInterviewState extends State<MockInterview> {
           color: appState.isDarkMode
               ? AppColors.mainTextColor
               : const Color.fromARGB(255, 0, 0, 0),
+
+          color:  appState.isDarkMode?Colors.white:Colors.black,
+        ),
+        centerTitle: true,
+        backgroundColor: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+        title: Text(
+          'MockInterview Preparation',
+          style: TextStyle(
+            color: appState.isDarkMode?Colors.white:Colors.black,
+          ),
+
         ),
       ),
       body: Container(
@@ -70,18 +92,21 @@ class _MockInterviewState extends State<MockInterview> {
           itemCount: videoIds.length,
           itemBuilder: (context, index) {
             final videoId = videoIds[index];
-            return ClickableVideoContainer(videoId: videoId);
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0), // Add vertical padding
+              child: Container(
+                width: dimension.height80,
+                height: dimension.height230,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.shadowColor),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: ClickableVideoContainer(videoId: videoId),
+              ),
+            );
           },
         ),
-      ),
-    );
-  }
-}
 
-class ClickableVideoContainer extends StatefulWidget {
-  final String videoId;
-  final double width;
-  final double height;
 
   ClickableVideoContainer(
       {required this.videoId, this.width = 200, this.height = 150});
@@ -142,6 +167,7 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
           'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
           fit: BoxFit.cover,
         ),
+
       ),
     );
   }

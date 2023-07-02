@@ -2,6 +2,7 @@ import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/home/PostJob.dart';
 import 'package:codebooter_study_app/AppState.dart';
+
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicCivil.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicComputers.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicElectricals.dart';
@@ -38,6 +39,15 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Internet
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/KnowledgeManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ProjectManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/TheoryOfComputation.dart';
+
+
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/ChemistryNotes.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/EngineeringMaths2.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/ComputerNetworks.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/DBMS2.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/OperatingSystem2.dart';
+
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaProblems.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaQuestion.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/HR/h_r.dart';
@@ -479,6 +489,21 @@ class App extends StatelessWidget {
                     path: 'mockinterview',
                     builder: (BuildContext context, GoRouterState state) =>
                         MockInterview(),
+                  ),
+                  GoRoute(
+                    path: 'os',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        OperatingSystem2(),
+                  ),
+                  GoRoute(
+                    path: 'cn',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        ComputerNetworks(),
+                  ),
+                  GoRoute(
+                    path: 'dbms',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        DBMS2(),
                   ),
                 ]),
             GoRoute(
