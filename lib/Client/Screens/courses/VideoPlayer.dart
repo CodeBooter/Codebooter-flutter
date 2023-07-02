@@ -6,6 +6,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/YoutubeFunction.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 class VideoScreen extends StatefulWidget {
   final String videoId;
@@ -23,6 +24,7 @@ class _VideoScreenState extends State<VideoScreen> {
   List<dynamic> _videoComments = [];
   bool _isCommentsExpanded = false;
   String _videoTitle = '';
+  bool _isFullScreen = false;
 
   @override
   void initState() {
@@ -43,7 +45,7 @@ class _VideoScreenState extends State<VideoScreen> {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     try {
       String description =
-          await youtubeFunction.fetchVideoDescription(widget.videoId);
+      await youtubeFunction.fetchVideoDescription(widget.videoId);
       String videoTitle = await youtubeFunction.fetchVideoTitle(widget.videoId);
       setState(() {
         _videoDescription = description;
@@ -58,7 +60,7 @@ class _VideoScreenState extends State<VideoScreen> {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     try {
       List<dynamic> comments =
-          await youtubeFunction.fetchVideoComments(widget.videoId);
+      await youtubeFunction.fetchVideoComments(widget.videoId);
       setState(() {
         _videoComments = comments;
       });
@@ -105,18 +107,41 @@ class _VideoScreenState extends State<VideoScreen> {
     }
   }
 
+  void _toggleFullScreen() {
+    setState(() {
+      _isFullScreen = !_isFullScreen;
+    });
+    if (_isFullScreen) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeRight,
+        DeviceOrientation.landscapeLeft,
+      ]);
+    } else {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    return Scaffold(
-      backgroundColor: appState.isDarkMode
-          ? AppColors.primaryColor
-          : AppColors.lightModePrimary,
-      appBar: AppBar(
+    return WillPopScope(
+      onWillPop: () async {
+        if (_isFullScreen) {
+          _toggleFullScreen();
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        appBar: AppBar(
           iconTheme: IconThemeData(
-              color: appState.isDarkMode
-                  ? AppColors.mainTextColor
-                  : AppColors.primaryColor),
+            color: appState.isDarkMode
+                ? AppColors.mainTextColor
+                : AppColors.primaryColor,
+          ),
           centerTitle: true,
           backgroundColor: appState.isDarkMode
               ? AppColors.primaryColor
@@ -133,188 +158,232 @@ class _VideoScreenState extends State<VideoScreen> {
             ),
             textAlign: TextAlign.center,
             softWrap: true,
-          )),
-      body: GestureDetector(
-        onTapDown: _onDoubleTap,
-        child: Column(
-          children: [
-            YoutubePlayer(
-              bottomActions: [
-                CurrentPosition(),
-                ProgressBar(isExpanded: true),
-                RemainingDuration(),
-                const PlaybackSpeedButton()
-              ],
-              controller: _controller,
-              showVideoProgressIndicator: true,
-              progressIndicatorColor: Colors.red,
-              progressColors: const ProgressBarColors(
-                playedColor: Colors.red,
-                handleColor: Colors.redAccent,
-              ),
-              onReady: () {
-                // Add your custom logic when the player is ready.
-              },
-              onEnded: (data) {
-                // Add your custom logic when the video ends.
-              },
-            ),
-            const SizedBox(height: 10.0),
-            Flexible(
-              child: ListView(
-                children: [
-                  ExpansionPanelList(
-                    elevation: 1,
-                    expandedHeaderPadding: EdgeInsets.zero,
-                    expansionCallback: (int index, bool isExpanded) {
-                      setState(() {
-                        _isDescriptionExpanded = !isExpanded;
-                      });
-                    },
-                    children: [
-                      ExpansionPanel(
-                        headerBuilder: (BuildContext context, bool isExpanded) {
-                          return Padding(
-                            padding: EdgeInsets.all(dimension.font18),
-                            child: Text(
-                              'Description',
-                              style: TextStyle(
-                                fontSize: dimension.font20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          );
-                        },
-                        body: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                _videoDescription,
-                                style: const TextStyle(
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
+          ),
+
+        ),
+        body: GestureDetector(
+          onTapDown: _isFullScreen ? _onDoubleTap : null,
+          child: Column(
+            children: [
+              if (!_isFullScreen)
+                YoutubePlayer(
+                  bottomActions: [
+                    CurrentPosition(),
+                    ProgressBar(isExpanded: true),
+                    RemainingDuration(),
+                    const PlaybackSpeedButton(),
+                      IconButton(
+                        onPressed: _toggleFullScreen,
+                        icon: Icon(
+                          _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
                         ),
-                        isExpanded: _isDescriptionExpanded,
                       ),
-                    ],
+                  ],
+                  controller: _controller,
+                  showVideoProgressIndicator: true,
+                  progressIndicatorColor: Colors.red,
+                  progressColors: const ProgressBarColors(
+                    playedColor: Colors.red,
+                    handleColor: Colors.redAccent,
                   ),
-                  const SizedBox(height: 10.0),
-                  ExpansionPanelList(
-                    elevation: 1,
-                    expandedHeaderPadding: EdgeInsets.zero,
-                    expansionCallback: (int index, bool isExpanded) {
-                      setState(() {
-                        _isCommentsExpanded = !isExpanded;
-                      });
+                  onReady: () {
+                    // Add your custom logic when the player is ready.
+                  },
+                  onEnded: (data) {
+                    // Add your custom logic when the video ends.
+                  },
+                )
+              else
+                Expanded(
+                  child: YoutubePlayerBuilder(
+                    player: YoutubePlayer(
+                      controller: _controller,
+                      showVideoProgressIndicator: true,
+                      progressIndicatorColor: Colors.red,
+                      progressColors: const ProgressBarColors(
+                        playedColor: Colors.red,
+                        handleColor: Colors.redAccent,
+                      ),
+                      onReady: () {
+                        // Add your custom logic when the player is ready.
+                      },
+                      onEnded: (data) {
+                        // Add your custom logic when the video ends.
+                      },
+                    ),
+                    builder: (context, player) {
+                      return Center(
+                        child: player,
+                      );
                     },
+                  ),
+                ),
+              const SizedBox(height: 10.0),
+              if (!_isFullScreen)
+                Flexible(
+                  child: ListView(
                     children: [
-                      ExpansionPanel(
-                        headerBuilder: (BuildContext context, bool isExpanded) {
-                          return const Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Text(
-                              'Comments',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
+                      ExpansionPanelList(
+                        elevation: 1,
+                        expandedHeaderPadding: EdgeInsets.zero,
+                        expansionCallback: (int index, bool isExpanded) {
+                          setState(() {
+                            _isDescriptionExpanded = !isExpanded;
+                          });
+                        },
+                        children: [
+                          ExpansionPanel(
+                            headerBuilder:
+                                (BuildContext context, bool isExpanded) {
+                              return Padding(
+                                padding: EdgeInsets.all(dimension.font18),
+                                child: Text(
+                                  'Description',
+                                  style: TextStyle(
+                                    fontSize: dimension.font20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              );
+                            },
+                            body: Container(
+                              padding:
+                              const EdgeInsets.symmetric(horizontal: 16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _videoDescription,
+                                    style: const TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          );
+                            isExpanded: _isDescriptionExpanded,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10.0),
+                      ExpansionPanelList(
+                        elevation: 1,
+                        expandedHeaderPadding: EdgeInsets.zero,
+                        expansionCallback: (int index, bool isExpanded) {
+                          setState(() {
+                            _isCommentsExpanded = !isExpanded;
+                          });
                         },
-                        body: Container(
-                          padding: const EdgeInsets.all(16.0),
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: _videoComments.length,
-                            itemBuilder: (context, index) {
-                              final comment = _videoComments[index];
-                              final commentText = comment['snippet']
-                                  ['topLevelComment']['snippet']['textDisplay'];
-                              final authorName = comment['snippet']
-                                      ['topLevelComment']['snippet']
+                        children: [
+                          ExpansionPanel(
+                            headerBuilder:
+                                (BuildContext context, bool isExpanded) {
+                              return const Padding(
+                                padding: EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Comments',
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              );
+                            },
+                            body: Container(
+                              padding: const EdgeInsets.all(16.0),
+                              child: ListView.builder(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: _videoComments.length,
+                                itemBuilder: (context, index) {
+                                  final comment = _videoComments[index];
+                                  final commentText = comment['snippet']
+                                  ['topLevelComment']['snippet']
+                                  ['textDisplay'];
+                                  final authorName = comment['snippet']
+                                  ['topLevelComment']['snippet']
                                   ['authorDisplayName'];
-                              final timestamp = comment['snippet']
-                                  ['topLevelComment']['snippet']['publishedAt'];
-                              final likeCount = comment['snippet']
-                                  ['topLevelComment']['snippet']['likeCount'];
-                              final formattedTimestamp =
-                                  DateFormat('yyyy-MM-dd')
+                                  final timestamp = comment['snippet']
+                                  ['topLevelComment']['snippet']
+                                  ['publishedAt'];
+                                  final likeCount = comment['snippet']
+                                  ['topLevelComment']['snippet']
+                                  ['likeCount'];
+                                  final formattedTimestamp = DateFormat(
+                                      'yyyy-MM-dd')
                                       .format(DateTime.parse(timestamp));
 
-                              return Column(
-                                children: [
-                                  ListTile(
-                                    leading: CircleAvatar(
-                                      backgroundImage: NetworkImage(
-                                          comment['snippet']['topLevelComment']
-                                                  ['snippet']
+                                  return Column(
+                                    children: [
+                                      ListTile(
+                                        leading: CircleAvatar(
+                                          backgroundImage: NetworkImage(
+                                              comment['snippet']
+                                              ['topLevelComment']
+                                              ['snippet']
                                               ['authorProfileImageUrl']),
-                                    ),
-                                    title: Column(
-                                      crossAxisAlignment:
+                                        ),
+                                        title: Column(
+                                          crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          authorName,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
-                                          commentText,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
                                           children: [
+                                            Text(
+                                              authorName,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              commentText,
+                                            ),
                                             Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment
+                                                  .spaceBetween,
                                               children: [
-                                                Icon(
-                                                  Icons.thumb_up,
-                                                  size: dimension.font14,
-                                                  color: Colors.grey,
+                                                Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons.thumb_up,
+                                                      size: dimension.font14,
+                                                      color: Colors.grey,
+                                                    ),
+                                                    SizedBox(width: 5.0),
+                                                    Text(
+                                                      likeCount.toString(),
+                                                      style: TextStyle(
+                                                        color: Colors.grey,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                                SizedBox(width: 5.0),
                                                 Text(
-                                                  likeCount.toString(),
-                                                  style: TextStyle(
-                                                    color: Colors.grey,
-                                                  ),
+                                                  formattedTimestamp,
                                                 ),
                                               ],
                                             ),
-                                            Text(
-                                              formattedTimestamp,
-                                            ),
                                           ],
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Divider(
-                                    height: 1,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              );
-                            },
+                                      ),
+                                      const Divider(
+                                        height: 1,
+                                        color: Colors.grey,
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
+                            ),
+                            isExpanded: _isCommentsExpanded,
                           ),
-                        ),
-                        isExpanded: _isCommentsExpanded,
+                        ],
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-          ],
+                ),
+            ],
+          ),
         ),
       ),
     );
