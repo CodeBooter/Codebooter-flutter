@@ -1,8 +1,13 @@
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+import '../../../../utils/Colors.dart';
+import '../../../../widgets/BigText.dart';
 
 class MockInterview extends StatefulWidget {
   const MockInterview();
@@ -43,18 +48,21 @@ class _MockInterviewState extends State<MockInterview> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text(
-          'MockInterview Preparation',
-          style: TextStyle(
-            color: Colors.black,
-          ),
+        title: bigText(
+          text: "MockInterview Preparation",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
       body: Container(
@@ -105,6 +113,7 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -121,8 +130,14 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
         );
       },
       child: Container(
-        width: widget.width,
-        height: widget.height,
+        padding: EdgeInsets.all(16),
+        width: dimension.width260,
+        height: dimension.height300,
+        decoration: BoxDecoration(
+          color: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
+        ),
         child: Image.network(
           'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
           fit: BoxFit.cover,
