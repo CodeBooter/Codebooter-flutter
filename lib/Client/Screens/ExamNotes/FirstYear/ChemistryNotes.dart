@@ -56,6 +56,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
       });
     } else {
       setState(() {
+
         isPdfDownloaded = false;
       });
     }
