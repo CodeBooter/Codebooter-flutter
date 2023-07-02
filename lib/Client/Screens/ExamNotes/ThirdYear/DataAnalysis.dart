@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class ChemistryNotes extends StatefulWidget {
-  const ChemistryNotes({Key? key}) : super(key: key);
+class DataAnalysis extends StatefulWidget {
+  const DataAnalysis({Key? key}) : super(key: key);
 
   @override
-  _ChemistryNotesState createState() => _ChemistryNotesState();
+  _DataAnalysisState createState() => _DataAnalysisState();
 }
 
-class _ChemistryNotesState extends State<ChemistryNotes> {
+class _DataAnalysisState extends State<DataAnalysis> {
   final String pdfUrl =
       'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
   late String localPath;
@@ -27,7 +27,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
 
   Future<void> downloadPdf() async {
     final directory = await getApplicationSupportDirectory();
-    localPath = '${directory.path}/Bce.pdf';
+    localPath = '${directory.path}/dataanalysis.pdf';
     final file = File(localPath);
 
     if (await file.exists()) {
@@ -47,7 +47,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
 
   Future<void> checkPdfExistence() async {
     final directory = await getApplicationSupportDirectory();
-    localPath = '${directory.path}/bce.pdf';
+    localPath = '${directory.path}/dataanalysis.pdf';
     final file = File(localPath);
 
     if (await file.exists()) {
@@ -96,7 +96,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
           ),
         ],
         title: const Text(
-          ' Basic Computer Engineering Notes ',
+          ' Data Analysis Notes ',
           style: TextStyle(color: Colors.black),
         ),
       ),
