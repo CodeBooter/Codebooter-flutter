@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class Mathematics extends StatefulWidget {
-  const Mathematics({Key? key}) : super(key: key);
+class Mathematics2 extends StatefulWidget {
+  const Mathematics2({Key? key}) : super(key: key);
 
   @override
-  _MathematicsState createState() => _MathematicsState();
+  _Mathematics2State createState() => _Mathematics2State();
 }
 
-class _MathematicsState extends State<Mathematics> {
+class _Mathematics2State extends State<Mathematics2> {
   final String pdfUrl =
       'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
   late String localPath;
