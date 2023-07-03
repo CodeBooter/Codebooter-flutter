@@ -62,8 +62,7 @@ class _TreeState extends State<Tree> {
               SizedBox(height: dimension.val25),
               Center(
                 child: Image(
-                  image: NetworkImage('https://i.imgur.com/MhDHiyz.pngf'),
-
+                  image: const NetworkImage('https://i.imgur.com/MhDHiyz.pngf'),
                   height: dimension.height250,
                 ),
               ),
@@ -84,22 +83,19 @@ class _TreeState extends State<Tree> {
                     _buildTreeType(
                       title: 'Binary Tree',
                       definition:
-                      'A binary tree is a tree in which each node has at most two children, referred to as the left child and the right child. The binary tree is a fundamental data structure that is widely used and serves as the basis for many other tree-based data structures.',
-
+                          'A binary tree is a tree in which each node has at most two children, referred to as the left child and the right child. The binary tree is a fundamental data structure that is widely used and serves as the basis for many other tree-based data structures.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildTreeType(
                       title: 'Binary Search Tree',
                       definition:
-                      'A binary search tree (BST) is a binary tree in which the nodes are ordered or sorted. For any given node, all the values in its left subtree are less than its value, and all the values in its right subtree are greater than its value.',
-
+                          'A binary search tree (BST) is a binary tree in which the nodes are ordered or sorted. For any given node, all the values in its left subtree are less than its value, and all the values in its right subtree are greater than its value.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildTreeType(
                       title: 'AVL Tree',
                       definition:
-                      ' An AVL (Adelson-Velskii and Landis) tree is a self-balancing binary search tree. It maintains an additional balance factor for each node, which ensures that the heights of the left and right subtrees differ by at most one.AVL trees provide log time complexity for operations. ',
-
+                          ' An AVL (Adelson-Velskii and Landis) tree is a self-balancing binary search tree. It maintains an additional balance factor for each node, which ensures that the heights of the left and right subtrees differ by at most one.AVL trees provide log time complexity for operations. ',
                     ),
                   ],
                 ),
@@ -116,11 +112,11 @@ class _TreeState extends State<Tree> {
               SizedBox(height: dimension.val10),
               Text(
                 '~ Insert: Adds a node to the tree.\n'
-                    '~ Delete: Removes a node from the tree.\n'
-                    '~ Search: Finds a node with a given value in the tree.\n'
-                    '~ Traverse: Visits all the nodes in a specific order (e.g., in-order, pre-order, post-order).\n'
-                    '~ Height: Returns the height of the tree.\n'
-                    '~ Size: Returns the number of nodes in the tree.',
+                '~ Delete: Removes a node from the tree.\n'
+                '~ Search: Finds a node with a given value in the tree.\n'
+                '~ Traverse: Visits all the nodes in a specific order (e.g., in-order, pre-order, post-order).\n'
+                '~ Height: Returns the height of the tree.\n'
+                '~ Size: Returns the number of nodes in the tree.',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -146,7 +142,7 @@ class _TreeState extends State<Tree> {
                       color: Colors.black12,
                       spreadRadius: dimension.val2,
                       blurRadius: dimension.val5,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
@@ -207,20 +203,21 @@ void main() {
   Widget _buildTreeType({
     required String title,
     required String definition,
-
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+        color: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -236,8 +233,8 @@ void main() {
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
-            ? AppColors.lightModePrimary
-                : AppColors.primaryColor,
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -246,9 +243,9 @@ void main() {
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-                color: appState.isDarkMode
-                    ? AppColors.lightModePrimary
-                    : AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

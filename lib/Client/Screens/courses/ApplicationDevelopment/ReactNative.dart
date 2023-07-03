@@ -4,15 +4,12 @@ import 'package:flutter/material.dart';
 
 import '../YoutubeFunction.dart';
 
-
-
 class ReactNative extends StatelessWidget {
   const ReactNative({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final String playlistId = 'PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ';
-    final String channelId = 'NetNinja';
+    const String playlistId = 'PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
@@ -36,7 +33,7 @@ class ReactNative extends StatelessWidget {
                 final item = playlistItems[index];
                 final title = item['snippet']['title'];
                 final thumbnailUrl =
-                item['snippet']['thumbnails']['default']['url'];
+                    item['snippet']['thumbnails']['default']['url'];
 
                 final channelId = item['snippet']['channelId'];
                 final videoId = item['snippet']['resourceId']['videoId'];
@@ -49,13 +46,13 @@ class ReactNative extends StatelessWidget {
                       return buildListTile(
                         thumbnailUrl: thumbnailUrl,
                         title: title,
-                        subtitle: Text('Loading...'),
+                        subtitle: const Text('Loading...'),
                       );
                     } else if (snapshot.hasError) {
                       return buildListTile(
                         thumbnailUrl: thumbnailUrl,
                         title: title,
-                        subtitle: Text('Failed to fetch channel details'),
+                        subtitle: const Text('Failed to fetch channel details'),
                       );
                     } else if (snapshot.hasData) {
                       final channelSnippet = snapshot.data!;
@@ -80,9 +77,10 @@ class ReactNative extends StatelessWidget {
                             builder: (context, snapshot) {
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {
-                                return Text('Loading...');
+                                return const Text('Loading...');
                               } else if (snapshot.hasError) {
-                                return Text('Failed to fetch video statistics');
+                                return const Text(
+                                    'Failed to fetch video statistics');
                               } else if (snapshot.hasData) {
                                 final videoStats = snapshot.data!;
                                 final likeCount = youtubeFunction
@@ -101,7 +99,7 @@ class ReactNative extends StatelessWidget {
                                     Text(
                                       '$likeCount',
                                       style:
-                                      TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: dimension.font14),
                                     ),
                                     const SizedBox(width: 8),
                                     Icon(
@@ -111,12 +109,12 @@ class ReactNative extends StatelessWidget {
                                     Text(
                                       ' $viewCount',
                                       style:
-                                      TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: dimension.font14),
                                     ),
                                   ],
                                 );
                               } else {
-                                return Text('');
+                                return const Text('');
                               }
                             },
                           ),
@@ -144,9 +142,9 @@ class ReactNative extends StatelessWidget {
               },
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text('Failed to fetch playlist'));
+            return const Center(child: Text('Failed to fetch playlist'));
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
@@ -172,7 +170,7 @@ Widget buildListTile({
             color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -192,4 +190,3 @@ Widget buildListTile({
     ),
   );
 }
-

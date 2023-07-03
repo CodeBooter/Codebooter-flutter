@@ -78,7 +78,6 @@ class YoutubeFunction {
       final List<dynamic> videoItems = data['items'];
       final videoSnippet = videoItems.first['snippet'];
       final String description = videoSnippet['description'];
-      final String title = videoSnippet['title'];
       return description;
     } else {
       throw Exception('Failed to fetch video description');

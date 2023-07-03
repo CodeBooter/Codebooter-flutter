@@ -45,7 +45,7 @@ class _VideoScreenState extends State<VideoScreen> {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     try {
       String description =
-      await youtubeFunction.fetchVideoDescription(widget.videoId);
+          await youtubeFunction.fetchVideoDescription(widget.videoId);
       String videoTitle = await youtubeFunction.fetchVideoTitle(widget.videoId);
       setState(() {
         _videoDescription = description;
@@ -60,7 +60,7 @@ class _VideoScreenState extends State<VideoScreen> {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     try {
       List<dynamic> comments =
-      await youtubeFunction.fetchVideoComments(widget.videoId);
+          await youtubeFunction.fetchVideoComments(widget.videoId);
       setState(() {
         _videoComments = comments;
       });
@@ -159,7 +159,6 @@ class _VideoScreenState extends State<VideoScreen> {
             textAlign: TextAlign.center,
             softWrap: true,
           ),
-
         ),
         body: GestureDetector(
           onTapDown: _isFullScreen ? _onDoubleTap : null,
@@ -172,12 +171,14 @@ class _VideoScreenState extends State<VideoScreen> {
                     ProgressBar(isExpanded: true),
                     RemainingDuration(),
                     const PlaybackSpeedButton(),
-                      IconButton(
-                        onPressed: _toggleFullScreen,
-                        icon: Icon(
-                          _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
-                        ),
+                    IconButton(
+                      onPressed: _toggleFullScreen,
+                      icon: Icon(
+                        _isFullScreen
+                            ? Icons.fullscreen_exit
+                            : Icons.fullscreen,
                       ),
+                    ),
                   ],
                   controller: _controller,
                   showVideoProgressIndicator: true,
@@ -248,7 +249,7 @@ class _VideoScreenState extends State<VideoScreen> {
                             },
                             body: Container(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 16.0),
+                                  const EdgeInsets.symmetric(horizontal: 16.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -294,25 +295,25 @@ class _VideoScreenState extends State<VideoScreen> {
                               padding: const EdgeInsets.all(16.0),
                               child: ListView.builder(
                                 shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
+                                physics: const NeverScrollableScrollPhysics(),
                                 itemCount: _videoComments.length,
                                 itemBuilder: (context, index) {
                                   final comment = _videoComments[index];
                                   final commentText = comment['snippet']
-                                  ['topLevelComment']['snippet']
-                                  ['textDisplay'];
+                                          ['topLevelComment']['snippet']
+                                      ['textDisplay'];
                                   final authorName = comment['snippet']
-                                  ['topLevelComment']['snippet']
-                                  ['authorDisplayName'];
+                                          ['topLevelComment']['snippet']
+                                      ['authorDisplayName'];
                                   final timestamp = comment['snippet']
-                                  ['topLevelComment']['snippet']
-                                  ['publishedAt'];
+                                          ['topLevelComment']['snippet']
+                                      ['publishedAt'];
                                   final likeCount = comment['snippet']
-                                  ['topLevelComment']['snippet']
-                                  ['likeCount'];
-                                  final formattedTimestamp = DateFormat(
-                                      'yyyy-MM-dd')
-                                      .format(DateTime.parse(timestamp));
+                                          ['topLevelComment']['snippet']
+                                      ['likeCount'];
+                                  final formattedTimestamp =
+                                      DateFormat('yyyy-MM-dd')
+                                          .format(DateTime.parse(timestamp));
 
                                   return Column(
                                     children: [
@@ -320,17 +321,17 @@ class _VideoScreenState extends State<VideoScreen> {
                                         leading: CircleAvatar(
                                           backgroundImage: NetworkImage(
                                               comment['snippet']
-                                              ['topLevelComment']
-                                              ['snippet']
-                                              ['authorProfileImageUrl']),
+                                                          ['topLevelComment']
+                                                      ['snippet']
+                                                  ['authorProfileImageUrl']),
                                         ),
                                         title: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               authorName,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
@@ -339,8 +340,8 @@ class _VideoScreenState extends State<VideoScreen> {
                                             ),
                                             Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment
-                                                  .spaceBetween,
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
                                                 Row(
                                                   children: [
@@ -349,10 +350,10 @@ class _VideoScreenState extends State<VideoScreen> {
                                                       size: dimension.font14,
                                                       color: Colors.grey,
                                                     ),
-                                                    SizedBox(width: 5.0),
+                                                    const SizedBox(width: 5.0),
                                                     Text(
                                                       likeCount.toString(),
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                         color: Colors.grey,
                                                       ),
                                                     ),

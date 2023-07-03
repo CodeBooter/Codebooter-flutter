@@ -104,27 +104,27 @@ class _ImageProcessingState extends State<ImageProcessing> {
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
             : Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                downloadPdf();
-              },
-              icon: Icon(
-                Icons.download,
-                color: Colors.black,
-                size: dimension.val60,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      downloadPdf();
+                    },
+                    icon: Icon(
+                      Icons.download,
+                      color: Colors.black,
+                      size: dimension.val60,
+                    ),
+                  ),
+                  SizedBox(
+                    height: dimension.val20,
+                  ),
+                  Text(downloadMessage,
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: dimension.font20)),
+                ],
               ),
-            ),
-            SizedBox(
-              height: dimension.val20,
-            ),
-            Text(downloadMessage,
-                style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: dimension.font20)),
-          ],
-        ),
       ),
     );
   }

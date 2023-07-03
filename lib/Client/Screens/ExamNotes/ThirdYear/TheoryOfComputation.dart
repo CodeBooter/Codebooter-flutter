@@ -9,7 +9,6 @@ class TheoryOfComputation extends StatefulWidget {
   const TheoryOfComputation({Key? key}) : super(key: key);
 
   @override
-
   _TheoryOfComputationState createState() => _TheoryOfComputationState();
 }
 
@@ -105,27 +104,27 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
             : Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                downloadPdf();
-              },
-              icon: Icon(
-                Icons.download,
-                color: Colors.black,
-                size: dimension.val60,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      downloadPdf();
+                    },
+                    icon: Icon(
+                      Icons.download,
+                      color: Colors.black,
+                      size: dimension.val60,
+                    ),
+                  ),
+                  SizedBox(
+                    height: dimension.val20,
+                  ),
+                  Text(downloadMessage,
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: dimension.font20)),
+                ],
               ),
-            ),
-            SizedBox(
-              height: dimension.val20,
-            ),
-            Text(downloadMessage,
-                style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: dimension.font20)),
-          ],
-        ),
       ),
     );
   }

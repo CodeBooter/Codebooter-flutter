@@ -64,10 +64,10 @@ class Searching extends StatelessWidget {
             ),
             SizedBox(height: dimension.val10),
             Text(
-                  '1. Target Element: The element being searched within the collection.\n'
-                  '2. Collection: The group of elements in which the search is performed.\n'
-                  '3. Searching Algorithm: The algorithm that determines the process of searching for the target element.\n'
-                  '4. Search Space: The range or area within which the search is conducted.',
+              '1. Target Element: The element being searched within the collection.\n'
+              '2. Collection: The group of elements in which the search is performed.\n'
+              '3. Searching Algorithm: The algorithm that determines the process of searching for the target element.\n'
+              '4. Search Space: The range or area within which the search is conducted.',
               style: TextStyle(
                 fontSize: dimension.font18,
                 fontFamily: 'Georgia',
@@ -93,7 +93,7 @@ class Searching extends StatelessWidget {
                       color: Colors.black12,
                       spreadRadius: dimension.val2,
                       blurRadius: dimension.val5,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),

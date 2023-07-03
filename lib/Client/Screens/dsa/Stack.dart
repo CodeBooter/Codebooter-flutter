@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Stacks extends StatefulWidget {
   const Stacks({Key? key}) : super(key: key);
 
@@ -22,7 +23,7 @@ class _StacksState extends State<Stacks> {
       backgroundColor: appState.isDarkMode
           ? AppColors.primaryColor
           : AppColors.lightModePrimary,
-      appBar:AppBar(
+      appBar: AppBar(
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
         backgroundColor: appState.isDarkMode
@@ -63,7 +64,7 @@ class _StacksState extends State<Stacks> {
               SizedBox(height: dimension.val25),
               Center(
                 child: Image(
-                  image: NetworkImage('https://i.imgur.com/mK2qWri.png'),
+                  image: const NetworkImage('https://i.imgur.com/mK2qWri.png'),
                   height: dimension.height150,
                 ),
               ),
@@ -84,20 +85,20 @@ class _StacksState extends State<Stacks> {
                   children: [
                     _buildStackType(
                       title: 'Simple Stack',
-                      definition: ' A static stack has a fixed size determined at the time of creation. Once the stack is full, it cannot accommodate any more elements until some are removed (popped) from the stack.',
-
+                      definition:
+                          ' A static stack has a fixed size determined at the time of creation. Once the stack is full, it cannot accommodate any more elements until some are removed (popped) from the stack.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildStackType(
                       title: 'Dynamic Stack',
-                      definition: 'Dynamic stack, also known as a resizable stack, can grow or shrink dynamically based on the number of elements it contains. It uses dynamic memory allocation to resize itself.',
-
+                      definition:
+                          'Dynamic stack, also known as a resizable stack, can grow or shrink dynamically based on the number of elements it contains. It uses dynamic memory allocation to resize itself.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildStackType(
                       title: 'Fixed-size Stack',
-                      definition: 'n array-based stack is implemented using an array or a similar fixed-size data structure. It maintains a pointer (often called "top") indicating the last inserted element. ',
-
+                      definition:
+                          'n array-based stack is implemented using an array or a similar fixed-size data structure. It maintains a pointer (often called "top") indicating the last inserted element. ',
                     ),
                   ],
                 ),
@@ -115,10 +116,10 @@ class _StacksState extends State<Stacks> {
               SizedBox(height: dimension.val10),
               Text(
                 '~ Push: Adds an element to the top of the stack.\n'
-                    '~ Pop: Removes and returns the top element from the stack.\n'
-                    '~ Peek: Returns the top element without removing it.\n'
-                    '~ IsEmpty: Checks if the stack is empty.\n'
-                    '~ IsFull: Checks if the stack is full (in case of a fixed-size stack).',
+                '~ Pop: Removes and returns the top element from the stack.\n'
+                '~ Peek: Returns the top element without removing it.\n'
+                '~ IsEmpty: Checks if the stack is empty.\n'
+                '~ IsFull: Checks if the stack is full (in case of a fixed-size stack).',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -145,7 +146,7 @@ class _StacksState extends State<Stacks> {
                       color: Colors.black12,
                       spreadRadius: dimension.val2,
                       blurRadius: dimension.val5,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
@@ -197,20 +198,21 @@ void main() {
   Widget _buildStackType({
     required String title,
     required String definition,
-
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+        color: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -225,7 +227,9 @@ void main() {
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -234,7 +238,9 @@ void main() {
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

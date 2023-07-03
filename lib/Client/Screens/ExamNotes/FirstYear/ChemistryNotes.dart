@@ -56,7 +56,6 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
       });
     } else {
       setState(() {
-
         isPdfDownloaded = false;
       });
     }
@@ -122,7 +121,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                   ),
                   Text(downloadMessage,
                       style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: const Color.fromARGB(255, 0, 0, 0),
                           fontSize: dimension.font20)),
                 ],
               ),

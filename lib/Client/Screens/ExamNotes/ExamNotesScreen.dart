@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +23,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
   final double borderRadius = dimension.val5;
   final double spacing = dimension.val20;
   final double runSpacing = dimension.val20;
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
@@ -109,14 +108,12 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/06f6aXE.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/physics'),
+                                    onTap: () => _navigateTo('/notes/physics'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/IX2yM5D.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/beee'),
+                                    onTap: () => _navigateTo('/notes/beee'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
@@ -133,26 +130,22 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/dZbuLl1.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/Bce'),
+                                    onTap: () => _navigateTo('/notes/Bce'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/CVwI8jV.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/eg'),
+                                    onTap: () => _navigateTo('/notes/eg'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/tEvvAfz.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/bme'),
+                                    onTap: () => _navigateTo('/notes/bme'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/Yoyfbou.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/bcm'),
+                                    onTap: () => _navigateTo('/notes/bcm'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -206,14 +199,12 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/OSIY5L6.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/eees'),
+                                    onTap: () => _navigateTo('/notes/eees'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/wttXuGJ.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/discrete'),
+                                    onTap: () => _navigateTo('/notes/discrete'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
@@ -230,14 +221,12 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/GSBAiTM.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/oopm'),
+                                    onTap: () => _navigateTo('/notes/oopm'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/FohUYQn.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/os'),
+                                    onTap: () => _navigateTo('/notes/os'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
@@ -248,20 +237,17 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/NCENCLK.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/coa'),
+                                    onTap: () => _navigateTo('/notes/coa'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/P65o5e2.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/se'),
+                                    onTap: () => _navigateTo('/notes/se'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/9M7f08r.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/ada'),
+                                    onTap: () => _navigateTo('/notes/ada'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -315,26 +301,22 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/C3JKLcf.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/iwt'),
+                                    onTap: () => _navigateTo('/notes/iwt'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/ENfdo1C.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/toc'),
+                                    onTap: () => _navigateTo('/notes/toc'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/QrlnCgA.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/dbms'),
+                                    onTap: () => _navigateTo('/notes/dbms'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/I4weBwi.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/oop'),
+                                    onTap: () => _navigateTo('/notes/oop'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
@@ -351,38 +333,32 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/AAgYhf8.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/ml'),
+                                    onTap: () => _navigateTo('/notes/ml'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/t82CmYU.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/cn'),
+                                    onTap: () => _navigateTo('/notes/cn'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/bhWiBqs.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/cd'),
+                                    onTap: () => _navigateTo('/notes/cd'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/DUvFS3k.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/pm'),
+                                    onTap: () => _navigateTo('/notes/pm'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/3a9Tj3D.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/km'),
+                                    onTap: () => _navigateTo('/notes/km'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/Ea99ImE.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/advarch'),
+                                    onTap: () => _navigateTo('/notes/advarch'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -436,56 +412,47 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/flObCX0.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/dmw'),
+                                    onTap: () => _navigateTo('/notes/dmw'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/nF5658T.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/sa'),
+                                    onTap: () => _navigateTo('/notes/sa'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/KTMONeL.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/ipcv'),
+                                    onTap: () => _navigateTo('/notes/ipcv'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/SvvzhpN.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/oose'),
+                                    onTap: () => _navigateTo('/notes/oose'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/DLUPQC1.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/iot'),
+                                    onTap: () => _navigateTo('/notes/iot'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/7EoavfN.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/cis'),
+                                    onTap: () => _navigateTo('/notes/cis'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/5x6xuoV.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/cc'),
+                                    onTap: () => _navigateTo('/notes/cc'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/91Wb97D.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/bigdata'),
+                                    onTap: () => _navigateTo('/notes/bigdata'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/mUtbZiW.jpg',
-                                    onTap: () =>
-                                        _navigateTo('/notes/wmc'),
+                                    onTap: () => _navigateTo('/notes/wmc'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -517,7 +484,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
             color: appState.isDarkMode ? AppColors.primaryColor : Colors.white,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
-              BoxShadow(
+              const BoxShadow(
                 color: AppColors.shadowColor,
                 spreadRadius: 2,
                 blurRadius: 5,
@@ -543,8 +510,9 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                     color: const Color.fromARGB(255, 209, 209, 209),
                   ),
                 ),
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],
           ),

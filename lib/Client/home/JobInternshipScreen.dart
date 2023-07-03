@@ -30,7 +30,7 @@ class _DsaScreenState extends State<JobInternshipScreen> {
       body: Padding(
           padding:
               EdgeInsets.only(left: dimension.val15, right: dimension.val15),
-          child: JobInternships()),
+          child: const JobInternships()),
     );
   }
 }

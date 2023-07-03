@@ -24,7 +24,7 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
     super.initState();
     _controller = YoutubePlayerController(
       initialVideoId: widget.videoId,
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         autoPlay: false,
       ),
     );
@@ -65,11 +65,11 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
               ),
             ),
           ),
-          Center(
+          const Center(
             child: Icon(
               Icons.play_circle_outline,
               size: 50,
-              color: const Color.fromARGB(255, 18, 18, 18),
+              color: Color.fromARGB(255, 18, 18, 18),
             ),
           )
         ]),

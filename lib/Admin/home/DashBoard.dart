@@ -21,7 +21,7 @@ class _DashBoardState extends State<DashBoard> {
   final double borderRadius = dimension.val5;
   final double spacing = dimension.val10;
   final double runSpacing = dimension.val10;
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
   Widget build(BuildContext context) {
@@ -77,11 +77,11 @@ class _DashBoardState extends State<DashBoard> {
             color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
-              BoxShadow(
+              const BoxShadow(
                 color: AppColors.shadowColor,
                 blurRadius: 10.0,
                 spreadRadius: 5.0,
-                offset: const Offset(-1, 0),
+                offset: Offset(-1, 0),
               ),
             ],
           ),
