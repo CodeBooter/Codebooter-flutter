@@ -70,7 +70,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font20,
+                                    fontSize: dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -78,7 +78,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val30,
+                                size: dimension.val20,
                               ),
                             ],
                           ),
@@ -104,55 +104,55 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                     imageAsset:
                                         'https://i.imgur.com/dYEB0pb.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/communication'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/06f6aXE.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/physics'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/IX2yM5D.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/beee'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/latY3gT.jpeg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/mathematics1'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/JHSEkVO.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/mathematics2'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/dZbuLl1.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/Bce'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/CVwI8jV.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/eg'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/tEvvAfz.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/bme'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/Yoyfbou.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/bcm'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -179,7 +179,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font20,
+                                    fontSize: dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -187,7 +187,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val30,
+                                size: dimension.val20,
                               ),
                             ],
                           ),
@@ -207,61 +207,61 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                     imageAsset:
                                         'https://i.imgur.com/OSIY5L6.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/eees'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/wttXuGJ.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/discrete'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/RzyPkhG.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/datastructure'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/51Wpp68.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/digitalsystems'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/GSBAiTM.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/oopm'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/FohUYQn.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/os'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/9x9GybD.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/mathematics3'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/NCENCLK.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/coa'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/P65o5e2.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/se'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/9M7f08r.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/ada'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -288,7 +288,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font20,
+                                    fontSize: dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -296,7 +296,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val30,
+                                size: dimension.val20,
                               ),
                             ],
                           ),
@@ -316,73 +316,73 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                     imageAsset:
                                         'https://i.imgur.com/C3JKLcf.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/iwt'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/ENfdo1C.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/toc'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/QrlnCgA.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/dbms'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/I4weBwi.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/oop'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/zNKci5K.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/dataanalysis'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/Lxb5qXz.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/cybersecurity'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/AAgYhf8.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/ml'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/t82CmYU.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/cn'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/bhWiBqs.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/cd'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/DUvFS3k.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/pm'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/3a9Tj3D.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/km'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/Ea99ImE.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/advarch'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])
@@ -409,7 +409,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font20,
+                                    fontSize: dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -417,7 +417,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val30,
+                                size: dimension.val20,
                               ),
                             ],
                           ),
@@ -437,55 +437,55 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                     imageAsset:
                                         'https://i.imgur.com/flObCX0.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/dmw'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/nF5658T.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/mathematics1'),
+                                        _navigateTo('/notes/sa'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/KTMONeL.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/ipcv'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/SvvzhpN.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/oose'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/DLUPQC1.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/iot'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/7EoavfN.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/cis'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/5x6xuoV.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/cc'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/91Wb97D.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/bigdata'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/mUtbZiW.jpg',
                                     onTap: () =>
-                                        _navigateTo('/notes/chemistry'),
+                                        _navigateTo('/notes/wmc'),
                                   ),
                                   SizedBox(height: dimension.val20),
                                 ])

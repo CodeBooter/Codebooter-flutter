@@ -2,9 +2,46 @@ import 'package:codebooter_study_app/Admin/authentication/AdminLogin.dart';
 import 'package:codebooter_study_app/Admin/home/AdminHome.dart';
 import 'package:codebooter_study_app/Admin/home/PostJob.dart';
 import 'package:codebooter_study_app/AppState.dart';
+
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/ChemistryNotes.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/EngineeringMaths1.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ExamNotesScreen.dart';
+
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicCivil.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicComputers.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicElectricals.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/BasicMechanical.dart';
+
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/communication.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/graphics.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/mathematics2.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FirstYear/physics.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/BigData.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/CloudComputing.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/CrptographyInformation.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/DataMining.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/ImageProccessing.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/InternetOfThings.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/ObjectOrientedSoftware.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/SoftwareArch.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/FourthYear/Wireless&Mobile.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/AnalysisDesign.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/ComputerArch.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/DataStructures.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/DigitalSystems.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/Discrete.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/Environmental.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/Mathematics3.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/ObjectOriented.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/SoftwareEngineering.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/AdvancedArch.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/DataAnalysis.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Database.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Internetweb.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/KnowledgeManagement.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ProjectManagement.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/TheoryOfComputation.dart';
+
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaProblems.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaQuestion.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/HR/h_r.dart';
@@ -30,7 +67,6 @@ import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/DBMS.da
 import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/OperatingSystem.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/TOC.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
-import 'package:codebooter_study_app/Client/Screens/ExamNotes/Test.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/InterviewPrepScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/CCNA.dart';
@@ -66,7 +102,6 @@ import 'package:codebooter_study_app/Client/Screens/dsa/searching.dart';
 import 'package:codebooter_study_app/Client/Screens/help.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
-import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
 import 'package:codebooter_study_app/Client/home/JobInternshipScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -462,7 +497,202 @@ class App extends StatelessWidget {
                     path: 'mathematics1',
                     builder: (BuildContext context, GoRouterState state) =>
                         const EngineeringMaths1(),
-                  )
+                  ),
+                  GoRoute(
+                    path: 'bcm',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const BasicCivil(),
+                  ),
+                  GoRoute(
+                    path: 'bce',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const BasicComputers(),
+                  ),
+                  GoRoute(
+                    path: 'beee',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const BasicElectricals(),
+                  ),
+                  GoRoute(
+                    path: 'bme',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const BasicMechanical(),
+                  ),
+                  GoRoute(
+                    path: 'communication',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Communication(),
+                  ),
+                  GoRoute(
+                    path: 'graphics',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const EngineeringGraphics(),
+                  ),
+                  GoRoute(
+                    path: 'mathematics2',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Mathematics2(),
+                  ),
+                  GoRoute(
+                    path: 'physics',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Physics(),
+                  ),
+                  GoRoute(
+                    path: 'bigdata',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const BigData(),
+                  ),
+                  GoRoute(
+                    path: 'cc',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const CloudComputing(),
+                  ),
+                  GoRoute(
+                    path: 'cis',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const CryptographyInformation(),
+                  ),
+                  GoRoute(
+                    path: 'dmw',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const DataMining(),
+                  ),
+                  GoRoute(
+                    path: 'sa',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const SoftwareArch(),
+                  ),
+                  GoRoute(
+                    path: 'ipcv',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ImageProcessing(),
+                  ),
+                  GoRoute(
+                    path: 'oose',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ObjectOrientedSoftware(),
+                  ),
+                  GoRoute(
+                    path: 'iot',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const InternetOfThings(),
+                  ),
+                  GoRoute(
+                    path: 'wmc',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const WirelessMobile(),
+                  ),
+                  GoRoute(
+                    path: 'advarch',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const AdvanceArch(),
+                  ),
+                  GoRoute(
+                    path: 'km',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const KnowledgeManagement(),
+                  ),
+                  GoRoute(
+                    path: 'pm',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ProjectManagement(),
+                  ),
+                  GoRoute(
+                    path: 'cd',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const CompilerDesign(),
+                  ),
+                  GoRoute(
+                    path: 'cn',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ComputerNetwork(),
+                  ),
+                  GoRoute(
+                    path: 'ml',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const MachineLearning(),
+                  ),
+                  GoRoute(
+                    path: 'cybersecurity',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const CyberSecurity(),
+                  ),
+                  GoRoute(
+                    path: 'dataanalysis',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const DataAnalysis(),
+                  ),
+                  GoRoute(
+                    path: 'oop',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ObjectOriented(),
+                  ),
+                  GoRoute(
+                    path: 'dbms',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Database(),
+                  ),
+                  GoRoute(
+                    path: 'toc',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const TheoryOfComputation(),
+                  ),
+                  GoRoute(
+                    path: 'iwt',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const InternetWeb(),
+                  ),
+                  GoRoute(
+                    path: 'ada',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const AnalysisDesin(),
+                  ),
+                  GoRoute(
+                    path: 'se',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const SoftwareEngineering(),
+                  ),
+                  GoRoute(
+                    path: 'coa',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ComputerArch(),
+                  ),
+                  GoRoute(
+                    path: 'mathematics3',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Mathematics3(),
+                  ),
+                  GoRoute(
+                    path: 'os',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const OperatingSystem(),
+                  ),
+                  GoRoute(
+                    path: 'oopm',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const ObjectOriented(),
+                  ),
+                  GoRoute(
+                    path: 'digitalsystems',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const DigitalSystems(),
+                  ),
+                  GoRoute(
+                    path: 'datastructure',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const DataStructure(),
+                  ),
+                  GoRoute(
+                    path: 'discrete',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Discrete(),
+                  ),
+                  GoRoute(
+                    path: 'eees',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const Environmental(),
+                  ),
                 ]),
             GoRoute(
               path: 'jobinternship',

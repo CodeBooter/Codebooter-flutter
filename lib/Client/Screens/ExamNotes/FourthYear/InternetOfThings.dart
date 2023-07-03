@@ -1,29 +1,25 @@
 import 'dart:io';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class EngineeringMaths1 extends StatefulWidget {
-  const EngineeringMaths1({Key? key}) : super(key: key);
+class InternetOfThings extends StatefulWidget {
+  const InternetOfThings({Key? key}) : super(key: key);
 
   @override
-  _EngineeringMaths1State createState() => _EngineeringMaths1State();
+  _InternetOfThingsState createState() => _InternetOfThingsState();
 }
 
-class _EngineeringMaths1State extends State<EngineeringMaths1> {
+class _InternetOfThingsState extends State<InternetOfThings> {
   final String pdfUrl =
-      'https://raw.githubusercontent.com/Manav-khadka/dfsfsd/715236bc87e59d18bff4384fd40f55bbf8f9eb45/math%201.pdf';
+      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
-  double downloadProgress = 0;
 
   @override
-
   void initState() {
     super.initState();
     checkPdfExistence();
@@ -31,7 +27,7 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
 
   Future<void> downloadPdf() async {
     final directory = await getApplicationSupportDirectory();
-    localPath = '${directory.path}/mathematicsI.pdf';
+    localPath = '${directory.path}/iot.pdf';
     final file = File(localPath);
 
     if (await file.exists()) {
@@ -39,30 +35,19 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
         isPdfDownloaded = true;
       });
     } else {
-      final dio = Dio();
-      dio.download(
-        pdfUrl,
-        localPath,
-        onReceiveProgress: (received, total) {
-          if (total != -1) {
-            setState(() {
-              downloadProgress = received / total;
-              downloadMessage =
-                  "Downloading ${(downloadProgress * 100).toStringAsFixed(0)}%";
-            });
-          }
-        },
-      ).then((_) {
-        setState(() {
-          isPdfDownloaded = true;
-        });
+      final response = await HttpClient().getUrl(Uri.parse(pdfUrl));
+      final downloadedFile = await response.close();
+      final bytes = await consolidateHttpClientResponseBytes(downloadedFile);
+      await file.writeAsBytes(bytes);
+      setState(() {
+        isPdfDownloaded = true;
       });
     }
   }
 
   Future<void> checkPdfExistence() async {
     final directory = await getApplicationSupportDirectory();
-    localPath = '${directory.path}/mathematicsI.pdf';
+    localPath = '${directory.path}/iot.pdf';
     final file = File(localPath);
 
     if (await file.exists()) {
@@ -82,8 +67,6 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
       await file.delete();
       setState(() {
         isPdfDownloaded = false;
-        downloadProgress = 0;
-        downloadMessage = "Click download icon to start download";
       });
     }
   }
@@ -112,8 +95,8 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
             ),
           ),
         ],
-        title: Text(
-          'Mathematics I 1ST Year ',
+        title: const Text(
+          '  Internet Of Things Notes ',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -121,30 +104,27 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
             : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(value: downloadProgress),
-                  SizedBox(height: dimension.val20),
-                  Text(
-                    downloadMessage,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: dimension.font20,
-                    ),
-                  ),
-                  SizedBox(height: dimension.val20),
-                  IconButton(
-                    onPressed: () {
-                      downloadPdf();
-                    },
-                    icon: Icon(
-                      Icons.download,
-                      color: Colors.black,
-                      size: dimension.val60,
-                    ),
-                  ),
-                ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                downloadPdf();
+              },
+              icon: Icon(
+                Icons.download,
+                color: Colors.black,
+                size: dimension.val60,
               ),
+            ),
+            SizedBox(
+              height: dimension.val20,
+            ),
+            Text(downloadMessage,
+                style: TextStyle(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: dimension.font20)),
+          ],
+        ),
       ),
     );
   }
