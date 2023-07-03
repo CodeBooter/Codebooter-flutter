@@ -51,6 +51,7 @@ import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/Cpp
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/JsProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/PythonProgramming.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/SqlProgramming.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/TopResumes/TopResumes.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/AIML/ArtificialIntelligence.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/AIML/BasicStarting.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/AIML/DataScience.dart';
@@ -481,6 +482,11 @@ class App extends StatelessWidget {
                     path: 'mockinterview',
                     builder: (BuildContext context, GoRouterState state) =>
                         MockInterview(),
+                  ),
+                  GoRoute(
+                    path: 'resumes',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        TopResumes(),
                   ),
                 ]),
             GoRoute(

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaInterview.dart';
-import 'package:codebooter_study_app/Client/Screens/InterviePrep/ProgrammingInterview.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/ProgrammingInterview.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
@@ -20,7 +20,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
   final double borderRadius = dimension.val2;
   final double spacing = dimension.val25;
   final double runSpacing = dimension.val25;
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
@@ -83,14 +83,14 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/gMQ17eB.png'
                           : 'https://i.imgur.com/PVLhC57.png',
-                      onTap: () => _navigateTo('/interview'),
+                      onTap: () => _navigateTo('/interview/resumes'),
                     ),
                   ],
                 ),
                 SizedBox(width: dimension.val20),
                 Column(
                   children: [
-                    DsaInterview(),
+                    const DsaInterview(),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(
                       imageHeight: dimension.height140,
@@ -168,7 +168,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: AppColors.shadowColor,
 
@@ -202,7 +202,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                   ),
                 ),
                 // placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],
           ),

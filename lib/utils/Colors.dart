@@ -22,7 +22,7 @@ class AppColors {
 
   static const Color shadowColor = Color.fromARGB(255, 24, 24, 24);
   // Dark mode colors
-  static const Color mainColor = Color.fromARGB(255, 33, 33, 33);
+  static const Color mainColor = Color.fromARGB(255, 56, 56, 56);
   static const Color darkModeSecondary = Color.fromARGB(255, 0, 0, 0);
   static const Color mainTextColor = Color.fromARGB(255, 255, 255, 255);
 
