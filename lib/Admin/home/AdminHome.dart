@@ -26,7 +26,7 @@ class _AdminHomeState extends State<AdminHome> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.home),
+                const Icon(Icons.home),
                 bigText(
                   text: 'CodeBooter',
                   color: Colors.black,
@@ -53,7 +53,7 @@ class _AdminHomeState extends State<AdminHome> {
                       SizedBox(height: dimension.val10),
                       smallText(text: "Thanks for being a part of us"),
                       SizedBox(height: dimension.val20),
-                      DashBoard(),
+                      const DashBoard(),
                     ]),
                   ),
                 ],

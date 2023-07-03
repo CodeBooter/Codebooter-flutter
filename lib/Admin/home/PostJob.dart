@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
+//TODO remove company
 class PostJob extends StatefulWidget {
   @override
   _PostJobState createState() => _PostJobState();
@@ -10,15 +11,15 @@ class PostJob extends StatefulWidget {
 class _PostJobState extends State<PostJob> {
   final _formKey = GlobalKey<FormState>();
 
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _imageAssetController = TextEditingController();
-  TextEditingController _stipendController = TextEditingController();
-  TextEditingController _locationController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _imageAssetController = TextEditingController();
+  final TextEditingController _stipendController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
   // TextEditingController _companyController = TextEditingController();
-  TextEditingController _applyLinkController = TextEditingController();
-  TextEditingController _durationController = TextEditingController();
-  TextEditingController _applyByController = TextEditingController();
-  TextEditingController _deadlineController = TextEditingController();
+  final TextEditingController _applyLinkController = TextEditingController();
+  final TextEditingController _durationController = TextEditingController();
+  final TextEditingController _applyByController = TextEditingController();
+  final TextEditingController _deadlineController = TextEditingController();
 
   Future<void> createJob() async {
     var url =
@@ -52,11 +53,11 @@ class _PostJobState extends State<PostJob> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Success'),
-              content: Text('Job created successfully'),
+              title: const Text('Success'),
+              content: const Text('Job created successfully'),
               actions: [
                 TextButton(
-                  child: Text('OK'),
+                  child: const Text('OK'),
                   onPressed: () {
                     Navigator.of(context).pop();
                     clearFields();
@@ -72,11 +73,11 @@ class _PostJobState extends State<PostJob> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Error'),
+              title: const Text('Error'),
               content: Text('Error creating job: ${response.statusCode}'),
               actions: [
                 TextButton(
-                  child: Text('OK'),
+                  child: const Text('OK'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -92,11 +93,11 @@ class _PostJobState extends State<PostJob> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Error'),
+            title: const Text('Error'),
             content: Text('Error creating job: $e'),
             actions: [
               TextButton(
-                child: Text('OK'),
+                child: const Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -124,18 +125,18 @@ class _PostJobState extends State<PostJob> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Job'),
+        title: const Text('Create Job'),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
                 TextFormField(
                   controller: _titleController,
-                  decoration: InputDecoration(labelText: 'Role'),
+                  decoration: const InputDecoration(labelText: 'Role'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter job title';
@@ -145,7 +146,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _imageAssetController,
-                  decoration: InputDecoration(labelText: 'Image Link'),
+                  decoration: const InputDecoration(labelText: 'Image Link'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter image asset';
@@ -155,7 +156,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _stipendController,
-                  decoration: InputDecoration(labelText: 'Stipend'),
+                  decoration: const InputDecoration(labelText: 'Stipend'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter stipend';
@@ -165,7 +166,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _locationController,
-                  decoration: InputDecoration(labelText: 'Location'),
+                  decoration: const InputDecoration(labelText: 'Location'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter location';
@@ -175,7 +176,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   // controller: _companyController,
-                  decoration: InputDecoration(labelText: 'Company'),
+                  decoration: const InputDecoration(labelText: 'Company'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter company name';
@@ -185,7 +186,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _applyLinkController,
-                  decoration: InputDecoration(labelText: 'Apply Link'),
+                  decoration: const InputDecoration(labelText: 'Apply Link'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter apply link';
@@ -195,7 +196,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _durationController,
-                  decoration: InputDecoration(labelText: 'Duration'),
+                  decoration: const InputDecoration(labelText: 'Duration'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter duration';
@@ -205,7 +206,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _applyByController,
-                  decoration: InputDecoration(labelText: 'Apply By'),
+                  decoration: const InputDecoration(labelText: 'Apply By'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter apply by date';
@@ -215,7 +216,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _deadlineController,
-                  decoration: InputDecoration(labelText: 'Deadline'),
+                  decoration: const InputDecoration(labelText: 'Deadline'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter deadline';
@@ -229,7 +230,7 @@ class _PostJobState extends State<PostJob> {
                       createJob();
                     }
                   },
-                  child: Text('Submit'),
+                  child: const Text('Submit'),
                 ),
               ],
             ),

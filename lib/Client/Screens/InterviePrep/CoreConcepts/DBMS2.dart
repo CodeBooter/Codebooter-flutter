@@ -31,9 +31,9 @@ class _DBMS2State extends State<DBMS2> {
         setState(() {
           questionsAndAnswers = data
               .map((item) => {
-            'question': item['question'] as String,
-            'answer': item['answer'] as String,
-          })
+                    'question': item['question'] as String,
+                    'answer': item['answer'] as String,
+                  })
               .toList();
           isLoading = false; // Set loading state to false when data is fetched
         });
@@ -55,7 +55,7 @@ class _DBMS2State extends State<DBMS2> {
             color: appState.isDarkMode ? Colors.white : Colors.black),
         centerTitle: true,
         backgroundColor:
-        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         title: Text(
           'DBMS',
           style: TextStyle(
@@ -64,16 +64,17 @@ class _DBMS2State extends State<DBMS2> {
         ),
       ),
       body: isLoading // Check if data is still loading
-          ? Center(child: CircularProgressIndicator()) // Show loading indicator
+          ? const Center(
+              child: CircularProgressIndicator()) // Show loading indicator
           : ListView.builder(
-        itemCount: questionsAndAnswers.length,
-        itemBuilder: (context, index) {
-          return QuestionAnswerTile(
-            question: questionsAndAnswers[index]['question']!,
-            answer: questionsAndAnswers[index]['answer']!,
-          );
-        },
-      ),
+              itemCount: questionsAndAnswers.length,
+              itemBuilder: (context, index) {
+                return QuestionAnswerTile(
+                  question: questionsAndAnswers[index]['question']!,
+                  answer: questionsAndAnswers[index]['answer']!,
+                );
+              },
+            ),
     );
   }
 }
@@ -109,7 +110,7 @@ class _QuestionAnswerTileState extends State<QuestionAnswerTile> {
             return ListTile(
               title: Text(
                 widget.question,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),

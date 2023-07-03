@@ -1,8 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:codebooter_study_app/AppState.dart';
-import 'package:codebooter_study_app/Client/home/HomeScreen.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
-import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
@@ -25,12 +23,11 @@ class _FeaturesState extends State<Features> {
   final double borderRadius = dimension.val5;
   final double spacing = dimension.val25;
   final double runSpacing = dimension.val25;
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    bool isDarkMode = AppColors.isDarkMode;
     return Padding(
       padding: const EdgeInsets.only(left: 2, right: 2),
       child: Column(
@@ -96,7 +93,7 @@ class _FeaturesState extends State<Features> {
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: AppColors.shadowColor,
 
@@ -130,7 +127,7 @@ class _FeaturesState extends State<Features> {
                   ),
                 ),
                 // placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],
           ),

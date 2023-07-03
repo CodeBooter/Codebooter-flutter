@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Backtracking extends StatelessWidget {
   const Backtracking({Key? key}) : super(key: key);
 
@@ -50,7 +51,8 @@ class Backtracking extends StatelessWidget {
             ),
             SizedBox(height: dimension.val10),
             Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+              padding: EdgeInsets.only(
+                  left: dimension.val15, right: dimension.val15),
               child: Text(
                 'Backtracking is a problem-solving technique that explores all possible solutions by incrementally building candidates and abandons a candidate as soon as it determines that it cannot be a valid solution.',
                 style: TextStyle(
@@ -73,12 +75,13 @@ class Backtracking extends StatelessWidget {
             ),
             SizedBox(height: dimension.val10),
             Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+              padding: EdgeInsets.only(
+                  left: dimension.val15, right: dimension.val15),
               child: Text(
                 '1. Candidate: A potential solution to the problem being solved.\n'
-                    '2. Constraints: Rules that determine whether a candidate is valid or not.\n'
-                    '3. Backtracking: A recursive algorithm that incrementally builds and explores candidates, abandoning a candidate as soon as it violates a constraint.\n'
-                    '4. Pruning: The process of discarding candidates that are known to be invalid.',
+                '2. Constraints: Rules that determine whether a candidate is valid or not.\n'
+                '3. Backtracking: A recursive algorithm that incrementally builds and explores candidates, abandoning a candidate as soon as it violates a constraint.\n'
+                '4. Pruning: The process of discarding candidates that are known to be invalid.',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -108,7 +111,7 @@ class Backtracking extends StatelessWidget {
                     color: Colors.black12,
                     spreadRadius: dimension.val2,
                     blurRadius: dimension.val5,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
               ),

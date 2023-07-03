@@ -14,7 +14,6 @@ class LinkedList extends StatefulWidget {
 }
 
 class _LinkedListState extends State<LinkedList> {
-
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
@@ -47,26 +46,31 @@ class _LinkedListState extends State<LinkedList> {
                 'Definition',
                 style: TextStyle(
                   fontSize: dimension.font20,
-                  fontWeight: FontWeight.bold, fontFamily: 'Georgia',
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
               SizedBox(height: dimension.val10),
               Text(
                 'A linked list is a linear data structure where each element (node) contains a reference to the next node.',
                 style: TextStyle(
-                  fontSize: dimension.font18, fontFamily: 'Georgia',
+                  fontSize: dimension.font18,
+                  fontFamily: 'Georgia',
                 ),
               ),
               //SizedBox(height: dimension.val2),
-              Center(child: Image(
-                image: NetworkImage('https://i.imgur.com/hhjRvJV.png'),
-                height: dimension.height200,)),
+              Center(
+                  child: Image(
+                image: const NetworkImage('https://i.imgur.com/hhjRvJV.png'),
+                height: dimension.height200,
+              )),
               //SizedBox(height: dimension.val2),
               Text(
                 'Types of Linked Lists',
                 style: TextStyle(
                   fontSize: dimension.font20,
-                  fontWeight: FontWeight.bold, fontFamily: 'Georgia',
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
               SizedBox(height: dimension.val25),
@@ -77,24 +81,19 @@ class _LinkedListState extends State<LinkedList> {
                     _buildLinkedListType(
                       title: 'Singly Linked List',
                       definition:
-                      'A singly linked list is a type of linked list where each node contains a data element and a reference (link) to the next node in the list. The last node in the list points to null, indicating the end of the list.',
-
+                          'A singly linked list is a type of linked list where each node contains a data element and a reference (link) to the next node in the list. The last node in the list points to null, indicating the end of the list.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildLinkedListType(
                       title: 'Doubly Linked List',
                       definition:
-                      'A doubly linked list is a type of linked list where each node contains a data element and two references (links): one to the previous node and one to the next node in the list. This allows for traversal in both directions.',
-
-
-
+                          'A doubly linked list is a type of linked list where each node contains a data element and two references (links): one to the previous node and one to the next node in the list. This allows for traversal in both directions.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildLinkedListType(
                       title: 'Circular Linked List',
                       definition:
-                      'A circular linked list is a type of linked list where the last nodes reference points back to the first node, creating a circular structure. This means that the next reference of the last node points to the first node.',
-
+                          'A circular linked list is a type of linked list where the last nodes reference points back to the first node, creating a circular structure. This means that the next reference of the last node points to the first node.',
                     ),
                   ],
                 ),
@@ -104,18 +103,20 @@ class _LinkedListState extends State<LinkedList> {
                 'Operations performed on Linked List',
                 style: TextStyle(
                   fontSize: dimension.font20,
-                  fontWeight: FontWeight.bold, fontFamily: 'Georgia',
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
               SizedBox(height: dimension.val10),
               Text(
                 '~  Searching for an element in a linked list.\n'
-                    '~  Reversing a linked list.\n'
-                    '~  Merging two linked lists.\n'
-                    '~  Detecting cycles in linked lists.\n'
-                    '~  Splitting a linked list into two halves.',
+                '~  Reversing a linked list.\n'
+                '~  Merging two linked lists.\n'
+                '~  Detecting cycles in linked lists.\n'
+                '~  Splitting a linked list into two halves.',
                 style: TextStyle(
-                  fontSize: dimension.font18, fontFamily: 'Georgia',
+                  fontSize: dimension.font18,
+                  fontFamily: 'Georgia',
                 ),
               ),
               SizedBox(height: dimension.val25),
@@ -123,13 +124,13 @@ class _LinkedListState extends State<LinkedList> {
                 'Example',
                 style: TextStyle(
                   fontSize: dimension.font20,
-                  fontWeight: FontWeight.bold, fontFamily: 'Georgia',
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Georgia',
                 ),
               ),
               SizedBox(height: dimension.val10),
               Container(
                 margin: EdgeInsets.all(dimension.val20),
-
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(dimension.val10),
                     color: Colors.black38,
@@ -138,10 +139,10 @@ class _LinkedListState extends State<LinkedList> {
                         color: Colors.black12,
                         spreadRadius: dimension.val2,
                         blurRadius: dimension.val5,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
                       ),
-                    ]
-                ),
+                    ]),
                 child: HighlightView(
                   '''Data(NextFree) = new Item
  
@@ -196,20 +197,21 @@ NextFree = NextFree + 1
   Widget _buildLinkedListType({
     required String title,
     required String definition,
-
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: appState.isDarkMode?AppColors.primaryColor:AppColors.mainTextColor,
+        color: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.mainTextColor,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -225,7 +227,9 @@ NextFree = NextFree + 1
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: appState.isDarkMode?AppColors.mainTextColor:AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.mainTextColor
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -234,7 +238,9 @@ NextFree = NextFree + 1
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: appState.isDarkMode?AppColors.mainTextColor:AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.mainTextColor
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),

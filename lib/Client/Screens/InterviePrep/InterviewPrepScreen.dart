@@ -20,7 +20,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
   final double borderRadius = dimension.val2;
   final double spacing = dimension.val25;
   final double runSpacing = dimension.val25;
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
@@ -90,7 +90,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                 SizedBox(width: dimension.val20),
                 Column(
                   children: [
-                    DsaInterview(),
+                    const DsaInterview(),
                     SizedBox(height: dimension.val20),
                     _buildFeatureContainer(
                       imageHeight: dimension.height140,
@@ -169,7 +169,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                 : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
             boxShadow: [
-              BoxShadow(
+              const BoxShadow(
                 color: AppColors.shadowColor,
 
                 spreadRadius: 1,
@@ -202,7 +202,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                   ),
                 ),
                 // placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],
           ),

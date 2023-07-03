@@ -29,7 +29,7 @@ class _JobInternshipsState extends State<JobInternships> {
   final double spacing = dimension.val10;
   final double runSpacing = dimension.val10;
 
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class _JobInternshipsState extends State<JobInternships> {
               );
             }
             return Container(
-              child: Text("Error"),
+              child: const Text("Error"),
             );
           },
         ),
@@ -98,7 +98,7 @@ class _JobInternshipsState extends State<JobInternships> {
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(255, 255, 255, 255),
           ),
           child: InkWell(
             onTap: onTap,
@@ -109,7 +109,7 @@ class _JobInternshipsState extends State<JobInternships> {
               height: containerHeight,
               decoration: BoxDecoration(
                 boxShadow: [
-                  BoxShadow(
+                  const BoxShadow(
                     color: AppColors.shadowColor,
                     spreadRadius: 2,
                     blurRadius: 5,
@@ -187,7 +187,6 @@ class _JobInternshipsState extends State<JobInternships> {
                                   child: ElevatedButton(
                                     onPressed: onTap,
                                     style: ElevatedButton.styleFrom(
-
                                       primary: appState.isDarkMode
                                           ? AppColors.primaryColor
                                           : AppColors.lightModePrimary,
@@ -205,19 +204,18 @@ class _JobInternshipsState extends State<JobInternships> {
                                       ),
                                     ),
                                     child: Text(
-                                        'Apply',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: dimension.val10,
-                                          color: appState.isDarkMode
-                                              ? AppColors.mainTextColor
-                                              : const Color.fromARGB(
-                                                  255, 0, 0, 0),
-                                        ),
+                                      'Apply',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: dimension.val10,
+                                        color: appState.isDarkMode
+                                            ? AppColors.mainTextColor
+                                            : const Color.fromARGB(
+                                                255, 0, 0, 0),
                                       ),
                                     ),
                                   ),
-
+                                ),
                               ],
                             ),
                           ),

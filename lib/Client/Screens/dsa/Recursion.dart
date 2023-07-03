@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Recursion extends StatelessWidget {
   const Recursion({Key? key}) : super(key: key);
 
@@ -50,7 +51,8 @@ class Recursion extends StatelessWidget {
             ),
             SizedBox(height: dimension.val10),
             Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+              padding: EdgeInsets.only(
+                  left: dimension.val15, right: dimension.val15),
               child: Text(
                 'Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller subproblems.',
                 style: TextStyle(
@@ -73,11 +75,12 @@ class Recursion extends StatelessWidget {
             ),
             SizedBox(height: dimension.val10),
             Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+              padding: EdgeInsets.only(
+                  left: dimension.val15, right: dimension.val15),
               child: Text(
                 '1. Base Case: A condition that terminates the recursion and provides a result.\n'
-                    '2. Recursive Case: The part of the function that calls itself with a modified input to solve a smaller subproblem.\n'
-                    '3. Recursion Stack: The stack that keeps track of function calls and their respective local variables.',
+                '2. Recursive Case: The part of the function that calls itself with a modified input to solve a smaller subproblem.\n'
+                '3. Recursion Stack: The stack that keeps track of function calls and their respective local variables.',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -103,7 +106,7 @@ class Recursion extends StatelessWidget {
                 borderRadius: BorderRadius.circular(dimension.val10),
                 color: AppColors.shadowColor,
                 boxShadow: [
-                  BoxShadow(
+                  const BoxShadow(
                     color: Colors.black12,
                     spreadRadius: 2,
                     blurRadius: 5,

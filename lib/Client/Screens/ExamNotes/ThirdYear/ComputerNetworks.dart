@@ -35,8 +35,7 @@ class _ComputerNetworksState extends State<ComputerNetworks> {
         isPdfDownloaded = true;
       });
     } else {
-      final response = await HttpClient().getUrl(
-          Uri.parse(pdfUrl));
+      final response = await HttpClient().getUrl(Uri.parse(pdfUrl));
       final downloadedFile = await response.close();
       final bytes = await consolidateHttpClientResponseBytes(downloadedFile);
       await file.writeAsBytes(bytes);
@@ -105,27 +104,27 @@ class _ComputerNetworksState extends State<ComputerNetworks> {
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
             : Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                downloadPdf();
-              },
-              icon: Icon(
-                Icons.download,
-                color: Colors.black,
-                size: dimension.val60,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      downloadPdf();
+                    },
+                    icon: Icon(
+                      Icons.download,
+                      color: Colors.black,
+                      size: dimension.val60,
+                    ),
+                  ),
+                  SizedBox(
+                    height: dimension.val20,
+                  ),
+                  Text(downloadMessage,
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: dimension.font20)),
+                ],
               ),
-            ),
-            SizedBox(
-              height: dimension.val20,
-            ),
-            Text(downloadMessage,
-                style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: dimension.font20)),
-          ],
-        ),
       ),
     );
   }

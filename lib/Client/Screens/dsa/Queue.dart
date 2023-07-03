@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Queues extends StatefulWidget {
   const Queues({Key? key}) : super(key: key);
 
@@ -19,7 +20,9 @@ class _QueuesState extends State<Queues> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
-      backgroundColor: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
@@ -60,7 +63,7 @@ class _QueuesState extends State<Queues> {
               SizedBox(height: dimension.val25),
               Center(
                 child: Image(
-                  image: NetworkImage('https://i.imgur.com/G96qGr3.png'),
+                  image: const NetworkImage('https://i.imgur.com/G96qGr3.png'),
                   height: dimension.height185,
                 ),
               ),
@@ -81,22 +84,19 @@ class _QueuesState extends State<Queues> {
                     _buildQueueType(
                       title: 'Simple Queue',
                       definition:
-                      'In Simple Queue, elements are added to the rear and removed from the front.In this queue the Insertion and deletion takes place from specified ends.',
-
+                          'In Simple Queue, elements are added to the rear and removed from the front.In this queue the Insertion and deletion takes place from specified ends.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildQueueType(
                       title: 'Circular Queue',
                       definition:
-                      'In a circular queue, the rear and front elements are connected in a circular manner, allowing efficient space utilization. Insertion and Deletioncan be done from any point',
-
+                          'In a circular queue, the rear and front elements are connected in a circular manner, allowing efficient space utilization. Insertion and Deletioncan be done from any point',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildQueueType(
                       title: 'Priority Queue',
                       definition:
-                      'It Assigns a priority value to each element, and dequeues the highest priority element first.This Queue works on the priority of the value of element',
-
+                          'It Assigns a priority value to each element, and dequeues the highest priority element first.This Queue works on the priority of the value of element',
                     ),
                   ],
                 ),
@@ -113,11 +113,11 @@ class _QueuesState extends State<Queues> {
               SizedBox(height: dimension.val10),
               Text(
                 '~ Enqueue: Adds an element to the rear of the queue.\n'
-                    '~ Dequeue: Removes and returns the front element from the queue.\n'
-                    '~ Front: Returns the front element without removing it.\n'
-                    '~ Rear: Returns the rear element without removing it.\n'
-                    '~ IsEmpty: Checks if the queue is empty.\n'
-                    '~ IsFull: Checks if the queue is full (in case of a fixed-size queue).',
+                '~ Dequeue: Removes and returns the front element from the queue.\n'
+                '~ Front: Returns the front element without removing it.\n'
+                '~ Rear: Returns the rear element without removing it.\n'
+                '~ IsEmpty: Checks if the queue is empty.\n'
+                '~ IsFull: Checks if the queue is full (in case of a fixed-size queue).',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -143,7 +143,7 @@ class _QueuesState extends State<Queues> {
                       color: Colors.black12,
                       spreadRadius: dimension.val2,
                       blurRadius: dimension.val5,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
@@ -193,20 +193,21 @@ void main() {
   Widget _buildQueueType({
     required String title,
     required String definition,
-
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
       width: dimension.width311,
       decoration: BoxDecoration(
-        color: appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+        color: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -221,7 +222,9 @@ void main() {
               fontSize: dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
-              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),
@@ -230,7 +233,9 @@ void main() {
             style: TextStyle(
               fontSize: dimension.font16,
               fontFamily: 'Georgia',
-              color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val15),
