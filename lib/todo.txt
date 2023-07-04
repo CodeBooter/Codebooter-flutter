@@ -1,3 +1,1 @@
--> machinelearning section in 
--> remove company from post jobs
--> improve dimensions
+-> video orientation

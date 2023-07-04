@@ -22,14 +22,14 @@ class AppColors {
 
   static const Color shadowColor = Color.fromARGB(255, 24, 24, 24);
   // Dark mode colors
-  static const Color mainColor = Color.fromARGB(255, 56, 56, 56);
+  static const Color mainColor = Color.fromARGB(255, 30, 30, 30);
   static const Color darkModeSecondary = Color.fromARGB(255, 0, 0, 0);
   static const Color mainTextColor = Color.fromARGB(255, 255, 255, 255);
 
   // Light mode colors
   static const Color lightModePrimary = Color.fromARGB(255, 255, 255, 255);
   static const Color lightModeSecondary = Color.fromARGB(255, 255, 255, 255);
-  static const Color lightTextColor = Color.fromARGB(255, 0, 0, 0);
+  static const Color lightTextColor = Color.fromARGB(255, 26, 11, 28);
 
   // Rest of the color constants...
 }

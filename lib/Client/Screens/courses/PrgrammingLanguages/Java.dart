@@ -1,7 +1,9 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 import '../YoutubeFunction.dart';
 
 class Java extends StatelessWidget {
@@ -11,14 +13,20 @@ class Java extends StatelessWidget {
   Widget build(BuildContext context) {
     const String playlistId = 'PLd3UqWTnYXOmx_J1774ukG_rvrpyWczm0';
     YoutubeFunction youtubeFunction = YoutubeFunction();
+    final appState = Provider.of<AppState>(context);
+
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Java',
-          style: TextStyle(color: Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        title: Text(
+          'Java Language',
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -90,7 +98,12 @@ class Java extends StatelessWidget {
 
                                 return Row(
                                   children: [
-                                    Text(' $channelName'),
+                                    Container(
+                                        width: dimension.width140,
+                                        child: Text(' $channelName',
+                                            style: TextStyle(
+                                                overflow: TextOverflow.ellipsis,
+                                                fontSize: dimension.font14))),
                                     const SizedBox(width: 8),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
@@ -167,7 +180,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color: Color.fromARGB(255, 24, 24, 24).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

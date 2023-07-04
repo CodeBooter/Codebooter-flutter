@@ -69,7 +69,6 @@ import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/Operati
 import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/TOC.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/InterviewPrepScreen.dart';
-import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/CCNA.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/CyberSecurity.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/InformationGathering.dart';
@@ -706,11 +705,6 @@ class App extends StatelessWidget {
                   const JobInternshipScreen(),
             ),
 
-            GoRoute(
-              path: 'saveditems',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const SavedItem(),
-            ),
             GoRoute(
                 path: 'admin',
                 builder: (BuildContext context, GoRouterState state) =>

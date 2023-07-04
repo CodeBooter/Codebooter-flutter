@@ -1,7 +1,9 @@
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 import '../YoutubeFunction.dart';
 
 class CPP extends StatelessWidget {
@@ -11,14 +13,19 @@ class CPP extends StatelessWidget {
   Widget build(BuildContext context) {
     const String playlistId = 'PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF';
     YoutubeFunction youtubeFunction = YoutubeFunction();
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
-          'C plus plus',
-          style: TextStyle(color: Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        title: Text(
+          'C++ Language',
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -90,7 +97,12 @@ class CPP extends StatelessWidget {
 
                                 return Row(
                                   children: [
-                                    Text(' $channelName'),
+                                    Container(
+                                        width: dimension.width140,
+                                        child: Text(' $channelName',
+                                            style: TextStyle(
+                                                overflow: TextOverflow.ellipsis,
+                                                fontSize: dimension.font14))),
                                     const SizedBox(width: 8),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
@@ -167,7 +179,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),
@@ -184,7 +196,9 @@ Widget buildListTile({
             height: 56,
           ),
         ),
-        title: Text(title),
+        title: Text(
+          title,
+        ),
         subtitle: subtitle,
       ),
     ),

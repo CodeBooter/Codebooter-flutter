@@ -168,13 +168,8 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
-
             boxShadow: const [
-              BoxShadow(
-
-            boxShadow: [
               const BoxShadow(
-
                 color: AppColors.shadowColor,
 
                 spreadRadius: 1,
