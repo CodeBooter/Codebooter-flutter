@@ -14,7 +14,7 @@ class BasicMechanical extends StatefulWidget {
 
 class _BasicMechanicalState extends State<BasicMechanical> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902705.us.archive.org/28/items/bme-shivani-bt-203/BME%2C%20Shivani%20BT203.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

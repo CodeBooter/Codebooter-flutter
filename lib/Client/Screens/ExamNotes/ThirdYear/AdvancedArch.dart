@@ -14,7 +14,7 @@ class AdvanceArch extends StatefulWidget {
 
 class _AdvanceArchState extends State<AdvanceArch> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902604.us.archive.org/18/items/aca-shivani/ACA%20Shivani.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

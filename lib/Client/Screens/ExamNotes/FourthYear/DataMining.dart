@@ -14,7 +14,7 @@ class DataMining extends StatefulWidget {
 
 class _DataMiningState extends State<DataMining> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902708.us.archive.org/4/items/data-mining-and-warehousing/DATA%20MINING%20AND%20WAREHOUSING%20.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

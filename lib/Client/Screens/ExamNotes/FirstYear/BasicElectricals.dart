@@ -14,7 +14,7 @@ class BasicElectricals extends StatefulWidget {
 
 class _BasicElectricalsState extends State<BasicElectricals> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902702.us.archive.org/25/items/beee_20230704/beee.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

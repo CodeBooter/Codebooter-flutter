@@ -14,7 +14,7 @@ class ComputerArch extends StatefulWidget {
 
 class _ComputerArchState extends State<ComputerArch> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia601601.us.archive.org/13/items/read4_202307/read4.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
