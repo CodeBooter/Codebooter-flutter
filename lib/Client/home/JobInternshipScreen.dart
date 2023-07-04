@@ -1,9 +1,11 @@
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:codebooter_study_app/AppState.dart';
+
 
 import '../../utils/Colors.dart';
 class JobInternshipScreen extends StatefulWidget {
@@ -23,22 +25,33 @@ class _DsaScreenState extends State<JobInternshipScreen> {
           : AppColors.lightModePrimary,
       appBar: AppBar(
 
-        backgroundColor: Colors.transparent,
-        iconTheme:  IconThemeData(
-            color: appState.isDarkMode
-                ? AppColors.lightModePrimary
-                : AppColors.primaryColor
+        elevation: 0,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         toolbarHeight: dimension.val70,
         centerTitle: true,
         title: bigText(
           text: "Jobs & Internships",
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
       ),
+
+      body: SingleChildScrollView(
+        child: Padding(
+            padding:
+                EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+            child: JobInternships()),
+      ),
+
       body: Padding(
           padding:
               EdgeInsets.only(left: dimension.val15, right: dimension.val15),
           child: const JobInternships()),
+
     );
   }
 }
