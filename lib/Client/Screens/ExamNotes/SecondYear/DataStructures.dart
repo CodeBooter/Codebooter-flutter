@@ -14,7 +14,7 @@ class DataStructure extends StatefulWidget {
 
 class _DataStructureState extends State<DataStructure> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902700.us.archive.org/3/items/data-structure/data%20structure.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

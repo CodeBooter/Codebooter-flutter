@@ -14,7 +14,7 @@ class ObjectOriented extends StatefulWidget {
 
 class _ObjectOrientedState extends State<ObjectOriented> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902702.us.archive.org/29/items/read5/read5.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

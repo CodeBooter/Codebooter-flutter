@@ -14,7 +14,7 @@ class WirelessMobile extends StatefulWidget {
 
 class _WirelessMobileState extends State<WirelessMobile> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902705.us.archive.org/4/items/reducedwireless-mobile-computing-shivani/%5Breduced%5Dwireless%20%26%20mobile%20computing%20shivani.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

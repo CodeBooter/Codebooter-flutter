@@ -14,7 +14,7 @@ class InternetOfThings extends StatefulWidget {
 
 class _InternetOfThingsState extends State<InternetOfThings> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902606.us.archive.org/29/items/8th-sem-iot-shivani/8th%20sem%20IOT%20Shivani.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

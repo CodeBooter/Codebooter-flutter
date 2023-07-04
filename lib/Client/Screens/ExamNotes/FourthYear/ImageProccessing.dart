@@ -14,7 +14,7 @@ class ImageProcessing extends StatefulWidget {
 
 class _ImageProcessingState extends State<ImageProcessing> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902701.us.archive.org/9/items/ipcv-shivani/IPCV%20shivani.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";

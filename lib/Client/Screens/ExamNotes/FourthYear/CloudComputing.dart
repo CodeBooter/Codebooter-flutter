@@ -14,7 +14,7 @@ class CloudComputing extends StatefulWidget {
 
 class _CloudComputingState extends State<CloudComputing> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia902705.us.archive.org/18/items/8th-sem-cloud-computing-shivani/8th%20Sem%20Cloud%20computing%20Shivani.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
