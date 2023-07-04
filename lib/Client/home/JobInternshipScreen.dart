@@ -2,7 +2,10 @@ import 'package:codebooter_study_app/Client/Screens/jobs/JobInternship.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 
+import '../../utils/Colors.dart';
 class JobInternshipScreen extends StatefulWidget {
   const JobInternshipScreen({super.key});
 
@@ -13,13 +16,18 @@ class JobInternshipScreen extends StatefulWidget {
 class _DsaScreenState extends State<JobInternshipScreen> {
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appState.isDarkMode
+          ? AppColors.primaryColor
+          : AppColors.lightModePrimary,
       appBar: AppBar(
-        elevation: 0,
+
         backgroundColor: Colors.transparent,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+        iconTheme:  IconThemeData(
+            color: appState.isDarkMode
+                ? AppColors.lightModePrimary
+                : AppColors.primaryColor
         ),
         toolbarHeight: dimension.val70,
         centerTitle: true,

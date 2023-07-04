@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 class ProjectManagement extends StatefulWidget {
   const ProjectManagement({Key? key}) : super(key: key);
 
@@ -73,6 +74,7 @@ class _ProjectManagementState extends State<ProjectManagement> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

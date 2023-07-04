@@ -29,7 +29,7 @@ class _FeaturesState extends State<Features> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Padding(
-      padding: const EdgeInsets.only(left: 2, right: 2),
+      padding:  EdgeInsets.only(left: dimension.val2, right: dimension.val2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

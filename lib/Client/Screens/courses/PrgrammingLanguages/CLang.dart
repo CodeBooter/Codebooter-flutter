@@ -1,7 +1,8 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 import '../YoutubeFunction.dart';
 
 class CLang extends StatelessWidget {
@@ -9,6 +10,7 @@ class CLang extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PL7ersPsTyYt2Q-SqZxTA1D-melSfqBRMW';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -181,7 +183,7 @@ Widget buildListTile({
             thumbnailUrl,
             fit: BoxFit.cover,
             width: dimension.width100,
-            height: 56,
+            height: dimension.val60,
           ),
         ),
         title: Text(title),

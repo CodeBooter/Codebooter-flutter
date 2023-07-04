@@ -4,7 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 
+import '../../../../utils/Colors.dart';
 class BasicComputers extends StatefulWidget {
   const BasicComputers({Key? key}) : super(key: key);
 
@@ -73,6 +76,7 @@ class _BasicComputersState extends State<BasicComputers> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -95,9 +99,11 @@ class _BasicComputersState extends State<BasicComputers> {
             ),
           ),
         ],
-        title: const Text(
+        title:  Text(
           ' Basic Computer Engineering Notes ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: Center(

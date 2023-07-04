@@ -1,8 +1,10 @@
 import 'package:codebooter_study_app/utils/Colors.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
 class AdminLogin extends StatefulWidget {
   const AdminLogin({Key? key}) : super(key: key);
 
@@ -17,49 +19,54 @@ class _AdminLoginState extends State<AdminLogin> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 50,
-            horizontal: 50,
+          padding:  EdgeInsets.symmetric(
+            vertical: dimension.val50,
+            horizontal: dimension.val50,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 70),
+               SizedBox(height: dimension.val70),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     alignment: Alignment.centerLeft,
-                    width: 60,
-                    height: 60,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                    width: dimension.val60,
+                    height: dimension.val60,
+                    decoration:  BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(dimension.val5)),
                       image: DecorationImage(
                         image: AssetImage('assets/images/logo4.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 25),
-                  const Text(
+                   SizedBox(height: dimension.val25),
+                   Text(
                     'Welcome to CodeBooter 👋 🚀',
                     style: TextStyle(
-                      color: AppColors.shadowColor,
+                      color: appState.isDarkMode
+                          ? AppColors.lightModePrimary
+                          : AppColors.primaryColor,
                       fontFamily: 'Poppins',
-                      fontSize: 24,
+                      fontSize: dimension.val30,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  const Text.rich(
+                   SizedBox(height: dimension.val15),
+                   Text.rich(
                     TextSpan(
                       style: TextStyle(
-                        color: AppColors.shadowColor,
+                        color: appState.isDarkMode
+                            ? AppColors.lightModePrimary
+                            : AppColors.primaryColor,
                         fontFamily: 'Poppins',
-                        fontSize: 16,
+                        fontSize: dimension.val20,
                         fontWeight: FontWeight.w400,
                       ),
                       children: [
@@ -77,15 +84,15 @@ class _AdminLoginState extends State<AdminLogin> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                   SizedBox(height: dimension.val20),
+                   Text(
                     "Admin Login",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: dimension.val25,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                   SizedBox(height: dimension.val20),
                   Form(
                     key: _formKey,
                     child: Column(
@@ -100,7 +107,7 @@ class _AdminLoginState extends State<AdminLogin> {
                           onSaved: (input) => _email = input!,
                           decoration: const InputDecoration(labelText: 'Email'),
                         ),
-                        const SizedBox(height: 20),
+                         SizedBox(height: dimension.val20),
                         TextFormField(
                           validator: (input) {
                             if (input!.length < 6) {
@@ -113,7 +120,7 @@ class _AdminLoginState extends State<AdminLogin> {
                               const InputDecoration(labelText: 'Password'),
                           obscureText: true,
                         ),
-                        const SizedBox(height: 20),
+                         SizedBox(height: dimension.val20),
                         ElevatedButton(
                           onPressed: signIn,
                           child: const Text('Sign In'),
@@ -121,20 +128,22 @@ class _AdminLoginState extends State<AdminLogin> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
-                  const Text(
+                   SizedBox(height: dimension.val40),
+                   Text(
                     'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                     style: TextStyle(
-                      color: AppColors.shadowColor,
+                      color: appState.isDarkMode
+                          ? AppColors.lightModePrimary
+                          : AppColors.primaryColor,
                       fontFamily: 'calibri',
-                      fontSize: 10,
+                      fontSize: dimension.val15,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(height: 70),
-                  const Text(
+                   SizedBox(height: dimension.val70),
+                   Text(
                     '© 2023 CodeBooter. All rights reserved.',
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(fontSize: dimension.val15),
                   ),
                 ],
               ),

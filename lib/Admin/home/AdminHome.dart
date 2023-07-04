@@ -5,7 +5,8 @@ import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 class AdminHome extends StatefulWidget {
   const AdminHome({super.key});
 
@@ -17,12 +18,13 @@ class _AdminHomeState extends State<AdminHome> {
   final AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       body: SafeArea(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
             padding: EdgeInsets.only(
-                left: dimension.val20, right: dimension.val20, top: 10),
+                left: dimension.val20, right: dimension.val20, top: dimension.val10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

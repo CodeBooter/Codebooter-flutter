@@ -3,11 +3,12 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/MockInterview/MockVideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
+import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:provider/provider.dart';
+
 
 class MockInterview extends StatefulWidget {
   const MockInterview();

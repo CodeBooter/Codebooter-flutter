@@ -1,7 +1,9 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 
 class NetworkSecurity extends StatelessWidget {
@@ -9,16 +11,21 @@ class NetworkSecurity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLIhvC56v63IIyU0aBUed4qwP0nSCORAdB';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode
+            ? AppColors.lightModePrimary
+            : AppColors.primaryColor,),
         centerTitle: true,
         backgroundColor: Colors.white,
-        title: const Text(
+        title:  Text(
           'Network Security',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -167,7 +174,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color: Colors.black45,
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

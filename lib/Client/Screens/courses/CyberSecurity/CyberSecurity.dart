@@ -1,7 +1,8 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 import '../YoutubeFunction.dart';
 
 class CyberSecurity extends StatelessWidget {
@@ -9,6 +10,7 @@ class CyberSecurity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PL9ooVrP1hQOGPQVeapGsJCktzIO4DtI4_';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
@@ -167,7 +169,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color: Colors.black45,
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

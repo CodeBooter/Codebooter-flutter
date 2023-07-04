@@ -1,7 +1,9 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
+import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 
 class Java extends StatelessWidget {
@@ -9,16 +11,23 @@ class Java extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLd3UqWTnYXOmx_J1774ukG_rvrpyWczm0';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode
+            ? AppColors.lightModePrimary
+            : AppColors.primaryColor,),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        title:  Text(
           'Java',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -181,7 +190,7 @@ Widget buildListTile({
             thumbnailUrl,
             fit: BoxFit.cover,
             width: dimension.width100,
-            height: 56,
+            height: dimension.val60,
           ),
         ),
         title: Text(title),

@@ -3,7 +3,8 @@ import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
 class LoginPage extends StatefulWidget {
   final AuthService _authService = AuthService();
 
@@ -16,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -45,12 +47,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(height: dimension.val25),
-                    const Text(
+                     Text(
                       'Welcome to CodeBooter 👋 🚀',
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'Poppins',
-                        fontSize: 24,
+                        fontSize: dimension.val30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -140,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: const Color.fromARGB(255, 48, 48, 48),
-                            width: 1,
+                            width: dimension.val2,
                           ),
                           borderRadius: BorderRadius.circular(5),
                         ),
