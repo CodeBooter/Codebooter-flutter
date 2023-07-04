@@ -100,7 +100,7 @@ class _TopResumesState extends State<TopResumes> {
                             child: SfPdfViewer.network(resumeLink!),
                           ),
                           SizedBox(width: 16.0),
-                          Text('Open Resume'),
+                          Text('Open'),
                         ],
                       ),
                     ),

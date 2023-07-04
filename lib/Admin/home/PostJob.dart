@@ -14,26 +14,25 @@ class _PostJobState extends State<PostJob> {
   TextEditingController _imageAssetController = TextEditingController();
   TextEditingController _stipendController = TextEditingController();
   TextEditingController _locationController = TextEditingController();
-  // TextEditingController _companyController = TextEditingController();
   TextEditingController _applyLinkController = TextEditingController();
-  TextEditingController _durationController = TextEditingController();
-  TextEditingController _applyByController = TextEditingController();
-  TextEditingController _deadlineController = TextEditingController();
+  String _deadlineText = 'Select Deadline';
+
+  DurationOption _selectedDurationOption = DurationOption.fullTime;
 
   Future<void> createJob() async {
     var url =
-        'https://jobinternshipapi-production.up.railway.app/api/v1/jobs/newjob'; // Replace with your API endpoint URL
+        'https://jobinternshipapi-production.up.railway.app/api/v1/jobs/newjob';
 
     var jobData = {
       'title': _titleController.text,
       'imageAssest': _imageAssetController.text,
       'stipend': _stipendController.text,
       'location': _locationController.text,
-      // 'company': _companyController.text,
       'applyLink': _applyLinkController.text,
-      'duration': _durationController.text,
-      'applyBy': _applyByController.text,
-      'deadline': _deadlineController.text,
+      'duration': _selectedDurationOption == DurationOption.fullTime
+          ? 'Full Time'
+          : 'Internship',
+      'deadline': _deadlineText,
     };
 
     var headers = {'Content-Type': 'application/json'};
@@ -47,7 +46,6 @@ class _PostJobState extends State<PostJob> {
       );
 
       if (response.statusCode == 201) {
-        // Job created successfully
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -66,8 +64,12 @@ class _PostJobState extends State<PostJob> {
             );
           },
         );
+
+        // Clear the deadline field
+        setState(() {
+          _deadlineText = 'Select Deadline';
+        });
       } else {
-        // Handle error
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -87,7 +89,6 @@ class _PostJobState extends State<PostJob> {
         );
       }
     } catch (e) {
-      // Handle error
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -113,11 +114,22 @@ class _PostJobState extends State<PostJob> {
     _imageAssetController.clear();
     _stipendController.clear();
     _locationController.clear();
-    // _companyController.clear();
     _applyLinkController.clear();
-    _durationController.clear();
-    _applyByController.clear();
-    _deadlineController.clear();
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? selectedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2100),
+    );
+
+    if (selectedDate != null) {
+      setState(() {
+        _deadlineText = selectedDate.toString().split(' ')[0];
+      });
+    }
   }
 
   @override
@@ -174,16 +186,6 @@ class _PostJobState extends State<PostJob> {
                   },
                 ),
                 TextFormField(
-                  // controller: _companyController,
-                  decoration: InputDecoration(labelText: 'Company'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please enter company name';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
                   controller: _applyLinkController,
                   decoration: InputDecoration(labelText: 'Apply Link'),
                   validator: (value) {
@@ -193,35 +195,45 @@ class _PostJobState extends State<PostJob> {
                     return null;
                   },
                 ),
-                TextFormField(
-                  controller: _durationController,
-                  decoration: InputDecoration(labelText: 'Duration'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please enter duration';
-                    }
-                    return null;
-                  },
+                Row(
+                  children: [
+                    Text("Duration:   "),
+                    Text('Full Time'),
+                    Radio<DurationOption>(
+                      value: DurationOption.fullTime,
+                      groupValue: _selectedDurationOption,
+                      onChanged: (DurationOption? value) {
+                        setState(() {
+                          _selectedDurationOption = value!;
+                        });
+                      },
+                    ),
+                    Text('Internship'),
+                    Radio<DurationOption>(
+                      value: DurationOption.internship,
+                      groupValue: _selectedDurationOption,
+                      onChanged: (DurationOption? value) {
+                        setState(() {
+                          _selectedDurationOption = value!;
+                        });
+                      },
+                    ),
+                  ],
                 ),
-                TextFormField(
-                  controller: _applyByController,
-                  decoration: InputDecoration(labelText: 'Apply By'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please enter apply by date';
-                    }
-                    return null;
+                InkWell(
+                  onTap: () {
+                    _selectDate(context);
                   },
-                ),
-                TextFormField(
-                  controller: _deadlineController,
-                  decoration: InputDecoration(labelText: 'Deadline'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please enter deadline';
-                    }
-                    return null;
-                  },
+                  child: InputDecorator(
+                    decoration: InputDecoration(
+                      labelText: 'Deadline',
+                      suffixIcon: Icon(Icons.calendar_today),
+                    ),
+                    child: Text(
+                      _deadlineText,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -239,3 +251,5 @@ class _PostJobState extends State<PostJob> {
     );
   }
 }
+
+enum DurationOption { fullTime, internship }
