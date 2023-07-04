@@ -268,7 +268,7 @@ class _CourseScreenState extends State<CourseScreen> {
                           imageAsset: appState.isDarkMode
                               ? "https://i.imgur.com/MNjeZQ3.png"
                               : "https://i.imgur.com/mJ5N0KN.png",
-                          onTap: () => _navigateTo('/courses/machinelearnin'),
+                          onTap: () => _navigateTo('/courses/machinelearning'),
                         ),
                         _buildFeatureContainer(
                           // deep learning

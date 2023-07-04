@@ -1,7 +1,9 @@
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
+import 'package:provider/provider.dart';
 
 import 'package:go_router/go_router.dart';
 
@@ -25,6 +27,8 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,6 +36,7 @@ class _DashBoardState extends State<DashBoard> {
           bigText(
             text: 'DashBoard',
             size: dimension.font24,
+            color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
           SizedBox(height: dimension.val20),
           Container(
@@ -64,6 +69,7 @@ class _DashBoardState extends State<DashBoard> {
     required String title,
     required VoidCallback onTap,
   }) {
+    final appState = Provider.of<AppState>(context);
     return InkWell(
       onTap: () {
         Future.delayed(tapDelay, onTap);
@@ -102,7 +108,11 @@ class _DashBoardState extends State<DashBoard> {
                   color: AppColors.primaryColor,
                 ),
               ),
-              bigText(text: title, size: dimension.font16),
+              bigText(
+                text: title,
+                size: dimension.font16,
+                color: appState.isDarkMode ? Colors.white : Colors.black,
+              ),
             ],
           ),
         ),

@@ -1,7 +1,10 @@
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class AdminLogin extends StatefulWidget {
   const AdminLogin({Key? key}) : super(key: key);
@@ -17,24 +20,23 @@ class _AdminLoginState extends State<AdminLogin> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 50,
-            horizontal: 50,
-          ),
+      // backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.all(dimension.val20),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 70),
+              SizedBox(height: dimension.val70),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     alignment: Alignment.centerLeft,
-                    width: 60,
-                    height: 60,
+                    width: dimension.width60,
+                    height: dimension.val60,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                       image: DecorationImage(
@@ -43,64 +45,118 @@ class _AdminLoginState extends State<AdminLogin> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 25),
-                  const Text(
+                  SizedBox(height: dimension.val25),
+                  Text(
                     'Welcome to CodeBooter 👋 🚀',
                     style: TextStyle(
-                      color: AppColors.shadowColor,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       fontFamily: 'Poppins',
-                      fontSize: 24,
+                      fontSize: dimension.font24,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  const Text.rich(
+                  SizedBox(height: dimension.val25),
+                  Text.rich(
                     TextSpan(
                       style: TextStyle(
-                        color: AppColors.shadowColor,
+                        color:
+                            appState.isDarkMode ? Colors.white : Colors.black,
                         fontFamily: 'Poppins',
-                        fontSize: 16,
+                        fontSize: dimension.font16,
                         fontWeight: FontWeight.w400,
                       ),
                       children: [
-                        TextSpan(text: 'Help you to '),
+                        TextSpan(
+                          text: 'Help you to ',
+                          style: TextStyle(
+                              fontSize: dimension.font14,
+                              color: appState.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
+                        ),
                         TextSpan(
                           text: 'Learn, Prepare',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: dimension.font14,
+                            color: appState.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
+                          ),
                         ),
-                        TextSpan(text: ' and '),
+                        TextSpan(
+                          text: ' and ',
+                          style: TextStyle(
+                              fontSize: dimension.font14,
+                              color: appState.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
+                        ),
                         TextSpan(
                           text: 'Ace',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: appState.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: dimension.font14),
                         ),
-                        TextSpan(text: ' your interviews. 🎯 💯'),
+                        TextSpan(
+                          text: ' your interviews. 🎯 💯',
+                          style: TextStyle(
+                              fontSize: dimension.font14,
+                              color: appState.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black),
+                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                  SizedBox(height: dimension.val25),
+                  Text(
                     "Admin Login",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: dimension.font20,
                       fontWeight: FontWeight.bold,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: dimension.val25),
                   Form(
                     key: _formKey,
                     child: Column(
                       children: [
                         TextFormField(
+                          style: TextStyle(
+                            fontSize: dimension.font18,
+                            color: Colors.black, // Set the text color to black
+                          ),
                           validator: (input) {
                             if (input!.isEmpty) {
-                              return 'Please enter an email';
+                              String msg = 'Please type an email';
+                              return msg;
                             }
                             return null;
                           },
                           onSaved: (input) => _email = input!,
-                          decoration: const InputDecoration(labelText: 'Email'),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
+                              ),
+                            ),
+                            labelText: 'Email',
+                            labelStyle: TextStyle(
+                              fontSize: dimension.font16,
+                              color: appState.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black, // Set the text color to black
+                            ),
+                          ),
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: dimension.val25),
                         TextFormField(
                           validator: (input) {
                             if (input!.length < 6) {
@@ -109,11 +165,25 @@ class _AdminLoginState extends State<AdminLogin> {
                             return null;
                           },
                           onSaved: (input) => _password = input!,
-                          decoration:
-                              const InputDecoration(labelText: 'Password'),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                                width: 2,
+                              ),
+                            ),
+                            labelText: 'Password',
+                            labelStyle: TextStyle(
+                              fontSize: dimension.font16,
+                              color: appState.isDarkMode
+                                  ? Colors.white
+                                  : Colors.black, // Set the text color to black
+                            ),
+                          ),
                           obscureText: true,
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: dimension.val25),
                         ElevatedButton(
                           onPressed: signIn,
                           child: const Text('Sign In'),
@@ -121,7 +191,7 @@ class _AdminLoginState extends State<AdminLogin> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  SizedBox(height: dimension.val40),
                   const Text(
                     'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                     style: TextStyle(
