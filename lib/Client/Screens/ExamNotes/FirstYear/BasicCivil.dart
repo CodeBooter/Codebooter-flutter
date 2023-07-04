@@ -4,7 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
 
+import '../../../../utils/Colors.dart';
 class BasicCivil extends StatefulWidget {
   const BasicCivil({Key? key}) : super(key: key);
 
@@ -73,9 +76,12 @@ class _BasicCivilState extends State<BasicCivil> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         iconTheme: const IconThemeData(
           color: Colors.black,
         ),
@@ -91,13 +97,17 @@ class _BasicCivilState extends State<BasicCivil> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
         ],
-        title: const Text(
+        title: Text(
           ' Basic Civil and Mechanical Engineering Notes ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: Center(

@@ -1,7 +1,9 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:provider/provider.dart';
+import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 
 class ArtificialIntelligence extends StatelessWidget {
@@ -11,11 +13,14 @@ class ArtificialIntelligence extends StatelessWidget {
   Widget build(BuildContext context) {
     const String playlistId = 'PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI';
     YoutubeFunction youtubeFunction = YoutubeFunction();
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         title: const Text(
           'Artificial Intelligence',
           style: TextStyle(color: Colors.black),
@@ -91,7 +96,7 @@ class ArtificialIntelligence extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                    const SizedBox(width: 8),
+                                     SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
                                       size: dimension.font14,
@@ -101,7 +106,7 @@ class ArtificialIntelligence extends StatelessWidget {
                                       style:
                                           TextStyle(fontSize: dimension.font14),
                                     ),
-                                    const SizedBox(width: 8),
+                                     SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
                                       size: dimension.font14,
@@ -181,7 +186,7 @@ Widget buildListTile({
             thumbnailUrl,
             fit: BoxFit.cover,
             width: dimension.width100,
-            height: 56,
+            height: dimension.val60,
           ),
         ),
         title: Text(title),

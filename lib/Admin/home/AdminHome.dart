@@ -26,7 +26,7 @@ class _AdminHomeState extends State<AdminHome> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
             padding: EdgeInsets.only(
-                left: dimension.val20, right: dimension.val20, top: 10),
+                left: dimension.val20, right: dimension.val20, top: dimension.val10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
