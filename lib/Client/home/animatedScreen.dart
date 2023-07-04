@@ -10,7 +10,7 @@ class AnimatedDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 1, end: 0),
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       builder: (BuildContext context, double value, Widget? child) {
         return Transform(
           transform: Matrix4.identity()
@@ -174,12 +174,12 @@ class AnimatedDrawer extends StatelessWidget {
                       context.go('/');
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: const Color.fromARGB(255, 250, 250, 250),
-                      onPrimary: Colors.white,
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color.fromARGB(255, 250, 250, 250),
                       elevation: dimension.val5,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
-                            color: Color.fromARGB(255, 19, 16, 16),
+                            color: const Color.fromARGB(255, 19, 16, 16),
                             width: dimension.val2,
                             style: BorderStyle.solid),
                         borderRadius: BorderRadius.circular(32.0),

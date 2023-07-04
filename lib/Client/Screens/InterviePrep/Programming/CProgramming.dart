@@ -64,7 +64,8 @@ class _CProgrammingState extends State<CProgramming> {
         ),
       ),
       body: isLoading // Check if data is still loading
-          ? Center(child: CircularProgressIndicator()) // Show loading indicator
+          ? const Center(
+              child: CircularProgressIndicator()) // Show loading indicator
           : ListView.builder(
               itemCount: questionsAndAnswers.length,
               itemBuilder: (context, index) {
@@ -109,7 +110,7 @@ class _QuestionAnswerTileState extends State<QuestionAnswerTile> {
             return ListTile(
               title: Text(
                 widget.question,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),

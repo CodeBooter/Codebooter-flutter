@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Graphs extends StatefulWidget {
   const Graphs({Key? key}) : super(key: key);
 
@@ -59,14 +60,12 @@ class _GraphsState extends State<Graphs> {
                   fontFamily: 'Georgia',
                 ),
               ),
-
               Center(
                 child: Image(
-                  image: NetworkImage('https://i.imgur.com/tE5mZ7g.png'),
+                  image: const NetworkImage('https://i.imgur.com/tE5mZ7g.png'),
                   height: dimension.height200,
                 ),
               ),
-
               Text(
                 'Types of Graphs',
                 style: TextStyle(
@@ -83,22 +82,19 @@ class _GraphsState extends State<Graphs> {
                     _buildGraphType(
                       title: 'Undirected Graph',
                       definition:
-                      'In an undirected graph, the edges do not have a direction. The connection between two vertices is symmetric, meaning if there is an edge from vertex A to vertex B, there is also an edge from vertex B to vertex A.',
-
+                          'In an undirected graph, the edges do not have a direction. The connection between two vertices is symmetric, meaning if there is an edge from vertex A to vertex B, there is also an edge from vertex B to vertex A.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildGraphType(
                       title: 'Directed Graph',
                       definition:
-                      'In a directed graph (also called a digraph), the edges have a direction. The connection between two vertices is asymmetric, meaning if there is an edge from vertex A to vertex B, there is not necessarily an edge from vertex B to vertex A.',
-
+                          'In a directed graph (also called a digraph), the edges have a direction. The connection between two vertices is asymmetric, meaning if there is an edge from vertex A to vertex B, there is not necessarily an edge from vertex B to vertex A.',
                     ),
                     SizedBox(width: dimension.val15),
                     _buildGraphType(
                       title: 'Weighted Graph',
                       definition:
-                      'In a weighted graph, each edge is assigned a weight or cost. This weight represents some value associated with the connection between two vertices, such as distance, time, or cost.Weighted graph can be directional or non-directional.',
-
+                          'In a weighted graph, each edge is assigned a weight or cost. This weight represents some value associated with the connection between two vertices, such as distance, time, or cost.Weighted graph can be directional or non-directional.',
                     ),
                   ],
                 ),
@@ -115,12 +111,12 @@ class _GraphsState extends State<Graphs> {
               SizedBox(height: dimension.val10),
               Text(
                 'Graphs support various operations, including:\n'
-                    '~ Adding a vertex or edge to the graph.\n'
-                    '~ Removing a vertex or edge from the graph.\n'
-                    '~ Checking if a vertex or edge exists in the graph.\n'
-                    '~ Traversing the graph to visit all vertices or find a specific path.\n'
-                    '~ Finding the shortest path between two vertices.\n'
-                    '~ Determining the connectivity of the graph.',
+                '~ Adding a vertex or edge to the graph.\n'
+                '~ Removing a vertex or edge from the graph.\n'
+                '~ Checking if a vertex or edge exists in the graph.\n'
+                '~ Traversing the graph to visit all vertices or find a specific path.\n'
+                '~ Finding the shortest path between two vertices.\n'
+                '~ Determining the connectivity of the graph.',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -141,7 +137,7 @@ class _GraphsState extends State<Graphs> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(dimension.val10),
                   color: Colors.black38,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: AppColors.shadowColor,
                       spreadRadius: 2,
@@ -200,13 +196,9 @@ void main() {
   Widget _buildGraphType({
     required String title,
     required String definition,
-
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-
-
-
       width: dimension.width311,
       decoration: BoxDecoration(
         color: appState.isDarkMode
@@ -218,7 +210,7 @@ void main() {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -234,8 +226,8 @@ void main() {
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
-            ? AppColors.lightModePrimary
-                : AppColors.primaryColor,
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor,
             ),
           ),
           SizedBox(height: dimension.val10),

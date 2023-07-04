@@ -14,7 +14,7 @@ class ComputerArch extends StatefulWidget {
 
 class _ComputerArchState extends State<ComputerArch> {
   final String pdfUrl =
-      'https://ia902608.us.archive.org/3/items/chemistry-shivani-pdf-2-compressed/CHEMISTRY%20SHIVANI%20PDF_2_compressed.pdf';
+      'https://ia601601.us.archive.org/13/items/read4_202307/read4.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
@@ -104,27 +104,27 @@ class _ComputerArchState extends State<ComputerArch> {
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
             : Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                downloadPdf();
-              },
-              icon: Icon(
-                Icons.download,
-                color: Colors.black,
-                size: dimension.val60,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      downloadPdf();
+                    },
+                    icon: Icon(
+                      Icons.download,
+                      color: Colors.black,
+                      size: dimension.val60,
+                    ),
+                  ),
+                  SizedBox(
+                    height: dimension.val20,
+                  ),
+                  Text(downloadMessage,
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: dimension.font20)),
+                ],
               ),
-            ),
-            SizedBox(
-              height: dimension.val20,
-            ),
-            Text(downloadMessage,
-                style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: dimension.font20)),
-          ],
-        ),
       ),
     );
   }

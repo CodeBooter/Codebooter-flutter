@@ -19,7 +19,7 @@ class DsaInterview extends StatelessWidget {
               : AppColors.lightModePrimary,
           borderRadius: BorderRadius.circular(dimension.val2),
           boxShadow: [
-            BoxShadow(
+            const BoxShadow(
               color: AppColors.shadowColor,
 
               spreadRadius: 1,

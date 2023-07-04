@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color.fromARGB(255, 62, 62, 62),
+                            color: const Color.fromARGB(255, 62, 62, 62),
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(5),
@@ -113,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                             Text(
                               'Continue with Google',
                               style: TextStyle(
-                                color: Color.fromARGB(219, 0, 0, 0),
+                                color: const Color.fromARGB(219, 0, 0, 0),
                                 fontFamily: 'Poppins',
                                 fontSize: dimension.font14,
                                 fontWeight: FontWeight.w600,
@@ -139,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Color.fromARGB(255, 48, 48, 48),
+                            color: const Color.fromARGB(255, 48, 48, 48),
                             width: 1,
                           ),
                           borderRadius: BorderRadius.circular(5),
@@ -181,7 +181,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text(
                         "Are you an admin? Login here",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 32, 32, 32),
+                          color: const Color.fromARGB(255, 32, 32, 32),
                           fontFamily: 'Poppins',
                           fontSize: dimension.font12,
                           fontWeight: FontWeight.w400,
@@ -214,7 +214,7 @@ class _LoginPageState extends State<LoginPage> {
           if (_isLoading)
             Container(
               color: Colors.black.withOpacity(0.5),
-              child: Center(
+              child: const Center(
                 child: CircularProgressIndicator(),
               ),
             ),

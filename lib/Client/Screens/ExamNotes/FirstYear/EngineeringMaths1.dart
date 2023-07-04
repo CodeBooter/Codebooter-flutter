@@ -23,7 +23,6 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
   double downloadProgress = 0;
 
   @override
-
   void initState() {
     super.initState();
     checkPdfExistence();
@@ -112,7 +111,7 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
             ),
           ),
         ],
-        title: Text(
+        title: const Text(
           'Mathematics I 1ST Year ',
           style: TextStyle(color: Colors.black),
         ),

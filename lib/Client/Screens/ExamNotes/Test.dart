@@ -47,12 +47,12 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Exam Note Screen'),
+        title: const Text('Exam Note Screen'),
       ),
       body: Center(
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
-            : CircularProgressIndicator(),
+            : const CircularProgressIndicator(),
       ),
     );
   }

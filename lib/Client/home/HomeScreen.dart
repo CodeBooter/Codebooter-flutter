@@ -49,8 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
               });
             },
             icon: appState.isDarkMode
-                ? Icon(Icons.light_mode)
-                : Icon(Icons.dark_mode),
+                ? const Icon(Icons.light_mode)
+                : const Icon(Icons.dark_mode),
             color: appState.isDarkMode
                 ? AppColors.mainTextColor
                 : const Color.fromARGB(255, 0, 0, 0),

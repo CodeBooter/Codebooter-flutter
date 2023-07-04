@@ -36,12 +36,19 @@ class _DsaScreenState extends State<JobInternshipScreen> {
           color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
       ),
+
       body: SingleChildScrollView(
         child: Padding(
             padding:
                 EdgeInsets.only(left: dimension.val15, right: dimension.val15),
             child: JobInternships()),
       ),
+
+      body: Padding(
+          padding:
+              EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+          child: const JobInternships()),
+
     );
   }
 }

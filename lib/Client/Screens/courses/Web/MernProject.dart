@@ -9,14 +9,12 @@ import '../YoutubeFunction.dart';
 import 'package:provider/provider.dart';
 
 class MernProject extends StatelessWidget {
-
   const MernProject({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    final String playlistId = 'PL39eN_AmKNMFPMMxnWu2gJJHwxMnpffWk';
-    final String channelId = 'NetNinja';
+    const String playlistId = 'PL39eN_AmKNMFPMMxnWu2gJJHwxMnpffWk';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       backgroundColor: appState.isDarkMode
@@ -53,7 +51,7 @@ class MernProject extends StatelessWidget {
                 final item = playlistItems[index];
                 final title = item['snippet']['title'];
                 final thumbnailUrl =
-                item['snippet']['thumbnails']['default']['url'];
+                    item['snippet']['thumbnails']['default']['url'];
 
                 final channelId = item['snippet']['channelId'];
                 final videoId = item['snippet']['resourceId']['videoId'];
@@ -81,7 +79,7 @@ class MernProject extends StatelessWidget {
                         context: context,
                         thumbnailUrl: thumbnailUrl,
                         title: title,
-                        subtitle: Text('Failed to fetch channel details'),
+                        subtitle: const Text('Failed to fetch channel details'),
                       );
                     } else if (snapshot.hasData) {
                       final channelSnippet = snapshot.data!;
@@ -134,7 +132,7 @@ class MernProject extends StatelessWidget {
                                           color: appState.isDarkMode
                                               ? AppColors.mainTextColor
                                               : const Color.fromARGB(
-                                              255, 0, 0, 0),
+                                                  255, 0, 0, 0),
                                         )),
                                     SizedBox(width: dimension.font12),
                                     Icon(
@@ -148,7 +146,7 @@ class MernProject extends StatelessWidget {
                                         color: appState.isDarkMode
                                             ? AppColors.mainTextColor
                                             : const Color.fromARGB(
-                                            255, 0, 0, 0),
+                                                255, 0, 0, 0),
                                       ),
                                     ),
                                     const SizedBox(width: 8),
@@ -166,13 +164,13 @@ class MernProject extends StatelessWidget {
                                         color: appState.isDarkMode
                                             ? AppColors.mainTextColor
                                             : const Color.fromARGB(
-                                            255, 0, 0, 0),
+                                                255, 0, 0, 0),
                                       ),
                                     ),
                                   ],
                                 );
                               } else {
-                                return Text('');
+                                return const Text('');
                               }
                             },
                           ),
@@ -201,9 +199,9 @@ class MernProject extends StatelessWidget {
               },
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text('Failed to fetch playlist'));
+            return const Center(child: Text('Failed to fetch playlist'));
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
@@ -230,7 +228,7 @@ Widget buildListTile({
             : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: AppColors.shadowColor,
             spreadRadius: 2,
             blurRadius: 5,

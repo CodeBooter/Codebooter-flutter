@@ -15,8 +15,7 @@ class HtmlCss extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    final String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
-    final String channelId = 'NetNinja';
+    const String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       backgroundColor: appState.isDarkMode
@@ -81,7 +80,7 @@ class HtmlCss extends StatelessWidget {
                         context: context,
                         thumbnailUrl: thumbnailUrl,
                         title: title,
-                        subtitle: Text('Failed to fetch channel details'),
+                        subtitle: const Text('Failed to fetch channel details'),
                       );
                     } else if (snapshot.hasData) {
                       final channelSnippet = snapshot.data!;
@@ -172,7 +171,7 @@ class HtmlCss extends StatelessWidget {
                                   ],
                                 );
                               } else {
-                                return Text('');
+                                return const Text('');
                               }
                             },
                           ),
@@ -201,9 +200,9 @@ class HtmlCss extends StatelessWidget {
               },
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text('Failed to fetch playlist'));
+            return const Center(child: Text('Failed to fetch playlist'));
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
@@ -230,7 +229,7 @@ Widget buildListTile({
             : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: AppColors.shadowColor,
             spreadRadius: 2,
             blurRadius: 5,

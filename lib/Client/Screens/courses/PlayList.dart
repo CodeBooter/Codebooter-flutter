@@ -42,7 +42,7 @@ class PlaylistScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('YouTube Playlist'),
+        title: const Text('YouTube Playlist'),
       ),
       body: FutureBuilder<List<dynamic>>(
         future: fetchYouTubePlaylist(playlistId, apiKey),
@@ -56,7 +56,6 @@ class PlaylistScreen extends StatelessWidget {
                 final title = item['snippet']['title'];
                 final thumbnailUrl =
                     item['snippet']['thumbnails']['default']['url'];
-                final videoId = item['snippet']['resourceId']['videoId'];
                 final channelId = item['snippet']['channelId'];
 
                 return FutureBuilder<Map<String, dynamic>>(
@@ -66,13 +65,13 @@ class PlaylistScreen extends StatelessWidget {
                       return ListTile(
                         leading: Image.network(thumbnailUrl),
                         title: Text(title),
-                        subtitle: CircularProgressIndicator(),
+                        subtitle: const CircularProgressIndicator(),
                       );
                     } else if (snapshot.hasError) {
                       return ListTile(
                         leading: Image.network(thumbnailUrl),
                         title: Text(title),
-                        subtitle: Text('Failed to fetch channel details'),
+                        subtitle: const Text('Failed to fetch channel details'),
                       );
                     } else if (snapshot.hasData) {
                       final channelSnippet = snapshot.data!;
@@ -99,9 +98,9 @@ class PlaylistScreen extends StatelessWidget {
               },
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text('Failed to fetch playlist'));
+            return const Center(child: Text('Failed to fetch playlist'));
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

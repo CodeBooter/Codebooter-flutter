@@ -23,7 +23,7 @@ class _CourseScreenState extends State<CourseScreen> {
   final double borderRadius = dimension.val5;
   final double spacing = dimension.val30;
   final double runSpacing = dimension.val30;
-  final Duration tapDelay = Duration(milliseconds: 200);
+  final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
   Widget build(BuildContext context) {
@@ -670,7 +670,7 @@ class _CourseScreenState extends State<CourseScreen> {
                   ),
                 ),
                 // placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],
           ),

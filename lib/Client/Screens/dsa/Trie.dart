@@ -7,12 +7,14 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Trie extends StatefulWidget {
   const Trie({Key? key}) : super(key: key);
 
   @override
   _TrieState createState() => _TrieState();
 }
+
 class _TrieState extends State<Trie> {
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,6 @@ class _TrieState extends State<Trie> {
               : const Color.fromARGB(255, 0, 0, 0),
         ),
       ),
-
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(dimension.val20),
@@ -61,9 +62,8 @@ class _TrieState extends State<Trie> {
               ),
               SizedBox(height: dimension.val25),
               Center(
-
                 child: Image(
-                  image: NetworkImage('https://i.imgur.com/6HkHFtc.png'),
+                  image: const NetworkImage('https://i.imgur.com/6HkHFtc.png'),
                   height: dimension.height250,
                   width: dimension.width280,
                 ),
@@ -80,9 +80,9 @@ class _TrieState extends State<Trie> {
               SizedBox(height: dimension.val10),
               Text(
                 '~ Insert: Adds a string to the trie.\n'
-                    '~ Search: Checks if a string is present in the trie.\n'
-                    '~ Delete: Removes a string from the trie.\n'
-                    '~ StartsWith: Checks if any string in the trie starts with a given prefix.',
+                '~ Search: Checks if a string is present in the trie.\n'
+                '~ Delete: Removes a string from the trie.\n'
+                '~ StartsWith: Checks if any string in the trie starts with a given prefix.',
                 style: TextStyle(
                   fontSize: dimension.font18,
                   fontFamily: 'Georgia',
@@ -103,7 +103,7 @@ class _TrieState extends State<Trie> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(dimension.val10),
                   color: Colors.black38,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: AppColors.shadowColor,
                       spreadRadius: 2,

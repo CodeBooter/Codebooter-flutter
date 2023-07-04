@@ -36,7 +36,9 @@ class Sorting extends StatelessWidget {
         padding: EdgeInsets.all(dimension.val20),
         children: [
           Card(
-            color:  appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+            color: appState.isDarkMode
+                ? AppColors.primaryColor
+                : AppColors.lightModePrimary,
             elevation: 7,
             child: Padding(
               padding: EdgeInsets.all(dimension.val15),
@@ -49,7 +51,9 @@ class Sorting extends StatelessWidget {
                       fontSize: dimension.font20,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Georgia',
-                      color:  appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
+                      color: appState.isDarkMode
+                          ? AppColors.lightModePrimary
+                          : AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(height: dimension.val10),
@@ -58,7 +62,9 @@ class Sorting extends StatelessWidget {
                     style: TextStyle(
                       fontSize: dimension.font18,
                       fontFamily: 'Georgia',
-                      color: appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor,
+                      color: appState.isDarkMode
+                          ? AppColors.lightModePrimary
+                          : AppColors.primaryColor,
                     ),
                   ),
                 ],
@@ -67,7 +73,9 @@ class Sorting extends StatelessWidget {
           ),
           SizedBox(height: dimension.val25),
           Card(
-            color:  appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+            color: appState.isDarkMode
+                ? AppColors.primaryColor
+                : AppColors.lightModePrimary,
             elevation: 7,
             child: Padding(
               padding: EdgeInsets.all(dimension.val15),
@@ -77,19 +85,20 @@ class Sorting extends StatelessWidget {
                   Text(
                     'Key Concepts',
                     style: TextStyle(
-                      fontSize: dimension.font20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Georgia',
-                      color:  appState.isDarkMode?AppColors.lightModePrimary:AppColors.primaryColor
-                    ),
+                        fontSize: dimension.font20,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Georgia',
+                        color: appState.isDarkMode
+                            ? AppColors.lightModePrimary
+                            : AppColors.primaryColor),
                   ),
                   SizedBox(height: dimension.val10),
                   Text(
                     '1. Sorting Algorithm: The algorithm that determines the process of rearranging elements in a specific order.\n'
-                        '2. Comparison-based Sorting: Sorting algorithms that compare elements and make decisions based on the comparison results.\n'
-                        '3. Stable Sorting: Sorting algorithms that maintain the relative order of elements with equal keys.\n'
-                        '4. In-place Sorting: Sorting algorithms that rearrange elements within the given array without using additional memory.\n'
-                        '5. Time Complexity: The measure of the amount of time required by a sorting algorithm to perform the sorting operation.',
+                    '2. Comparison-based Sorting: Sorting algorithms that compare elements and make decisions based on the comparison results.\n'
+                    '3. Stable Sorting: Sorting algorithms that maintain the relative order of elements with equal keys.\n'
+                    '4. In-place Sorting: Sorting algorithms that rearrange elements within the given array without using additional memory.\n'
+                    '5. Time Complexity: The measure of the amount of time required by a sorting algorithm to perform the sorting operation.',
                     style: TextStyle(
                       fontSize: dimension.font18,
                       fontFamily: 'Georgia',
@@ -101,7 +110,9 @@ class Sorting extends StatelessWidget {
           ),
           SizedBox(height: dimension.val25),
           Card(
-            color:  appState.isDarkMode?AppColors.primaryColor:AppColors.lightModePrimary,
+            color: appState.isDarkMode
+                ? AppColors.primaryColor
+                : AppColors.lightModePrimary,
             elevation: 6,
             child: Padding(
               padding: EdgeInsets.all(dimension.val15),
@@ -126,6 +137,7 @@ class Sorting extends StatelessWidget {
                           color: Colors.black12,
                           spreadRadius: dimension.val2,
                           blurRadius: dimension.val5,
+                          // ignore: prefer_const_constructors
                           offset: Offset(0, 3), // changes position of shadow
                         ),
                       ],
