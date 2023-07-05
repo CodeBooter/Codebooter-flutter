@@ -1,9 +1,13 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:convert';
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+import 'package:codebooter_study_app/AppState.dart';
+//TODO remove company
 class PostJob extends StatefulWidget {
   @override
   _PostJobState createState() => _PostJobState();
@@ -136,13 +140,16 @@ class _PostJobState extends State<PostJob> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Create Job'),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+
+          padding:  EdgeInsets.all(dimension.val15),
+
           child: Form(
             key: _formKey,
             child: Column(

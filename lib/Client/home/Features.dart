@@ -28,6 +28,7 @@ class _FeaturesState extends State<Features> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(left: 2, right: 2),
@@ -72,6 +73,8 @@ class _FeaturesState extends State<Features> {
             ),
           ],
         ),
+
+   
       ),
     );
   }

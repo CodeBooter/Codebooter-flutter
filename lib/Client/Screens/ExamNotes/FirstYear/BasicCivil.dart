@@ -8,6 +8,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
 
+
+import '../../../../utils/Colors.dart';
 class BasicCivil extends StatefulWidget {
   const BasicCivil({Key? key}) : super(key: key);
 
@@ -80,10 +82,12 @@ class _BasicCivilState extends State<BasicCivil> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:
-            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
-        iconTheme: IconThemeData(
-          color: appState.isDarkMode ? Colors.white : Colors.black,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+
         ),
         centerTitle: true,
         actions: [
@@ -97,14 +101,18 @@ class _BasicCivilState extends State<BasicCivil> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
+
               color: appState.isDarkMode ? Colors.white : Colors.black,
+
             ),
           ),
         ],
         title: Text(
+
           'Basic Civil and Mechanical Engineering ',
           style: TextStyle(
               color: appState.isDarkMode ? Colors.white : Colors.black),
+
         ),
       ),
       body: Center(

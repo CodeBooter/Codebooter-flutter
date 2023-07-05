@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
-import '../../../../AppState.dart';
+
+import 'package:codebooter_study_app/AppState.dart';
 
 class Communication extends StatefulWidget {
   const Communication({Key? key}) : super(key: key);
@@ -77,38 +78,27 @@ class _CommunicationState extends State<Communication> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: appState.isDarkMode
-            ? AppColors.primaryColor
-            : AppColors.lightModePrimary,
-        appBar: AppBar(
-          backgroundColor: appState.isDarkMode
-              ? AppColors.primaryColor
-              : AppColors.lightModePrimary,
-          iconTheme: IconThemeData(
-            color: appState.isDarkMode ? Colors.white : Colors.black,
-          ),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: () {
-                if (isPdfDownloaded) {
-                  deletePdf();
-                } else {
-                  downloadPdf();
-                }
-              },
-              icon: Icon(
-                isPdfDownloaded ? Icons.delete : Icons.download,
-                color: appState.isDarkMode ? Colors.white : Colors.black,
-              ),
-            ),
-          ],
-          title: Text(
-            ' English Communication Notes ',
-            style: TextStyle(
-              color: appState.isDarkMode ? Colors.white : Colors.black,
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              if (isPdfDownloaded) {
+                deletePdf();
+              } else {
+                downloadPdf();
+              }
+            },
+            icon: Icon(
+              isPdfDownloaded ? Icons.delete : Icons.download,
+              color: Colors.black,
+
             ),
           ),
         ),

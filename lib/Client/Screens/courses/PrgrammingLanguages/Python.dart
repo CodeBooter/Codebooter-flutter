@@ -4,6 +4,7 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
+
 import '../YoutubeFunction.dart';
 
 class Python extends StatelessWidget {
@@ -11,21 +12,26 @@ class Python extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLu0W_9lII9agwh1XjRt242xIpHhPT2llg';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
+
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
+
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
+
         title: Text(
           'Python Language',
           style: TextStyle(
               color: appState.isDarkMode ? Colors.white : Colors.black),
+
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -177,14 +183,18 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(255, 32, 32, 32).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        boxShadow: const [
+              BoxShadow(
+                color: AppColors.shadowColor,
+
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: Offset(
+                  0,
+                  0,
+                ), // changes position of shadow
+              ),
+            ],
       ),
       child: ListTile(
         leading: ClipRRect(
@@ -193,7 +203,7 @@ Widget buildListTile({
             thumbnailUrl,
             fit: BoxFit.cover,
             width: dimension.width100,
-            height: 56,
+            height: dimension.val60,
           ),
         ),
         title: Text(title),

@@ -1,7 +1,10 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 
 class Tokenization extends StatelessWidget {
@@ -9,16 +12,23 @@ class Tokenization extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLnjh8FWWpVQhZTrsuOcSJzrBn10O1MnQi';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode
+            ? AppColors.lightModePrimary
+            : AppColors.primaryColor,),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        title:  Text(
           'Tokenization',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -167,7 +177,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color: Colors.black45,
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

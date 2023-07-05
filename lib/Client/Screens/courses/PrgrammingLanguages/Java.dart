@@ -4,6 +4,7 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
+
 import '../YoutubeFunction.dart';
 
 class Java extends StatelessWidget {
@@ -11,18 +12,22 @@ class Java extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLd3UqWTnYXOmx_J1774ukG_rvrpyWczm0';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     final appState = Provider.of<AppState>(context);
 
     return Scaffold(
       appBar: AppBar(
+
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
+
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
+
         title: Text(
           'Java Language',
           style: TextStyle(
@@ -194,7 +199,7 @@ Widget buildListTile({
             thumbnailUrl,
             fit: BoxFit.cover,
             width: dimension.width100,
-            height: 56,
+            height: dimension.val60,
           ),
         ),
         title: Text(title),

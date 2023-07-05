@@ -1,24 +1,32 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
-
+import 'package:codebooter_study_app/AppState.dart';
 class DataScience extends StatelessWidget {
   const DataScience({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLeo1K3hjS3us_ELKYSj_Fth2tIEkdKXvV';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode
+        ? AppColors.lightModePrimary
+            : AppColors.primaryColor,),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        title:  Text(
           'Data Science',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+          ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -91,7 +99,7 @@ class DataScience extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                    const SizedBox(width: 8),
+                                     SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
                                       size: dimension.font14,
@@ -101,7 +109,7 @@ class DataScience extends StatelessWidget {
                                       style:
                                           TextStyle(fontSize: dimension.font14),
                                     ),
-                                    const SizedBox(width: 8),
+                                     SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
                                       size: dimension.font14,
@@ -167,7 +175,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color:  Colors.black45,
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),
@@ -181,7 +189,7 @@ Widget buildListTile({
             thumbnailUrl,
             fit: BoxFit.cover,
             width: dimension.width100,
-            height: 56,
+            height: dimension.val60,
           ),
         ),
         title: Text(title),

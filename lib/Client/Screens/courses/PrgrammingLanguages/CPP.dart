@@ -4,6 +4,7 @@ import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../YoutubeFunction.dart';
 
 class CPP extends StatelessWidget {
@@ -11,21 +12,26 @@ class CPP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
+
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
+
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
+
         title: Text(
           'C++ Language',
           style: TextStyle(
               color: appState.isDarkMode ? Colors.white : Colors.black),
+
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -179,7 +185,9 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
+
+            color: AppColors.shadowColor,
+
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

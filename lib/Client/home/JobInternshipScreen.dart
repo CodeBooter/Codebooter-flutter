@@ -6,6 +6,8 @@ import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+import '../../utils/Colors.dart';
 class JobInternshipScreen extends StatefulWidget {
   const JobInternshipScreen({super.key});
 
@@ -22,6 +24,7 @@ class _DsaScreenState extends State<JobInternshipScreen> {
           ? AppColors.primaryColor
           : AppColors.lightModePrimary,
       appBar: AppBar(
+
         elevation: 0,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
