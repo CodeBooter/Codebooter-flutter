@@ -11,9 +11,10 @@ class CarouselScreen extends StatefulWidget {
 
 class _CarouselScreenState extends State<CarouselScreen> {
   final List<String> imagePaths = [
-    'assets/images/logo4.png',
-    'assets/images/logo4.png',
-    'assets/images/logo4.png',
+    'assets/images/tour1.jpeg',
+    'assets/images/tour2.jpeg',
+    'assets/images/tour3.jpeg',
+// assets added
   ];
 
   int _currentPageIndex = 0;
