@@ -98,13 +98,13 @@ class _KnowledgeManagementState extends State<KnowledgeManagement> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
         ],
-        title: const Text(
+        title:  Text(
           ' Knowledge Management Notes ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle( color: appState.isDarkMode ? Colors.white : Colors.black,),
         ),
       ),
       body: Center(
@@ -119,7 +119,7 @@ class _KnowledgeManagementState extends State<KnowledgeManagement> {
                     },
                     icon: Icon(
                       Icons.download,
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       size: dimension.val60,
                     ),
                   ),
@@ -128,7 +128,7 @@ class _KnowledgeManagementState extends State<KnowledgeManagement> {
                   ),
                   Text(downloadMessage,
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color: appState.isDarkMode ? Colors.white : Colors.black,
                           fontSize: dimension.font20)),
                 ],
               ),

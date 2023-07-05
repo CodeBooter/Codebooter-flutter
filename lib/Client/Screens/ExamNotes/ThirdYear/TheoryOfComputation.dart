@@ -98,13 +98,13 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
         ],
-        title: const Text(
+        title:  Text(
           ' Theory of Computation Notes ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle( color: appState.isDarkMode ? Colors.white : Colors.black,),
         ),
       ),
       body: Center(
@@ -119,7 +119,7 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
                     },
                     icon: Icon(
                       Icons.download,
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       size: dimension.val60,
                     ),
                   ),
@@ -128,7 +128,7 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
                   ),
                   Text(downloadMessage,
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color: appState.isDarkMode ? Colors.white : Colors.black,
                           fontSize: dimension.font20)),
                 ],
               ),
