@@ -38,7 +38,7 @@ class AnimatedDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: dimension.height300,
+                    height: dimension.height250,
                     child: Column(
                       children: [
                         // SizedBox(height: dimension.val50),

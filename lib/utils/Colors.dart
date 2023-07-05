@@ -20,9 +20,9 @@ class AppColors {
     isDarkMode = value;
   }
 
-  static const Color shadowColor = Color.fromRGBO(95, 125, 152, 1);
+  static const Color shadowColor = Color.fromRGBO(208, 224, 255, 1);
   // Dark mode colors
-  static const Color mainColor = Color.fromARGB(255, 39, 55, 77);
+  static const Color mainColor = Color.fromARGB(255, 46, 46, 46);
   static const Color darkModeSecondary = Color.fromARGB(255, 0, 0, 0);
   static const Color mainTextColor = Color.fromARGB(255, 255, 255, 255);
 

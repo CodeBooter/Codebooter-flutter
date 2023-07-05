@@ -19,7 +19,7 @@ class _FeaturesState extends State<Features> {
   final double imageHeight = dimension.height180;
   final double imageWidth = dimension.width170;
   final double containerWidth = dimension.width170;
-  final double containerHeight = dimension.height185;
+  final double containerHeight = dimension.height190;
   final double borderRadius = dimension.val5;
   final double spacing = dimension.val25;
   final double runSpacing = dimension.val25;
@@ -73,8 +73,6 @@ class _FeaturesState extends State<Features> {
             ),
           ],
         ),
-
-   
       ),
     );
   }
@@ -95,21 +93,13 @@ class _FeaturesState extends State<Features> {
         child: Ink(
           decoration: BoxDecoration(
             color: appState.isDarkMode
-                ? AppColors.primaryColor
+                ? AppColors.mainColor
                 : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
-            boxShadow: const [
-              BoxShadow(
-                color: AppColors.shadowColor,
-
-                spreadRadius: 1,
-                blurRadius: 1,
-                offset: Offset(
-                  0,
-                  0,
-                ), // changes position of shadow
-              ),
-            ],
+            border: Border.all(
+              color: AppColors.shadowColor,
+              width: 2,
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
