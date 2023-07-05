@@ -77,7 +77,6 @@ class _CarouselScreenState extends State<CarouselScreen> {
                   },
                   child: Container(
                     padding: EdgeInsets.only(left: 10),
-
                     child: Text(
                       'Skip',
                       style: TextStyle(
