@@ -106,6 +106,7 @@ import 'package:codebooter_study_app/Client/Screens/help.dart';
 import 'package:codebooter_study_app/Client/authentication/LoginPage.dart';
 import 'package:codebooter_study_app/Client/authentication/auth_service.dart';
 import 'package:codebooter_study_app/Client/home/JobInternshipScreen.dart';
+import 'package:codebooter_study_app/Client/home/Tour.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -157,6 +158,11 @@ class App extends StatelessWidget {
               path: 'homepage',
               builder: (BuildContext context, GoRouterState state) =>
                   const HomeScreen(),
+            ),
+            GoRoute(
+              path: 'log',
+              builder: (BuildContext context, GoRouterState state) =>
+               LoginPage(),
             ),
             GoRoute(
               path: 'help',
@@ -764,7 +770,7 @@ class App extends StatelessWidget {
               }
             } else {
               // Navigate to the login page
-              return LoginPage();
+              return CarouselScreen();
             }
           })
     ],

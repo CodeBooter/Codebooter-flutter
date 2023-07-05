@@ -6,6 +6,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
+
+import '../../../../utils/Colors.dart';
 class ImageProcessing extends StatefulWidget {
   const ImageProcessing({Key? key}) : super(key: key);
 
@@ -76,10 +78,13 @@ class _ImageProcessingState extends State<ImageProcessing> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor:
+      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+        backgroundColor:
+        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         centerTitle: true,
         actions: [
@@ -93,13 +98,13 @@ class _ImageProcessingState extends State<ImageProcessing> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
         ],
-        title: const Text(
+        title:  Text(
           ' Image Processing & Computer Vision Notes ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode ? Colors.white : Colors.black,),
         ),
       ),
       body: Center(
@@ -114,7 +119,7 @@ class _ImageProcessingState extends State<ImageProcessing> {
                     },
                     icon: Icon(
                       Icons.download,
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       size: dimension.val60,
                     ),
                   ),
@@ -123,7 +128,7 @@ class _ImageProcessingState extends State<ImageProcessing> {
                   ),
                   Text(downloadMessage,
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color: appState.isDarkMode ? Colors.white : Colors.black,
                           fontSize: dimension.font20)),
                 ],
               ),
