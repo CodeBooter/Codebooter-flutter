@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
+import '../../../../utils/Colors.dart';
+
 class EngineeringMaths1 extends StatefulWidget {
   const EngineeringMaths1({Key? key}) : super(key: key);
 
@@ -92,10 +94,13 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor:
+      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+        backgroundColor:
+        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         centerTitle: true,
         actions: [
@@ -109,13 +114,13 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
         ],
-        title: const Text(
+        title:  Text(
           'Mathematics I 1ST Year ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: Center(
@@ -129,7 +134,7 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
                   Text(
                     downloadMessage,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       fontSize: dimension.font20,
                     ),
                   ),
@@ -140,7 +145,7 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
                     },
                     icon: Icon(
                       Icons.download,
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       size: dimension.val60,
                     ),
                   ),

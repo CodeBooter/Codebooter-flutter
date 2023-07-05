@@ -81,13 +81,13 @@ class _BasicCivilState extends State<BasicCivil> {
     final appState = Provider.of<AppState>(context);
 
     return Scaffold(
+      backgroundColor:
+      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
-        backgroundColor: appState.isDarkMode
-            ? AppColors.primaryColor
-            : AppColors.lightModePrimary,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-
+        backgroundColor:
+        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         centerTitle: true,
         actions: [
@@ -127,7 +127,7 @@ class _BasicCivilState extends State<BasicCivil> {
                     },
                     icon: Icon(
                       Icons.download,
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       size: dimension.val60,
                     ),
                   ),
@@ -136,7 +136,7 @@ class _BasicCivilState extends State<BasicCivil> {
                   ),
                   Text(downloadMessage,
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color: appState.isDarkMode ? Colors.white : Colors.black,
                           fontSize: dimension.font20)),
                 ],
               ),

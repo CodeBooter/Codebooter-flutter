@@ -80,10 +80,13 @@ class _CommunicationState extends State<Communication> {
     final appState = Provider.of<AppState>(context);
 
     return Scaffold(
+      backgroundColor:
+      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+        backgroundColor:
+        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         centerTitle: true,
         actions: [
@@ -97,7 +100,7 @@ class _CommunicationState extends State<Communication> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
         ],
