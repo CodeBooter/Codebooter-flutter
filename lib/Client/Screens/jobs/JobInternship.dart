@@ -98,7 +98,10 @@ class _JobInternshipsState extends State<JobInternships> {
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
-            color: const Color.fromARGB(255, 255, 255, 255),
+            border: Border.all(color: AppColors.shadowColor, width: 2.0),
+            color: appState.isDarkMode
+                ? AppColors.mainColor
+                : AppColors.lightModePrimary,
           ),
           child: InkWell(
             onTap: onTap,
@@ -107,24 +110,6 @@ class _JobInternshipsState extends State<JobInternships> {
             child: Container(
               width: containerWidth,
               height: containerHeight,
-              decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                    color: AppColors.shadowColor,
-
-                    spreadRadius: 1,
-                    blurRadius: 1,
-                    offset: Offset(
-                      0,
-                      0,
-                    ), // changes position of shadow
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(borderRadius),
-                color: appState.isDarkMode
-                    ? AppColors.primaryColor
-                    : AppColors.lightModePrimary,
-              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
