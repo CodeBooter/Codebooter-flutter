@@ -28,48 +28,50 @@ class _FeaturesState extends State<Features> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    return Padding(
-      padding: const EdgeInsets.only(left: 2, right: 2),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          bigText(
-            text: 'Features',
-            size: dimension.font24,
-            color: appState.isDarkMode ? Colors.white : Colors.black,
-          ),
-          SizedBox(height: dimension.val10),
-          Wrap(
-            spacing: spacing,
-            runSpacing: runSpacing,
-            children: [
-              _buildFeatureContainer(
-                imageAsset: appState.isDarkMode
-                    ? 'https://i.imgur.com/O0AYLFY.png'
-                    : 'https://i.imgur.com/ZM3HoSa.png',
-                onTap: () => _navigateTo('/dsa'),
-              ),
-              _buildFeatureContainer(
-                imageAsset: appState.isDarkMode
-                    ? 'https://i.imgur.com/psroZPx.png'
-                    : 'https://i.imgur.com/chVM8es.png',
-                onTap: () => _navigateTo('/courses'),
-              ),
-              _buildFeatureContainer(
-                imageAsset: appState.isDarkMode
-                    ? 'https://i.imgur.com/tsmGrpX.png'
-                    : 'https://i.imgur.com/Ijyh2AC.png',
-                onTap: () => _navigateTo('/interview'),
-              ),
-              _buildFeatureContainer(
-                imageAsset: appState.isDarkMode
-                    ? 'https://i.imgur.com/ThdpOTH.png'
-                    : 'https://i.imgur.com/eFqgEZp.png',
-                onTap: () => _navigateTo('/notes'),
-              ),
-            ],
-          ),
-        ],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 2, right: 2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            bigText(
+              text: 'Features',
+              size: dimension.font24,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
+            ),
+            SizedBox(height: dimension.val10),
+            Wrap(
+              spacing: spacing,
+              runSpacing: runSpacing,
+              children: [
+                _buildFeatureContainer(
+                  imageAsset: appState.isDarkMode
+                      ? 'https://i.imgur.com/O0AYLFY.png'
+                      : 'https://i.imgur.com/ZM3HoSa.png',
+                  onTap: () => _navigateTo('/dsa'),
+                ),
+                _buildFeatureContainer(
+                  imageAsset: appState.isDarkMode
+                      ? 'https://i.imgur.com/psroZPx.png'
+                      : 'https://i.imgur.com/chVM8es.png',
+                  onTap: () => _navigateTo('/courses'),
+                ),
+                _buildFeatureContainer(
+                  imageAsset: appState.isDarkMode
+                      ? 'https://i.imgur.com/tsmGrpX.png'
+                      : 'https://i.imgur.com/Ijyh2AC.png',
+                  onTap: () => _navigateTo('/interview'),
+                ),
+                _buildFeatureContainer(
+                  imageAsset: appState.isDarkMode
+                      ? 'https://i.imgur.com/ThdpOTH.png'
+                      : 'https://i.imgur.com/eFqgEZp.png',
+                  onTap: () => _navigateTo('/notes'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -98,10 +100,10 @@ class _FeaturesState extends State<Features> {
                 color: AppColors.shadowColor,
 
                 spreadRadius: 1,
-                blurRadius: 2,
+                blurRadius: 1,
                 offset: Offset(
-                  2,
-                  5,
+                  0,
+                  0,
                 ), // changes position of shadow
               ),
             ],

@@ -50,6 +50,8 @@ class _CProgrammingState extends State<CProgramming> {
     final appState = Provider.of<AppState>(context);
 
     return Scaffold(
+      backgroundColor:
+          appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
@@ -96,7 +98,10 @@ class _QuestionAnswerTileState extends State<QuestionAnswerTile> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+
     return ExpansionPanelList(
+      animationDuration: const Duration(milliseconds: 500),
       elevation: 1,
       expandedHeaderPadding: EdgeInsets.zero,
       expansionCallback: (int index, bool isExpanded) {
@@ -106,6 +111,8 @@ class _QuestionAnswerTileState extends State<QuestionAnswerTile> {
       },
       children: [
         ExpansionPanel(
+          backgroundColor:
+              appState.isDarkMode ? AppColors.primaryColor : Colors.white,
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
               title: Text(

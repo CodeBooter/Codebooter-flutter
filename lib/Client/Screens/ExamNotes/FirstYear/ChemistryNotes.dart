@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:provider/provider.dart';
+import '../../../../AppState.dart';
 
 class ChemistryNotes extends StatefulWidget {
   const ChemistryNotes({Key? key}) : super(key: key);
@@ -14,7 +17,7 @@ class ChemistryNotes extends StatefulWidget {
 
 class _ChemistryNotesState extends State<ChemistryNotes> {
   final String pdfUrl =
-      'https://github.com/CodeBooter/img/blob/8f5c61939e5185742d10cbc767e8982037bde165/math%201.pdf';
+      'https://ia802708.us.archive.org/25/items/chemistry-shivani-pdf-2/CHEMISTRY%20SHIVANI%20PDF_2.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
   String downloadMessage = "Click download icon to start download";
@@ -73,11 +76,15 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
+      backgroundColor:
+          appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+        backgroundColor:
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
         centerTitle: true,
         actions: [
@@ -91,13 +98,14 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
         ],
-        title: const Text(
+        title: Text(
           'Chemistry Notes 1ST Year ',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: Center(
@@ -112,7 +120,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                     },
                     icon: Icon(
                       Icons.download,
-                      color: Colors.black,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
                       size: dimension.val60,
                     ),
                   ),
@@ -121,7 +129,8 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                   ),
                   Text(downloadMessage,
                       style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
                           fontSize: dimension.font20)),
                 ],
               ),

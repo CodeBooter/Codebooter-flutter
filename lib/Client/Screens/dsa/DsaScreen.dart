@@ -11,27 +11,26 @@ class DsaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       backgroundColor: appState.isDarkMode
           ? AppColors.primaryColor
           : AppColors.lightModePrimary,
       appBar: AppBar(
-    iconTheme: IconThemeData(
-    color: appState.isDarkMode ? Colors.white : Colors.black),
-    backgroundColor: appState.isDarkMode
-    ? AppColors.primaryColor
-        : AppColors.lightModePrimary,
-    elevation: 4,
-    centerTitle: true,
-    title: bigText(
-    text: "Exam Notes",
-    color: appState.isDarkMode
-    ? AppColors.mainTextColor
-        : const Color.fromARGB(255, 0, 0, 0),
-    ),
-    ),
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        elevation: 4,
+        centerTitle: true,
+        title: bigText(
+          text: "Exam Notes",
+          color: appState.isDarkMode
+              ? AppColors.mainTextColor
+              : const Color.fromARGB(255, 0, 0, 0),
+        ),
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -173,8 +172,9 @@ class DsaScreen extends StatelessWidget {
       color: appState.isDarkMode
           ? AppColors.primaryColor
           : AppColors.lightModePrimary,
-      elevation: 7,
-      shadowColor: AppColors.mainTextColor.withOpacity(.2),
+      elevation: 3,
+      // borderOnForeground: true,
+      shadowColor: AppColors.shadowColor,
       child: ListTile(
         leading: Icon(
           icon,
@@ -184,12 +184,13 @@ class DsaScreen extends StatelessWidget {
         title: Text(
           title,
           style: TextStyle(
-              fontSize: dimension.font16,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Georgia',
-          color: appState.isDarkMode
-              ? AppColors.mainTextColor
-              : const Color.fromARGB(255, 0, 0, 0),),
+            fontSize: dimension.font16,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Georgia',
+            color: appState.isDarkMode
+                ? AppColors.mainTextColor
+                : const Color.fromARGB(255, 0, 0, 0),
+          ),
         ),
         onTap: onTap,
       ),

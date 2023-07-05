@@ -41,9 +41,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
           centerTitle: true,
           title: bigText(
             text: "Exam Notes",
-            color: appState.isDarkMode
-                ? AppColors.mainTextColor
-                : const Color.fromARGB(255, 0, 0, 0),
+            color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
         ),
         body: SingleChildScrollView(
@@ -483,12 +481,16 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
           decoration: BoxDecoration(
             color: appState.isDarkMode ? AppColors.primaryColor : Colors.white,
             borderRadius: BorderRadius.circular(borderRadius),
-            boxShadow: [
-              const BoxShadow(
+            boxShadow: const [
+              BoxShadow(
                 color: AppColors.shadowColor,
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(0, 3), // changes position of shadow
+
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: Offset(
+                  0,
+                  0,
+                ), // changes position of shadow
               ),
             ],
           ),
@@ -510,8 +512,6 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                     color: const Color.fromARGB(255, 209, 209, 209),
                   ),
                 ),
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ],

@@ -36,87 +36,89 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    return Scaffold(
-      backgroundColor: appState.isDarkMode
-          ? AppColors.primaryColor
-          : AppColors.lightModePrimary,
-      drawer: AnimatedDrawer(),
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-            color: appState.isDarkMode ? Colors.white : Colors.black),
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        elevation: 4,
-        centerTitle: true,
-        title: bigText(
-          text: "Home",
-          color: appState.isDarkMode
-              ? AppColors.mainTextColor
-              : const Color.fromARGB(255, 0, 0, 0),
-        ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              setState(() {
-                appState.toggleDarkMode();
-              });
-            },
-            icon: appState.isDarkMode
-                ? const Icon(Icons.light_mode)
-                : const Icon(Icons.dark_mode),
+        drawer: AnimatedDrawer(),
+        appBar: AppBar(
+          iconTheme: IconThemeData(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
+          backgroundColor: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
+          elevation: 4,
+          centerTitle: true,
+          title: bigText(
+            text: "Home",
             color: appState.isDarkMode
                 ? AppColors.mainTextColor
                 : const Color.fromARGB(255, 0, 0, 0),
           ),
-        ],
-      ),
-      body: RefreshIndicator(
-        onRefresh: () => _refreshData(context),
-        child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: Column(
-            children: [
-              SizedBox(
-                height: dimension.val20,
-              ),
-              const Features(),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: dimension.val20,
-                  right: dimension.val20,
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  appState.toggleDarkMode();
+                });
+              },
+              icon: appState.isDarkMode
+                  ? const Icon(Icons.light_mode)
+                  : const Icon(Icons.dark_mode),
+              color: appState.isDarkMode
+                  ? AppColors.mainTextColor
+                  : const Color.fromARGB(255, 0, 0, 0),
+            ),
+          ],
+        ),
+        body: RefreshIndicator(
+          onRefresh: () => _refreshData(context),
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: dimension.val20,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Job & Internships",
-                      style: TextStyle(
-                        color: appState.isDarkMode
-                            ? AppColors.mainTextColor
-                            : const Color.fromARGB(255, 0, 0, 0),
-                        fontFamily: 'poppins',
-                        fontSize: dimension.font20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () => context.go('/jobinternship'),
-                      child: Text(
-                        "View All",
+                const Features(),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: dimension.val20,
+                    right: dimension.val20,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Job & Internships",
                         style: TextStyle(
+                          color: appState.isDarkMode
+                              ? AppColors.mainTextColor
+                              : const Color.fromARGB(255, 0, 0, 0),
                           fontFamily: 'poppins',
-                          fontSize: dimension.font16,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.blue,
+                          fontSize: dimension.font20,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                    ),
-                  ],
+                      TextButton(
+                        onPressed: () => context.go('/jobinternship'),
+                        child: Text(
+                          "View All",
+                          style: TextStyle(
+                            fontFamily: 'poppins',
+                            fontSize: dimension.font16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              const JobInternships(),
-            ],
+                const JobInternships(),
+              ],
+            ),
           ),
         ),
       ),

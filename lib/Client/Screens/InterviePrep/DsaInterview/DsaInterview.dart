@@ -18,15 +18,15 @@ class DsaInterview extends StatelessWidget {
               ? AppColors.primaryColor
               : AppColors.lightModePrimary,
           borderRadius: BorderRadius.circular(dimension.val2),
-          boxShadow: [
-            const BoxShadow(
+          boxShadow: const [
+            BoxShadow(
               color: AppColors.shadowColor,
 
               spreadRadius: 1,
-              blurRadius: 2,
+              blurRadius: 1,
               offset: Offset(
-                2,
-                5,
+                0,
+                0,
               ), // changes position of shadow
             ),
           ],

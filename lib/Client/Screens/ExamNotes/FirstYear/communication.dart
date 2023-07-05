@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:provider/provider.dart';
+import '../../../../AppState.dart';
 
 class Communication extends StatefulWidget {
   const Communication({Key? key}) : super(key: key);
@@ -73,58 +76,71 @@ class _CommunicationState extends State<Communication> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              if (isPdfDownloaded) {
-                deletePdf();
-              } else {
-                downloadPdf();
-              }
-            },
-            icon: Icon(
-              isPdfDownloaded ? Icons.delete : Icons.download,
-              color: Colors.black,
+    final appState = Provider.of<AppState>(context);
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        appBar: AppBar(
+          backgroundColor: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
+          iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black,
+          ),
+          centerTitle: true,
+          actions: [
+            IconButton(
+              onPressed: () {
+                if (isPdfDownloaded) {
+                  deletePdf();
+                } else {
+                  downloadPdf();
+                }
+              },
+              icon: Icon(
+                isPdfDownloaded ? Icons.delete : Icons.download,
+                color: appState.isDarkMode ? Colors.white : Colors.black,
+              ),
+            ),
+          ],
+          title: Text(
+            ' English Communication Notes ',
+            style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
           ),
-        ],
-        title: const Text(
-          ' English Communication Notes ',
-          style: TextStyle(color: Colors.black),
         ),
-      ),
-      body: Center(
-        child: isPdfDownloaded
-            ? SfPdfViewer.file(File(localPath))
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      downloadPdf();
-                    },
-                    icon: Icon(
-                      Icons.download,
-                      color: Colors.black,
-                      size: dimension.val60,
+        body: Center(
+          child: isPdfDownloaded
+              ? SfPdfViewer.file(File(localPath))
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        downloadPdf();
+                      },
+                      icon: Icon(
+                        Icons.download,
+                        color:
+                            appState.isDarkMode ? Colors.white : Colors.black,
+                        size: dimension.val60,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: dimension.val20,
-                  ),
-                  Text(downloadMessage,
-                      style: TextStyle(
-                          color: const Color.fromARGB(255, 0, 0, 0),
-                          fontSize: dimension.font20)),
-                ],
-              ),
+                    SizedBox(
+                      height: dimension.val20,
+                    ),
+                    Text(downloadMessage,
+                        style: TextStyle(
+                            color: appState.isDarkMode
+                                ? Colors.white
+                                : Colors.black,
+                            fontSize: dimension.font20)),
+                  ],
+                ),
+        ),
       ),
     );
   }
