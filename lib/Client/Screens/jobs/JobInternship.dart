@@ -92,7 +92,7 @@ class _JobInternshipsState extends State<JobInternships> {
   }) {
     final appState = Provider.of<AppState>(context);
     return Padding(
-      padding: EdgeInsets.all(dimension.val5),
+      padding: EdgeInsets.all(dimension.val10),
       child: InkWell(
         onTap: onTap,
         child: Ink(
@@ -108,12 +108,16 @@ class _JobInternshipsState extends State<JobInternships> {
               width: containerWidth,
               height: containerHeight,
               decoration: BoxDecoration(
-                boxShadow: [
-                  const BoxShadow(
+                boxShadow: const [
+                  BoxShadow(
                     color: AppColors.shadowColor,
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3), // changes position of shadow
+
+                    spreadRadius: 1,
+                    blurRadius: 1,
+                    offset: Offset(
+                      0,
+                      0,
+                    ), // changes position of shadow
                   ),
                 ],
                 borderRadius: BorderRadius.circular(borderRadius),

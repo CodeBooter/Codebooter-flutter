@@ -41,6 +41,9 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Internet
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/KnowledgeManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ProjectManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/TheoryOfComputation.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/AptitudeMain.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/DBMS2.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/OperatingSystem2.dart';
 
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaProblems.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/DsaQuestion.dart';
@@ -69,7 +72,6 @@ import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/Operati
 import 'package:codebooter_study_app/Client/Screens/courses/CoreConcepts/TOC.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CourseScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/InterviewPrepScreen.dart';
-import 'package:codebooter_study_app/Client/Screens/SavedItem.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/CCNA.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/CyberSecurity.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/CyberSecurity/InformationGathering.dart';
@@ -113,6 +115,7 @@ import 'package:codebooter_study_app/Client/Screens/dsa/DsaScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ErrorScreen.dart';
 import 'package:codebooter_study_app/Client/home/HomeScreen.dart';
 
+import '../Client/Screens/InterviePrep/CoreConcepts/ComputerNetworks.dart';
 import '../Client/Screens/dsa/Graph.dart';
 import '../Client/Screens/dsa/Queue.dart';
 import '../Client/Screens/dsa/Recursion.dart';
@@ -488,6 +491,26 @@ class App extends StatelessWidget {
                     builder: (BuildContext context, GoRouterState state) =>
                         TopResumes(),
                   ),
+                  GoRoute(
+                    path: 'os',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        OperatingSystem2(),
+                  ),
+                  GoRoute(
+                    path: 'dbms',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        DBMS2(),
+                  ),
+                  GoRoute(
+                    path: 'cn',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        ComputerNetworks(),
+                  ),
+                  GoRoute(
+                    path: 'aptitude',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        const AptitudeMain(),
+                  ),
                 ]),
             GoRoute(
                 path: 'notes',
@@ -706,11 +729,6 @@ class App extends StatelessWidget {
                   const JobInternshipScreen(),
             ),
 
-            GoRoute(
-              path: 'saveditems',
-              builder: (BuildContext context, GoRouterState state) =>
-                  const SavedItem(),
-            ),
             GoRoute(
                 path: 'admin',
                 builder: (BuildContext context, GoRouterState state) =>

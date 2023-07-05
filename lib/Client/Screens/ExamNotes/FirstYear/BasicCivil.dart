@@ -1,11 +1,13 @@
 import 'dart:io';
+import 'package:codebooter_study_app/AppState.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
-import 'package:codebooter_study_app/AppState.dart';
+
 
 import '../../../../utils/Colors.dart';
 class BasicCivil extends StatefulWidget {
@@ -77,6 +79,7 @@ class _BasicCivilState extends State<BasicCivil> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: appState.isDarkMode
@@ -84,6 +87,7 @@ class _BasicCivilState extends State<BasicCivil> {
             : AppColors.lightModePrimary,
         iconTheme: const IconThemeData(
           color: Colors.black,
+
         ),
         centerTitle: true,
         actions: [
@@ -97,17 +101,18 @@ class _BasicCivilState extends State<BasicCivil> {
             },
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
-              color: appState.isDarkMode
-                  ? AppColors.lightModePrimary
-                  : AppColors.primaryColor,
+
+              color: appState.isDarkMode ? Colors.white : Colors.black,
+
             ),
           ),
         ],
         title: Text(
-          ' Basic Civil and Mechanical Engineering Notes ',
-          style: TextStyle(color: appState.isDarkMode
-              ? AppColors.lightModePrimary
-              : AppColors.primaryColor,),
+
+          'Basic Civil and Mechanical Engineering ',
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
+
         ),
       ),
       body: Center(

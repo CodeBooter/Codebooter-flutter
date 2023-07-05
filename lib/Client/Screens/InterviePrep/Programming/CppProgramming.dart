@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:codebooter_study_app/AppState.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -49,10 +50,12 @@ class _CppProgrammingState extends State<CppProgramming> {
     final appState = Provider.of<AppState>(context);
 
     return Scaffold(
+      backgroundColor: appState.isDarkMode ? AppColors.mainColor : Colors.white,
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        // iconTheme:  IconThemeData(color: Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor:
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         title: Text(
           'C++ Programming',
           style: TextStyle(
@@ -93,7 +96,10 @@ class _QuestionAnswerTileState extends State<QuestionAnswerTile> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+
     return ExpansionPanelList(
+      animationDuration: const Duration(milliseconds: 500),
       elevation: 1,
       expandedHeaderPadding: EdgeInsets.zero,
       expansionCallback: (int index, bool isExpanded) {
@@ -103,6 +109,8 @@ class _QuestionAnswerTileState extends State<QuestionAnswerTile> {
       },
       children: [
         ExpansionPanel(
+          backgroundColor:
+              appState.isDarkMode ? AppColors.primaryColor : Colors.white,
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
               title: Text(

@@ -81,7 +81,15 @@ class _MockInterviewState extends State<MockInterview> {
                   border: Border.all(color: AppColors.shadowColor),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: ClickableVideoContainer(videoId: videoId),
+                child: Container(
+                  color: appState.isDarkMode
+                      ? AppColors.primaryColor
+                      : AppColors.lightModePrimary,
+                  height: dimension.height230,
+                  child: ClickableVideoContainer(
+                    videoId: videoId,
+                  ),
+                ),
               ),
             );
           },

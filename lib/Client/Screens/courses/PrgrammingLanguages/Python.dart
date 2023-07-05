@@ -1,9 +1,10 @@
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
-import '../../../../utils/Colors.dart';
+
 import '../YoutubeFunction.dart';
 
 class Python extends StatelessWidget {
@@ -14,20 +15,23 @@ class Python extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLu0W_9lII9agwh1XjRt242xIpHhPT2llg';
     YoutubeFunction youtubeFunction = YoutubeFunction();
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode
-            ? AppColors.lightModePrimary
-            : AppColors.primaryColor,),
+
+        iconTheme: IconThemeData(
+            color: appState.isDarkMode ? Colors.white : Colors.black),
+
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
-          'Python',
-          style: TextStyle(color: appState.isDarkMode
-              ? AppColors.lightModePrimary
-              : AppColors.primaryColor,),
+
+        title: Text(
+          'Python Language',
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
+
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -99,7 +103,12 @@ class Python extends StatelessWidget {
 
                                 return Row(
                                   children: [
-                                    Text(' $channelName'),
+                                    Container(
+                                        width: dimension.width130,
+                                        child: Text(' $channelName',
+                                            style: TextStyle(
+                                                overflow: TextOverflow.ellipsis,
+                                                fontSize: dimension.font14))),
                                     const SizedBox(width: 8),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
@@ -174,14 +183,18 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black45,
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        boxShadow: const [
+              BoxShadow(
+                color: AppColors.shadowColor,
+
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: Offset(
+                  0,
+                  0,
+                ), // changes position of shadow
+              ),
+            ],
       ),
       child: ListTile(
         leading: ClipRRect(

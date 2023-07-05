@@ -32,7 +32,7 @@ class _VideoScreenState extends State<VideoScreen> {
     _controller = YoutubePlayerController(
       initialVideoId: widget.videoId,
       flags: const YoutubePlayerFlags(
-        autoPlay: true,
+        // autoPlay: true,
         mute: false,
       ),
     );
@@ -107,19 +107,19 @@ class _VideoScreenState extends State<VideoScreen> {
     }
   }
 
-  void _toggleFullScreen() {
-    setState(() {
-      _isFullScreen = !_isFullScreen;
-    });
-    if (_isFullScreen) {
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeRight,
-        DeviceOrientation.landscapeLeft,
-      ]);
-    } else {
-      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    }
-  }
+  // void _toggleFullScreen() {
+  //   setState(() {
+  //     _isFullScreen = !_isFullScreen;
+  //   });
+  //   if (_isFullScreen) {
+  //     SystemChrome.setPreferredOrientations([
+  //       DeviceOrientation.landscapeRight,
+  //       DeviceOrientation.landscapeLeft,
+  //     ]);
+  //   } else {
+  //     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +127,7 @@ class _VideoScreenState extends State<VideoScreen> {
     return WillPopScope(
       onWillPop: () async {
         if (_isFullScreen) {
-          _toggleFullScreen();
+          // _toggleFullScreen();
           return false;
         }
         return true;
@@ -161,7 +161,7 @@ class _VideoScreenState extends State<VideoScreen> {
           ),
         ),
         body: GestureDetector(
-          onTapDown: _isFullScreen ? _onDoubleTap : null,
+          // onTapDown: _isFullScreen ? _onDoubleTap : null,
           child: Column(
             children: [
               if (!_isFullScreen)
@@ -171,14 +171,14 @@ class _VideoScreenState extends State<VideoScreen> {
                     ProgressBar(isExpanded: true),
                     RemainingDuration(),
                     const PlaybackSpeedButton(),
-                    IconButton(
-                      onPressed: _toggleFullScreen,
-                      icon: Icon(
-                        _isFullScreen
-                            ? Icons.fullscreen_exit
-                            : Icons.fullscreen,
-                      ),
-                    ),
+                    // IconButton(
+                    //   onPressed: _toggleFullScreen,
+                    //   icon: Icon(
+                    //     _isFullScreen
+                    //         ? Icons.fullscreen_exit
+                    //         : Icons.fullscreen,
+                    //   ),
+                    // ),
                   ],
                   controller: _controller,
                   showVideoProgressIndicator: true,

@@ -23,10 +23,10 @@ class ProgrammingInterview extends StatelessWidget {
               color: AppColors.shadowColor,
 
               spreadRadius: 1,
-              blurRadius: 2,
+              blurRadius: 1,
               offset: Offset(
-                2,
-                5,
+                0,
+                0,
               ), // changes position of shadow
             ),
           ],

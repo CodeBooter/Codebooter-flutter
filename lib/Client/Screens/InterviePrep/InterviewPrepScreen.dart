@@ -30,12 +30,14 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
+          elevation: 2,
+          backgroundColor: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
           iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
-          toolbarHeight: dimension.val70,
+          // toolbarHeight: dimension.val70,
           centerTitle: true,
           title: Text("Interview Preparation",
               style: TextStyle(
@@ -133,7 +135,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/MBF0Yvc.png'
                           : 'https://i.imgur.com/P7knNPh.png',
-                      onTap: () => _navigateTo('/interview'),
+                      onTap: () => _navigateTo('/interview/aptitude'),
                     ),
                     SizedBox(height: dimension.val20),
                   ],
@@ -168,20 +170,15 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
             borderRadius: BorderRadius.circular(borderRadius),
-
             boxShadow: const [
               BoxShadow(
-
-            boxShadow: [
-              const BoxShadow(
-
                 color: AppColors.shadowColor,
 
                 spreadRadius: 1,
-                blurRadius: 2,
+                blurRadius: 1,
                 offset: Offset(
-                  2,
-                  5,
+                  0,
+                  0,
                 ), // changes position of shadow
               ),
             ],

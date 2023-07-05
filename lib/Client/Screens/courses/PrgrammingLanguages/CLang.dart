@@ -1,8 +1,10 @@
+import 'package:codebooter_study_app/AppState.dart';
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:codebooter_study_app/AppState.dart';
+
 import '../YoutubeFunction.dart';
 
 class CLang extends StatelessWidget {
@@ -13,14 +15,18 @@ class CLang extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     const String playlistId = 'PL7ersPsTyYt2Q-SqZxTA1D-melSfqBRMW';
     YoutubeFunction youtubeFunction = YoutubeFunction();
+    final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
+        title: Text(
           'C Language',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -169,7 +175,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),
