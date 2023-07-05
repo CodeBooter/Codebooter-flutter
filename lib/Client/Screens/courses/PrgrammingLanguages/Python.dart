@@ -15,23 +15,19 @@ class Python extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLu0W_9lII9agwh1XjRt242xIpHhPT2llg';
     YoutubeFunction youtubeFunction = YoutubeFunction();
-    final appState = Provider.of<AppState>(context);
+
     return Scaffold(
       appBar: AppBar(
-
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
-
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-
         title: Text(
           'Python Language',
           style: TextStyle(
               color: appState.isDarkMode ? Colors.white : Colors.black),
-
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -184,17 +180,17 @@ Widget buildListTile({
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: const [
-              BoxShadow(
-                color: AppColors.shadowColor,
+          BoxShadow(
+            color: AppColors.shadowColor,
 
-                spreadRadius: 1,
-                blurRadius: 1,
-                offset: Offset(
-                  0,
-                  0,
-                ), // changes position of shadow
-              ),
-            ],
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: Offset(
+              0,
+              0,
+            ), // changes position of shadow
+          ),
+        ],
       ),
       child: ListTile(
         leading: ClipRRect(

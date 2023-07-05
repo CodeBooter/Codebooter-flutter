@@ -15,7 +15,7 @@ class CLang extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     const String playlistId = 'PL7ersPsTyYt2Q-SqZxTA1D-melSfqBRMW';
     YoutubeFunction youtubeFunction = YoutubeFunction();
-    final appState = Provider.of<AppState>(context);
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),

@@ -15,19 +15,15 @@ class Java extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLd3UqWTnYXOmx_J1774ukG_rvrpyWczm0';
     YoutubeFunction youtubeFunction = YoutubeFunction();
-    final appState = Provider.of<AppState>(context);
 
     return Scaffold(
       appBar: AppBar(
-
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
-
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-
         title: Text(
           'Java Language',
           style: TextStyle(

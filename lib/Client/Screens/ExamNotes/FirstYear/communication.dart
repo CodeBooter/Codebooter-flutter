@@ -98,39 +98,36 @@ class _CommunicationState extends State<Communication> {
             icon: Icon(
               isPdfDownloaded ? Icons.delete : Icons.download,
               color: Colors.black,
-
             ),
           ),
-        ),
-        body: Center(
-          child: isPdfDownloaded
-              ? SfPdfViewer.file(File(localPath))
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        downloadPdf();
-                      },
-                      icon: Icon(
-                        Icons.download,
-                        color:
-                            appState.isDarkMode ? Colors.white : Colors.black,
-                        size: dimension.val60,
-                      ),
+        ],
+      ),
+      body: Center(
+        child: isPdfDownloaded
+            ? SfPdfViewer.file(File(localPath))
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      downloadPdf();
+                    },
+                    icon: Icon(
+                      Icons.download,
+                      color: appState.isDarkMode ? Colors.white : Colors.black,
+                      size: dimension.val60,
                     ),
-                    SizedBox(
-                      height: dimension.val20,
-                    ),
-                    Text(downloadMessage,
-                        style: TextStyle(
-                            color: appState.isDarkMode
-                                ? Colors.white
-                                : Colors.black,
-                            fontSize: dimension.font20)),
-                  ],
-                ),
-        ),
+                  ),
+                  SizedBox(
+                    height: dimension.val20,
+                  ),
+                  Text(downloadMessage,
+                      style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font20)),
+                ],
+              ),
       ),
     );
   }

@@ -15,23 +15,19 @@ class CPP extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     const String playlistId = 'PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF';
     YoutubeFunction youtubeFunction = YoutubeFunction();
-    final appState = Provider.of<AppState>(context);
+
     return Scaffold(
       appBar: AppBar(
-
         iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black),
-
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-
         title: Text(
           'C++ Language',
           style: TextStyle(
               color: appState.isDarkMode ? Colors.white : Colors.black),
-
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -185,9 +181,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-
             color: AppColors.shadowColor,
-
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),
