@@ -1,4 +1,3 @@
-import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:go_router/go_router.dart';
@@ -11,10 +10,10 @@ class CarouselScreen extends StatefulWidget {
 }
 
 class _CarouselScreenState extends State<CarouselScreen> {
-  final List<String> url = [
-    'https://i.imgur.com/QtHevrc.png',
-    'https://i.imgur.com/5GSojti.png',
-    'https://i.imgur.com/hkDNb7l.png',
+  final List<String> imagePaths = [
+    'assets/images/logo4.png',
+    'assets/images/logo4.png',
+    'assets/images/logo4.png',
   ];
 
   int _currentPageIndex = 0;
@@ -34,7 +33,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                   options: CarouselOptions(
                     enableInfiniteScroll: false,
                     autoPlayInterval: Duration(seconds: 4),
-                    height: 500, // Adjusted image height
+                    height: 650, // Adjusted image height
                     autoPlay: true,
                     enlargeCenterPage: true,
                     aspectRatio: 16 / 9,
@@ -43,14 +42,14 @@ class _CarouselScreenState extends State<CarouselScreen> {
                       setState(() {
                         _currentPageIndex = index;
                       });
-                      if (index == url.length - 1) {
+                      if (index == imagePaths.length - 1) {
                         Future.delayed(Duration(seconds: 2), () {
                           GoRouter.of(context).go('/log');
                         });
                       }
                     },
                   ),
-                  items: url.map((item) {
+                  items: imagePaths.map((path) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
@@ -59,7 +58,10 @@ class _CarouselScreenState extends State<CarouselScreen> {
                           decoration: BoxDecoration(
                             color: Colors.transparent,
                           ),
-                          child: Image.network(item, fit: BoxFit.cover),
+                          child: Image.asset(
+                            path,
+                            fit: BoxFit.cover,
+                          ),
                         );
                       },
                     );
@@ -67,18 +69,15 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 ),
               ),
               Positioned(
-                top: dimension.val50,
-                right: dimension.val10,
+                top: 50,
+                right: 10,
                 child: InkWell(
                   onTap: () {
                     GoRouter.of(context).go('/log');
                   },
                   child: Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                    padding: EdgeInsets.only(left: 10),
+
                     child: Text(
                       'Skip',
                       style: TextStyle(
