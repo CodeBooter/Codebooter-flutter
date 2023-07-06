@@ -179,9 +179,9 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: const [
+        boxShadow:  [
           BoxShadow(
-            color: AppColors.shadowColor,
+            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
 
             spreadRadius: 1,
             blurRadius: 1,

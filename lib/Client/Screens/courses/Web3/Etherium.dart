@@ -175,7 +175,7 @@ Widget buildListTile({
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
           BoxShadow(
-            color: Colors.black45,
+
             spreadRadius: 2,
             blurRadius: 5,
             offset: const Offset(0, 3),

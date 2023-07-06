@@ -226,8 +226,8 @@ Widget buildListTile({
             : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val5),
         boxShadow: [
-          const BoxShadow(
-            color: AppColors.shadowColor,
+           BoxShadow(
+            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0, 3),
