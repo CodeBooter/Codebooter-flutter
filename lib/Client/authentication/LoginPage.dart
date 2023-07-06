@@ -5,6 +5,7 @@ import 'package:codebooter_study_app/widgets/SmallText.dart';
 import 'package:go_router/go_router.dart';
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
+
 class LoginPage extends StatefulWidget {
   final AuthService _authService = AuthService();
 
@@ -47,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(height: dimension.val25),
-                     Text(
+                    Text(
                       'Welcome to CodeBooter 👋 🚀',
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -142,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: const Color.fromARGB(255, 48, 48, 48),
-                            width: dimension.val2,
+                            // width: dimension.val2,
                           ),
                           borderRadius: BorderRadius.circular(5),
                         ),

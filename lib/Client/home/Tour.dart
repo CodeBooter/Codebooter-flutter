@@ -1,3 +1,4 @@
+import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:go_router/go_router.dart';
@@ -11,9 +12,9 @@ class CarouselScreen extends StatefulWidget {
 
 class _CarouselScreenState extends State<CarouselScreen> {
   final List<String> imagePaths = [
-    'assets/images/tour1.jpeg',
-    'assets/images/tour2.jpeg',
-    'assets/images/tour3.jpeg',
+    'assets/images/tour1.png',
+    'assets/images/tour2.png',
+    'assets/images/tour3.png',
 // assets added
   ];
 
@@ -34,7 +35,8 @@ class _CarouselScreenState extends State<CarouselScreen> {
                   options: CarouselOptions(
                     enableInfiniteScroll: false,
                     autoPlayInterval: Duration(seconds: 4),
-                    height: 650, // Adjusted image height
+                    height:
+                        dimension.screenHeight * 0.8, // Adjusted image height
                     autoPlay: true,
                     enlargeCenterPage: true,
                     aspectRatio: 16 / 9,
@@ -44,7 +46,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                         _currentPageIndex = index;
                       });
                       if (index == imagePaths.length - 1) {
-                        Future.delayed(Duration(seconds: 2), () {
+                        Future.delayed(Duration(seconds: 4), () {
                           GoRouter.of(context).go('/log');
                         });
                       }
@@ -70,20 +72,20 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 ),
               ),
               Positioned(
-                top: 50,
-                right: 10,
+                top: dimension.height100,
+                right: dimension.width50,
                 child: InkWell(
                   onTap: () {
                     GoRouter.of(context).go('/log');
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(left: dimension.width10),
                     child: Text(
                       'Skip',
                       style: TextStyle(
-                        color: Color(0xff0d1526),
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 80, 80, 81),
+                        fontSize: dimension.font24,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),

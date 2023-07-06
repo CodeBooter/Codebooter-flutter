@@ -59,7 +59,7 @@ class AnimatedDrawer extends StatelessWidget {
                           height: dimension.val20,
                         ),
                         Text(
-                          _authService.getUserName() ?? "User",
+                          _authService.getUserName() ?? "",
                           style: TextStyle(
                               fontSize: dimension.font20,
                               fontWeight: FontWeight.w600),
@@ -68,7 +68,7 @@ class AnimatedDrawer extends StatelessWidget {
                           height: dimension.val5,
                         ),
                         Text(
-                          _authService.getUserEmail() ?? "User",
+                          _authService.getUserEmail() ?? "",
                           style: TextStyle(
                               fontSize: dimension.font16,
                               fontWeight: FontWeight.w400),
