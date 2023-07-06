@@ -5,25 +5,26 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
 import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
-
+import 'package:codebooter_study_app/AppState.dart';
 class ArtificialIntelligence extends StatelessWidget {
   const ArtificialIntelligence({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     const String playlistId = 'PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode ? Colors.white : Colors.black,),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title: const Text(
+        title:  Text(
           'Artificial Intelligence',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode ? Colors.white : Colors.black,),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -169,15 +170,8 @@ Widget buildListTile({
     ),
     child: Container(
       decoration: BoxDecoration(
+        border: Border.all(color: AppColors.shadowColor),
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: ListTile(
         leading: ClipRRect(

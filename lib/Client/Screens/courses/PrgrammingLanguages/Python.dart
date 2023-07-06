@@ -179,18 +179,7 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: const [
-          BoxShadow(
-            color: AppColors.shadowColor,
-
-            spreadRadius: 1,
-            blurRadius: 1,
-            offset: Offset(
-              0,
-              0,
-            ), // changes position of shadow
-          ),
-        ],
+          border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(

@@ -15,9 +15,7 @@ class MernStack extends StatelessWidget {
     const String playlistId = 'PLwGdqUZWnOp3t3qT7pvAznwUDzKbhEcCc';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
-      backgroundColor: appState.isDarkMode
-          ? AppColors.primaryColor
-          : AppColors.lightModePrimary,
+
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: appState.isDarkMode
@@ -225,14 +223,7 @@ Widget buildListTile({
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          const BoxShadow(
-            color: AppColors.shadowColor,
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: Offset(0, 3),
-          ),
-        ],
+       border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(

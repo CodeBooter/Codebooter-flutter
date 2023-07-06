@@ -20,7 +20,9 @@ class InformationGathering extends StatelessWidget {
             ? AppColors.lightModePrimary
             : AppColors.primaryColor,),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: appState.isDarkMode
+            ? AppColors.primaryColor
+            : AppColors.lightModePrimary,
         title:  Text(
           'Information gathering',
           style: TextStyle(color: appState.isDarkMode
@@ -170,16 +172,10 @@ Widget buildListTile({
       borderRadius: BorderRadius.circular(dimension.val5),
     ),
     child: Container(
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black45,
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(
