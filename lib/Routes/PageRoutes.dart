@@ -42,6 +42,13 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Knowledg
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ProjectManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/TheoryOfComputation.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/AptitudeMain.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/Average.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/MixtureAndAlligation.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/Numbers.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/Percentage.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/ProftAndLoss.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/TimeAndWork.dart';
+import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/TimeDistanceAndSpeed.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/DBMS2.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/CoreConcepts/OperatingSystem2.dart';
 
@@ -116,6 +123,7 @@ import 'package:codebooter_study_app/Client/Screens/dsa/DsaScreen.dart';
 import 'package:codebooter_study_app/Client/Screens/ErrorScreen.dart';
 import 'package:codebooter_study_app/Client/home/HomeScreen.dart';
 
+import '../Client/Screens/InterviePrep/Aptitude/RatioAndProportion.dart';
 import '../Client/Screens/InterviePrep/CoreConcepts/ComputerNetworks.dart';
 import '../Client/Screens/dsa/Graph.dart';
 import '../Client/Screens/dsa/Queue.dart';
@@ -162,7 +170,7 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'log',
               builder: (BuildContext context, GoRouterState state) =>
-               LoginPage(),
+                  LoginPage(),
             ),
             GoRoute(
               path: 'help',
@@ -513,10 +521,59 @@ class App extends StatelessWidget {
                         ComputerNetworks(),
                   ),
                   GoRoute(
-                    path: 'aptitude',
-                    builder: (BuildContext context, GoRouterState state) =>
-                        const AptitudeMain(),
-                  ),
+                      path: 'aptitude',
+                      builder: (BuildContext context, GoRouterState state) =>
+                          const AptitudeMain(),
+                      routes: [
+                        GoRoute(
+                          path: 'numbers',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const Numbers(),
+                        ),
+                        GoRoute(
+                          path: 'percentage',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const Percentage(),
+                        ),
+                        GoRoute(
+                          path: 'profit',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const ProfitAndLoss(),
+                        ),
+                        GoRoute(
+                          path: 'average',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const Average(),
+                        ),
+                        GoRoute(
+                          path: 'mixture',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const MixtureAndAlligation(),
+                        ),
+                        GoRoute(
+                          path: 'time1',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const TimeAndWork(),
+                        ),
+                        GoRoute(
+                          path: 'time2',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const TimeDistanceAndSpeed(),
+                        ),
+                        GoRoute(
+                          path: 'ratio',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const RatioAndProportion(),
+                        ),
+                      ]),
                 ]),
             GoRoute(
                 path: 'notes',
