@@ -25,9 +25,9 @@ class _CarouselScreenState extends State<CarouselScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        LoginPage(), // Login page in the background
+       // Login page in the background
         Scaffold(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           body: Stack(
             children: [
               Positioned.fill(
