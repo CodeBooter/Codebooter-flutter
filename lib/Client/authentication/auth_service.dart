@@ -15,18 +15,30 @@ class AuthService {
     title: 'GitHub Connection',
     centerTitle: false,
   );
-
-  //sign in with github
   Future<void> signInWithGitHub(BuildContext context) async {
     try {
       final result = await _gitHubSignIn.signIn(context);
-      // ignore: unnecessary_null_comparison
       if (result != null) {
         final token = await result.token;
         if (token != null) {
           final credential = GithubAuthProvider.credential(token);
-          await _firebaseAuth.signInWithCredential(credential);
-          context.go('/homepage');
+          try {
+            final currentUser = _firebaseAuth.currentUser;
+
+            if (currentUser != null) {
+              // Link the GitHub credential with the existing Firebase account
+              await currentUser.linkWithCredential(credential);
+              // Navigate to the home page
+              context.go('/homepage');
+            } else {
+              // If no user is currently signed in, sign in with the GitHub credential
+              await _firebaseAuth.signInWithCredential(credential);
+              // Navigate to the home page
+              context.go('/homepage');
+            }
+          } catch (error) {
+            print('Firebase sign-in error: $error');
+          }
         } else {
           print('Failed to retrieve GitHub access token.');
         }
