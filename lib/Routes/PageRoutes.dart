@@ -170,7 +170,7 @@ class App extends StatelessWidget {
             GoRoute(
               path: 'log',
               builder: (BuildContext context, GoRouterState state) =>
-               LoginPage(),
+                  LoginPage(),
             ),
             GoRoute(
               path: 'help',
@@ -521,45 +521,59 @@ class App extends StatelessWidget {
                         ComputerNetworks(),
                   ),
                   GoRoute(
-                    path: 'aptitude',
-                    builder: (BuildContext context, GoRouterState state) =>
-                        const AptitudeMain(),
-                    routes: [
-                      GoRoute(path: 'numbers',
-                      builder: (BuildContext context,GoRouterState state)=>
-                          const Numbers(),
-                      ),
-                      GoRoute(path: 'percentage',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const Percentage(),
-                      ),
-                      GoRoute(path: 'profit',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const ProfitAndLoss(),
-                      ),
-                      GoRoute(path: 'average',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const Average(),
-                      ),
-                      GoRoute(path: 'mixture',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const MixtureAndAlligation(),
-                      ),
-                      GoRoute(path: 'time1',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const TimeAndWork(),
-                      ),
-                      GoRoute(path: 'time2',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const TimeDistanceAndSpeed(),
-                      ),
-                      GoRoute(path: 'ratio',
-                        builder: (BuildContext context,GoRouterState state)=>
-                        const RatioAndProportion(),
-                      ),
-                    ]
-
-                  ),
+                      path: 'aptitude',
+                      builder: (BuildContext context, GoRouterState state) =>
+                          const AptitudeMain(),
+                      routes: [
+                        GoRoute(
+                          path: 'numbers',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const Numbers(),
+                        ),
+                        GoRoute(
+                          path: 'percentage',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const Percentage(),
+                        ),
+                        GoRoute(
+                          path: 'profit',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const ProfitAndLoss(),
+                        ),
+                        GoRoute(
+                          path: 'average',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const Average(),
+                        ),
+                        GoRoute(
+                          path: 'mixture',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const MixtureAndAlligation(),
+                        ),
+                        GoRoute(
+                          path: 'time1',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const TimeAndWork(),
+                        ),
+                        GoRoute(
+                          path: 'time2',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const TimeDistanceAndSpeed(),
+                        ),
+                        GoRoute(
+                          path: 'ratio',
+                          builder:
+                              (BuildContext context, GoRouterState state) =>
+                                  const RatioAndProportion(),
+                        ),
+                      ]),
                 ]),
             GoRoute(
                 path: 'notes',
@@ -813,7 +827,7 @@ class App extends StatelessWidget {
               }
             } else {
               // Navigate to the login page
-              return CLang();
+              return CarouselScreen();
             }
           })
     ],

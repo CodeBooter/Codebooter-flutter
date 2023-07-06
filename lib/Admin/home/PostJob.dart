@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
+
 //TODO remove company
 class PostJob extends StatefulWidget {
   @override
@@ -147,9 +148,7 @@ class _PostJobState extends State<PostJob> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-
-          padding:  EdgeInsets.all(dimension.val15),
-
+          padding: EdgeInsets.all(dimension.val15),
           child: Form(
             key: _formKey,
             child: Column(
@@ -244,13 +243,26 @@ class _PostJobState extends State<PostJob> {
                     ),
                   ),
                 ),
+                SizedBox(height: dimension.val20),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       createJob();
                     }
                   },
-                  child: Text('Submit'),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    elevation: MaterialStateProperty.all(10),
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromARGB(255, 107, 107, 107)),
+                    overlayColor: MaterialStateProperty.all(
+                        Color.fromARGB(255, 130, 180, 255)),
+                  ),
+                  child: Text('Post'),
                 ),
               ],
             ),

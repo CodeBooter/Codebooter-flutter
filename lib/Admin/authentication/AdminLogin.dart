@@ -127,7 +127,8 @@ class _AdminLoginState extends State<AdminLogin> {
                     TextFormField(
                       style: TextStyle(
                         fontSize: dimension.font18,
-                        color: Colors.black, // Set the text color to black
+                        color: const Color.fromARGB(
+                            255, 255, 255, 255), // Set the text color to black
                       ),
                       validator: (input) {
                         if (input!.isEmpty) {
@@ -138,6 +139,8 @@ class _AdminLoginState extends State<AdminLogin> {
                       },
                       onSaved: (input) => _email = input!,
                       decoration: InputDecoration(
+                        // fillColor: Colors.white,
+
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(
