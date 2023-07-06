@@ -1,12 +1,13 @@
-
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:go_router/go_router.dart';
 
-import '../authentication/LoginPage.dart';
+
 
 class CarouselScreen extends StatefulWidget {
+  const CarouselScreen({super.key});
+
   @override
   _CarouselScreenState createState() => _CarouselScreenState();
 }
@@ -19,7 +20,6 @@ class _CarouselScreenState extends State<CarouselScreen> {
 // assets added
   ];
 
-  int _currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 child: CarouselSlider(
                   options: CarouselOptions(
                     enableInfiniteScroll: false,
-                    autoPlayInterval: Duration(seconds: 4),
+                    autoPlayInterval: const Duration(seconds: 4),
                     height:
                         dimension.screenHeight * 0.8, // Adjusted image height
                     autoPlay: true,
@@ -44,10 +44,9 @@ class _CarouselScreenState extends State<CarouselScreen> {
                     viewportFraction: 0.8,
                     onPageChanged: (index, reason) {
                       setState(() {
-                        _currentPageIndex = index;
                       });
                       if (index == imagePaths.length - 1) {
-                        Future.delayed(Duration(seconds: 4), () {
+                        Future.delayed(const Duration(seconds: 4), () {
                           GoRouter.of(context).go('/log');
                         });
                       }
@@ -58,8 +57,8 @@ class _CarouselScreenState extends State<CarouselScreen> {
                       builder: (BuildContext context) {
                         return Container(
                           width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: const BoxDecoration(
                             color: Colors.transparent,
                           ),
                           child: Image.asset(
@@ -84,7 +83,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                     child: Text(
                       'Skip',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 80, 80, 81),
+                        color: const Color.fromARGB(255, 80, 80, 81),
                         fontSize: dimension.font24,
                         fontWeight: FontWeight.w400,
                       ),
