@@ -173,7 +173,6 @@ class DsaScreen extends StatelessWidget {
           ? AppColors.primaryColor
           : AppColors.lightModePrimary,
       elevation: 3,
-      // borderOnForeground: true,
       shadowColor: AppColors.shadowColor,
       child: ListTile(
         leading: Icon(

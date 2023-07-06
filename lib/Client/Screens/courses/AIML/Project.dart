@@ -16,7 +16,9 @@ class Project extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode
+            ? AppColors.lightModePrimary
+            : AppColors.primaryColor),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
@@ -172,14 +174,7 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+       border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(

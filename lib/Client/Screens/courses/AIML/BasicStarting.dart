@@ -16,7 +16,7 @@ class BasicStarting extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: appState.isDarkMode ? Colors.white : Colors.black,),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
@@ -24,8 +24,8 @@ class BasicStarting extends StatelessWidget {
         title:  Text(
           'Basics',
           style: TextStyle(color:  appState.isDarkMode
-          ? AppColors.primaryColor
-              : AppColors.lightModePrimary,),
+          ? AppColors.lightModePrimary
+              : AppColors.primaryColor,),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -172,14 +172,7 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(

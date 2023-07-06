@@ -173,14 +173,7 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
 
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: ListTile(
         leading: ClipRRect(

@@ -19,14 +19,13 @@ class HtmlCss extends StatelessWidget {
     const String playlistId = 'PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
-      backgroundColor: appState.isDarkMode
-          ? AppColors.primaryColor
-          : AppColors.lightModePrimary,
+
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: appState.isDarkMode
               ? AppColors.mainTextColor
               : const Color.fromARGB(255, 0, 0, 0),
+
         ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
@@ -229,14 +228,7 @@ Widget buildListTile({
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-           BoxShadow(
-            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: Offset(0, 3),
-          ),
-        ],
+          border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(

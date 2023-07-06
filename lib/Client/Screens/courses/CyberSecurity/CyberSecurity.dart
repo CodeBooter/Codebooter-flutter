@@ -3,6 +3,7 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
+import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 
 class CyberSecurity extends StatelessWidget {
@@ -15,12 +16,18 @@ class CyberSecurity extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme:  IconThemeData(color: AppState().isDarkMode
+            ? AppColors.lightModePrimary
+            : AppColors.primaryColor),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: const Text(
+        backgroundColor:  appState.isDarkMode
+      ? AppColors.lightModePrimary
+          : AppColors.primaryColor,
+        title:  Text(
           'Cyber Security',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -167,14 +174,7 @@ Widget buildListTile({
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(dimension.val5),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(255, 28, 28, 28).withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+       border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(
