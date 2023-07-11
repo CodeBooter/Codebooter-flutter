@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Job & Internships",
                         style: TextStyle(
                           color: appState.isDarkMode
-                              ? AppColors.shadowColor
+                              ? AppColors.mainTextColor
                               : Colors.black,
                           fontFamily: 'poppins',
                           fontSize: dimension.font20,

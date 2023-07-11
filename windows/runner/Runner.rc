@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.codebooter" "\0"
-            VALUE "FileDescription", "codebooter_study_app" "\0"
+            VALUE "FileDescription", "CodeBooter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "codebooter_study_app" "\0"
+            VALUE "InternalName", "CodeBooter" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.codebooter. All rights reserved." "\0"
             VALUE "OriginalFilename", "codebooter_study_app.exe" "\0"
-            VALUE "ProductName", "codebooter_study_app" "\0"
+            VALUE "ProductName", "CodeBooter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
