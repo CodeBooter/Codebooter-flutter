@@ -19,7 +19,7 @@ class ChemistryNotes extends StatefulWidget {
 
 class _ChemistryNotesState extends State<ChemistryNotes> {
   final String pdfUrl =
-      'https://drive.google.com/uc?export=download&id=1s9wE7HMbb0oj9Ko90kFVBl7gXmq1d-vc'; // Replace 'YOUR_FILE_ID' with the actual file ID from Google Drive
+      'https://drive.google.com/uc?export=download&id=1s9wE7HMbb0oj9Ko90kFVBl7gXmq1d-vc`'; // Replace 'YOUR_FILE_ID' with the actual file ID from Google Drive
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;
@@ -220,13 +220,6 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                           fontSize: dimension.font20,
                         ),
                       ),
-<<<<<<< HEAD
-=======
-                      Text("Note: Don't leave the Screen until download finished, "
-                          "If error occured then first delete and then download again",
-                        style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
-                      )
->>>>>>> 70acdb9e077402acaf3a9f818626c89c55177912
                     ],
                   ),
       ),
