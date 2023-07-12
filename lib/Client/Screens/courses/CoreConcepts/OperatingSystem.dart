@@ -16,18 +16,22 @@ class OperatingSystem extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode
-            ? AppColors.lightModePrimary
-            : AppColors.primaryColor,),
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,
+        ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
+        title: Text(
           'Operating System',
-          style: TextStyle(color: appState.isDarkMode
-              ? AppColors.lightModePrimary
-              : AppColors.primaryColor,),
+          style: TextStyle(
+            color: appState.isDarkMode
+                ? AppColors.lightModePrimary
+                : AppColors.primaryColor,
+          ),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -173,9 +177,8 @@ Widget buildListTile({
     ),
     child: Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(dimension.val5),
-          border: Border.all(color: AppColors.shadowColor)
-      ),
+          borderRadius: BorderRadius.circular(dimension.val5),
+          border: Border.all(color: AppColors.shadowColor)),
       child: ListTile(
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(dimension.val5),
