@@ -83,6 +83,7 @@ class _CommunicationState extends State<Communication> {
       backgroundColor:
           appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
+        title: Text("Engilish for Communication"),
         backgroundColor:
             appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         iconTheme: IconThemeData(
