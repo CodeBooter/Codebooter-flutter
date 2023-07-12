@@ -81,10 +81,10 @@ class _CommunicationState extends State<Communication> {
 
     return Scaffold(
       backgroundColor:
-      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+          appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
         backgroundColor:
-        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         iconTheme: IconThemeData(
           color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
