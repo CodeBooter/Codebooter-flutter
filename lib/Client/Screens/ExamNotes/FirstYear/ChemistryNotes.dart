@@ -19,11 +19,11 @@ class ChemistryNotes extends StatefulWidget {
 
 class _ChemistryNotesState extends State<ChemistryNotes> {
   final String pdfUrl =
-      'https://ia802708.us.archive.org/25/items/chemistry-shivani-pdf-2/CHEMISTRY%20SHIVANI%20PDF_2.pdf';
+      'https://drive.google.com/uc?export=download&id=1f5Wyvb-oMyuzZElIp1kEsO9Ql4Xb6qRL'; // Replace 'YOUR_FILE_ID' with the actual file ID from Google Drive
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;
-  String downloadMessage = "Click download icon to start download";
+  String downloadMessage = "Click the download icon to start the download";
   double downloadProgress = 0.0;
   int totalBytes = 0;
   int receivedBytes = 0;
@@ -147,7 +147,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
           ),
         ],
         title: Text(
-          'Chemistry Notes 1ST Year ',
+          'Chemistry Notes 1st Year',
           style: TextStyle(
               color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
@@ -159,7 +159,7 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircularProgressIndicator(),
+                      const CircularProgressIndicator(),
                       SizedBox(height: dimension.val20),
                       Text(
                         'Downloading...',
@@ -187,6 +187,12 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                           fontSize: dimension.font16,
                         ),
                       ),
+                      const Text(
+                        "Note: Don't leave the screen until the download finishes. "
+                        "If an error occurs, delete the file and then download it again.",
+                        style: TextStyle(color: Colors.red),
+                        textAlign: TextAlign.center,
+                      )
                     ],
                   )
                 : Column(
@@ -214,10 +220,6 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                           fontSize: dimension.font20,
                         ),
                       ),
-                      Text("Note: Don't leave the Screen until download finished, "
-                          "If error occured then first delete and then download again",
-                        style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
-                      )
                     ],
                   ),
       ),

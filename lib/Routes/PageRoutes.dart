@@ -39,6 +39,7 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/DataAnal
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Database.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Internetweb.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/KnowledgeManagement.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/OperatingSystem.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ProjectManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/TheoryOfComputation.dart';
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Aptitude/AptitudeMain.dart';
@@ -756,9 +757,9 @@ class App extends StatelessWidget {
                         const Mathematics3(),
                   ),
                   GoRoute(
-                    path: 'os',
+                    path: 'operatingsystem',
                     builder: (BuildContext context, GoRouterState state) =>
-                        const OperatingSystem(),
+                        const OperatingSystems(),
                   ),
                   GoRoute(
                     path: 'oopm',

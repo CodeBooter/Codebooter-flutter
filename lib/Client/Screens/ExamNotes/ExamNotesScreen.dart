@@ -196,35 +196,30 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 children: [
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/OSIY5L6.jpg',
+                                        'https://i.imgur.com/Yi33pXj.png',
                                     onTap: () => _navigateTo('/notes/eees'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/wttXuGJ.jpg',
+                                        'https://i.imgur.com/39uZewz.png',
                                     onTap: () => _navigateTo('/notes/discrete'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/RzyPkhG.jpg',
+                                        'https://i.imgur.com/Ni4oUim.png',
                                     onTap: () =>
                                         _navigateTo('/notes/datastructure'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/51Wpp68.jpg',
+                                        'https://i.imgur.com/GhCMeWH.png',
                                     onTap: () =>
                                         _navigateTo('/notes/digitalsystems'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/GSBAiTM.jpg',
+                                        'https://i.imgur.com/2jdijEa.png',
                                     onTap: () => _navigateTo('/notes/oopm'),
-                                  ),
-                                  _buildFeatureContainer(
-                                    imageAsset:
-                                        'https://i.imgur.com/FohUYQn.jpg',
-                                    onTap: () => _navigateTo('/notes/os'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
@@ -244,7 +239,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/9M7f08r.jpg',
+                                        'https://i.imgur.com/NLC1f8N.png',
                                     onTap: () => _navigateTo('/notes/ada'),
                                   ),
                                   SizedBox(height: dimension.val20),
@@ -300,6 +295,12 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                     imageAsset:
                                         'https://i.imgur.com/C3JKLcf.jpg',
                                     onTap: () => _navigateTo('/notes/iwt'),
+                                  ),
+                                  _buildFeatureContainer(
+                                    imageAsset:
+                                        'https://i.imgur.com/FohUYQn.jpg',
+                                    onTap: () =>
+                                        _navigateTo('/notes/operatingsystem'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:

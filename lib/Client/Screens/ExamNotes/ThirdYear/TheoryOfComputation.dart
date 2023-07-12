@@ -6,8 +6,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
 import 'package:codebooter_study_app/AppState.dart';
+import 'package:http/http.dart' as http;
 
 import '../../../../utils/Colors.dart';
+
 class TheoryOfComputation extends StatefulWidget {
   const TheoryOfComputation({Key? key}) : super(key: key);
 
@@ -20,7 +22,11 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
       'https://ia902700.us.archive.org/15/items/read2_20230704/read2.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
+  bool isDownloading = false;
   String downloadMessage = "Click download icon to start download";
+  double downloadProgress = 0.0;
+  int totalBytes = 0;
+  int receivedBytes = 0;
 
   @override
   void initState() {
@@ -29,6 +35,10 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
   }
 
   Future<void> downloadPdf() async {
+    setState(() {
+      isDownloading = true;
+    });
+
     final directory = await getApplicationSupportDirectory();
     localPath = '${directory.path}/toc.pdf';
     final file = File(localPath);
@@ -36,15 +46,43 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
     if (await file.exists()) {
       setState(() {
         isPdfDownloaded = true;
+        isDownloading = false;
       });
     } else {
-      final response = await HttpClient().getUrl(Uri.parse(pdfUrl));
-      final downloadedFile = await response.close();
-      final bytes = await consolidateHttpClientResponseBytes(downloadedFile);
-      await file.writeAsBytes(bytes);
-      setState(() {
-        isPdfDownloaded = true;
-      });
+      final request = http.Request('GET', Uri.parse(pdfUrl));
+      final streamedResponse = await request.send();
+
+      if (streamedResponse.statusCode == 200) {
+        totalBytes = streamedResponse.contentLength ?? 0;
+
+        final fileStream = file.openWrite();
+        receivedBytes = 0;
+
+        await streamedResponse.stream.listen(
+          (List<int> data) {
+            if (!mounted) return; // Check if the widget is still mounted
+
+            fileStream.add(data);
+            receivedBytes += data.length;
+
+            setState(() {
+              downloadProgress = receivedBytes / totalBytes;
+            });
+          },
+          onDone: () async {
+            await fileStream.close();
+            setState(() {
+              isPdfDownloaded = true;
+              isDownloading = false;
+            });
+          },
+          onError: (error) {
+            setState(() {
+              isDownloading = false;
+            });
+          },
+        );
+      }
     }
   }
 
@@ -75,14 +113,20 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    // Dispose any resources here
+  }
+
+  @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       backgroundColor:
-      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+          appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
         backgroundColor:
-        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         iconTheme: IconThemeData(
           color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
@@ -102,36 +146,83 @@ class _TheoryOfComputationState extends State<TheoryOfComputation> {
             ),
           ),
         ],
-        title:  Text(
+        title: Text(
           ' Theory of Computation Notes ',
-          style: TextStyle( color: appState.isDarkMode ? Colors.white : Colors.black,),
+          style: TextStyle(
+            color: appState.isDarkMode ? Colors.white : Colors.black,
+          ),
         ),
       ),
       body: Center(
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      downloadPdf();
-                    },
-                    icon: Icon(
-                      Icons.download,
-                      color: appState.isDarkMode ? Colors.white : Colors.black,
-                      size: dimension.val60,
-                    ),
+            : isDownloading
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const CircularProgressIndicator(),
+                      SizedBox(height: dimension.val20),
+                      Text(
+                        'Downloading...',
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font20,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val10),
+                      LinearProgressIndicator(
+                        minHeight: 30,
+                        value: downloadProgress,
+                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          appState.isDarkMode ? Colors.white : Colors.blue,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val10),
+                      Text(
+                        '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font16,
+                        ),
+                      ),
+                      const Text(
+                        "Note*:Don't leave the Screen until download finished, "
+                        "If error occured then first delete and then download again",
+                        style: TextStyle(color: Colors.red),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          downloadPdf();
+                        },
+                        icon: Icon(
+                          Icons.download,
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          size: dimension.val60,
+                        ),
+                      ),
+                      SizedBox(
+                        height: dimension.val20,
+                      ),
+                      Text(
+                        downloadMessage,
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font20,
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    height: dimension.val20,
-                  ),
-                  Text(downloadMessage,
-                      style: TextStyle(
-                          color: appState.isDarkMode ? Colors.white : Colors.black,
-                          fontSize: dimension.font20)),
-                ],
-              ),
       ),
     );
   }
