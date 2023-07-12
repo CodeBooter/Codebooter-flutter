@@ -93,56 +93,56 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 children: [
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.pinimg.com/474x/4b/7e/da/4b7edae90adefff1b7d25272170a0db4.jpg',
+                                        'https://i.imgur.com/0ynwxkk.png',
                                     onTap: () =>
                                         _navigateTo('/notes/chemistry'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/dYEB0pb.jpg',
+                                        'https://i.imgur.com/p2ISCuN.png',
                                     onTap: () =>
                                         _navigateTo('/notes/communication'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/06f6aXE.jpg',
+                                        'https://i.imgur.com/kN8Xt6s.png',
                                     onTap: () => _navigateTo('/notes/physics'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/IX2yM5D.jpg',
+                                        'https://i.imgur.com/sSOFHcx.png',
                                     onTap: () => _navigateTo('/notes/beee'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/latY3gT.jpeg',
+                                        'https://i.imgur.com/MdzP9Ej.png',
                                     onTap: () =>
                                         _navigateTo('/notes/mathematics1'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/JHSEkVO.jpg',
+                                        'https://i.imgur.com/DfgTj4x.png',
                                     onTap: () =>
                                         _navigateTo('/notes/mathematics2'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/dZbuLl1.jpg',
+                                        'https://i.imgur.com/7gskHgQ.png',
                                     onTap: () => _navigateTo('/notes/Bce'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/CVwI8jV.jpg',
+                                        'https://i.imgur.com/F5J90nL.png',
                                     onTap: () => _navigateTo('/notes/eg'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/tEvvAfz.jpg',
+                                        'https://i.imgur.com/rfdrIER.png',
                                     onTap: () => _navigateTo('/notes/bme'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/Yoyfbou.jpg',
+                                        'https://i.imgur.com/Fa2XGpM.png',
                                     onTap: () => _navigateTo('/notes/bcm'),
                                   ),
                                   SizedBox(height: dimension.val20),

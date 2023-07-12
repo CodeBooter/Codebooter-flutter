@@ -131,6 +131,10 @@ class _BasicComputersState extends State<BasicComputers> {
                       style: TextStyle(
                           color: appState.isDarkMode ? Colors.white : Colors.black,
                           fontSize: dimension.font20)),
+                  Text("Don't leave the Screen until download finished, "
+                      "If error occured then first delete and then download again",
+                    style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
+                  )
                 ],
               ),
       ),
