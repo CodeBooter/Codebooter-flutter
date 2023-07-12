@@ -3,6 +3,7 @@ import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,11 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
       'https://ia802708.us.archive.org/25/items/chemistry-shivani-pdf-2/CHEMISTRY%20SHIVANI%20PDF_2.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
+  bool isDownloading = false;
   String downloadMessage = "Click download icon to start download";
+  double downloadProgress = 0.0;
+  int totalBytes = 0;
+  int receivedBytes = 0;
 
   @override
   void initState() {
@@ -30,6 +35,10 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
   }
 
   Future<void> downloadPdf() async {
+    setState(() {
+      isDownloading = true;
+    });
+
     final directory = await getApplicationSupportDirectory();
     localPath = '${directory.path}/chemistry.pdf';
     final file = File(localPath);
@@ -37,15 +46,43 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
     if (await file.exists()) {
       setState(() {
         isPdfDownloaded = true;
+        isDownloading = false;
       });
     } else {
-      final response = await HttpClient().getUrl(Uri.parse(pdfUrl));
-      final downloadedFile = await response.close();
-      final bytes = await consolidateHttpClientResponseBytes(downloadedFile);
-      await file.writeAsBytes(bytes);
-      setState(() {
-        isPdfDownloaded = true;
-      });
+      final request = http.Request('GET', Uri.parse(pdfUrl));
+      final streamedResponse = await request.send();
+
+      if (streamedResponse.statusCode == 200) {
+        totalBytes = streamedResponse.contentLength ?? 0;
+
+        final fileStream = file.openWrite();
+        receivedBytes = 0;
+
+        await streamedResponse.stream.listen(
+          (List<int> data) {
+            if (!mounted) return; // Check if the widget is still mounted
+
+            fileStream.add(data);
+            receivedBytes += data.length;
+
+            setState(() {
+              downloadProgress = receivedBytes / totalBytes;
+            });
+          },
+          onDone: () async {
+            await fileStream.close();
+            setState(() {
+              isPdfDownloaded = true;
+              isDownloading = false;
+            });
+          },
+          onError: (error) {
+            setState(() {
+              isDownloading = false;
+            });
+          },
+        );
+      }
     }
   }
 
@@ -73,6 +110,12 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
         isPdfDownloaded = false;
       });
     }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    // Dispose any resources here
   }
 
   @override
@@ -112,29 +155,67 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
       body: Center(
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      downloadPdf();
-                    },
-                    icon: Icon(
-                      Icons.download,
-                      color: appState.isDarkMode ? Colors.white : Colors.black,
-                      size: dimension.val60,
-                    ),
-                  ),
-                  SizedBox(
-                    height: dimension.val20,
-                  ),
-                  Text(downloadMessage,
-                      style: TextStyle(
+            : isDownloading
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(height: dimension.val20),
+                      Text(
+                        'Downloading...',
+                        style: TextStyle(
                           color:
                               appState.isDarkMode ? Colors.white : Colors.black,
-                          fontSize: dimension.font20)),
-                ],
-              ),
+                          fontSize: dimension.font20,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val10),
+                      LinearProgressIndicator(
+                        minHeight: 30,
+                        value: downloadProgress,
+                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          appState.isDarkMode ? Colors.white : Colors.blue,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val10),
+                      Text(
+                        '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font16,
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          downloadPdf();
+                        },
+                        icon: Icon(
+                          Icons.download,
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          size: dimension.val60,
+                        ),
+                      ),
+                      SizedBox(
+                        height: dimension.val20,
+                      ),
+                      Text(
+                        downloadMessage,
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font20,
+                        ),
+                      ),
+                    ],
+                  ),
       ),
     );
   }
