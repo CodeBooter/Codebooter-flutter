@@ -220,6 +220,13 @@ class _ChemistryNotesState extends State<ChemistryNotes> {
                           fontSize: dimension.font20,
                         ),
                       ),
+<<<<<<< HEAD
+=======
+                      Text("Note: Don't leave the Screen until download finished, "
+                          "If error occured then first delete and then download again",
+                        style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
+                      )
+>>>>>>> 70acdb9e077402acaf3a9f818626c89c55177912
                     ],
                   ),
       ),

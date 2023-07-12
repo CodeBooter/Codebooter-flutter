@@ -1,13 +1,15 @@
 import 'dart:io';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:provider/provider.dart';
+
 import 'package:codebooter_study_app/AppState.dart';
 
-import '../../../../utils/Colors.dart';
 class BasicElectricals extends StatefulWidget {
   const BasicElectricals({Key? key}) : super(key: key);
 
@@ -20,7 +22,11 @@ class _BasicElectricalsState extends State<BasicElectricals> {
       'https://ia902702.us.archive.org/25/items/beee_20230704/beee.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
+  bool isDownloading = false;
   String downloadMessage = "Click download icon to start download";
+  double downloadProgress = 0.0;
+  int totalBytes = 0;
+  int receivedBytes = 0;
 
   @override
   void initState() {
@@ -29,6 +35,10 @@ class _BasicElectricalsState extends State<BasicElectricals> {
   }
 
   Future<void> downloadPdf() async {
+    setState(() {
+      isDownloading = true;
+    });
+
     final directory = await getApplicationSupportDirectory();
     localPath = '${directory.path}/beee.pdf';
     final file = File(localPath);
@@ -36,15 +46,43 @@ class _BasicElectricalsState extends State<BasicElectricals> {
     if (await file.exists()) {
       setState(() {
         isPdfDownloaded = true;
+        isDownloading = false;
       });
     } else {
-      final response = await HttpClient().getUrl(Uri.parse(pdfUrl));
-      final downloadedFile = await response.close();
-      final bytes = await consolidateHttpClientResponseBytes(downloadedFile);
-      await file.writeAsBytes(bytes);
-      setState(() {
-        isPdfDownloaded = true;
-      });
+      final request = http.Request('GET', Uri.parse(pdfUrl));
+      final streamedResponse = await request.send();
+
+      if (streamedResponse.statusCode == 200) {
+        totalBytes = streamedResponse.contentLength ?? 0;
+
+        final fileStream = file.openWrite();
+        receivedBytes = 0;
+
+        await streamedResponse.stream.listen(
+              (List<int> data) {
+            if (!mounted) return; // Check if the widget is still mounted
+
+            fileStream.add(data);
+            receivedBytes += data.length;
+
+            setState(() {
+              downloadProgress = receivedBytes / totalBytes;
+            });
+          },
+          onDone: () async {
+            await fileStream.close();
+            setState(() {
+              isPdfDownloaded = true;
+              isDownloading = false;
+            });
+          },
+          onError: (error) {
+            setState(() {
+              isDownloading = false;
+            });
+          },
+        );
+      }
     }
   }
 
@@ -75,6 +113,12 @@ class _BasicElectricalsState extends State<BasicElectricals> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    // Dispose any resources here
+  }
+
+  @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
@@ -102,40 +146,80 @@ class _BasicElectricalsState extends State<BasicElectricals> {
             ),
           ),
         ],
-        title: const Text(
-          ' Basic Electrical & Electronics Engineering Notes ',
-          style: TextStyle(color: Colors.black),
+        title: Text(
+          'Basic Electricals & Electronics Engineering Notes',
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: Center(
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      downloadPdf();
-                    },
-                    icon: Icon(
-                      Icons.download,
-                      color: appState.isDarkMode ? Colors.white : Colors.black,
-                      size: dimension.val60,
-                    ),
-                  ),
-                  SizedBox(
-                    height: dimension.val20,
-                  ),
-                  Text(downloadMessage,
-                      style: TextStyle(
-                          color: appState.isDarkMode ? Colors.white : Colors.black,
-                          fontSize: dimension.font20)),
-                  Text("Don't leave the Screen until download finished, "
-                      "If error occured then first delete and then download again",
-                    style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
-                  )
-                ],
+            : isDownloading
+            ? Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircularProgressIndicator(),
+            SizedBox(height: dimension.val20),
+            Text(
+              'Downloading...',
+              style: TextStyle(
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                fontSize: dimension.font20,
               ),
+            ),
+            SizedBox(height: dimension.val10),
+            LinearProgressIndicator(
+              minHeight: 30,
+              value: downloadProgress,
+              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+              valueColor: AlwaysStoppedAnimation<Color>(
+                appState.isDarkMode ? Colors.white : Colors.blue,
+              ),
+            ),
+            SizedBox(height: dimension.val10),
+            Text(
+              '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
+              style: TextStyle(
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                fontSize: dimension.font16,
+              ),
+            ),
+          ],
+        )
+            : Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                downloadPdf();
+              },
+              icon: Icon(
+                Icons.download,
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                size: dimension.val60,
+              ),
+            ),
+            SizedBox(
+              height: dimension.val20,
+            ),
+            Text(
+              downloadMessage,
+              style: TextStyle(
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                fontSize: dimension.font20,
+              ),
+            ),
+            Text("Note: Don't leave the Screen until download finished, "
+                "If error occured then first delete and then download again",
+              style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
+            )
+          ],
+        ),
       ),
     );
   }
