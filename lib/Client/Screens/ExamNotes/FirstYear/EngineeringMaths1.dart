@@ -1,14 +1,14 @@
 import 'dart:io';
+import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
-import 'package:provider/provider.dart';
-import 'package:codebooter_study_app/AppState.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:provider/provider.dart';
 
-import '../../../../utils/Colors.dart';
+import 'package:codebooter_study_app/AppState.dart';
 
 class EngineeringMaths1 extends StatefulWidget {
   const EngineeringMaths1({Key? key}) : super(key: key);
@@ -22,8 +22,11 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
       'https://raw.githubusercontent.com/Manav-khadka/dfsfsd/715236bc87e59d18bff4384fd40f55bbf8f9eb45/math%201.pdf';
   late String localPath;
   bool isPdfDownloaded = false;
+  bool isDownloading = false;
   String downloadMessage = "Click download icon to start download";
-  double downloadProgress = 0;
+  double downloadProgress = 0.0;
+  int totalBytes = 0;
+  int receivedBytes = 0;
 
   @override
   void initState() {
@@ -32,39 +35,60 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
   }
 
   Future<void> downloadPdf() async {
+    setState(() {
+      isDownloading = true;
+    });
+
     final directory = await getApplicationSupportDirectory();
-    localPath = '${directory.path}/mathematicsI.pdf';
+    localPath = '${directory.path}/mathematics1.pdf';
     final file = File(localPath);
 
     if (await file.exists()) {
       setState(() {
         isPdfDownloaded = true;
+        isDownloading = false;
       });
     } else {
-      final dio = Dio();
-      dio.download(
-        pdfUrl,
-        localPath,
-        onReceiveProgress: (received, total) {
-          if (total != -1) {
+      final request = http.Request('GET', Uri.parse(pdfUrl));
+      final streamedResponse = await request.send();
+
+      if (streamedResponse.statusCode == 200) {
+        totalBytes = streamedResponse.contentLength ?? 0;
+
+        final fileStream = file.openWrite();
+        receivedBytes = 0;
+
+        await streamedResponse.stream.listen(
+              (List<int> data) {
+            if (!mounted) return; // Check if the widget is still mounted
+
+            fileStream.add(data);
+            receivedBytes += data.length;
+
             setState(() {
-              downloadProgress = received / total;
-              downloadMessage =
-                  "Downloading ${(downloadProgress * 100).toStringAsFixed(0)}%";
+              downloadProgress = receivedBytes / totalBytes;
             });
-          }
-        },
-      ).then((_) {
-        setState(() {
-          isPdfDownloaded = true;
-        });
-      });
+          },
+          onDone: () async {
+            await fileStream.close();
+            setState(() {
+              isPdfDownloaded = true;
+              isDownloading = false;
+            });
+          },
+          onError: (error) {
+            setState(() {
+              isDownloading = false;
+            });
+          },
+        );
+      }
     }
   }
 
   Future<void> checkPdfExistence() async {
     final directory = await getApplicationSupportDirectory();
-    localPath = '${directory.path}/mathematicsI.pdf';
+    localPath = '${directory.path}/mathematics1.pdf';
     final file = File(localPath);
 
     if (await file.exists()) {
@@ -84,10 +108,14 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
       await file.delete();
       setState(() {
         isPdfDownloaded = false;
-        downloadProgress = 0;
-        downloadMessage = "Click download icon to start download";
       });
     }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    // Dispose any resources here
   }
 
   @override
@@ -118,39 +146,80 @@ class _EngineeringMaths1State extends State<EngineeringMaths1> {
             ),
           ),
         ],
-        title:  Text(
-          'Mathematics I 1ST Year ',
-          style: TextStyle(color: appState.isDarkMode ? Colors.white : Colors.black),
+        title: Text(
+          'Engineering Mathematics Notes |',
+          style: TextStyle(
+              color: appState.isDarkMode ? Colors.white : Colors.black),
         ),
       ),
       body: Center(
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(value: downloadProgress),
-                  SizedBox(height: dimension.val20),
-                  Text(
-                    downloadMessage,
-                    style: TextStyle(
-                      color: appState.isDarkMode ? Colors.white : Colors.black,
-                      fontSize: dimension.font20,
-                    ),
-                  ),
-                  SizedBox(height: dimension.val20),
-                  IconButton(
-                    onPressed: () {
-                      downloadPdf();
-                    },
-                    icon: Icon(
-                      Icons.download,
-                      color: appState.isDarkMode ? Colors.white : Colors.black,
-                      size: dimension.val60,
-                    ),
-                  ),
-                ],
+            : isDownloading
+            ? Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircularProgressIndicator(),
+            SizedBox(height: dimension.val20),
+            Text(
+              'Downloading...',
+              style: TextStyle(
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                fontSize: dimension.font20,
               ),
+            ),
+            SizedBox(height: dimension.val10),
+            LinearProgressIndicator(
+              minHeight: 30,
+              value: downloadProgress,
+              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+              valueColor: AlwaysStoppedAnimation<Color>(
+                appState.isDarkMode ? Colors.white : Colors.blue,
+              ),
+            ),
+            SizedBox(height: dimension.val10),
+            Text(
+              '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
+              style: TextStyle(
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                fontSize: dimension.font16,
+              ),
+            ),
+          ],
+        )
+            : Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                downloadPdf();
+              },
+              icon: Icon(
+                Icons.download,
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                size: dimension.val60,
+              ),
+            ),
+            SizedBox(
+              height: dimension.val20,
+            ),
+            Text(
+              downloadMessage,
+              style: TextStyle(
+                color:
+                appState.isDarkMode ? Colors.white : Colors.black,
+                fontSize: dimension.font20,
+              ),
+            ),
+            Text("Note: Don't leave the Screen until download finished, "
+                "If error occured then first delete and then download again",
+              style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
+            )
+          ],
+        ),
       ),
     );
   }
