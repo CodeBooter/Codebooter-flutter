@@ -410,47 +410,47 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 children: [
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/flObCX0.jpg',
+                                        'https://i.imgur.com/UxlaZzQ.png',
                                     onTap: () => _navigateTo('/notes/dmw'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/nF5658T.jpg',
+                                        'https://i.imgur.com/1r8BEEB.png',
                                     onTap: () => _navigateTo('/notes/sa'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/KTMONeL.jpg',
+                                        'https://i.imgur.com/Dvdk0MX.png',
                                     onTap: () => _navigateTo('/notes/ipcv'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/SvvzhpN.jpg',
+                                        'https://i.imgur.com/LX6jwOn.png',
                                     onTap: () => _navigateTo('/notes/oose'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/DLUPQC1.jpg',
+                                        'https://i.imgur.com/uAIWeXe.png',
                                     onTap: () => _navigateTo('/notes/iot'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/7EoavfN.jpg',
+                                        'https://i.imgur.com/mLz4R45.png',
                                     onTap: () => _navigateTo('/notes/cis'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/5x6xuoV.jpg',
+                                        'https://i.imgur.com/Rsyv0LC.png',
                                     onTap: () => _navigateTo('/notes/cc'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/91Wb97D.jpg',
+                                        'https://i.imgur.com/VoV3wKu.png',
                                     onTap: () => _navigateTo('/notes/bigdata'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/mUtbZiW.jpg',
+                                        'https://i.imgur.com/xqBH5EP.png',
                                     onTap: () => _navigateTo('/notes/wmc'),
                                   ),
                                   SizedBox(height: dimension.val20),
