@@ -28,7 +28,7 @@ class _PostJobState extends State<PostJob> {
 
   Future<void> createJob() async {
     var url =
-        'https://jobinternshipapi-production.up.railway.app/api/v1/jobs/newjob';
+        'https://ptg00pthu8.execute-api.ap-south-1.amazonaws.com/dev/api/v1/jobs/newjob';
 
     var jobData = {
       'title': _titleController.text,
