@@ -3,11 +3,10 @@ import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
 import '../YoutubeFunction.dart';
 
-import 'package:provider/provider.dart';
+
 
 class HtmlCss extends StatelessWidget {
   final BuildContext context;
