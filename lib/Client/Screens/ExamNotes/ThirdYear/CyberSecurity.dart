@@ -18,7 +18,7 @@ class CyberSecurity extends StatefulWidget {
 
 class _CyberSecurityState extends State<CyberSecurity> {
   final String pdfUrl =
-      'https://ia902707.us.archive.org/18/items/cyber-security_202307/Cyber%20Security.pdf';
+      'https://drive.google.com/uc?export=download&id=18iOzQtps0IBX5-ZFUlhVh6NmVbZA8eFw';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

@@ -18,7 +18,7 @@ class MachineLearning extends StatefulWidget {
 
 class _MachineLearningState extends State<MachineLearning> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1K_5NBmYPO7m4j2QPrO48edWHTrS_n4qP';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

@@ -18,7 +18,7 @@ class AdvanceArch extends StatefulWidget {
 
 class _AdvanceArchState extends State<AdvanceArch> {
   final String pdfUrl =
-      'https://drive.google.com/uc?export=download&id=1f5Wyvb-oMyuzZElIp1kEsO9Ql4Xb6qRL';
+      'https://drive.google.com/uc?export=download&id=13POfeOMjRqTbM5nb60Xkp3LM2Oq56n3M';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

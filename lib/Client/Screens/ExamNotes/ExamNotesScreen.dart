@@ -337,7 +337,8 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   _buildFeatureContainer(
                                     imageAsset:
                                         'https://i.imgur.com/avKWZJB.png',
-                                    onTap: () => _navigateTo('/notes/cn'),
+                                    onTap: () =>
+                                        _navigateTo('/notes/computerNetwork'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:

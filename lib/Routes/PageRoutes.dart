@@ -35,6 +35,7 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/Mathema
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/ObjectOriented.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/SoftwareEngineering.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/AdvancedArch.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ComputerNetworks.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/DataAnalysis.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Database.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Internetweb.dart';
@@ -697,9 +698,9 @@ class App extends StatelessWidget {
                         const CompilerDesign(),
                   ),
                   GoRoute(
-                    path: 'cn',
+                    path: 'computerNetwork',
                     builder: (BuildContext context, GoRouterState state) =>
-                        const ComputerNetwork(),
+                        const ComputerNetworksNote(),
                   ),
                   GoRoute(
                     path: 'ml',

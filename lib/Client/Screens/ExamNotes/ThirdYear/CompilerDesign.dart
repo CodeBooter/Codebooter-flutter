@@ -18,7 +18,7 @@ class CompilerDesign extends StatefulWidget {
 
 class _CompilerDesignState extends State<CompilerDesign> {
   final String pdfUrl =
-      'https://ia902702.us.archive.org/27/items/read3_20230704_1141/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1XdoqPd9Xe5qtYnCu37jRN3sjn43OMweh';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

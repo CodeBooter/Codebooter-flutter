@@ -19,7 +19,7 @@ class OperatingSystems extends StatefulWidget {
 
 class _OperatingSystemsState extends State<OperatingSystems> {
   final String pdfUrl =
-      'https://ia902703.us.archive.org/13/items/read_20230704/read.pdf';
+      'https://drive.google.com/uc?export=download&id=1Vwm1RtViUCs0bi_yObNYj-l28NQFF0N2';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

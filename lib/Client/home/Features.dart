@@ -65,8 +65,8 @@ class _FeaturesState extends State<Features> {
                 ),
                 _buildFeatureContainer(
                   imageAsset: appState.isDarkMode
-                      ? 'https://i.imgur.com/ThdpOTH.png'
-                      : 'https://i.imgur.com/eFqgEZp.png',
+                      ? 'https://i.imgur.com/KotHNmf.png'
+                      : 'https://i.imgur.com/hSBFz7e.png',
                   onTap: () => _navigateTo('/notes'),
                 ),
               ],

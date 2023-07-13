@@ -9,16 +9,16 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:http/http.dart' as http;
 import '../../../../utils/Colors.dart';
 
-class ComputerNetworks extends StatefulWidget {
-  const ComputerNetworks({Key? key}) : super(key: key);
+class ComputerNetworksNote extends StatefulWidget {
+  const ComputerNetworksNote({Key? key}) : super(key: key);
 
   @override
-  _ComputerNetworksState createState() => _ComputerNetworksState();
+  _ComputerNetworksNoteState createState() => _ComputerNetworksNoteState();
 }
 
-class _ComputerNetworksState extends State<ComputerNetworks> {
+class _ComputerNetworksNoteState extends State<ComputerNetworksNote> {
   final String pdfUrl =
-      'https://ia902705.us.archive.org/24/items/read_20230704_20230704/read.pdf';
+      'https://drive.google.com/uc?export=download&id=1JdUa46zicMaHvCDHaD1z_Fs1f98EWJxH'; // Replace 'YOUR_FILE_ID' with the actual file ID from Google Drive
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

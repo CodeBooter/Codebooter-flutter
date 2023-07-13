@@ -18,7 +18,7 @@ class DataMining extends StatefulWidget {
 
 class _DataMiningState extends State<DataMining> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=18D1K8Z8l4jcQNQjyyNBc5gpf37yQhKWH';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;
