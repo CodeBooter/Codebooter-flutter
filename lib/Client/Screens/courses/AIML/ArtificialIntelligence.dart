@@ -5,7 +5,7 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
 import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
-import 'package:codebooter_study_app/AppState.dart';
+
 class ArtificialIntelligence extends StatelessWidget {
   const ArtificialIntelligence({Key? key}) : super(key: key);
 

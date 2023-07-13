@@ -4,7 +4,6 @@ import 'package:codebooter_study_app/Client/Screens/InterviePrep/DsaInterview/Ds
 import 'package:codebooter_study_app/Client/Screens/InterviePrep/Programming/ProgrammingInterview.dart';
 import 'package:codebooter_study_app/utils/Colors.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
-import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';

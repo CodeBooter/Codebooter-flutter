@@ -81,11 +81,11 @@ class _PostJobState extends State<PostJob> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Error'),
+              title: const Text('Error'),
               content: Text('Error creating job: ${response.statusCode}'),
               actions: [
                 TextButton(
-                  child: Text('OK'),
+                  child: const Text('OK'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -100,11 +100,11 @@ class _PostJobState extends State<PostJob> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Error'),
+            title: const Text('Error'),
             content: Text('Error creating job: $e'),
             actions: [
               TextButton(
-                child: Text('OK'),
+                child: const Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -144,7 +144,7 @@ class _PostJobState extends State<PostJob> {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Job'),
+        title: const Text('Create Job'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -155,7 +155,7 @@ class _PostJobState extends State<PostJob> {
               children: [
                 TextFormField(
                   controller: _titleController,
-                  decoration: InputDecoration(labelText: 'Role'),
+                  decoration: const InputDecoration(labelText: 'Role'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter job title';
@@ -165,7 +165,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _imageAssetController,
-                  decoration: InputDecoration(labelText: 'Image Link'),
+                  decoration: const InputDecoration(labelText: 'Image Link'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter image asset';
@@ -175,7 +175,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _stipendController,
-                  decoration: InputDecoration(labelText: 'Stipend'),
+                  decoration: const InputDecoration(labelText: 'Stipend'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter stipend';
@@ -185,7 +185,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _locationController,
-                  decoration: InputDecoration(labelText: 'Location'),
+                  decoration: const InputDecoration(labelText: 'Location'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter location';
@@ -195,7 +195,7 @@ class _PostJobState extends State<PostJob> {
                 ),
                 TextFormField(
                   controller: _applyLinkController,
-                  decoration: InputDecoration(labelText: 'Apply Link'),
+                  decoration: const InputDecoration(labelText: 'Apply Link'),
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter apply link';
@@ -205,8 +205,8 @@ class _PostJobState extends State<PostJob> {
                 ),
                 Row(
                   children: [
-                    Text("Duration:   "),
-                    Text('Full Time'),
+                    const Text("Duration:   "),
+                    const Text('Full Time'),
                     Radio<DurationOption>(
                       value: DurationOption.fullTime,
                       groupValue: _selectedDurationOption,
@@ -216,7 +216,7 @@ class _PostJobState extends State<PostJob> {
                         });
                       },
                     ),
-                    Text('Internship'),
+                    const Text('Internship'),
                     Radio<DurationOption>(
                       value: DurationOption.internship,
                       groupValue: _selectedDurationOption,
@@ -233,7 +233,7 @@ class _PostJobState extends State<PostJob> {
                     _selectDate(context);
                   },
                   child: InputDecorator(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Deadline',
                       suffixIcon: Icon(Icons.calendar_today),
                     ),
