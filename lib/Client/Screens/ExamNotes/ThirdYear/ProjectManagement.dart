@@ -18,7 +18,7 @@ class ProjectManagement extends StatefulWidget {
 
 class _ProjectManagementState extends State<ProjectManagement> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1fOSn-28lP7z5FTpuhlDRakRLURBliKdN';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

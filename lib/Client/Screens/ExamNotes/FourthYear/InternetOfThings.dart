@@ -18,7 +18,7 @@ class InternetOfThings extends StatefulWidget {
 
 class _InternetOfThingsState extends State<InternetOfThings> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1qgmsAawy2hWQsbs2_BOQMHgTMnDaGiXd'; // Replace 'YOUR_FILE_ID' with the actual file ID from Google Drive
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

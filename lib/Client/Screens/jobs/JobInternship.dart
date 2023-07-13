@@ -72,9 +72,7 @@ class _JobInternshipsState extends State<JobInternships> {
                 ],
               );
             }
-            return Container(
-              child: const Text("Error"),
-            );
+            return Container(child: CircularProgressIndicator());
           },
         ),
       ),

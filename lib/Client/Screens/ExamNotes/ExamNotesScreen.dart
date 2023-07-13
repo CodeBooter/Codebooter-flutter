@@ -223,18 +223,18 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/9x9GybD.jpg',
+                                        'https://i.imgur.com/LujVNUR.png',
                                     onTap: () =>
                                         _navigateTo('/notes/mathematics3'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/NCENCLK.jpg',
+                                        'https://i.imgur.com/idB0p7h.png',
                                     onTap: () => _navigateTo('/notes/coa'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/P65o5e2.jpg',
+                                        'https://i.imgur.com/1qd91O5.png',
                                     onTap: () => _navigateTo('/notes/se'),
                                   ),
                                   _buildFeatureContainer(
@@ -293,70 +293,71 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                 children: [
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/C3JKLcf.jpg',
+                                        'https://i.imgur.com/CuFgtHw.png',
                                     onTap: () => _navigateTo('/notes/iwt'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/FohUYQn.jpg',
+                                        'https://i.imgur.com/0yxfeu6.png',
                                     onTap: () =>
                                         _navigateTo('/notes/operatingsystem'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/ENfdo1C.jpg',
+                                        'https://i.imgur.com/8yhxXSU.png',
                                     onTap: () => _navigateTo('/notes/toc'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/QrlnCgA.jpg',
+                                        'https://i.imgur.com/jy3sTvU.png',
                                     onTap: () => _navigateTo('/notes/dbms'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/I4weBwi.jpg',
+                                        'https://i.imgur.com/ZX92jTA.png',
                                     onTap: () => _navigateTo('/notes/oop'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/zNKci5K.jpg',
+                                        'https://i.imgur.com/510QXjE.png',
                                     onTap: () =>
                                         _navigateTo('/notes/dataanalysis'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/Lxb5qXz.jpg',
+                                        'https://i.imgur.com/JS68ZWT.png',
                                     onTap: () =>
                                         _navigateTo('/notes/cybersecurity'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/AAgYhf8.jpg',
+                                        'https://i.imgur.com/556gmxj.png',
                                     onTap: () => _navigateTo('/notes/ml'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/t82CmYU.jpg',
-                                    onTap: () => _navigateTo('/notes/cn'),
+                                        'https://i.imgur.com/avKWZJB.png',
+                                    onTap: () =>
+                                        _navigateTo('/notes/computerNetwork'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/bhWiBqs.jpg',
+                                        'https://i.imgur.com/KCvRgCQ.png',
                                     onTap: () => _navigateTo('/notes/cd'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/DUvFS3k.jpg',
+                                        'https://i.imgur.com/WVMF5n5.png',
                                     onTap: () => _navigateTo('/notes/pm'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/3a9Tj3D.jpg',
+                                        'https://i.imgur.com/j45j6yq.png',
                                     onTap: () => _navigateTo('/notes/km'),
                                   ),
                                   _buildFeatureContainer(
                                     imageAsset:
-                                        'https://i.imgur.com/Ea99ImE.jpg',
+                                        'https://i.imgur.com/v7xOSY7.png',
                                     onTap: () => _navigateTo('/notes/advarch'),
                                   ),
                                   SizedBox(height: dimension.val20),

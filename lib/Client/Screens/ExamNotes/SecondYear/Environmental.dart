@@ -19,7 +19,7 @@ class Environmental extends StatefulWidget {
 
 class _EnvironmentalState extends State<Environmental> {
   final String pdfUrl =
-      'https://ia902702.us.archive.org/34/items/read4/read4.pdf';
+      'https://drive.google.com/uc?export=download&id=1B7hUsnFuzu6wHQeQcY5nBT1ah_1Syke1';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;
@@ -59,7 +59,7 @@ class _EnvironmentalState extends State<Environmental> {
         receivedBytes = 0;
 
         await streamedResponse.stream.listen(
-              (List<int> data) {
+          (List<int> data) {
             if (!mounted) return; // Check if the widget is still mounted
 
             fileStream.add(data);
@@ -123,10 +123,10 @@ class _EnvironmentalState extends State<Environmental> {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       backgroundColor:
-      appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+          appState.isDarkMode ? AppColors.primaryColor : Colors.white,
       appBar: AppBar(
         backgroundColor:
-        appState.isDarkMode ? AppColors.primaryColor : Colors.white,
+            appState.isDarkMode ? AppColors.primaryColor : Colors.white,
         iconTheme: IconThemeData(
           color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
@@ -156,70 +156,72 @@ class _EnvironmentalState extends State<Environmental> {
         child: isPdfDownloaded
             ? SfPdfViewer.file(File(localPath))
             : isDownloading
-            ? Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(),
-            SizedBox(height: dimension.val20),
-            Text(
-              'Downloading...',
-              style: TextStyle(
-                color:
-                appState.isDarkMode ? Colors.white : Colors.black,
-                fontSize: dimension.font20,
-              ),
-            ),
-            SizedBox(height: dimension.val10),
-            LinearProgressIndicator(
-              minHeight: 30,
-              value: downloadProgress,
-              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-              valueColor: AlwaysStoppedAnimation<Color>(
-                appState.isDarkMode ? Colors.white : Colors.blue,
-              ),
-            ),
-            SizedBox(height: dimension.val10),
-            Text(
-              '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
-              style: TextStyle(
-                color:
-                appState.isDarkMode ? Colors.white : Colors.black,
-                fontSize: dimension.font16,
-              ),
-            ),
-          ],
-        )
-            : Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                downloadPdf();
-              },
-              icon: Icon(
-                Icons.download,
-                color:
-                appState.isDarkMode ? Colors.white : Colors.black,
-                size: dimension.val60,
-              ),
-            ),
-            SizedBox(
-              height: dimension.val20,
-            ),
-            Text(
-              downloadMessage,
-              style: TextStyle(
-                color:
-                appState.isDarkMode ? Colors.white : Colors.black,
-                fontSize: dimension.font20,
-              ),
-            ),
-            Text("Note: Don't leave the Screen until download finished, "
-                "If error occured then first delete and then download again",
-              style: TextStyle(color: Colors.red),textAlign: TextAlign.center,
-            )
-          ],
-        ),
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(height: dimension.val20),
+                      Text(
+                        'Downloading...',
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font20,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val10),
+                      LinearProgressIndicator(
+                        minHeight: 30,
+                        value: downloadProgress,
+                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          appState.isDarkMode ? Colors.white : Colors.blue,
+                        ),
+                      ),
+                      SizedBox(height: dimension.val10),
+                      Text(
+                        '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font16,
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          downloadPdf();
+                        },
+                        icon: Icon(
+                          Icons.download,
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          size: dimension.val60,
+                        ),
+                      ),
+                      SizedBox(
+                        height: dimension.val20,
+                      ),
+                      Text(
+                        downloadMessage,
+                        style: TextStyle(
+                          color:
+                              appState.isDarkMode ? Colors.white : Colors.black,
+                          fontSize: dimension.font20,
+                        ),
+                      ),
+                      Text(
+                        "Note: Don't leave the Screen until download finished, "
+                        "If error occured then first delete and then download again",
+                        style: TextStyle(color: Colors.red),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
       ),
     );
   }

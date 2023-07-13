@@ -18,7 +18,7 @@ class OOP extends StatefulWidget {
 
 class _OOPState extends State<OOP> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1bd43sjJ5siaGcZuZtJs-rdpkstR0YS1I';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

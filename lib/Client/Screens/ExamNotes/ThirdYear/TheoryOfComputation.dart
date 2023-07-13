@@ -19,7 +19,7 @@ class TheoryOfComputation extends StatefulWidget {
 
 class _TheoryOfComputationState extends State<TheoryOfComputation> {
   final String pdfUrl =
-      'https://ia902700.us.archive.org/15/items/read2_20230704/read2.pdf';
+      'https://drive.google.com/uc?export=download&id=1Zz86p4X-Pw48m0_430sVkHfiPyiBgLW-';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

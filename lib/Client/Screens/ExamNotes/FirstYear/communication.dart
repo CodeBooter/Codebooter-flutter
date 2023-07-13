@@ -19,7 +19,7 @@ class Communication extends StatefulWidget {
 
 class _CommunicationState extends State<Communication> {
   final String pdfUrl =
-      'https://ia902609.us.archive.org/7/items/communication_202307/communication.pdf';
+      'https://drive.google.com/uc?export=download&id=1qztZcR-1M3W76PaFHaUeBz1C9jwuWKIV';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

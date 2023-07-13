@@ -18,7 +18,7 @@ class Database extends StatefulWidget {
 
 class _DatabaseState extends State<Database> {
   final String pdfUrl =
-      'https://ia902701.us.archive.org/2/items/read_20230704_202307/read.pdf';
+      'https://drive.google.com/uc?export=download&id=1B7hUsnFuzu6wHQeQcY5nBT1ah_1Syke1';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

@@ -18,7 +18,7 @@ class ImageProcessing extends StatefulWidget {
 
 class _ImageProcessingState extends State<ImageProcessing> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=16dv2BcDPT8T7znOFk-zbMbgNj2jI1c7v';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

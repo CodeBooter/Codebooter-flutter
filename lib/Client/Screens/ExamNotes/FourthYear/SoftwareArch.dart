@@ -18,7 +18,7 @@ class SoftwareArch extends StatefulWidget {
 
 class _SoftwareArchState extends State<SoftwareArch> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1XqwvMMqUMLaXOo1PYVfjXzy2IdjHinwA';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;

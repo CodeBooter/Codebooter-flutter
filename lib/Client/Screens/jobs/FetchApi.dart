@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class FetchJobApi {
   String endpoint =
-      "https://jobinternshipapi-production.up.railway.app/api/v1/jobs";
+      "https://ptg00pthu8.execute-api.ap-south-1.amazonaws.com/dev/api/v1/jobs";
   Future<List<JobModel>> getJobs() async {
     Response response = await get(Uri.parse(endpoint));
     if (response.statusCode == 200) {

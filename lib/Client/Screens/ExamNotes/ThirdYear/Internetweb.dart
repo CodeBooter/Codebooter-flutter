@@ -18,7 +18,7 @@ class InternetWeb extends StatefulWidget {
 
 class _InternetWebState extends State<InternetWeb> {
   final String pdfUrl =
-      'https://ia902704.us.archive.org/35/items/read3_20230704_1136/read3.pdf';
+      'https://drive.google.com/uc?export=download&id=1HY_YQCdSKQRw3aOQFnyTNC3cL8CYYrbf';
   late String localPath;
   bool isPdfDownloaded = false;
   bool isDownloading = false;
