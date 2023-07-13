@@ -40,7 +40,7 @@ class _AdminLoginState extends State<AdminLogin> {
                 decoration: BoxDecoration(
                   borderRadius:
                       BorderRadius.all(Radius.circular(dimension.val5)),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('assets/images/logo4.png'),
                     fit: BoxFit.fill,
                   ),
@@ -143,7 +143,7 @@ class _AdminLoginState extends State<AdminLogin> {
 
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.black,
                             width: 2,
                           ),
@@ -169,7 +169,7 @@ class _AdminLoginState extends State<AdminLogin> {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.black,
                             width: 2,
                           ),
