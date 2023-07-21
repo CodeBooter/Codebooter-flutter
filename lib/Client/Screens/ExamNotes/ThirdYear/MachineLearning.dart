@@ -9,14 +9,14 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:http/http.dart' as http;
 import '../../../../utils/Colors.dart';
 
-class MachineLearning extends StatefulWidget {
-  const MachineLearning({Key? key}) : super(key: key);
+class Machinelearning extends StatefulWidget {
+  const Machinelearning({Key? key}) : super(key: key);
 
   @override
-  _MachineLearningState createState() => _MachineLearningState();
+  _MachinelearningState createState() => _MachinelearningState();
 }
 
-class _MachineLearningState extends State<MachineLearning> {
+class _MachinelearningState extends State<Machinelearning> {
   final String pdfUrl =
       'https://drive.google.com/uc?export=download&id=1K_5NBmYPO7m4j2QPrO48edWHTrS_n4qP';
   late String localPath;

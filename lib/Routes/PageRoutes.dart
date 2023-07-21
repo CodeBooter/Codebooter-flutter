@@ -35,11 +35,14 @@ import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/Mathema
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/ObjectOriented.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/SecondYear/SoftwareEngineering.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/AdvancedArch.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/CompilerDesign.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ComputerNetworks.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/CyberSecurity.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/DataAnalysis.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Database.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/Internetweb.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/KnowledgeManagement.dart';
+import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/MachineLearning.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/OperatingSystem.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/ProjectManagement.dart';
 import 'package:codebooter_study_app/Client/Screens/ExamNotes/ThirdYear/TheoryOfComputation.dart';
@@ -695,7 +698,7 @@ class App extends StatelessWidget {
                   GoRoute(
                     path: 'cd',
                     builder: (BuildContext context, GoRouterState state) =>
-                        const CompilerDesign(),
+                        const Compilerdesign(),
                   ),
                   GoRoute(
                     path: 'computerNetwork',
@@ -705,12 +708,12 @@ class App extends StatelessWidget {
                   GoRoute(
                     path: 'ml',
                     builder: (BuildContext context, GoRouterState state) =>
-                        const MachineLearning(),
+                        const Machinelearning(),
                   ),
                   GoRoute(
                     path: 'cybersecurity',
                     builder: (BuildContext context, GoRouterState state) =>
-                        const CyberSecurity(),
+                        const Cybersecurity(),
                   ),
                   GoRoute(
                     path: 'dataanalysis',
