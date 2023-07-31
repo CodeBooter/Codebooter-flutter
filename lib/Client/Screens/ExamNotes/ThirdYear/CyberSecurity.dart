@@ -9,14 +9,14 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:http/http.dart' as http;
 import '../../../../utils/Colors.dart';
 
-class CyberSecurity extends StatefulWidget {
-  const CyberSecurity({Key? key}) : super(key: key);
+class Cybersecurity extends StatefulWidget {
+  const Cybersecurity({Key? key}) : super(key: key);
 
   @override
-  _CyberSecurityState createState() => _CyberSecurityState();
+  _CybersecurityState createState() => _CybersecurityState();
 }
 
-class _CyberSecurityState extends State<CyberSecurity> {
+class _CybersecurityState extends State<Cybersecurity> {
   final String pdfUrl =
       'https://drive.google.com/uc?export=download&id=18iOzQtps0IBX5-ZFUlhVh6NmVbZA8eFw';
   late String localPath;

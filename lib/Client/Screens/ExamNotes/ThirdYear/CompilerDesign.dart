@@ -9,14 +9,14 @@ import 'package:codebooter_study_app/AppState.dart';
 import 'package:http/http.dart' as http;
 import '../../../../utils/Colors.dart';
 
-class CompilerDesign extends StatefulWidget {
-  const CompilerDesign({Key? key}) : super(key: key);
+class Compilerdesign extends StatefulWidget {
+  const Compilerdesign({Key? key}) : super(key: key);
 
   @override
-  _CompilerDesignState createState() => _CompilerDesignState();
+  _CompilerdesignState createState() => _CompilerdesignState();
 }
 
-class _CompilerDesignState extends State<CompilerDesign> {
+class _CompilerdesignState extends State<Compilerdesign> {
   final String pdfUrl =
       'https://drive.google.com/uc?export=download&id=1XdoqPd9Xe5qtYnCu37jRN3sjn43OMweh';
   late String localPath;
