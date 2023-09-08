@@ -1,8 +1,9 @@
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // Import SystemChrome
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
 import '../../courses/YoutubeFunction.dart';
+
 
 class ClickableVideoContainer extends StatefulWidget {
   final String videoId;
@@ -23,6 +24,8 @@ class ClickableVideoContainer extends StatefulWidget {
 class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
   late YoutubePlayerController _controller;
   String _videoTitle = '';
+  bool isFullScreen = false;
+
   @override
   void initState() {
     super.initState();
@@ -40,11 +43,22 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
       String videoTitle = await youtubeFunction.fetchVideoTitle(widget.videoId);
       setState(() {
         _videoTitle = videoTitle;
-        print(_videoTitle);
       });
     } catch (e) {
       print('Failed to fetch video title: $e');
     }
+  }
+
+  void _enterFullScreen() {
+    setState(() {
+      isFullScreen = true;
+    });
+  }
+
+  void _exitFullScreen() {
+    setState(() {
+      isFullScreen = false;
+    });
   }
 
   @override
@@ -55,29 +69,24 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
 
   @override
   Widget build(BuildContext context) {
-    print('videoId: ${widget.videoId}');
     return GestureDetector(
       onTap: () {
-        print('videoId: ${widget.videoId}');
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => Scaffold(
-              appBar: AppBar(
-                title: Text(_videoTitle),
-              ),
-              body: Column(
-                children: [
-                  YoutubePlayer(
-                    controller: _controller,
-                    showVideoProgressIndicator: true,
-                    progressIndicatorColor: Colors.blueAccent,
-                  ),
-                ],
+        if (isFullScreen) {
+          _exitFullScreen();
+          Navigator.pop(context);
+        } else {
+          _enterFullScreen();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => FullScreenVideoView(
+                controller: _controller,
+                videoTitle: _videoTitle,
+                exitFullScreen: _exitFullScreen,
               ),
             ),
-          ),
-        );
+          );
+        }
       },
       child: Center(
         child: Stack(
@@ -92,14 +101,60 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
                 ),
               ),
             ),
-            const Center(
+            isFullScreen
+                ? Container() // Empty container to hide play icon in full-screen mode
+                : const Center(
               child: Icon(
                 Icons.play_circle_outline,
                 size: 50,
                 color: Color.fromARGB(255, 18, 18, 18),
               ),
-            )
+            ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class FullScreenVideoView extends StatelessWidget {
+  final YoutubePlayerController controller;
+  final String videoTitle;
+  final VoidCallback exitFullScreen;
+
+  FullScreenVideoView({
+    required this.controller,
+    required this.videoTitle,
+    required this.exitFullScreen,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async {
+        // Before popping, set the preferred orientation to portrait
+        SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+        // Exit full-screen mode and pop the route
+        exitFullScreen();
+        return true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(videoTitle),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: exitFullScreen,
+            ),
+          ],
+        ),
+        body: Center(
+          child: YoutubePlayer(
+            controller: controller,
+            showVideoProgressIndicator: true,
+            progressIndicatorColor: Colors.blueAccent,
+          ),
         ),
       ),
     );
