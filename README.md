@@ -1,6 +1,6 @@
 # codebooter_study_app
 
-A new Flutter project.
+Flutter Project : an Enhance way of Learning - Codebooter
 
 ## Getting Started
 
