@@ -1,4 +1,3 @@
-
 import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
+
 class MachineLearning extends StatelessWidget {
   const MachineLearning({Key? key}) : super(key: key);
 
@@ -17,18 +17,22 @@ class MachineLearning extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode
-            ? AppColors.lightModePrimary
-            : AppColors.primaryColor,),
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,
+        ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
+        title: Text(
           'Machine Learning',
-          style: TextStyle(color: appState.isDarkMode
-              ? AppColors.lightModePrimary
-              : AppColors.primaryColor,),
+          style: TextStyle(
+            color: appState.isDarkMode
+                ? AppColors.lightModePrimary
+                : AppColors.primaryColor,
+          ),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -101,25 +105,25 @@ class MachineLearning extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                     SizedBox(width: 10),
+                                    SizedBox(width: 10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       '$likeCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: Dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
                                   ],
                                 );
@@ -168,25 +172,22 @@ Widget buildListTile({
   Widget? subtitle,
   int? likeCount,
 }) {
-
   return Card(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(dimension.val5),
+      borderRadius: BorderRadius.circular(Dimension.val5),
     ),
     child: Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(dimension.val5),
-        border: Border.all(color: AppColors.shadowColor)
-
-      ),
+          borderRadius: BorderRadius.circular(Dimension.val5),
+          border: Border.all(color: AppColors.shadowColor)),
       child: ListTile(
         leading: ClipRRect(
-          borderRadius: BorderRadius.circular(dimension.val5),
+          borderRadius: BorderRadius.circular(Dimension.val5),
           child: Image.network(
             thumbnailUrl,
             fit: BoxFit.cover,
-            width: dimension.width100,
-            height: dimension.val60,
+            width: Dimension.width100,
+            height: Dimension.val60,
           ),
         ),
         title: Text(title),

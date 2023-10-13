@@ -34,83 +34,83 @@ class Backtracking extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(dimension.val20),
+        padding: EdgeInsets.all(Dimension.val20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Padding(
               padding: EdgeInsets.only(
-                  left: dimension.val15, right: dimension.val15),
+                  left: Dimension.val15, right: Dimension.val15),
               child: Text(
                 'Backtracking is a problem-solving technique that explores all possible solutions by incrementally building candidates and abandons a candidate as soon as it determines that it cannot be a valid solution.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val25),
+            SizedBox(height: Dimension.val25),
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Key Concepts',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Padding(
               padding: EdgeInsets.only(
-                  left: dimension.val15, right: dimension.val15),
+                  left: Dimension.val15, right: Dimension.val15),
               child: Text(
                 '1. Candidate: A potential solution to the problem being solved.\n'
                 '2. Constraints: Rules that determine whether a candidate is valid or not.\n'
                 '3. Backtracking: A recursive algorithm that incrementally builds and explores candidates, abandoning a candidate as soon as it violates a constraint.\n'
                 '4. Pruning: The process of discarding candidates that are known to be invalid.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val25),
+            SizedBox(height: Dimension.val25),
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Container(
-              margin: EdgeInsets.all(dimension.val20),
+              margin: EdgeInsets.all(Dimension.val20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(dimension.val10),
+                borderRadius: BorderRadius.circular(Dimension.val10),
                 color: Colors.grey[200],
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,
-                    spreadRadius: dimension.val2,
-                    blurRadius: dimension.val5,
+                    spreadRadius: Dimension.val2,
+                    blurRadius: Dimension.val5,
                     offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
@@ -161,10 +161,10 @@ void main() {
 }''',
                 language: 'dart',
                 theme: a11yDarkTheme,
-                padding: EdgeInsets.all(dimension.val15),
+                padding: EdgeInsets.all(Dimension.val15),
                 textStyle: TextStyle(
                   fontFamily: 'Courier New',
-                  fontSize: dimension.font14,
+                  fontSize: Dimension.font14,
                 ),
               ),
             ),

@@ -15,13 +15,13 @@ class CourseScreen extends StatefulWidget {
 }
 
 class _CourseScreenState extends State<CourseScreen> {
-  final double imageHeight = dimension.height90;
-  final double imageWidth = dimension.width100;
-  final double containerWidth = dimension.width100;
-  final double containerHeight = dimension.height92;
-  final double borderRadius = dimension.val5;
-  final double spacing = dimension.val30;
-  final double runSpacing = dimension.val30;
+  final double imageHeight = Dimension.height90;
+  final double imageWidth = Dimension.width100;
+  final double containerWidth = Dimension.width100;
+  final double containerHeight = Dimension.height92;
+  final double borderRadius = Dimension.val5;
+  final double spacing = Dimension.val30;
+  final double runSpacing = Dimension.val30;
   final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
@@ -51,17 +51,17 @@ class _CourseScreenState extends State<CourseScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: dimension.val10),
+                  SizedBox(height: Dimension.val10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       bigText(
                         text: 'Programming Languages',
-                        size: dimension.font18,
+                        size: Dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
@@ -71,18 +71,18 @@ class _CourseScreenState extends State<CourseScreen> {
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -130,9 +130,9 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -141,7 +141,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       bigText(
                         text: 'Cyber Security & Ethical Hacking',
-                        size: dimension.font18,
+                        size: Dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
@@ -151,18 +151,18 @@ class _CourseScreenState extends State<CourseScreen> {
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -209,9 +209,9 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -220,7 +220,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       bigText(
                         text: 'AI/ML/DS & Python',
-                        size: dimension.font18,
+                        size: Dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
@@ -230,18 +230,18 @@ class _CourseScreenState extends State<CourseScreen> {
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -296,9 +296,9 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -307,7 +307,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       bigText(
                         text: 'Web Development',
-                        size: dimension.font18,
+                        size: Dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
@@ -317,18 +317,18 @@ class _CourseScreenState extends State<CourseScreen> {
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -383,9 +383,9 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -394,7 +394,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       bigText(
                         text: 'Application Development',
-                        size: dimension.font18,
+                        size: Dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
@@ -404,18 +404,18 @@ class _CourseScreenState extends State<CourseScreen> {
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -453,9 +453,9 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -464,7 +464,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     children: [
                       bigText(
                         text: 'WEB 3',
-                        size: dimension.font18,
+                        size: Dimension.font18,
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
@@ -474,18 +474,18 @@ class _CourseScreenState extends State<CourseScreen> {
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -534,9 +534,9 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
             Padding(
-              padding: EdgeInsets.only(left: dimension.width25),
+              padding: EdgeInsets.only(left: Dimension.width25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -548,25 +548,25 @@ class _CourseScreenState extends State<CourseScreen> {
                         color: appState.isDarkMode
                             ? AppColors.mainTextColor
                             : const Color.fromARGB(255, 0, 0, 0),
-                        size: dimension.font18,
+                        size: Dimension.font18,
                       ),
                       Row(
                         children: [
                           Text(
                             'swipe',
                             style: TextStyle(
-                                fontSize: dimension.font16,
+                                fontSize: Dimension.font16,
                                 fontWeight: FontWeight.w400),
                           ),
                           Icon(
                             Icons.keyboard_double_arrow_right_outlined,
-                            size: dimension.font20,
+                            size: Dimension.font20,
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val5),
+                  SizedBox(height: Dimension.val5),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Wrap(
@@ -613,7 +613,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 ],
               ),
             ),
-            SizedBox(height: dimension.val20),
+            SizedBox(height: Dimension.val20),
           ],
         ),
       ),
@@ -655,7 +655,7 @@ class _CourseScreenState extends State<CourseScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: dimension.val2),
+              SizedBox(height: Dimension.val2),
               CachedNetworkImage(
                 imageUrl: imageAsset,
                 imageBuilder: (context, imageProvider) => Container(

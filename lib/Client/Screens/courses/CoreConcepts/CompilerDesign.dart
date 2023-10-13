@@ -16,18 +16,22 @@ class CompilerDesign extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode
-            ? AppColors.lightModePrimary
-            : AppColors.primaryColor,),
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,
+        ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
+        title: Text(
           'Compiler Design',
-          style: TextStyle(color: appState.isDarkMode
-              ? AppColors.lightModePrimary
-              : AppColors.primaryColor,),
+          style: TextStyle(
+            color: appState.isDarkMode
+                ? AppColors.lightModePrimary
+                : AppColors.primaryColor,
+          ),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -100,25 +104,25 @@ class CompilerDesign extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: Dimension.val10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       '$likeCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: Dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
                                   ],
                                 );
@@ -169,21 +173,20 @@ Widget buildListTile({
 }) {
   return Card(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(dimension.val5),
+      borderRadius: BorderRadius.circular(Dimension.val5),
     ),
     child: Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(dimension.val5),
-        border: Border.all(color: AppColors.shadowColor)
-      ),
+          borderRadius: BorderRadius.circular(Dimension.val5),
+          border: Border.all(color: AppColors.shadowColor)),
       child: ListTile(
         leading: ClipRRect(
-          borderRadius: BorderRadius.circular(dimension.val5),
+          borderRadius: BorderRadius.circular(Dimension.val5),
           child: Image.network(
             thumbnailUrl,
             fit: BoxFit.cover,
-            width: dimension.width100,
-            height: dimension.val60,
+            width: Dimension.width100,
+            height: Dimension.val60,
           ),
         ),
         title: Text(title),

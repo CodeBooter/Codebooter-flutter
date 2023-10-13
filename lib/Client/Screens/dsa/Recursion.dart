@@ -34,76 +34,76 @@ class Recursion extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(dimension.val20),
+        padding: EdgeInsets.all(Dimension.val20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Padding(
               padding: EdgeInsets.only(
-                  left: dimension.val15, right: dimension.val15),
+                  left: Dimension.val15, right: Dimension.val15),
               child: Text(
                 'Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller subproblems.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val25),
+            SizedBox(height: Dimension.val25),
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Key Concepts',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Padding(
               padding: EdgeInsets.only(
-                  left: dimension.val15, right: dimension.val15),
+                  left: Dimension.val15, right: Dimension.val15),
               child: Text(
                 '1. Base Case: A condition that terminates the recursion and provides a result.\n'
                 '2. Recursive Case: The part of the function that calls itself with a modified input to solve a smaller subproblem.\n'
                 '3. Recursion Stack: The stack that keeps track of function calls and their respective local variables.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val25),
+            SizedBox(height: Dimension.val25),
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Container(
-              margin: EdgeInsets.all(dimension.val20),
+              margin: EdgeInsets.all(Dimension.val20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(dimension.val10),
+                borderRadius: BorderRadius.circular(Dimension.val10),
                 color: AppColors.shadowColor,
                 boxShadow: [
                   const BoxShadow(
@@ -130,10 +130,10 @@ void main() {
 }''',
                 language: 'dart',
                 theme: a11yDarkTheme,
-                padding: EdgeInsets.all(dimension.val15),
+                padding: EdgeInsets.all(Dimension.val15),
                 textStyle: TextStyle(
                   fontFamily: 'Courier New',
-                  fontSize: dimension.font14,
+                  fontSize: Dimension.font14,
                 ),
               ),
             ),

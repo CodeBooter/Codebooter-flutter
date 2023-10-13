@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-
 class MockInterview extends StatefulWidget {
   const MockInterview();
 
@@ -75,8 +74,8 @@ class _MockInterviewState extends State<MockInterview> {
               padding: const EdgeInsets.symmetric(
                   horizontal: 8.0, vertical: 8.0), // Add vertical padding
               child: Container(
-                width: dimension.height80,
-                height: dimension.height230,
+                width: Dimension.height80,
+                height: Dimension.height230,
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.shadowColor),
                   borderRadius: BorderRadius.circular(8.0),
@@ -85,7 +84,7 @@ class _MockInterviewState extends State<MockInterview> {
                   color: appState.isDarkMode
                       ? AppColors.primaryColor
                       : AppColors.lightModePrimary,
-                  height: dimension.height230,
+                  height: Dimension.height230,
                   child: ClickableVideoContainer(
                     videoId: videoId,
                   ),

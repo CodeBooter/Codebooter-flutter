@@ -16,9 +16,9 @@ class InterviewPrepScreen extends StatefulWidget {
 }
 
 class _DsaScreenState extends State<InterviewPrepScreen> {
-  final double borderRadius = dimension.val2;
-  final double spacing = dimension.val25;
-  final double runSpacing = dimension.val25;
+  final double borderRadius = Dimension.val2;
+  final double spacing = Dimension.val25;
+  final double runSpacing = Dimension.val25;
   final Duration tapDelay = const Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
           iconTheme: IconThemeData(
             color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
-          // toolbarHeight: dimension.val70,
+          // toolbarHeight: Dimension.val70,
           centerTitle: true,
           title: Text("Interview Preparation",
               style: TextStyle(
@@ -45,42 +45,42 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(
-              left: dimension.width35,
-              right: dimension.width30,
+              left: Dimension.width35,
+              right: Dimension.width30,
             ),
             child: Row(
               children: [
                 Column(
                   children: [
                     const ProgrammingInterview(),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height155,
-                      imageWidth: dimension.width170,
-                      containerHeight: dimension.height160,
-                      containerWidth: dimension.width170,
+                      imageHeight: Dimension.height155,
+                      imageWidth: Dimension.width170,
+                      containerHeight: Dimension.height160,
+                      containerWidth: Dimension.width170,
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/SZdYtgU.png'
                           : 'https://i.imgur.com/ZKFP2go.png',
                       onTap: () => _navigateTo('/interview/hr'),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height145,
-                      containerHeight: dimension.height150,
-                      imageWidth: dimension.width170,
-                      containerWidth: dimension.width170,
+                      imageHeight: Dimension.height145,
+                      containerHeight: Dimension.height150,
+                      imageWidth: Dimension.width170,
+                      containerWidth: Dimension.width170,
                       imageAsset: appState.isDarkMode
                           ? "https://i.imgur.com/wpG8va6.png"
                           : "https://i.imgur.com/9oaWPpu.png",
                       onTap: () => _navigateTo('/interview/os'),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height165,
-                      containerHeight: dimension.height170,
-                      imageWidth: dimension.width170,
-                      containerWidth: dimension.width170,
+                      imageHeight: Dimension.height165,
+                      containerHeight: Dimension.height170,
+                      imageWidth: Dimension.width170,
+                      containerWidth: Dimension.width170,
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/gMQ17eB.png'
                           : 'https://i.imgur.com/PVLhC57.png',
@@ -88,55 +88,55 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
                     ),
                   ],
                 ),
-                SizedBox(width: dimension.val20),
+                SizedBox(width: Dimension.val20),
                 Column(
                   children: [
                     const DsaInterview(),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height140,
-                      imageWidth: dimension.width150,
-                      containerHeight: dimension.height145,
-                      containerWidth: dimension.width150,
+                      imageHeight: Dimension.height140,
+                      imageWidth: Dimension.width150,
+                      containerHeight: Dimension.height145,
+                      containerWidth: Dimension.width150,
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/hpKh71m.png'
                           : 'https://i.imgur.com/mpN9h5e.png',
                       onTap: () => _navigateTo('/interview/mockinterview'),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height115,
-                      containerHeight: dimension.height120,
-                      imageWidth: dimension.width150,
-                      containerWidth: dimension.width150,
+                      imageHeight: Dimension.height115,
+                      containerHeight: Dimension.height120,
+                      imageWidth: Dimension.width150,
+                      containerWidth: Dimension.width150,
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/Vmkv1ma.png'
                           : 'https://i.imgur.com/SAciE64.png',
                       onTap: () => _navigateTo('/interview/dbms'),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height125,
-                      containerHeight: dimension.height130,
-                      imageWidth: dimension.width150,
-                      containerWidth: dimension.width150,
+                      imageHeight: Dimension.height125,
+                      containerHeight: Dimension.height130,
+                      imageWidth: Dimension.width150,
+                      containerWidth: Dimension.width150,
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/CUX05LH.png'
                           : 'https://i.imgur.com/mMzZwcG.png',
                       onTap: () => _navigateTo('/interview/cn'),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     _buildFeatureContainer(
-                      imageHeight: dimension.height140,
-                      containerHeight: dimension.height145,
-                      imageWidth: dimension.width150,
-                      containerWidth: dimension.width150,
+                      imageHeight: Dimension.height140,
+                      containerHeight: Dimension.height145,
+                      imageWidth: Dimension.width150,
+                      containerWidth: Dimension.width150,
                       imageAsset: appState.isDarkMode
                           ? 'https://i.imgur.com/MBF0Yvc.png'
                           : 'https://i.imgur.com/P7knNPh.png',
                       onTap: () => _navigateTo('/interview/aptitude'),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                   ],
                 ),
               ],
@@ -185,7 +185,7 @@ class _DsaScreenState extends State<InterviewPrepScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: dimension.val2),
+              SizedBox(height: Dimension.val2),
               CachedNetworkImage(
                 imageUrl: imageAsset!,
                 imageBuilder: (context, imageProvider) => Container(

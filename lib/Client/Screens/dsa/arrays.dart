@@ -39,42 +39,42 @@ class _ArraysState extends State<Arrays> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(dimension.val20),
+          padding: EdgeInsets.all(Dimension.val20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'An array is a data structure that stores a fixed-size sequence of elements of the same type in contiguous memory locations.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Center(
                   child: Image(
                 image: const NetworkImage('https://i.imgur.com/4Y9S29P.png'),
-                height: dimension.height85,
+                height: Dimension.height85,
               )),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Types of Arrays',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -82,53 +82,53 @@ class _ArraysState extends State<Arrays> {
                     _buildLinkedListType(
                       title: 'One-Dimensional Array',
                       definition:
-                          'A one-dimensional array is the most basic type of array. It stores elements in a linear sequence, where each element is accessed using a single index.',
+                          'A one-Dimensional array is the most basic type of array. It stores elements in a linear sequence, where each element is accessed using a single index.',
                       //  Blue color
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Two-Dimensional Array',
                       definition:
-                          'A two-dimensional array is an array of arrays. It represents a table-like structure with rows and columns. It is often used to represent matrices and grids.',
+                          'A two-Dimensional array is an array of arrays. It represents a table-like structure with rows and columns. It is often used to represent matrices and grids.',
                       // Blue color
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Dynamic Array',
                       definition:
                           'A dynamic array is an array that can dynamically resize itself during runtime. It allows for adding or removing elements without a fixed size constraint.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Jagged Array',
                       definition:
                           'A jagged array, also known as an array of arrays, is an array where each element can be an array of different lengths. It allows for creating ragged structures',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Sparse Array',
                       definition:
                           'A sparse array is an array where most of the elements have a default or null value, and only a small portion of the elements contain actual data.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Multi-Dimensional Array',
                       definition:
-                          'A multidimensional array is an array with more than two dimensions. It extends the concept of a two-dimensional array to higher dimensions. ',
+                          'A multiDimensional array is an array with more than two Dimensions. It extends the concept of a two-Dimensional array to higher Dimensions. ',
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Operations performed on Linked List',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 '~  Searching for an element in a Array.\n'
                 '~  Reversing a Array.\n'
@@ -136,24 +136,24 @@ class _ArraysState extends State<Arrays> {
                 '~  Detecting cycles in Array.\n'
                 '~  Splitting a Array into two halves.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Container(
-                margin: EdgeInsets.all(dimension.val20),
+                margin: EdgeInsets.all(Dimension.val20),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(dimension.val10),
+                    borderRadius: BorderRadius.circular(Dimension.val10),
                     color: appState.isDarkMode
                         ? AppColors.shadowColor
                         : AppColors.primaryColor,
@@ -186,10 +186,10 @@ END FOR
                   theme: a11yDarkTheme,
 
                   // theme: themeMap[ThemeColor.lightTheme],
-                  padding: EdgeInsets.all(dimension.val15),
+                  padding: EdgeInsets.all(Dimension.val15),
                   textStyle: TextStyle(
                     fontFamily: 'Courier New',
-                    fontSize: dimension.font14,
+                    fontSize: Dimension.font14,
                   ),
                 ),
               ),
@@ -206,13 +206,13 @@ END FOR
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-      width: dimension.width311,
-      height: dimension.height180,
+      width: Dimension.width311,
+      height: Dimension.height180,
       decoration: BoxDecoration(
         color: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        borderRadius: BorderRadius.circular(dimension.val15),
+        borderRadius: BorderRadius.circular(Dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -222,8 +222,8 @@ END FOR
           ),
         ],
       ),
-      padding: EdgeInsets.all(dimension.val20),
-      margin: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val20),
+      margin: EdgeInsets.all(Dimension.val10),
       // Add margin to increase spacing
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,7 +231,7 @@ END FOR
           Text(
             title,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
@@ -239,18 +239,18 @@ END FOR
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val10),
+          SizedBox(height: Dimension.val10),
           Text(
             definition,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
                   ? AppColors.lightModePrimary
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val15),
+          SizedBox(height: Dimension.val15),
         ],
       ),
     );

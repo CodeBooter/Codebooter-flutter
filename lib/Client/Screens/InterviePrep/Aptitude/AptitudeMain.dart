@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../../utils/Colors.dart';
 
-
 class AptitudeMain extends StatefulWidget {
   const AptitudeMain({Key? key}) : super(key: key);
 
@@ -15,13 +14,13 @@ class AptitudeMain extends StatefulWidget {
 }
 
 class _AptitudeMain extends State<AptitudeMain> {
-  final double imageHeight = dimension.height90;
-  final double imageWidth = dimension.width100;
-  final double containerWidth = dimension.width100;
-  final double containerHeight = dimension.height92;
-  final double borderRadius = dimension.val5;
-  final double spacing = dimension.val30;
-  final double runSpacing = dimension.val30;
+  final double imageHeight = Dimension.height90;
+  final double imageWidth = Dimension.width100;
+  final double containerWidth = Dimension.width100;
+  final double containerHeight = Dimension.height92;
+  final double borderRadius = Dimension.val5;
+  final double spacing = Dimension.val30;
+  final double runSpacing = Dimension.val30;
   final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
@@ -49,8 +48,7 @@ class _AptitudeMain extends State<AptitudeMain> {
             ListTile(
               title: Text("Numbers"),
               trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () => _navigateTo('/interview/aptitude/numbers')
-              ,
+              onTap: () => _navigateTo('/interview/aptitude/numbers'),
             ),
             Divider(
               color: Colors.black,
@@ -108,7 +106,6 @@ class _AptitudeMain extends State<AptitudeMain> {
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () => _navigateTo('/interview/aptitude/ratio'),
             ),
-
           ],
         ));
   }
@@ -148,7 +145,7 @@ class _AptitudeMain extends State<AptitudeMain> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: dimension.val2),
+              SizedBox(height: Dimension.val2),
               CachedNetworkImage(
                 imageUrl: imageAsset,
                 imageBuilder: (context, imageProvider) => Container(

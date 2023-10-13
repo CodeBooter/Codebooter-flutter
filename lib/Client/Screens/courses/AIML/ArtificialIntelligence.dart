@@ -11,20 +11,23 @@ class ArtificialIntelligence extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     const String playlistId = 'PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode ? Colors.white : Colors.black,),
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
+        ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
+        title: Text(
           'Artificial Intelligence',
-          style: TextStyle(color: appState.isDarkMode ? Colors.white : Colors.black,),
+          style: TextStyle(
+            color: appState.isDarkMode ? Colors.white : Colors.black,
+          ),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -97,25 +100,25 @@ class ArtificialIntelligence extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: Dimension.val10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       likeCount,
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: Dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
                                   ],
                                 );
@@ -166,21 +169,21 @@ Widget buildListTile({
 }) {
   return Card(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(dimension.val5),
+      borderRadius: BorderRadius.circular(Dimension.val5),
     ),
     child: Container(
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.shadowColor),
-        borderRadius: BorderRadius.circular(dimension.val5),
+        borderRadius: BorderRadius.circular(Dimension.val5),
       ),
       child: ListTile(
         leading: ClipRRect(
-          borderRadius: BorderRadius.circular(dimension.val5),
+          borderRadius: BorderRadius.circular(Dimension.val5),
           child: Image.network(
             thumbnailUrl,
             fit: BoxFit.cover,
-            width: dimension.width100,
-            height: dimension.val60,
+            width: Dimension.width100,
+            height: Dimension.val60,
           ),
         ),
         title: Text(title),

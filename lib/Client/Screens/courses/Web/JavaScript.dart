@@ -15,7 +15,6 @@ class JavaScript extends StatelessWidget {
     const String playlistId = 'PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
-
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: appState.isDarkMode
@@ -130,15 +129,15 @@ class JavaScript extends StatelessWidget {
                                               : const Color.fromARGB(
                                                   255, 0, 0, 0),
                                         )),
-                                    SizedBox(width: dimension.font12),
+                                    SizedBox(width: Dimension.font12),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       '$likeCount',
                                       style: TextStyle(
-                                        fontSize: dimension.font14,
+                                        fontSize: Dimension.font14,
                                         color: appState.isDarkMode
                                             ? AppColors.mainTextColor
                                             : const Color.fromARGB(
@@ -151,12 +150,12 @@ class JavaScript extends StatelessWidget {
                                       color: appState.isDarkMode
                                           ? AppColors.mainTextColor
                                           : const Color.fromARGB(255, 0, 0, 0),
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       ' $viewCount',
                                       style: TextStyle(
-                                        fontSize: dimension.font14,
+                                        fontSize: Dimension.font14,
                                         color: appState.isDarkMode
                                             ? AppColors.mainTextColor
                                             : const Color.fromARGB(
@@ -215,24 +214,23 @@ Widget buildListTile({
   final appState = Provider.of<AppState>(context);
   return Card(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(dimension.val5),
+      borderRadius: BorderRadius.circular(Dimension.val5),
     ),
     child: Container(
       decoration: BoxDecoration(
-        color: appState.isDarkMode
-            ? AppColors.primaryColor
-            : AppColors.lightModePrimary,
-        borderRadius: BorderRadius.circular(dimension.val5),
-          border: Border.all(color: AppColors.shadowColor)
-      ),
+          color: appState.isDarkMode
+              ? AppColors.primaryColor
+              : AppColors.lightModePrimary,
+          borderRadius: BorderRadius.circular(Dimension.val5),
+          border: Border.all(color: AppColors.shadowColor)),
       child: ListTile(
         leading: ClipRRect(
-          borderRadius: BorderRadius.circular(dimension.val5),
+          borderRadius: BorderRadius.circular(Dimension.val5),
           child: Image.network(
             thumbnailUrl,
             fit: BoxFit.cover,
-            width: dimension.width100,
-            height: dimension.val60,
+            width: Dimension.width100,
+            height: Dimension.val60,
           ),
         ),
         title: Text(title),

@@ -16,18 +16,20 @@ class CyberSecurity extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: AppState().isDarkMode
-            ? AppColors.lightModePrimary
-            : AppColors.primaryColor),
+        iconTheme: IconThemeData(
+            color: AppState().isDarkMode
+                ? AppColors.lightModePrimary
+                : AppColors.primaryColor),
         centerTitle: true,
-        backgroundColor:  appState.isDarkMode
-      ? AppColors.lightModePrimary
-          : AppColors.primaryColor,
-        title:  Text(
+        backgroundColor: appState.isDarkMode
+            ? AppColors.lightModePrimary
+            : AppColors.primaryColor,
+        title: Text(
           'Cyber Security',
-          style: TextStyle(color: appState.isDarkMode
-              ? AppColors.lightModePrimary
-              : AppColors.primaryColor),
+          style: TextStyle(
+              color: appState.isDarkMode
+                  ? AppColors.lightModePrimary
+                  : AppColors.primaryColor),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -103,22 +105,22 @@ class CyberSecurity extends StatelessWidget {
                                     const SizedBox(width: 8),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       '$likeCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
                                     const SizedBox(width: 8),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
-                                      size: dimension.font14,
+                                      size: Dimension.font14,
                                     ),
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                          TextStyle(fontSize: Dimension.font14),
                                     ),
                                   ],
                                 );
@@ -169,20 +171,19 @@ Widget buildListTile({
 }) {
   return Card(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(dimension.val5),
+      borderRadius: BorderRadius.circular(Dimension.val5),
     ),
     child: Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(dimension.val5),
-       border: Border.all(color: AppColors.shadowColor)
-      ),
+          borderRadius: BorderRadius.circular(Dimension.val5),
+          border: Border.all(color: AppColors.shadowColor)),
       child: ListTile(
         leading: ClipRRect(
-          borderRadius: BorderRadius.circular(dimension.val5),
+          borderRadius: BorderRadius.circular(Dimension.val5),
           child: Image.network(
             thumbnailUrl,
             fit: BoxFit.cover,
-            width: dimension.width100,
+            width: Dimension.width100,
             height: 56,
           ),
         ),

@@ -16,13 +16,13 @@ class ExamNotesScreen extends StatefulWidget {
 }
 
 class _ExamNotesScreenState extends State<ExamNotesScreen> {
-  final double imageHeight = dimension.height170;
-  final double imageWidth = dimension.width110;
-  final double containerWidth = dimension.width110;
-  final double containerHeight = dimension.height175;
-  final double borderRadius = dimension.val5;
-  final double spacing = dimension.val20;
-  final double runSpacing = dimension.val20;
+  final double imageHeight = Dimension.height170;
+  final double imageWidth = Dimension.width110;
+  final double containerWidth = Dimension.width110;
+  final double containerHeight = Dimension.height175;
+  final double borderRadius = Dimension.val5;
+  final double spacing = Dimension.val20;
+  final double runSpacing = Dimension.val20;
   final Duration tapDelay = const Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(dimension.val20),
+            padding: EdgeInsets.all(Dimension.val20),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -57,7 +57,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                         children: [
                           bigText(
                             text: 'First Year',
-                            size: dimension.font20,
+                            size: Dimension.font20,
                             color: appState.isDarkMode
                                 ? Colors.white
                                 : Colors.black,
@@ -67,7 +67,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font16,
+                                    fontSize: Dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -75,13 +75,13 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val20,
+                                size: Dimension.val20,
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: dimension.val5),
+                      SizedBox(height: Dimension.val5),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -145,14 +145,14 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                         'https://i.imgur.com/Fa2XGpM.png',
                                     onTap: () => _navigateTo('/notes/bcm'),
                                   ),
-                                  SizedBox(height: dimension.val20),
+                                  SizedBox(height: Dimension.val20),
                                 ])
                           ],
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val25),
+                  SizedBox(height: Dimension.val25),
                   Column(
                     children: [
                       Row(
@@ -160,7 +160,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                         children: [
                           bigText(
                             text: 'Second Year',
-                            size: dimension.font20,
+                            size: Dimension.font20,
                             color: appState.isDarkMode
                                 ? Colors.white
                                 : Colors.black,
@@ -170,7 +170,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font16,
+                                    fontSize: Dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -178,13 +178,13 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val20,
+                                size: Dimension.val20,
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: dimension.val5),
+                      SizedBox(height: Dimension.val5),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -242,14 +242,14 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                         'https://i.imgur.com/NLC1f8N.png',
                                     onTap: () => _navigateTo('/notes/ada'),
                                   ),
-                                  SizedBox(height: dimension.val20),
+                                  SizedBox(height: Dimension.val20),
                                 ])
                           ],
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val25),
+                  SizedBox(height: Dimension.val25),
                   Column(
                     children: [
                       Row(
@@ -257,7 +257,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                         children: [
                           bigText(
                             text: 'Third Year',
-                            size: dimension.font20,
+                            size: Dimension.font20,
                             color: appState.isDarkMode
                                 ? Colors.white
                                 : Colors.black,
@@ -267,7 +267,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font16,
+                                    fontSize: Dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -275,13 +275,13 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val20,
+                                size: Dimension.val20,
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: dimension.val5),
+                      SizedBox(height: Dimension.val5),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -360,14 +360,14 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                         'https://i.imgur.com/v7xOSY7.png',
                                     onTap: () => _navigateTo('/notes/advarch'),
                                   ),
-                                  SizedBox(height: dimension.val20),
+                                  SizedBox(height: Dimension.val20),
                                 ])
                           ],
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: dimension.val25),
+                  SizedBox(height: Dimension.val25),
                   Column(
                     children: [
                       Row(
@@ -375,7 +375,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                         children: [
                           bigText(
                             text: 'Fourth Year',
-                            size: dimension.font20,
+                            size: Dimension.font20,
                             color: appState.isDarkMode
                                 ? Colors.white
                                 : Colors.black,
@@ -385,7 +385,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               Text(
                                 'Swipe',
                                 style: TextStyle(
-                                    fontSize: dimension.font16,
+                                    fontSize: Dimension.font16,
                                     fontWeight: FontWeight.w400,
                                     color: appState.isDarkMode
                                         ? Colors.white
@@ -393,13 +393,13 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                               ),
                               Icon(
                                 Icons.keyboard_double_arrow_right_outlined,
-                                size: dimension.val20,
+                                size: Dimension.val20,
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: dimension.val5),
+                      SizedBox(height: Dimension.val5),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -454,7 +454,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
                                         'https://i.imgur.com/xqBH5EP.png',
                                     onTap: () => _navigateTo('/notes/wmc'),
                                   ),
-                                  SizedBox(height: dimension.val20),
+                                  SizedBox(height: Dimension.val20),
                                 ])
                           ],
                         ),
@@ -499,7 +499,7 @@ class _ExamNotesScreenState extends State<ExamNotesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: dimension.val2),
+              SizedBox(height: Dimension.val2),
               CachedNetworkImage(
                 imageUrl: imageAsset,
                 imageBuilder: (context, imageProvider) => Container(

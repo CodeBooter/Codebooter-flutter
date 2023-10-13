@@ -40,43 +40,43 @@ class _QueuesState extends State<Queues> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(dimension.val20),
+          padding: EdgeInsets.all(Dimension.val20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'A queue is a data structure that follows the First-In-First-Out (FIFO) principle.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Center(
                 child: Image(
                   image: const NetworkImage('https://i.imgur.com/G96qGr3.png'),
-                  height: dimension.height185,
+                  height: Dimension.height185,
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Types of Queues',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -86,13 +86,13 @@ class _QueuesState extends State<Queues> {
                       definition:
                           'In Simple Queue, elements are added to the rear and removed from the front.In this queue the Insertion and deletion takes place from specified ends.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildQueueType(
                       title: 'Circular Queue',
                       definition:
                           'In a circular queue, the rear and front elements are connected in a circular manner, allowing efficient space utilization. Insertion and Deletioncan be done from any point',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildQueueType(
                       title: 'Priority Queue',
                       definition:
@@ -101,16 +101,16 @@ class _QueuesState extends State<Queues> {
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Operations performed on Queue',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 '~ Enqueue: Adds an element to the rear of the queue.\n'
                 '~ Dequeue: Removes and returns the front element from the queue.\n'
@@ -119,30 +119,30 @@ class _QueuesState extends State<Queues> {
                 '~ IsEmpty: Checks if the queue is empty.\n'
                 '~ IsFull: Checks if the queue is full (in case of a fixed-size queue).',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Container(
-                margin: EdgeInsets.all(dimension.val20),
+                margin: EdgeInsets.all(Dimension.val20),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(dimension.val10),
+                  borderRadius: BorderRadius.circular(Dimension.val10),
                   color: Colors.black38,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
-                      spreadRadius: dimension.val2,
-                      blurRadius: dimension.val5,
+                      spreadRadius: Dimension.val2,
+                      blurRadius: Dimension.val5,
                       offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
@@ -176,10 +176,10 @@ void main() {
 }''',
                   language: 'dart',
                   theme: a11yDarkTheme,
-                  padding: EdgeInsets.all(dimension.val15),
+                  padding: EdgeInsets.all(Dimension.val15),
                   textStyle: TextStyle(
                     fontFamily: 'Courier New',
-                    fontSize: dimension.font14,
+                    fontSize: Dimension.font14,
                   ),
                 ),
               ),
@@ -196,12 +196,12 @@ void main() {
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-      width: dimension.width311,
+      width: Dimension.width311,
       decoration: BoxDecoration(
         color: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        borderRadius: BorderRadius.circular(dimension.val15),
+        borderRadius: BorderRadius.circular(Dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -211,15 +211,15 @@ void main() {
           ),
         ],
       ),
-      padding: EdgeInsets.all(dimension.val20),
-      margin: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val20),
+      margin: EdgeInsets.all(Dimension.val10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
@@ -227,18 +227,18 @@ void main() {
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val10),
+          SizedBox(height: Dimension.val10),
           Text(
             definition,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
                   ? AppColors.lightModePrimary
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val15),
+          SizedBox(height: Dimension.val15),
         ],
       ),
     );

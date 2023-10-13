@@ -40,41 +40,41 @@ class _GraphsState extends State<Graphs> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(dimension.val20),
+          padding: EdgeInsets.all(Dimension.val20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'A graph is a non-linear data structure that consists of a set of vertices (also known as nodes) connected by edges.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
               Center(
                 child: Image(
                   image: const NetworkImage('https://i.imgur.com/tE5mZ7g.png'),
-                  height: dimension.height200,
+                  height: Dimension.height200,
                 ),
               ),
               Text(
                 'Types of Graphs',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -84,13 +84,13 @@ class _GraphsState extends State<Graphs> {
                       definition:
                           'In an undirected graph, the edges do not have a direction. The connection between two vertices is symmetric, meaning if there is an edge from vertex A to vertex B, there is also an edge from vertex B to vertex A.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildGraphType(
                       title: 'Directed Graph',
                       definition:
                           'In a directed graph (also called a digraph), the edges have a direction. The connection between two vertices is asymmetric, meaning if there is an edge from vertex A to vertex B, there is not necessarily an edge from vertex B to vertex A.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildGraphType(
                       title: 'Weighted Graph',
                       definition:
@@ -99,16 +99,16 @@ class _GraphsState extends State<Graphs> {
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Operations performed on Graphs',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'Graphs support various operations, including:\n'
                 '~ Adding a vertex or edge to the graph.\n'
@@ -118,24 +118,24 @@ class _GraphsState extends State<Graphs> {
                 '~ Finding the shortest path between two vertices.\n'
                 '~ Determining the connectivity of the graph.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Container(
-                margin: EdgeInsets.all(dimension.val20),
+                margin: EdgeInsets.all(Dimension.val20),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(dimension.val10),
+                  borderRadius: BorderRadius.circular(Dimension.val10),
                   color: Colors.black38,
                   boxShadow: const [
                     BoxShadow(
@@ -179,10 +179,10 @@ void main() {
 }''',
                   language: 'dart',
                   theme: a11yDarkTheme,
-                  padding: EdgeInsets.all(dimension.val15),
+                  padding: EdgeInsets.all(Dimension.val15),
                   textStyle: TextStyle(
                     fontFamily: 'Courier New',
-                    fontSize: dimension.font14,
+                    fontSize: Dimension.font14,
                   ),
                 ),
               ),
@@ -199,12 +199,12 @@ void main() {
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-      width: dimension.width311,
+      width: Dimension.width311,
       decoration: BoxDecoration(
         color: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        borderRadius: BorderRadius.circular(dimension.val15),
+        borderRadius: BorderRadius.circular(Dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -214,15 +214,15 @@ void main() {
           ),
         ],
       ),
-      padding: EdgeInsets.all(dimension.val20),
-      margin: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val20),
+      margin: EdgeInsets.all(Dimension.val10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
@@ -230,18 +230,18 @@ void main() {
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val10),
+          SizedBox(height: Dimension.val10),
           Text(
             definition,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
                   ? AppColors.lightModePrimary
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val15),
+          SizedBox(height: Dimension.val15),
         ],
       ),
     );

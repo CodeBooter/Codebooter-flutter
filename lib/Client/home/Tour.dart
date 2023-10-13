@@ -34,7 +34,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
               options: CarouselOptions(
                 enableInfiniteScroll: false,
                 autoPlayInterval: const Duration(seconds: 2),
-                height: dimension.screenHeight * 0.8, // Adjusted image height
+                height: Dimension.screenHeight * 0.8, // Adjusted image height
                 autoPlay: false,
                 enlargeCenterPage: true,
                 aspectRatio: 16 / 9,
@@ -70,8 +70,8 @@ class _CarouselScreenState extends State<CarouselScreen> {
             ),
           ),
           Positioned(
-            top: dimension.height100,
-            right: dimension.width50,
+            top: Dimension.height100,
+            right: Dimension.width50,
             child: InkWell(
               onTap: () {
                 final int nextIndex = currentIndex + 1;
@@ -85,12 +85,12 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 }
               },
               child: Container(
-                padding: EdgeInsets.only(left: dimension.width10),
+                padding: EdgeInsets.only(left: Dimension.width10),
                 child: Text(
                   currentIndex == imagePaths.length - 1 ? 'Finish' : 'Next',
                   style: TextStyle(
                     color: const Color.fromARGB(255, 80, 80, 81),
-                    fontSize: dimension.font24,
+                    fontSize: Dimension.font24,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

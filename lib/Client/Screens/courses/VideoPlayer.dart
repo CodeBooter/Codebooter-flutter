@@ -153,7 +153,7 @@ class _VideoScreenState extends State<VideoScreen> {
               color: appState.isDarkMode
                   ? AppColors.mainTextColor
                   : AppColors.primaryColor,
-              fontSize: dimension.font18,
+              fontSize: Dimension.font18,
               fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center,
@@ -237,11 +237,11 @@ class _VideoScreenState extends State<VideoScreen> {
                             headerBuilder:
                                 (BuildContext context, bool isExpanded) {
                               return Padding(
-                                padding: EdgeInsets.all(dimension.font18),
+                                padding: EdgeInsets.all(Dimension.font18),
                                 child: Text(
                                   'Description',
                                   style: TextStyle(
-                                    fontSize: dimension.font20,
+                                    fontSize: Dimension.font20,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -347,7 +347,7 @@ class _VideoScreenState extends State<VideoScreen> {
                                                   children: [
                                                     Icon(
                                                       Icons.thumb_up,
-                                                      size: dimension.font14,
+                                                      size: Dimension.font14,
                                                       color: Colors.grey,
                                                     ),
                                                     const SizedBox(width: 5.0),

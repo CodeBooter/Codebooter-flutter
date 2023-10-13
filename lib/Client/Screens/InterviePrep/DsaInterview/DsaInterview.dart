@@ -17,7 +17,7 @@ class DsaInterview extends StatelessWidget {
           color: appState.isDarkMode
               ? AppColors.primaryColor
               : AppColors.lightModePrimary,
-          borderRadius: BorderRadius.circular(dimension.val2),
+          borderRadius: BorderRadius.circular(Dimension.val2),
           boxShadow: const [
             BoxShadow(
               color: AppColors.shadowColor,
@@ -32,10 +32,10 @@ class DsaInterview extends StatelessWidget {
           ],
         ),
         child: Container(
-          height: dimension.height150,
-          width: dimension.width150,
+          height: Dimension.height150,
+          width: Dimension.width150,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(dimension.val2),
+            borderRadius: BorderRadius.circular(Dimension.val2),
             color: appState.isDarkMode
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
@@ -48,21 +48,21 @@ class DsaInterview extends StatelessWidget {
                       color: appState.isDarkMode
                           ? AppColors.lightModePrimary
                           : AppColors.primaryColor,
-                      fontSize: dimension.font24,
+                      fontSize: Dimension.font24,
                       fontWeight: FontWeight.bold)),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Row(
                 children: [
-                  SizedBox(width: dimension.width10),
+                  SizedBox(width: Dimension.width10),
                   Icon(
                     Icons.arrow_forward_ios,
-                    size: dimension.font12,
+                    size: Dimension.font12,
                     color: appState.isDarkMode
                         ? AppColors.lightModePrimary
                         : AppColors.primaryColor,
                   ),
                   SizedBox(
-                    width: dimension.width10,
+                    width: Dimension.width10,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -77,26 +77,26 @@ class DsaInterview extends StatelessWidget {
                         color: appState.isDarkMode
                             ? AppColors.lightModePrimary
                             : AppColors.primaryColor,
-                        fontSize: dimension.font14,
+                        fontSize: Dimension.font14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Row(
                 children: [
-                  SizedBox(width: dimension.width10),
+                  SizedBox(width: Dimension.width10),
                   Icon(
                     Icons.arrow_forward_ios,
-                    size: dimension.font12,
+                    size: Dimension.font12,
                     color: appState.isDarkMode
                         ? AppColors.lightModePrimary
                         : AppColors.primaryColor,
                   ),
                   SizedBox(
-                    width: dimension.width10,
+                    width: Dimension.width10,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -111,14 +111,14 @@ class DsaInterview extends StatelessWidget {
                         color: appState.isDarkMode
                             ? AppColors.lightModePrimary
                             : AppColors.primaryColor,
-                        fontSize: dimension.font14,
+                        fontSize: Dimension.font14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
             ],
           ),
         ));

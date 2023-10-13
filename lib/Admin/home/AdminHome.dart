@@ -26,7 +26,9 @@ class _AdminHomeState extends State<AdminHome> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
             padding: EdgeInsets.only(
-                left: dimension.val20, right: dimension.val20, top: dimension.val10),
+                left: Dimension.val20,
+                right: Dimension.val20,
+                top: Dimension.val10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -52,19 +54,19 @@ class _AdminHomeState extends State<AdminHome> {
                   Container(
                     alignment: Alignment.center,
                     child: Column(children: [
-                      SizedBox(height: dimension.val30),
+                      SizedBox(height: Dimension.val30),
                       bigText(
                         text: "Welcome to CodeBooter 👋 🚀",
                         color:
                             appState.isDarkMode ? Colors.white : Colors.black,
                       ),
-                      SizedBox(height: dimension.val10),
+                      SizedBox(height: Dimension.val10),
                       smallText(
                         text: "Thanks for being a part of us",
                         color:
                             appState.isDarkMode ? Colors.white : Colors.black,
                       ),
-                      SizedBox(height: dimension.val20),
+                      SizedBox(height: Dimension.val20),
                       const DashBoard(),
                     ]),
                   ),
