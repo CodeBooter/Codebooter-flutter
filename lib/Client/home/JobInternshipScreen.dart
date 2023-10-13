@@ -41,7 +41,7 @@ class _DsaScreenState extends State<JobInternshipScreen> {
       body: SingleChildScrollView(
         child: Padding(
             padding: EdgeInsets.only(left: dimension.val10),
-            child: const JobInternships()),
+            child: const JobInternships(value: 10000,)),
       ),
     );
   }
