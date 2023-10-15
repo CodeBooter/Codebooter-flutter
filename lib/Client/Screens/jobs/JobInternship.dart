@@ -13,7 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class JobInternships extends StatefulWidget {
-  const JobInternships({Key? key}) : super(key: key);
+  final int value;
+  const JobInternships({Key? key, required this.value}) : super(key: key);
 
   @override
   State<JobInternships> createState() => _JobInternshipsState();
@@ -49,10 +50,10 @@ class _JobInternshipsState extends State<JobInternships> {
             if (state is JobLoadedState) {
               List<JobModel> jobList = state.jobs;
               // print(jobList[1].imageAsset);
-
+              int itemNum=widget.value<jobList.length?widget.value:jobList.length;
               return Column(
                 children: [
-                  ...jobList.map((job) => _buildFeatureContainer(
+                  ...jobList.take(itemNum).map((job) => _buildFeatureContainer(
                         title: job.title,
                         imageAsset: job.imageAsset,
                         stipend: job.stipend,

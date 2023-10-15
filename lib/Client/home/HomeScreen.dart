@@ -116,7 +116,25 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                const JobInternships(),
+                const JobInternships(value: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      onPressed: () => context.go('/jobinternship'),
+                      child: Text(
+                        "Show More",
+                        style: TextStyle(
+                          fontFamily: 'poppins',
+                          fontSize: dimension.font16,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward_ios, color: Colors.blue,size: dimension.font16,)
+                  ],
+                )
               ],
             ),
           ),
