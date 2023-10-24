@@ -2,16 +2,31 @@
 
 Welcome to Codebooter Study App, the ultimate platform designed to help B.Tech Computer Science students excel in their studies and prepare for successful careers in the tech industry. Whether you're looking to enhance your interview preparation, master Data Structures and Algorithms (DSA), explore courses, watch educational videos, prepare for exams, or discover job and internship opportunities, this app has you covered.
 
+<h2>Preview of App <img src="https://cdn-icons-png.flaticon.com/128/2920/2920369.png" width="30" height="30" alt="App Icon"></h2>
+<div style="display: flex; justify-content: space-between; padding: 10px;">
+    <img src="https://i.imgur.com/7MbSyHF.png" width="150" height="260">
+    <img src="https://i.imgur.com/wGhnu0c.png" width="150" height="260">
+    <img src="https://i.imgur.com/AxJsD7W.png" width="150" height="260">
+    <img src="https://i.imgur.com/jLlG05E.png" width="150" height="260">
+    <img src="https://i.imgur.com/wGhnu0c.png" width="150" height="260">
+</div>
 
-![Codebooter Study App Screenshot](https://i.imgur.com/7MbSyHF.png)                                             ![Codebooter Study App Screenshot](https://i.imgur.com/Fs3HXaq.png)
+
+
 
 # Features
 
-## Authentication
-- Secure and convenient authentication for users.
-- Protect your personal information and progress within the app.
+### Authentication
+<div >
+    <img src="https://i.imgur.com/AWjV3zn.png" width="150" height="260" alt="Authentication Screenshot">
+</div>
 
-![Codebooter Study App Screenshot](https://i.imgur.com/AWjV3zn.png)
+- OAuth2 authentication is used to protect your privacy; we don't store any passwords.
+- Secure and convenient authentication for users.
+- Protect your personal information.
+
+
+<!-- ![Codebooter Study App Screenshot](https://i.imgur.com/AWjV3zn.png) -->
 
 ## Interview Preparation
 - Access a vast collection of interview questions and challenges to enhance your problem-solving skills.
