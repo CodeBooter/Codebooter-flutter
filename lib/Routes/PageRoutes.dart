@@ -832,7 +832,8 @@ class App extends StatelessWidget {
               }
             } else {
               // Navigate to the login page
-              return CarouselScreen();
+              // return CarouselScreen();
+              return const HomeScreen();
             }
           })
     ],
