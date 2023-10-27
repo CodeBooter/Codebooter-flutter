@@ -3,28 +3,33 @@ import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:codebooter_study_app/AppState.dart';
 import 'package:provider/provider.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
+import 'package:flutter/services.dart'; // Import the SystemChrome class
 
 class ArtificialIntelligence extends StatelessWidget {
   const ArtificialIntelligence({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     const String playlistId = 'PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI';
     YoutubeFunction youtubeFunction = YoutubeFunction();
     final appState = Provider.of<AppState>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode ? Colors.white : Colors.black,),
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode ? Colors.white : Colors.black,
+        ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
+        title: Text(
           'Artificial Intelligence',
-          style: TextStyle(color: appState.isDarkMode ? Colors.white : Colors.black,),
+          style: TextStyle(
+            color: appState.isDarkMode ? Colors.white : Colors.black,
+          ),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -39,7 +44,7 @@ class ArtificialIntelligence extends StatelessWidget {
                 final item = playlistItems[index];
                 final title = item['snippet']['title'];
                 final thumbnailUrl =
-                    item['snippet']['thumbnails']['default']['url'];
+                item['snippet']['thumbnails']['default']['url'];
 
                 final channelId = item['snippet']['channelId'];
                 final videoId = item['snippet']['resourceId']['videoId'];
@@ -66,6 +71,11 @@ class ArtificialIntelligence extends StatelessWidget {
 
                       return InkWell(
                         onTap: () {
+                          // Disable landscape mode when entering full-screen
+                          SystemChrome.setPreferredOrientations([
+                            DeviceOrientation.portraitUp,
+                          ]);
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -97,7 +107,7 @@ class ArtificialIntelligence extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
                                       size: dimension.font14,
@@ -105,9 +115,9 @@ class ArtificialIntelligence extends StatelessWidget {
                                     Text(
                                       likeCount,
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                      TextStyle(fontSize: dimension.font14),
                                     ),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
                                       size: dimension.font14,
@@ -115,7 +125,7 @@ class ArtificialIntelligence extends StatelessWidget {
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                      TextStyle(fontSize: dimension.font14),
                                     ),
                                   ],
                                 );
@@ -129,6 +139,11 @@ class ArtificialIntelligence extends StatelessWidget {
                     } else {
                       return InkWell(
                         onTap: () {
+                          // Disable landscape mode when entering full-screen
+                          SystemChrome.setPreferredOrientations([
+                            DeviceOrientation.portraitUp,
+                          ]);
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -155,6 +170,74 @@ class ArtificialIntelligence extends StatelessWidget {
         },
       ),
     );
+  }
+}
+
+class VideoScreen extends StatefulWidget {
+  final String videoId;
+
+  VideoScreen({required this.videoId});
+
+  @override
+  _VideoScreenState createState() => _VideoScreenState();
+}
+
+class _VideoScreenState extends State<VideoScreen> {
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: widget.videoId,
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        // Use this option to enable full-screen when the video starts
+        isLive: true,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // Customize the AppBar for full-screen video mode if needed
+        title: Text('Video Player'),
+        // Add a back button to return to the previous screen
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Enable landscape mode when returning from full-screen
+            SystemChrome.setPreferredOrientations([
+              DeviceOrientation.portraitUp,
+              DeviceOrientation.landscapeLeft,
+              DeviceOrientation.landscapeRight,
+            ]);
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: Center(
+        child: YoutubePlayer(
+          controller: _controller,
+          showVideoProgressIndicator: true,
+          progressIndicatorColor: Colors.blueAccent,
+          onReady: () {
+            // You can handle video ready event here
+          },
+          onEnded: (data) {
+            // You can handle video ended event here
+          },
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 }
 

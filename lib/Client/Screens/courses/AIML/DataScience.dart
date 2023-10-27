@@ -2,9 +2,12 @@ import 'package:codebooter_study_app/Client/Screens/courses/VideoPlayer.dart';
 import 'package:codebooter_study_app/utils/Dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../../utils/Colors.dart';
 import '../YoutubeFunction.dart';
 import 'package:codebooter_study_app/AppState.dart';
+import 'package:flutter/services.dart'; // Import the SystemChrome class
+
 class DataScience extends StatelessWidget {
   const DataScience({Key? key}) : super(key: key);
 
@@ -15,18 +18,22 @@ class DataScience extends StatelessWidget {
     YoutubeFunction youtubeFunction = YoutubeFunction();
     return Scaffold(
       appBar: AppBar(
-        iconTheme:  IconThemeData(color: appState.isDarkMode
-        ? AppColors.lightModePrimary
-            : AppColors.primaryColor,),
+        iconTheme: IconThemeData(
+          color: appState.isDarkMode
+              ? AppColors.lightModePrimary
+              : AppColors.primaryColor,
+        ),
         centerTitle: true,
         backgroundColor: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        title:  Text(
+        title: Text(
           'Data Science',
-          style: TextStyle(color: appState.isDarkMode
-          ? AppColors.lightModePrimary
-              : AppColors.primaryColor,),
+          style: TextStyle(
+            color: appState.isDarkMode
+                ? AppColors.lightModePrimary
+                : AppColors.primaryColor,
+          ),
         ),
       ),
       body: FutureBuilder<List<dynamic>>(
@@ -41,7 +48,7 @@ class DataScience extends StatelessWidget {
                 final item = playlistItems[index];
                 final title = item['snippet']['title'];
                 final thumbnailUrl =
-                    item['snippet']['thumbnails']['default']['url'];
+                item['snippet']['thumbnails']['default']['url'];
 
                 final channelId = item['snippet']['channelId'];
                 final videoId = item['snippet']['resourceId']['videoId'];
@@ -68,6 +75,11 @@ class DataScience extends StatelessWidget {
 
                       return InkWell(
                         onTap: () {
+                          // Disable landscape mode when entering full-screen
+                          SystemChrome.setPreferredOrientations([
+                            DeviceOrientation.portraitUp,
+                          ]);
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -99,7 +111,7 @@ class DataScience extends StatelessWidget {
                                 return Row(
                                   children: [
                                     Text(' $channelName'),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.thumb_up_alt_outlined,
                                       size: dimension.font14,
@@ -107,9 +119,9 @@ class DataScience extends StatelessWidget {
                                     Text(
                                       likeCount,
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                      TextStyle(fontSize: dimension.font14),
                                     ),
-                                     SizedBox(width: dimension.val10),
+                                    SizedBox(width: dimension.val10),
                                     Icon(
                                       Icons.remove_red_eye_outlined,
                                       size: dimension.font14,
@@ -117,7 +129,7 @@ class DataScience extends StatelessWidget {
                                     Text(
                                       ' $viewCount',
                                       style:
-                                          TextStyle(fontSize: dimension.font14),
+                                      TextStyle(fontSize: dimension.font14),
                                     ),
                                   ],
                                 );
@@ -131,6 +143,11 @@ class DataScience extends StatelessWidget {
                     } else {
                       return InkWell(
                         onTap: () {
+                          // Disable landscape mode when entering full-screen
+                          SystemChrome.setPreferredOrientations([
+                            DeviceOrientation.portraitUp,
+                          ]);
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -160,6 +177,74 @@ class DataScience extends StatelessWidget {
   }
 }
 
+class VideoScreen extends StatefulWidget {
+  final String videoId;
+
+  VideoScreen({required this.videoId});
+
+  @override
+  _VideoScreenState createState() => _VideoScreenState();
+}
+
+class _VideoScreenState extends State<VideoScreen> {
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: widget.videoId,
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        // Use this option to enable full-screen when the video starts
+        isLive: true,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // Customize the AppBar for full-screen video mode if needed
+        title: Text('Video Player'),
+        // Add a back button to return to the previous screen
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Enable landscape mode when returning from full-screen
+            SystemChrome.setPreferredOrientations([
+              DeviceOrientation.portraitUp,
+              DeviceOrientation.landscapeLeft,
+              DeviceOrientation.landscapeRight,
+            ]);
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: Center(
+        child: YoutubePlayer(
+          controller: _controller,
+          showVideoProgressIndicator: true,
+          progressIndicatorColor: Colors.blueAccent,
+          onReady: () {
+            // You can handle video ready event here
+          },
+          onEnded: (data) {
+            // You can handle video ended event here
+          },
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+}
+
 Widget buildListTile({
   required String thumbnailUrl,
   required String title,
@@ -172,8 +257,8 @@ Widget buildListTile({
     ),
     child: Container(
       decoration: BoxDecoration(
+        border: Border.all(color: AppColors.shadowColor),
         borderRadius: BorderRadius.circular(dimension.val5),
-        border: Border.all(color: AppColors.shadowColor)
       ),
       child: ListTile(
         leading: ClipRRect(
