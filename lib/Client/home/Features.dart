@@ -16,13 +16,13 @@ class Features extends StatefulWidget {
 }
 
 class _FeaturesState extends State<Features> {
-  final double imageHeight = dimension.height180;
-  final double imageWidth = dimension.width170;
-  final double containerWidth = dimension.width170;
-  final double containerHeight = dimension.height190;
-  final double borderRadius = dimension.val5;
-  final double spacing = dimension.val25;
-  final double runSpacing = dimension.val25;
+  final double imageHeight = Dimension.height180;
+  final double imageWidth = Dimension.width170;
+  final double containerWidth = Dimension.width170;
+  final double containerHeight = Dimension.height190;
+  final double borderRadius = Dimension.val5;
+  final double spacing = Dimension.val25;
+  final double runSpacing = Dimension.val25;
   final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
@@ -37,10 +37,10 @@ class _FeaturesState extends State<Features> {
           children: [
             bigText(
               text: 'Features',
-              size: dimension.font24,
+              size: Dimension.font24,
               color: appState.isDarkMode ? Colors.white : Colors.black,
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Wrap(
               spacing: spacing,
               runSpacing: runSpacing,
@@ -104,7 +104,7 @@ class _FeaturesState extends State<Features> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: dimension.val2),
+              SizedBox(height: Dimension.val2),
               CachedNetworkImage(
                 imageUrl: imageAsset,
                 imageBuilder: (context, imageProvider) => Container(

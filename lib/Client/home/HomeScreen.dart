@@ -79,13 +79,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: dimension.val20,
+                  height: Dimension.val20,
                 ),
                 const Features(),
                 Padding(
                   padding: EdgeInsets.only(
-                    left: dimension.val20,
-                    right: dimension.val20,
+                    left: Dimension.val20,
+                    right: Dimension.val20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ? AppColors.mainTextColor
                               : Colors.black,
                           fontFamily: 'poppins',
-                          fontSize: dimension.font20,
+                          fontSize: Dimension.font20,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           "View All",
                           style: TextStyle(
                             fontFamily: 'poppins',
-                            fontSize: dimension.font16,
+                            fontSize: Dimension.font16,
                             fontWeight: FontWeight.w400,
                             color: Colors.blue,
                           ),

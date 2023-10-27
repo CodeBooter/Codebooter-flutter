@@ -33,7 +33,7 @@ class Sorting extends StatelessWidget {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(dimension.val20),
+        padding: EdgeInsets.all(Dimension.val20),
         children: [
           Card(
             color: appState.isDarkMode
@@ -41,14 +41,14 @@ class Sorting extends StatelessWidget {
                 : AppColors.lightModePrimary,
             elevation: 7,
             child: Padding(
-              padding: EdgeInsets.all(dimension.val15),
+              padding: EdgeInsets.all(Dimension.val15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Definition',
                     style: TextStyle(
-                      fontSize: dimension.font20,
+                      fontSize: Dimension.font20,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Georgia',
                       color: appState.isDarkMode
@@ -56,11 +56,11 @@ class Sorting extends StatelessWidget {
                           : AppColors.primaryColor,
                     ),
                   ),
-                  SizedBox(height: dimension.val10),
+                  SizedBox(height: Dimension.val10),
                   Text(
                     'Sorting is the process of arranging elements in a specific order, typically in increasing or decreasing order based on a certain property or key.',
                     style: TextStyle(
-                      fontSize: dimension.font18,
+                      fontSize: Dimension.font18,
                       fontFamily: 'Georgia',
                       color: appState.isDarkMode
                           ? AppColors.lightModePrimary
@@ -71,28 +71,28 @@ class Sorting extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: dimension.val25),
+          SizedBox(height: Dimension.val25),
           Card(
             color: appState.isDarkMode
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
             elevation: 7,
             child: Padding(
-              padding: EdgeInsets.all(dimension.val15),
+              padding: EdgeInsets.all(Dimension.val15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Key Concepts',
                     style: TextStyle(
-                        fontSize: dimension.font20,
+                        fontSize: Dimension.font20,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Georgia',
                         color: appState.isDarkMode
                             ? AppColors.lightModePrimary
                             : AppColors.primaryColor),
                   ),
-                  SizedBox(height: dimension.val10),
+                  SizedBox(height: Dimension.val10),
                   Text(
                     '1. Sorting Algorithm: The algorithm that determines the process of rearranging elements in a specific order.\n'
                     '2. Comparison-based Sorting: Sorting algorithms that compare elements and make decisions based on the comparison results.\n'
@@ -100,7 +100,7 @@ class Sorting extends StatelessWidget {
                     '4. In-place Sorting: Sorting algorithms that rearrange elements within the given array without using additional memory.\n'
                     '5. Time Complexity: The measure of the amount of time required by a sorting algorithm to perform the sorting operation.',
                     style: TextStyle(
-                      fontSize: dimension.font18,
+                      fontSize: Dimension.font18,
                       fontFamily: 'Georgia',
                     ),
                   ),
@@ -108,35 +108,35 @@ class Sorting extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: dimension.val25),
+          SizedBox(height: Dimension.val25),
           Card(
             color: appState.isDarkMode
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
             elevation: 6,
             child: Padding(
-              padding: EdgeInsets.all(dimension.val15),
+              padding: EdgeInsets.all(Dimension.val15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Example',
                     style: TextStyle(
-                      fontSize: dimension.font20,
+                      fontSize: Dimension.font20,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Georgia',
                     ),
                   ),
-                  SizedBox(height: dimension.val10),
+                  SizedBox(height: Dimension.val10),
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(dimension.val10),
+                      borderRadius: BorderRadius.circular(Dimension.val10),
                       color: Colors.grey[200],
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black12,
-                          spreadRadius: dimension.val2,
-                          blurRadius: dimension.val5,
+                          spreadRadius: Dimension.val2,
+                          blurRadius: Dimension.val5,
                           // ignore: prefer_const_constructors
                           offset: Offset(0, 3), // changes position of shadow
                         ),
@@ -164,10 +164,10 @@ void main() {
 }''',
                       language: 'dart',
                       theme: a11yDarkTheme,
-                      padding: EdgeInsets.all(dimension.val15),
+                      padding: EdgeInsets.all(Dimension.val15),
                       textStyle: TextStyle(
                         fontFamily: 'Courier New',
-                        fontSize: dimension.font14,
+                        fontSize: Dimension.font14,
                       ),
                     ),
                   ),

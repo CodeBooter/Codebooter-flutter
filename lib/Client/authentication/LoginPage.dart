@@ -25,20 +25,20 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: dimension.val50,
-              horizontal: dimension.val50,
+              vertical: Dimension.val50,
+              horizontal: Dimension.val50,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: dimension.val70),
+                SizedBox(height: Dimension.val70),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       alignment: Alignment.centerLeft,
-                      width: dimension.val60,
-                      height: dimension.val60,
+                      width: Dimension.val60,
+                      height: Dimension.val60,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                         image: DecorationImage(
@@ -47,24 +47,24 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: dimension.val25),
+                    SizedBox(height: Dimension.val25),
                     Text(
                       'Welcome to CodeBooter 👋 🚀',
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontFamily: 'Poppins',
-                        fontSize: dimension.val30,
+                        fontSize: Dimension.val30,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: dimension.val15),
+                    SizedBox(height: Dimension.val15),
                     RichText(
                       textAlign: TextAlign.left,
                       text: TextSpan(
                         style: TextStyle(
                           color: const Color.fromARGB(255, 0, 0, 0),
                           fontFamily: 'Poppins',
-                          fontSize: dimension.font16,
+                          fontSize: Dimension.font16,
                           fontWeight: FontWeight.w400,
                         ),
                         children: const [
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                     ),
-                    SizedBox(height: dimension.val40),
+                    SizedBox(height: Dimension.val40),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -94,8 +94,8 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                       child: Container(
-                        width: dimension.width311,
-                        height: dimension.val40,
+                        width: Dimension.width311,
+                        height: Dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: const Color.fromARGB(255, 62, 62, 62),
@@ -106,19 +106,19 @@ class _LoginPageState extends State<LoginPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(width: dimension.val10),
+                            SizedBox(width: Dimension.val10),
                             Image.asset(
                               'assets/images/google.png',
-                              width: dimension.val20,
-                              height: dimension.val20,
+                              width: Dimension.val20,
+                              height: Dimension.val20,
                             ),
-                            SizedBox(width: dimension.val10),
+                            SizedBox(width: Dimension.val10),
                             Text(
                               'Continue with Google',
                               style: TextStyle(
                                 color: const Color.fromARGB(219, 0, 0, 0),
                                 fontFamily: 'Poppins',
-                                fontSize: dimension.font14,
+                                fontSize: Dimension.font14,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: dimension.val15),
+                    SizedBox(height: Dimension.val15),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -138,31 +138,31 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                       child: Container(
-                        width: dimension.width311,
-                        height: dimension.val40,
+                        width: Dimension.width311,
+                        height: Dimension.val40,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: const Color.fromARGB(255, 48, 48, 48),
-                            // width: dimension.val2,
+                            // width: Dimension.val2,
                           ),
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(width: dimension.val10),
+                            SizedBox(width: Dimension.val10),
                             Image.asset(
                               'assets/images/github.png',
-                              width: dimension.val20,
-                              height: dimension.val20,
+                              width: Dimension.val20,
+                              height: Dimension.val20,
                             ),
-                            SizedBox(width: dimension.val10),
+                            SizedBox(width: Dimension.val10),
                             Text(
                               'Continue with GitHub',
                               style: TextStyle(
                                 color: const Color.fromARGB(219, 0, 0, 0),
                                 fontFamily: 'Poppins',
-                                fontSize: dimension.font14,
+                                fontSize: Dimension.font14,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: dimension.val15),
+                    SizedBox(height: Dimension.val15),
                     GestureDetector(
                       onTap: () {
                         setState(() {
@@ -186,7 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                           color: const Color.fromARGB(255, 32, 32, 32),
                           fontFamily: 'Poppins',
-                          fontSize: dimension.font12,
+                          fontSize: Dimension.font12,
                           fontWeight: FontWeight.w400,
                           decoration: TextDecoration.underline,
                           decorationColor: const Color.fromARGB(255, 3, 3, 3),
@@ -194,20 +194,20 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: dimension.height85),
+                    SizedBox(height: Dimension.height85),
                     Text(
                       'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                       style: TextStyle(
                         color: const Color.fromARGB(255, 107, 106, 106),
                         fontFamily: 'calibri',
-                        fontSize: dimension.val10,
+                        fontSize: Dimension.val10,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(height: dimension.val70),
+                    SizedBox(height: Dimension.val70),
                     smallText(
                       text: '© 2023 CodeBooter. All rights reserved.',
-                      size: dimension.font12,
+                      size: Dimension.font12,
                     ),
                   ],
                 ),

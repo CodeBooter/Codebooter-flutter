@@ -39,43 +39,43 @@ class _TreeState extends State<Tree> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(dimension.val20),
+          padding: EdgeInsets.all(Dimension.val20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'A tree is a hierarchical data structure consisting of nodes connected by edges. It is a widely used abstract data type that emulates a hierarchical tree structure with a set of linked nodes.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Center(
                 child: Image(
                   image: const NetworkImage('https://i.imgur.com/MhDHiyz.pngf'),
-                  height: dimension.height250,
+                  height: Dimension.height250,
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Types of Trees',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -85,13 +85,13 @@ class _TreeState extends State<Tree> {
                       definition:
                           'A binary tree is a tree in which each node has at most two children, referred to as the left child and the right child. The binary tree is a fundamental data structure that is widely used and serves as the basis for many other tree-based data structures.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildTreeType(
                       title: 'Binary Search Tree',
                       definition:
                           'A binary search tree (BST) is a binary tree in which the nodes are ordered or sorted. For any given node, all the values in its left subtree are less than its value, and all the values in its right subtree are greater than its value.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildTreeType(
                       title: 'AVL Tree',
                       definition:
@@ -100,16 +100,16 @@ class _TreeState extends State<Tree> {
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Operations performed on Tree',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 '~ Insert: Adds a node to the tree.\n'
                 '~ Delete: Removes a node from the tree.\n'
@@ -118,30 +118,30 @@ class _TreeState extends State<Tree> {
                 '~ Height: Returns the height of the tree.\n'
                 '~ Size: Returns the number of nodes in the tree.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Container(
-                margin: EdgeInsets.all(dimension.val20),
+                margin: EdgeInsets.all(Dimension.val20),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(dimension.val10),
+                  borderRadius: BorderRadius.circular(Dimension.val10),
                   color: Colors.black38,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
-                      spreadRadius: dimension.val2,
-                      blurRadius: dimension.val5,
+                      spreadRadius: Dimension.val2,
+                      blurRadius: Dimension.val5,
                       offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
@@ -186,10 +186,10 @@ void main() {
 }''',
                   language: 'dart',
                   theme: a11yDarkTheme,
-                  padding: EdgeInsets.all(dimension.val15),
+                  padding: EdgeInsets.all(Dimension.val15),
                   textStyle: TextStyle(
                     fontFamily: 'Courier New',
-                    fontSize: dimension.font14,
+                    fontSize: Dimension.font14,
                   ),
                 ),
               ),
@@ -206,12 +206,12 @@ void main() {
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-      width: dimension.width311,
+      width: Dimension.width311,
       decoration: BoxDecoration(
         color: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        borderRadius: BorderRadius.circular(dimension.val15),
+        borderRadius: BorderRadius.circular(Dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -221,15 +221,15 @@ void main() {
           ),
         ],
       ),
-      padding: EdgeInsets.all(dimension.val20),
-      margin: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val20),
+      margin: EdgeInsets.all(Dimension.val10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
@@ -237,18 +237,18 @@ void main() {
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val10),
+          SizedBox(height: Dimension.val10),
           Text(
             definition,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
                   ? AppColors.lightModePrimary
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val15),
+          SizedBox(height: Dimension.val15),
         ],
       ),
     );

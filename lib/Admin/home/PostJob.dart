@@ -148,7 +148,7 @@ class _PostJobState extends State<PostJob> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(dimension.val15),
+          padding: EdgeInsets.all(Dimension.val15),
           child: Form(
             key: _formKey,
             child: Column(
@@ -243,7 +243,7 @@ class _PostJobState extends State<PostJob> {
                     ),
                   ),
                 ),
-                SizedBox(height: dimension.val20),
+                SizedBox(height: Dimension.val20),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {

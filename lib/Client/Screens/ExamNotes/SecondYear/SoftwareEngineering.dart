@@ -160,16 +160,16 @@ class _SoftwareEngineeringState extends State<SoftwareEngineering> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircularProgressIndicator(),
-                      SizedBox(height: dimension.val20),
+                      SizedBox(height: Dimension.val20),
                       Text(
                         'Downloading...',
                         style: TextStyle(
                           color:
                               appState.isDarkMode ? Colors.white : Colors.black,
-                          fontSize: dimension.font20,
+                          fontSize: Dimension.font20,
                         ),
                       ),
-                      SizedBox(height: dimension.val10),
+                      SizedBox(height: Dimension.val10),
                       LinearProgressIndicator(
                         minHeight: 30,
                         value: downloadProgress,
@@ -178,13 +178,13 @@ class _SoftwareEngineeringState extends State<SoftwareEngineering> {
                           appState.isDarkMode ? Colors.white : Colors.blue,
                         ),
                       ),
-                      SizedBox(height: dimension.val10),
+                      SizedBox(height: Dimension.val10),
                       Text(
                         '${(receivedBytes / 1024 / 1024).toStringAsFixed(2)} MB / ${(totalBytes / 1024 / 1024).toStringAsFixed(2)} MB',
                         style: TextStyle(
                           color:
                               appState.isDarkMode ? Colors.white : Colors.black,
-                          fontSize: dimension.font16,
+                          fontSize: Dimension.font16,
                         ),
                       ),
                     ],
@@ -200,18 +200,18 @@ class _SoftwareEngineeringState extends State<SoftwareEngineering> {
                           Icons.download,
                           color:
                               appState.isDarkMode ? Colors.white : Colors.black,
-                          size: dimension.val60,
+                          size: Dimension.val60,
                         ),
                       ),
                       SizedBox(
-                        height: dimension.val20,
+                        height: Dimension.val20,
                       ),
                       Text(
                         downloadMessage,
                         style: TextStyle(
                           color:
                               appState.isDarkMode ? Colors.white : Colors.black,
-                          fontSize: dimension.font20,
+                          fontSize: Dimension.font20,
                         ),
                       ),
                       Text(

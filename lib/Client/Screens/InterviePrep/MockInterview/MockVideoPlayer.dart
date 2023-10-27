@@ -4,7 +4,6 @@ import 'package:flutter/services.dart'; // Import SystemChrome
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../courses/YoutubeFunction.dart';
 
-
 class ClickableVideoContainer extends StatefulWidget {
   final String videoId;
   final double width;
@@ -93,8 +92,8 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
           children: [
             Center(
               child: Container(
-                width: dimension.screenWidth * 0.9,
-                height: dimension.height200,
+                width: Dimension.screenWidth * 0.9,
+                height: Dimension.height200,
                 child: Image.network(
                   'https://img.youtube.com/vi/${widget.videoId}/0.jpg',
                   fit: BoxFit.cover,
@@ -104,12 +103,12 @@ class _ClickableVideoContainerState extends State<ClickableVideoContainer> {
             isFullScreen
                 ? Container() // Empty container to hide play icon in full-screen mode
                 : const Center(
-              child: Icon(
-                Icons.play_circle_outline,
-                size: 50,
-                color: Color.fromARGB(255, 18, 18, 18),
-              ),
-            ),
+                    child: Icon(
+                      Icons.play_circle_outline,
+                      size: 50,
+                      color: Color.fromARGB(255, 18, 18, 18),
+                    ),
+                  ),
           ],
         ),
       ),

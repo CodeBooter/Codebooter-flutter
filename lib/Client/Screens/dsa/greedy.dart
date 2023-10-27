@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../utils/Colors.dart';
 import '../../../widgets/BigText.dart';
+
 class Greedy extends StatelessWidget {
   const Greedy({Key? key}) : super(key: key);
 
@@ -33,82 +34,84 @@ class Greedy extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(dimension.val20),
+        padding: EdgeInsets.all(Dimension.val20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+              padding: EdgeInsets.only(
+                  left: Dimension.val15, right: Dimension.val15),
               child: Text(
                 'Greedy is an algorithmic paradigm that follows the problem-solving heuristic of making the locally optimal choice at each stage with the hope of finding a global optimum.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val25),
+            SizedBox(height: Dimension.val25),
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Key Concepts',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Padding(
-              padding: EdgeInsets.only(left: dimension.val15, right: dimension.val15),
+              padding: EdgeInsets.only(
+                  left: Dimension.val15, right: Dimension.val15),
               child: Text(
                 '1. Greedy Algorithm: An algorithmic approach that builds up a solution step by step by making a series of locally optimal choices.\n'
-                    '2. Locally Optimal Choice: A choice that seems to be the best at the current stage.\n'
-                    '3. Greedy Choice Property: The locally optimal choice made at each stage should lead to a globally optimal solution.\n'
-                    '4. Optimization Problems: Problems that require finding the best solution among a set of possible solutions.\n'
-                    '5. Greedy Algorithms in Practice: Greedy algorithms are often used for optimization problems such as scheduling, routing, and data compression.',
+                '2. Locally Optimal Choice: A choice that seems to be the best at the current stage.\n'
+                '3. Greedy Choice Property: The locally optimal choice made at each stage should lead to a globally optimal solution.\n'
+                '4. Optimization Problems: Problems that require finding the best solution among a set of possible solutions.\n'
+                '5. Greedy Algorithms in Practice: Greedy algorithms are often used for optimization problems such as scheduling, routing, and data compression.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val25),
+            SizedBox(height: Dimension.val25),
             Padding(
-              padding: EdgeInsets.all(dimension.val5),
+              padding: EdgeInsets.all(Dimension.val5),
               child: Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
             ),
-            SizedBox(height: dimension.val10),
+            SizedBox(height: Dimension.val10),
             Container(
-              margin: EdgeInsets.all(dimension.val20),
+              margin: EdgeInsets.all(Dimension.val20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(dimension.val10),
+                borderRadius: BorderRadius.circular(Dimension.val10),
                 color: Colors.grey[200],
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,
-                    spreadRadius: dimension.val2,
-                    blurRadius: dimension.val5,
+                    spreadRadius: Dimension.val2,
+                    blurRadius: Dimension.val5,
                     offset: Offset(0, 3), // changes position of shadow
                   ),
                 ],
@@ -135,14 +138,12 @@ void main() {
   List<int> change = coinChangeGreedy(coins, amount);
   print('Coins to make \$change');
 }''',
-
-
                 language: 'dart',
                 theme: a11yDarkTheme,
-                padding: EdgeInsets.all(dimension.val15),
+                padding: EdgeInsets.all(Dimension.val15),
                 textStyle: TextStyle(
                   fontFamily: 'Courier New',
-                  fontSize: dimension.font14,
+                  fontSize: Dimension.font14,
                 ),
               ),
             ),

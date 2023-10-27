@@ -40,45 +40,45 @@ class _StacksState extends State<Stacks> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(dimension.val20),
+          padding: EdgeInsets.all(Dimension.val20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'A stack is a data structure that follows the Last-In-First-Out (LIFO) principle.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
               // ...
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Center(
                 child: Image(
                   image: const NetworkImage('https://i.imgur.com/mK2qWri.png'),
-                  height: dimension.height150,
+                  height: Dimension.height150,
                 ),
               ),
 
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Types of Stacks',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -88,13 +88,13 @@ class _StacksState extends State<Stacks> {
                       definition:
                           ' A static stack has a fixed size determined at the time of creation. Once the stack is full, it cannot accommodate any more elements until some are removed (popped) from the stack.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildStackType(
                       title: 'Dynamic Stack',
                       definition:
                           'Dynamic stack, also known as a resizable stack, can grow or shrink dynamically based on the number of elements it contains. It uses dynamic memory allocation to resize itself.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildStackType(
                       title: 'Fixed-size Stack',
                       definition:
@@ -104,16 +104,16 @@ class _StacksState extends State<Stacks> {
                 ),
               ),
               // ...
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Operations performed on Stack',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 '~ Push: Adds an element to the top of the stack.\n'
                 '~ Pop: Removes and returns the top element from the stack.\n'
@@ -121,31 +121,31 @@ class _StacksState extends State<Stacks> {
                 '~ IsEmpty: Checks if the stack is empty.\n'
                 '~ IsFull: Checks if the stack is full (in case of a fixed-size stack).',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
               // ...
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Container(
-                margin: EdgeInsets.all(dimension.val20),
+                margin: EdgeInsets.all(Dimension.val20),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(dimension.val10),
+                  borderRadius: BorderRadius.circular(Dimension.val10),
                   color: Colors.black38,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
-                      spreadRadius: dimension.val2,
-                      blurRadius: dimension.val5,
+                      spreadRadius: Dimension.val2,
+                      blurRadius: Dimension.val5,
                       offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
@@ -181,10 +181,10 @@ void main() {
 }''',
                   language: 'dart',
                   theme: a11yDarkTheme,
-                  padding: EdgeInsets.all(dimension.val15),
+                  padding: EdgeInsets.all(Dimension.val15),
                   textStyle: TextStyle(
                     fontFamily: 'Courier New',
-                    fontSize: dimension.font14,
+                    fontSize: Dimension.font14,
                   ),
                 ),
               ),
@@ -201,12 +201,12 @@ void main() {
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-      width: dimension.width311,
+      width: Dimension.width311,
       decoration: BoxDecoration(
         color: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.lightModePrimary,
-        borderRadius: BorderRadius.circular(dimension.val15),
+        borderRadius: BorderRadius.circular(Dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -216,15 +216,15 @@ void main() {
           ),
         ],
       ),
-      padding: EdgeInsets.all(dimension.val20),
-      margin: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val20),
+      margin: EdgeInsets.all(Dimension.val10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
@@ -232,18 +232,18 @@ void main() {
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val10),
+          SizedBox(height: Dimension.val10),
           Text(
             definition,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
                   ? AppColors.lightModePrimary
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val15),
+          SizedBox(height: Dimension.val15),
         ],
       ),
     );

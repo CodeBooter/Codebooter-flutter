@@ -26,51 +26,51 @@ class AnimatedDrawer extends StatelessWidget {
           child: Drawer(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(dimension.val20),
-                bottomRight: Radius.circular(dimension.val20),
+                topRight: Radius.circular(Dimension.val20),
+                bottomRight: Radius.circular(Dimension.val20),
               ),
             ),
             backgroundColor: appState.isDarkMode
                 ? AppColors.primaryColor
                 : AppColors.lightModePrimary,
-            width: dimension.screenWidth * 0.6,
+            width: Dimension.screenWidth * 0.6,
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   Container(
-                    height: dimension.height250,
+                    height: Dimension.height250,
                     child: Column(
                       children: [
-                        // SizedBox(height: dimension.val50),
+                        // SizedBox(height: Dimension.val50),
                         SizedBox(
-                          height: dimension.val60,
+                          height: Dimension.val60,
                         ),
                         ClipOval(
                           child: Image(
                             image: NetworkImage(_authService.getUserImage() ??
                                 "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"),
-                            height: dimension.height100,
-                            width: dimension.width105,
+                            height: Dimension.height100,
+                            width: Dimension.width105,
                             fit: BoxFit
                                 .cover, // Ensure the image covers the circular area
                           ),
                         ),
                         SizedBox(
-                          height: dimension.val20,
+                          height: Dimension.val20,
                         ),
                         Text(
                           _authService.getUserName() ?? "",
                           style: TextStyle(
-                              fontSize: dimension.font20,
+                              fontSize: Dimension.font20,
                               fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
-                          height: dimension.val5,
+                          height: Dimension.val5,
                         ),
                         Text(
                           _authService.getUserEmail() ?? "",
                           style: TextStyle(
-                              fontSize: dimension.font16,
+                              fontSize: Dimension.font16,
                               fontWeight: FontWeight.w400),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -81,12 +81,12 @@ class AnimatedDrawer extends StatelessWidget {
                   // ListTile(
                   //   leading: Icon(
                   //     Icons.home,
-                  //     size: dimension.val25,
+                  //     size: Dimension.val25,
                   //   ),
-                  //   horizontalTitleGap: dimension.val2,
+                  //   horizontalTitleGap: Dimension.val2,
                   //   title: Text('Home',
                   //       style: TextStyle(
-                  //           fontSize: dimension.font16,
+                  //           fontSize: Dimension.font16,
                   //           fontWeight: FontWeight.w400)),
                   //   onTap: () {
                   //     context.go('/homepage');
@@ -95,12 +95,12 @@ class AnimatedDrawer extends StatelessWidget {
                   // ListTile(
                   //   leading: Icon(
                   //     Icons.laptop,
-                  //     size: dimension.val25,
+                  //     size: Dimension.val25,
                   //   ),
-                  //   horizontalTitleGap: dimension.val2,
+                  //   horizontalTitleGap: Dimension.val2,
                   //   title: Text('Courses',
                   //       style: TextStyle(
-                  //           fontSize: dimension.font16,
+                  //           fontSize: Dimension.font16,
                   //           fontWeight: FontWeight.w400)),
                   //   onTap: () {
                   //     context.go('/courses');
@@ -109,12 +109,12 @@ class AnimatedDrawer extends StatelessWidget {
                   // ListTile(
                   //   leading: Icon(
                   //     Icons.work_outline_rounded,
-                  //     size: dimension.val25,
+                  //     size: Dimension.val25,
                   //   ),
-                  //   horizontalTitleGap: dimension.val2,
+                  //   horizontalTitleGap: Dimension.val2,
                   //   title: Text('Internship/Jobs',
                   //       style: TextStyle(
-                  //           fontSize: dimension.font16,
+                  //           fontSize: Dimension.font16,
                   //           fontWeight: FontWeight.w400)),
                   //   onTap: () {
                   //     context.go('/jobinternship');
@@ -123,12 +123,12 @@ class AnimatedDrawer extends StatelessWidget {
                   // ListTile(
                   //   leading: Icon(
                   //     Icons.book_outlined,
-                  //     size: dimension.val25,
+                  //     size: Dimension.val25,
                   //   ),
-                  //   horizontalTitleGap: dimension.val2,
+                  //   horizontalTitleGap: Dimension.val2,
                   //   title: Text('Notes',
                   //       style: TextStyle(
-                  //           fontSize: dimension.font16,
+                  //           fontSize: Dimension.font16,
                   //           fontWeight: FontWeight.w400)),
                   //   onTap: () {
                   //     context.go('/notes');
@@ -137,12 +137,12 @@ class AnimatedDrawer extends StatelessWidget {
                   // ListTile(
                   //   leading: Icon(
                   //     Icons.laptop_mac_rounded,
-                  //     size: dimension.val25,
+                  //     size: Dimension.val25,
                   //   ),
-                  //   horizontalTitleGap: dimension.val2,
+                  //   horizontalTitleGap: Dimension.val2,
                   //   title: Text('Interview Gem',
                   //       style: TextStyle(
-                  //           fontSize: dimension.font16,
+                  //           fontSize: Dimension.font16,
                   //           fontWeight: FontWeight.w400)),
                   //   onTap: () {
                   //     context.go('/interview');
@@ -150,21 +150,21 @@ class AnimatedDrawer extends StatelessWidget {
                   // ),
                   // //divider
                   Divider(
-                    height: dimension.val20,
-                    thickness: dimension.val2,
-                    indent: dimension.val20,
-                    endIndent: dimension.val20,
+                    height: Dimension.val20,
+                    thickness: Dimension.val2,
+                    indent: Dimension.val20,
+                    endIndent: Dimension.val20,
                   ),
 
                   ListTile(
                     leading: Icon(
                       Icons.help_outlined,
-                      size: dimension.val25,
+                      size: Dimension.val25,
                     ),
-                    horizontalTitleGap: dimension.val2,
+                    horizontalTitleGap: Dimension.val2,
                     title: Text('Help',
                         style: TextStyle(
-                            fontSize: dimension.font16,
+                            fontSize: Dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
                       context.go('/help');
@@ -174,12 +174,12 @@ class AnimatedDrawer extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.email_outlined,
-                      size: dimension.val25,
+                      size: Dimension.val25,
                     ),
-                    horizontalTitleGap: dimension.val2,
+                    horizontalTitleGap: Dimension.val2,
                     title: Text('Contact Us',
                         style: TextStyle(
-                            fontSize: dimension.font16,
+                            fontSize: Dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
                       const email = 'codebooter2022@gmail.com';
@@ -193,12 +193,12 @@ class AnimatedDrawer extends StatelessWidget {
                   ListTile(
                     leading: Icon(
                       Icons.logout,
-                      size: dimension.val25,
+                      size: Dimension.val25,
                     ),
-                    horizontalTitleGap: dimension.val2,
+                    horizontalTitleGap: Dimension.val2,
                     title: Text('Sign Out',
                         style: TextStyle(
-                            fontSize: dimension.font16,
+                            fontSize: Dimension.font16,
                             fontWeight: FontWeight.w400)),
                     onTap: () {
                       _authService.signOut(context);
@@ -213,11 +213,11 @@ class AnimatedDrawer extends StatelessWidget {
                   //     style: ElevatedButton.styleFrom(
                   //       foregroundColor: Colors.white,
                   //       backgroundColor: const Color.fromARGB(255, 250, 250, 250),
-                  //       elevation: dimension.val5,
+                  //       elevation: Dimension.val5,
                   //       shape: RoundedRectangleBorder(
                   //         side: BorderSide(
                   //             color: const Color.fromARGB(255, 19, 16, 16),
-                  //             width: dimension.val2,
+                  //             width: Dimension.val2,
                   //             style: BorderStyle.solid),
                   //         borderRadius: BorderRadius.circular(32.0),
                   //       ),
@@ -226,7 +226,7 @@ class AnimatedDrawer extends StatelessWidget {
                   //       'Sign Out',
                   //       style: TextStyle(
                   //           color: Colors.black,
-                  //           fontSize: dimension.font16,
+                  //           fontSize: Dimension.font16,
                   //           fontWeight: FontWeight.w400),
                   //       textAlign: TextAlign.center,
                   //     ),

@@ -6,8 +6,6 @@ import 'package:codebooter_study_app/widgets/BigText.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
-
 class JobInternshipScreen extends StatefulWidget {
   const JobInternshipScreen({super.key});
 
@@ -31,7 +29,7 @@ class _DsaScreenState extends State<JobInternshipScreen> {
         iconTheme: IconThemeData(
           color: appState.isDarkMode ? Colors.white : Colors.black,
         ),
-        toolbarHeight: dimension.val70,
+        toolbarHeight: Dimension.val70,
         centerTitle: true,
         title: bigText(
           text: "Jobs & Internships",
@@ -40,8 +38,12 @@ class _DsaScreenState extends State<JobInternshipScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
+            padding: EdgeInsets.only(left: Dimension.val10),
+            child: const JobInternships()),
+
             padding: EdgeInsets.only(left: dimension.val10),
             child: const JobInternships(value: 10000,)),
+         main
       ),
     );
   }

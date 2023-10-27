@@ -38,42 +38,42 @@ class _LinkedListState extends State<LinkedList> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(dimension.val20),
+          padding: EdgeInsets.all(Dimension.val20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Definition',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 'A linked list is a linear data structure where each element (node) contains a reference to the next node.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              //SizedBox(height: dimension.val2),
+              //SizedBox(height: Dimension.val2),
               Center(
                   child: Image(
                 image: const NetworkImage('https://i.imgur.com/hhjRvJV.png'),
-                height: dimension.height200,
+                height: Dimension.height200,
               )),
-              //SizedBox(height: dimension.val2),
+              //SizedBox(height: Dimension.val2),
               Text(
                 'Types of Linked Lists',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -83,13 +83,13 @@ class _LinkedListState extends State<LinkedList> {
                       definition:
                           'A singly linked list is a type of linked list where each node contains a data element and a reference (link) to the next node in the list. The last node in the list points to null, indicating the end of the list.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Doubly Linked List',
                       definition:
                           'A doubly linked list is a type of linked list where each node contains a data element and two references (links): one to the previous node and one to the next node in the list. This allows for traversal in both directions.',
                     ),
-                    SizedBox(width: dimension.val15),
+                    SizedBox(width: Dimension.val15),
                     _buildLinkedListType(
                       title: 'Circular Linked List',
                       definition:
@@ -98,16 +98,16 @@ class _LinkedListState extends State<LinkedList> {
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Operations performed on Linked List',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Text(
                 '~  Searching for an element in a linked list.\n'
                 '~  Reversing a linked list.\n'
@@ -115,30 +115,30 @@ class _LinkedListState extends State<LinkedList> {
                 '~  Detecting cycles in linked lists.\n'
                 '~  Splitting a linked list into two halves.',
                 style: TextStyle(
-                  fontSize: dimension.font18,
+                  fontSize: Dimension.font18,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Example',
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Georgia',
                 ),
               ),
-              SizedBox(height: dimension.val10),
+              SizedBox(height: Dimension.val10),
               Container(
-                margin: EdgeInsets.all(dimension.val20),
+                margin: EdgeInsets.all(Dimension.val20),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(dimension.val10),
+                    borderRadius: BorderRadius.circular(Dimension.val10),
                     color: Colors.black38,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black12,
-                        spreadRadius: dimension.val2,
-                        blurRadius: dimension.val5,
+                        spreadRadius: Dimension.val2,
+                        blurRadius: Dimension.val5,
                         offset:
                             const Offset(0, 3), // changes position of shadow
                       ),
@@ -180,10 +180,10 @@ NextFree = NextFree + 1
                   language: 'cpp',
                   theme: a11yDarkTheme,
                   // theme: themeMap[ThemeColor.lightTheme],
-                  padding: EdgeInsets.all(dimension.val15),
+                  padding: EdgeInsets.all(Dimension.val15),
                   textStyle: TextStyle(
                     fontFamily: 'Courier New',
-                    fontSize: dimension.font14,
+                    fontSize: Dimension.font14,
                   ),
                 ),
               ),
@@ -200,12 +200,12 @@ NextFree = NextFree + 1
   }) {
     final appState = Provider.of<AppState>(context);
     return Container(
-      width: dimension.width311,
+      width: Dimension.width311,
       decoration: BoxDecoration(
         color: appState.isDarkMode
             ? AppColors.primaryColor
             : AppColors.mainTextColor,
-        borderRadius: BorderRadius.circular(dimension.val15),
+        borderRadius: BorderRadius.circular(Dimension.val15),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -215,8 +215,8 @@ NextFree = NextFree + 1
           ),
         ],
       ),
-      padding: EdgeInsets.all(dimension.val20),
-      margin: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val20),
+      margin: EdgeInsets.all(Dimension.val10),
       // Add margin to increase spacing
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,7 +224,7 @@ NextFree = NextFree + 1
           Text(
             title,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontWeight: FontWeight.bold,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
@@ -232,18 +232,18 @@ NextFree = NextFree + 1
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val10),
+          SizedBox(height: Dimension.val10),
           Text(
             definition,
             style: TextStyle(
-              fontSize: dimension.font16,
+              fontSize: Dimension.font16,
               fontFamily: 'Georgia',
               color: appState.isDarkMode
                   ? AppColors.mainTextColor
                   : AppColors.primaryColor,
             ),
           ),
-          SizedBox(height: dimension.val15),
+          SizedBox(height: Dimension.val15),
         ],
       ),
     );

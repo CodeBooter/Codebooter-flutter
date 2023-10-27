@@ -26,50 +26,50 @@ class _AdminLoginState extends State<AdminLogin> {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            vertical: dimension.val50,
-            horizontal: dimension.val50,
+            vertical: Dimension.val50,
+            horizontal: Dimension.val50,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: dimension.val70),
+              SizedBox(height: Dimension.val70),
               Container(
                 alignment: Alignment.centerLeft,
-                width: dimension.val60,
-                height: dimension.val60,
+                width: Dimension.val60,
+                height: Dimension.val60,
                 decoration: BoxDecoration(
                   borderRadius:
-                      BorderRadius.all(Radius.circular(dimension.val5)),
+                      BorderRadius.all(Radius.circular(Dimension.val5)),
                   image: const DecorationImage(
                     image: AssetImage('assets/images/logo4.png'),
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 'Welcome to CodeBooter 👋 🚀',
                 style: TextStyle(
                   color: appState.isDarkMode ? Colors.white : Colors.black,
                   fontFamily: 'Poppins',
-                  fontSize: dimension.font24,
+                  fontSize: Dimension.font24,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text.rich(
                 TextSpan(
                   style: TextStyle(
                     color: appState.isDarkMode ? Colors.white : Colors.black,
                     fontFamily: 'Poppins',
-                    fontSize: dimension.font16,
+                    fontSize: Dimension.font16,
                     fontWeight: FontWeight.w400,
                   ),
                   children: [
                     TextSpan(
                       text: 'Help you to ',
                       style: TextStyle(
-                          fontSize: dimension.font14,
+                          fontSize: Dimension.font14,
                           color: appState.isDarkMode
                               ? Colors.white
                               : Colors.black),
@@ -78,7 +78,7 @@ class _AdminLoginState extends State<AdminLogin> {
                       text: 'Learn, Prepare',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: dimension.font14,
+                        fontSize: Dimension.font14,
                         color:
                             appState.isDarkMode ? Colors.white : Colors.black,
                       ),
@@ -86,7 +86,7 @@ class _AdminLoginState extends State<AdminLogin> {
                     TextSpan(
                       text: ' and ',
                       style: TextStyle(
-                          fontSize: dimension.font14,
+                          fontSize: Dimension.font14,
                           color: appState.isDarkMode
                               ? Colors.white
                               : Colors.black),
@@ -97,12 +97,12 @@ class _AdminLoginState extends State<AdminLogin> {
                           color:
                               appState.isDarkMode ? Colors.white : Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: dimension.font14),
+                          fontSize: Dimension.font14),
                     ),
                     TextSpan(
                       text: ' your interviews. 🎯 💯',
                       style: TextStyle(
-                          fontSize: dimension.font14,
+                          fontSize: Dimension.font14,
                           color: appState.isDarkMode
                               ? Colors.white
                               : Colors.black),
@@ -110,23 +110,23 @@ class _AdminLoginState extends State<AdminLogin> {
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val25),
+              SizedBox(height: Dimension.val25),
               Text(
                 "Admin Login",
                 style: TextStyle(
-                  fontSize: dimension.font20,
+                  fontSize: Dimension.font20,
                   fontWeight: FontWeight.bold,
                   color: appState.isDarkMode ? Colors.white : Colors.black,
                 ),
               ),
-              SizedBox(height: dimension.val20),
+              SizedBox(height: Dimension.val20),
               Form(
                 key: _formKey,
                 child: Column(
                   children: [
                     TextFormField(
                       style: TextStyle(
-                        fontSize: dimension.font18,
+                        fontSize: Dimension.font18,
                         color: const Color.fromARGB(
                             255, 255, 255, 255), // Set the text color to black
                       ),
@@ -150,14 +150,14 @@ class _AdminLoginState extends State<AdminLogin> {
                         ),
                         labelText: 'Email',
                         labelStyle: TextStyle(
-                          fontSize: dimension.font16,
+                          fontSize: Dimension.font16,
                           color: appState.isDarkMode
                               ? Colors.white
                               : Colors.black, // Set the text color to black
                         ),
                       ),
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     TextFormField(
                       validator: (input) {
                         if (input!.length < 6) {
@@ -176,7 +176,7 @@ class _AdminLoginState extends State<AdminLogin> {
                         ),
                         labelText: 'Password',
                         labelStyle: TextStyle(
-                          fontSize: dimension.font16,
+                          fontSize: Dimension.font16,
                           color: appState.isDarkMode
                               ? Colors.white
                               : Colors.black, // Set the text color to black
@@ -184,7 +184,7 @@ class _AdminLoginState extends State<AdminLogin> {
                       ),
                       obscureText: true,
                     ),
-                    SizedBox(height: dimension.val20),
+                    SizedBox(height: Dimension.val20),
                     ElevatedButton(
                       onPressed: signIn,
                       child: const Text('Sign In'),
@@ -192,7 +192,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   ],
                 ),
               ),
-              SizedBox(height: dimension.val40),
+              SizedBox(height: Dimension.val40),
               Text(
                 'By clicking continue with Google, Apple, Facebook above, you acknowledge that you have read and agree to the CodeBooter\'s Terms of Service and Privacy Policy.',
                 style: TextStyle(
@@ -200,14 +200,14 @@ class _AdminLoginState extends State<AdminLogin> {
                       ? AppColors.lightModePrimary
                       : AppColors.primaryColor,
                   fontFamily: 'calibri',
-                  fontSize: dimension.val15,
+                  fontSize: Dimension.val15,
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              SizedBox(height: dimension.val70),
+              SizedBox(height: Dimension.val70),
               Text(
                 '© 2023 CodeBooter. All rights reserved.',
-                style: TextStyle(fontSize: dimension.val15),
+                style: TextStyle(fontSize: Dimension.val15),
               ),
             ],
           ),

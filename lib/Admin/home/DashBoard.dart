@@ -16,13 +16,13 @@ class DashBoard extends StatefulWidget {
 
 class _DashBoardState extends State<DashBoard> {
   final List<bool> isTappedList = [false, false, false, false];
-  final double imageHeight = dimension.height100;
-  final double imageWidth = dimension.width165;
-  final double containerWidth = dimension.width180;
-  final double containerHeight = dimension.height132;
-  final double borderRadius = dimension.val5;
-  final double spacing = dimension.val10;
-  final double runSpacing = dimension.val10;
+  final double imageHeight = Dimension.height100;
+  final double imageWidth = Dimension.width165;
+  final double containerWidth = Dimension.width180;
+  final double containerHeight = Dimension.height132;
+  final double borderRadius = Dimension.val5;
+  final double spacing = Dimension.val10;
+  final double runSpacing = Dimension.val10;
   final Duration tapDelay = const Duration(milliseconds: 200);
 
   @override
@@ -35,10 +35,10 @@ class _DashBoardState extends State<DashBoard> {
         children: [
           bigText(
             text: 'DashBoard',
-            size: dimension.font24,
+            size: Dimension.font24,
             color: appState.isDarkMode ? Colors.white : Colors.black,
           ),
-          SizedBox(height: dimension.val20),
+          SizedBox(height: Dimension.val20),
           Container(
             child: Wrap(
               spacing: spacing,
@@ -90,7 +90,7 @@ class _DashBoardState extends State<DashBoard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: dimension.val2),
+              SizedBox(height: Dimension.val2),
               Container(
                 alignment: Alignment.center,
                 height: imageHeight,
@@ -106,7 +106,7 @@ class _DashBoardState extends State<DashBoard> {
               ),
               bigText(
                 text: title,
-                size: dimension.font16,
+                size: Dimension.font16,
                 color: appState.isDarkMode ? Colors.white : Colors.black,
               ),
             ],

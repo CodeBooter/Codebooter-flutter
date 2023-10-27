@@ -21,14 +21,14 @@ class JobInternships extends StatefulWidget {
 }
 
 class _JobInternshipsState extends State<JobInternships> {
-  final double imageHeight = dimension.height100;
-  final double imageWidth = dimension.width100;
-  final double containerWidth = dimension.width360;
-  final double containerHeight = dimension.height110;
-  final double borderRadius = dimension.val5;
-  final double buttonRadius = dimension.val5;
-  final double spacing = dimension.val10;
-  final double runSpacing = dimension.val10;
+  final double imageHeight = Dimension.height100;
+  final double imageWidth = Dimension.width100;
+  final double containerWidth = Dimension.width360;
+  final double containerHeight = Dimension.height110;
+  final double borderRadius = Dimension.val5;
+  final double buttonRadius = Dimension.val5;
+  final double spacing = Dimension.val10;
+  final double runSpacing = Dimension.val10;
 
   final Duration tapDelay = const Duration(milliseconds: 200);
 
@@ -91,7 +91,7 @@ class _JobInternshipsState extends State<JobInternships> {
   }) {
     final appState = Provider.of<AppState>(context);
     return Padding(
-      padding: EdgeInsets.all(dimension.val10),
+      padding: EdgeInsets.all(Dimension.val10),
       child: InkWell(
         onTap: onTap,
         child: Ink(
@@ -113,7 +113,7 @@ class _JobInternshipsState extends State<JobInternships> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: dimension.val5,
+                    width: Dimension.val5,
                   ),
                   Container(
                     width: imageWidth,
@@ -126,11 +126,11 @@ class _JobInternshipsState extends State<JobInternships> {
                       ),
                     ),
                   ),
-                  SizedBox(width: dimension.val10),
+                  SizedBox(width: Dimension.val10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: dimension.val5),
+                      SizedBox(height: Dimension.val5),
                       Text(
                         "$title",
                         style: TextStyle(
@@ -138,26 +138,26 @@ class _JobInternshipsState extends State<JobInternships> {
                               ? AppColors.mainTextColor
                               : const Color.fromARGB(255, 0, 0, 0),
                           fontFamily: 'poppins',
-                          fontSize: dimension.font16,
+                          fontSize: Dimension.font16,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: dimension.val5),
+                      SizedBox(height: Dimension.val5),
                       Row(
                         children: [
                           Container(
-                            height: dimension.height80,
-                            width: dimension.width68,
+                            height: Dimension.height80,
+                            width: Dimension.width68,
                             child: Column(
                               children: [
                                 Icon(
                                   Icons.monetization_on_outlined,
-                                  size: dimension.val20,
+                                  size: Dimension.val20,
                                   color: appState.isDarkMode
                                       ? AppColors.mainTextColor
                                       : const Color.fromARGB(255, 0, 0, 0),
                                 ),
-                                SizedBox(height: dimension.val10),
+                                SizedBox(height: Dimension.val10),
                                 Text(
                                   "$stipend ",
                                   style: TextStyle(
@@ -165,20 +165,20 @@ class _JobInternshipsState extends State<JobInternships> {
                                         ? AppColors.mainTextColor
                                         : const Color.fromARGB(255, 0, 0, 0),
                                     overflow: TextOverflow.ellipsis,
-                                    fontSize: dimension.font14,
+                                    fontSize: Dimension.font14,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                SizedBox(height: dimension.val5),
+                                SizedBox(height: Dimension.val5),
                                 SizedBox(
-                                  height: dimension.val20,
+                                  height: Dimension.val20,
                                   child: ElevatedButton(
                                     onPressed: onTap,
                                     style: ElevatedButton.styleFrom(
                                       primary: appState.isDarkMode
                                           ? AppColors.primaryColor
                                           : AppColors.lightModePrimary,
-                                      elevation: dimension.val5,
+                                      elevation: Dimension.val5,
                                       shape: RoundedRectangleBorder(
                                         side: BorderSide(
                                             color: appState.isDarkMode
@@ -188,14 +188,14 @@ class _JobInternshipsState extends State<JobInternships> {
                                             width: 1,
                                             style: BorderStyle.solid),
                                         borderRadius: BorderRadius.circular(
-                                            dimension.val5),
+                                            Dimension.val5),
                                       ),
                                     ),
                                     child: Text(
                                       'Apply',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
-                                        fontSize: dimension.val10,
+                                        fontSize: Dimension.val10,
                                         color: appState.isDarkMode
                                             ? AppColors.mainTextColor
                                             : const Color.fromARGB(
@@ -207,20 +207,20 @@ class _JobInternshipsState extends State<JobInternships> {
                               ],
                             ),
                           ),
-                          SizedBox(height: dimension.val5),
+                          SizedBox(height: Dimension.val5),
                           Container(
-                            height: dimension.height80,
-                            width: dimension.width68,
+                            height: Dimension.height80,
+                            width: Dimension.width68,
                             child: Column(
                               children: [
                                 Icon(
                                   Icons.location_on_outlined,
-                                  size: dimension.val20,
+                                  size: Dimension.val20,
                                   color: appState.isDarkMode
                                       ? AppColors.mainTextColor
                                       : const Color.fromARGB(255, 0, 0, 0),
                                 ),
-                                SizedBox(height: dimension.val10),
+                                SizedBox(height: Dimension.val10),
                                 Text(
                                   "$location ",
                                   style: TextStyle(
@@ -228,7 +228,7 @@ class _JobInternshipsState extends State<JobInternships> {
                                         ? AppColors.mainTextColor
                                         : const Color.fromARGB(255, 0, 0, 0),
                                     overflow: TextOverflow.ellipsis,
-                                    fontSize: dimension.font14,
+                                    fontSize: Dimension.font14,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -236,18 +236,18 @@ class _JobInternshipsState extends State<JobInternships> {
                             ),
                           ),
                           Container(
-                            height: dimension.height80,
-                            width: dimension.width68,
+                            height: Dimension.height80,
+                            width: Dimension.width68,
                             child: Column(
                               children: [
                                 Icon(
                                   Icons.access_time_outlined,
-                                  size: dimension.val20,
+                                  size: Dimension.val20,
                                   color: appState.isDarkMode
                                       ? AppColors.mainTextColor
                                       : const Color.fromARGB(255, 0, 0, 0),
                                 ),
-                                SizedBox(height: dimension.val10),
+                                SizedBox(height: Dimension.val10),
                                 Text(
                                   "$duration ",
                                   style: TextStyle(
@@ -255,7 +255,7 @@ class _JobInternshipsState extends State<JobInternships> {
                                         ? AppColors.mainTextColor
                                         : const Color.fromARGB(255, 0, 0, 0),
                                     overflow: TextOverflow.ellipsis,
-                                    fontSize: dimension.font14,
+                                    fontSize: Dimension.font14,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -263,18 +263,18 @@ class _JobInternshipsState extends State<JobInternships> {
                             ),
                           ),
                           Container(
-                            height: dimension.height80,
-                            width: dimension.width68,
+                            height: Dimension.height80,
+                            width: Dimension.width68,
                             child: Column(
                               children: [
                                 Icon(
                                   Icons.hourglass_bottom_outlined,
-                                  size: dimension.val20,
+                                  size: Dimension.val20,
                                   color: appState.isDarkMode
                                       ? AppColors.mainTextColor
                                       : const Color.fromARGB(255, 0, 0, 0),
                                 ),
-                                SizedBox(height: dimension.val10),
+                                SizedBox(height: Dimension.val10),
                                 Text(
                                   "${deadline.substring(5, 10)}",
                                   style: TextStyle(
@@ -282,7 +282,7 @@ class _JobInternshipsState extends State<JobInternships> {
                                         ? AppColors.mainTextColor
                                         : const Color.fromARGB(255, 0, 0, 0),
                                     overflow: TextOverflow.ellipsis,
-                                    fontSize: dimension.font14,
+                                    fontSize: Dimension.font14,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -291,7 +291,7 @@ class _JobInternshipsState extends State<JobInternships> {
                           ),
                         ],
                       ),
-                      SizedBox(width: dimension.val10),
+                      SizedBox(width: Dimension.val10),
                     ],
                   ),
                 ],
