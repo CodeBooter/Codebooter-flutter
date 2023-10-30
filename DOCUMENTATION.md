@@ -164,6 +164,95 @@ Thank you for being a part of the CodeBooter community!
 ## Code Examples
 
 Include code examples to illustrate best practices and common tasks.
+Best Practices Example
+Naming Conventions for Variables
+// Good variable naming conventions
+String userName = 'JohnDoe';
+int age = 25;
+bool isLoggedIn = true;
+
+Common Task Example
+Making an API Request using the http Package
+import 'package:http/http.dart' as http;
+
+Future<void> fetchData() async {
+  final response = await http.get(Uri.parse('https://api.example.com/data'));
+  
+  if (response.statusCode == 200) {
+    print('Data: ${response.body}');
+    // Handle the received data
+  } else {
+    print('Request failed with status: ${response.statusCode}');
+    // Handle error
+  }
+}
+Explanation: Fetching data from an API using the http package, and handling the response based on its status code.
+
+State Management Best Practice
+Using Provider Package for State Management
+
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class Counter with ChangeNotifier {
+  int _count = 0;
+
+  int get count => _count;
+
+  void increment() {
+    _count++;
+    notifyListeners();
+  }
+}
+
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Counter(),
+      child: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Counter App')),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('You have pushed the button this many times:'),
+              Consumer<Counter>(
+                builder: (context, counter, child) {
+                  return Text(
+                    '${counter.count}',
+                    style: Theme.of(context).textTheme.headline4,
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Provider.of<Counter>(context, listen: false).increment();
+          },
+          tooltip: 'Increment',
+          child: Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+}
+
+Explanation: Demonstrating the use of the provider package for simple state management, allowing widget rebuilds on state changes.
+
+Including such code examples can assist contributors in understanding the preferred practices and common tasks within the CodeBooter Study App. Adjust and expand these examples as needed based on the specific practices and functionalities in your project.
+
+
 
 ## Links to Additional Resources
 
