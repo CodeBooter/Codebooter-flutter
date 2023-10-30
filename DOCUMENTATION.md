@@ -167,7 +167,9 @@ Include code examples to illustrate best practices and common tasks.
 
 ## Links to Additional Resources
 
-Provide links to external libraries, documentation, and related resources.
+https://docs.flutter.dev/
+https://firebase.google.com/docs?gad=1&gclid=Cj0KCQjwqP2pBhDMARIsAJQ0CzpdYE4L8Lg6d0TQYz0DMMpDrpeyHHW7_wKwPBifgv1UE-8RDW5w6G4aAhwCEALw_wcB&gclsrc=aw.ds
+https://pub.dev/packages/provider
 
 ## Maintainer Contact Information
 
