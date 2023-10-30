@@ -52,6 +52,9 @@ flutter: The core dependency required for a Flutter project.
 http: For making HTTP requests.
 provider: For state management.
 firebase_core: For Firebase integration.
+google_sign_in: ^6.1.4
+github_sign_in_plus: ^0.0.1
+youtube_player_flutter: ^8.1.2
 
 ## Development Workflow
 
