@@ -14,7 +14,7 @@ Welcome to Codebooter Study App, the ultimate platform designed to help B.Tech C
 
 
 
-# Features
+## Features
 
 ### Authentication
 <div >
