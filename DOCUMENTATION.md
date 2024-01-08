@@ -103,6 +103,36 @@ youtube_player_flutter: ^8.1.2
 
 Document coding guidelines and style conventions used in the project.
 
+## Libraries used and their uses
+Sure, here's a general overview of the uses of each library in the "codebooter_study_app" Flutter project:
+
+1. `get: ^4.6.5`: A state management library for Flutter applications.
+2. `cupertino_icons: ^1.0.2`: Provides the Cupertino (iOS-style) icons for use in Flutter applications.
+3. `go_router: ^8.0.3`: A declarative router for Flutter that simplifies navigation.
+4. `url_strategy: ^0.2.0`: A package for defining URL strategies in Flutter web applications.
+5. `animated_splash_screen: ^1.3.0`: Helps in creating animated splash screens for Flutter applications.
+6. `firebase_core: ^2.14.0`: The core Firebase SDK, required for Firebase services in Flutter.
+7. `google_sign_in: ^6.1.4`: Allows users to sign in with Google accounts.
+8. `github_sign_in_plus: ^0.0.1`: Enables GitHub sign-in functionality.
+9. `firebase_auth: ^4.6.3`: Provides Firebase authentication services.
+10. `firebase_auth_oauth: ^1.0.2`: Allows for Firebase authentication using OAuth providers.
+11. `flutter_highlight: ^0.7.0`: Syntax highlighting for code snippets in Flutter applications.
+12. `mongo_dart: ^0.9.1`: A Dart driver for MongoDB, allowing Flutter apps to interact with MongoDB databases.
+13. `http: ^0.13.6`: A package for making HTTP requests in Flutter applications.
+14. `equatable: ^2.0.5`: Helps with value equality and comparison for Dart objects.
+15. `flutter_bloc: ^8.1.3`: Implements the BLoC (Business Logic Component) pattern for state management.
+16. `liquid_progress_indicator: ^0.4.0`: Creates liquid-like progress indicators in Flutter.
+17. `youtube_player_flutter: ^8.1.2`: Integrates YouTube video playback in Flutter apps.
+18. `youtube_data_api: ^1.0.4`: A Dart library for interacting with the YouTube Data API.
+19. `intl: ^0.18.1`: Provides internationalization and localization support for Flutter apps.
+20. `syncfusion_flutter_pdfviewer: ^21.2.10`: Displays PDF documents in Flutter using Syncfusion's PDF viewer.
+21. `path_provider: ^2.0.15`: Helps in accessing device directories for storing and retrieving files.
+22. `cached_network_image: ^3.2.3`: Caches network images to improve performance in Flutter apps.
+23. `dio: ^5.2.1+1`: A powerful HTTP client for Dart, facilitating HTTP requests.
+24. `carousel_slider: ^4.2.1`: Creates carousel/slider widgets in Flutter for displaying multiple items in a carousel.
+
+These libraries collectively provide a wide range of functionalities, from UI components to state management, networking, authentication, and integration with external services like Firebase and YouTube.
+
 ## Testing
 
 1.Existing Tests: Locate existing test files within the project, often found in a directory like /test.
